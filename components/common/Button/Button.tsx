@@ -10,7 +10,7 @@ export default function Button({ children }: ButtonProps) {
 
 const button = css({
   // base styles
-  color: 'red',
+  color: '$john',
   variants: {
     variant: {
       primary: {
