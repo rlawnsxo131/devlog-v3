@@ -6,6 +6,7 @@
 * Yarn Berry
 * TypeScript
 * Next.js
+* Stitches
 
 ### V1 Repository
 <https://github.com/rlawnsxo131/devlog-client>

@@ -979,6 +979,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stitches/react@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "@stitches/react@npm:1.2.8"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: 029795323cdedb5599ec0636526fc233b2cf41fa9c1f4a704b1f7f457c6170053384a7430afed45e25f73e348d7c391cf1379bc079943cd9cad44302234a5244
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.4.3":
   version: 0.4.3
   resolution: "@swc/helpers@npm:0.4.3"
@@ -2123,6 +2132,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "devlog-v3@workspace:."
   dependencies:
+    "@stitches/react": ^1.2.8
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.3.0
     "@types/jest": ^29.0.0
