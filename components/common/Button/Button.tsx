@@ -1,24 +1,22 @@
-import { css } from '@stitches/react';
+import { css } from '@/styles/_stitches.config';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export default function Button({ children }: ButtonProps) {
+function Button({ children }: ButtonProps) {
   return <button className={button()}>{children}</button>;
 }
 
 const button = css({
   // base styles
-  color: '$john',
+  color: '$red600',
   variants: {
     variant: {
-      primary: {
-        // primary styles
-      },
-      secondary: {
-        // secondary styles
-      },
+      primary: {},
+      secondary: {},
     },
   },
 });
+
+export default Button;

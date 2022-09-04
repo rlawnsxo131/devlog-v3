@@ -1,6 +1,6 @@
-import { globalCss } from './stitches.config';
+import { globalCss } from './_stitches.config';
 
-export const globalStyles = globalCss({
+const globalStyles = globalCss({
   html: {
     margin: '0',
     padding: '0',
@@ -24,3 +24,5 @@ export const globalStyles = globalCss({
     height: '100%',
   },
 });
+
+export default globalStyles;
