@@ -1,19 +1,13 @@
 import { createStitches } from '@stitches/react';
-import palette from './palette';
 
-export const { createTheme, globalCss, getCssText, css } = createStitches({
-  theme: {
-    colors: {
-      ...palette,
+export const { createTheme, globalCss, getCssText, config, css } =
+  createStitches({
+    theme: {
+      colors: {},
     },
-  },
-  // media: {
-  //   dark: '(prefers-color-scheme: dark)',
-  // },
-});
+    // media: {
+    //   dark: '(prefers-color-scheme: dark)',
+    // },
+  });
 
-export const darkTheme = createTheme({
-  colors: {
-    ...palette,
-  },
-});
+export const darkTheme = createTheme({});
