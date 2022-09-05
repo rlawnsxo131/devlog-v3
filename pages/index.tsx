@@ -1,10 +1,9 @@
-import Button from '@/components/common/Button';
+import Button from '@/components/base/Button';
 
 export default function HomePage() {
   return (
     <div>
-      hello
-      <Button>hello</Button>
+      <Button>click</Button>
     </div>
   );
 }

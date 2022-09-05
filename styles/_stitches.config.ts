@@ -1,5 +1,6 @@
 import { createStitches } from '@stitches/react';
 import {
+  whiteA,
   gray,
   red,
   green,
@@ -10,28 +11,25 @@ import {
   cyanDark,
 } from '@radix-ui/colors';
 
-export const { createTheme, globalCss, getCssText, config, css } =
+export const { createTheme, globalCss, getCssText, config, css, styled } =
   createStitches({
     theme: {
       colors: {
+        ...whiteA,
         ...gray,
         ...cyan,
         ...red,
         ...green,
-        bg_1: '$gray1',
       },
     },
-    // media: {
-    //   dark: '(prefers-color-scheme: dark)',
-    // },
   });
 
 export const darkTheme = createTheme('dark-theme', {
   colors: {
+    ...whiteA,
     ...grayDark,
     ...cyanDark,
     ...redDark,
     ...greenDark,
-    bg_1: '$gray1',
   },
 });
