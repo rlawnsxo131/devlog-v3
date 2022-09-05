@@ -1,13 +1,13 @@
 import { createStitches } from '@stitches/react';
 import {
   gray,
-  blue,
   red,
   green,
   grayDark,
-  blueDark,
   redDark,
   greenDark,
+  cyan,
+  cyanDark,
 } from '@radix-ui/colors';
 
 export const { createTheme, globalCss, getCssText, config, css } =
@@ -15,9 +15,10 @@ export const { createTheme, globalCss, getCssText, config, css } =
     theme: {
       colors: {
         ...gray,
-        ...blue,
+        ...cyan,
         ...red,
         ...green,
+        bg_1: '$gray1',
       },
     },
     // media: {
@@ -25,11 +26,12 @@ export const { createTheme, globalCss, getCssText, config, css } =
     // },
   });
 
-export const darkTheme = createTheme({
+export const darkTheme = createTheme('dark-theme', {
   colors: {
     ...grayDark,
-    ...blueDark,
+    ...cyanDark,
     ...redDark,
     ...greenDark,
+    bg_1: '$gray1',
   },
 });

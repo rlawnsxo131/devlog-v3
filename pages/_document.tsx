@@ -1,8 +1,16 @@
-import { getCssText } from '@/styles/_stitches.config';
+import { darkTheme, getCssText } from '@/styles/_stitches.config';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
-  // document.documentElement.classList.add("dark")
+  const themeScript = `
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('${darkTheme}');
+    } else {
+      document.documentElement.classList.remove('${darkTheme}');
+    }
+    // document.documentElement.classList.add('${darkTheme}');
+  `;
+
   return (
     <Html>
       <Head>
@@ -10,6 +18,7 @@ export default function Document() {
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
       <body>
         <Main />

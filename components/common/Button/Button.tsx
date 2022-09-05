@@ -8,13 +8,18 @@ function Button({ children }: ButtonProps) {
   return <button className={button()}>{children}</button>;
 }
 
+const aa = css({
+  background: '$red9',
+});
 const button = css({
   // base styles
-  color: '$blue7',
+  ...aa,
+  color: '$cyan10',
   variants: {
     variant: {
       primary: {},
       secondary: {},
+      disable: {},
     },
   },
 });
