@@ -1,6 +1,6 @@
 import { globalCss } from './_stitches.config';
 
-const toLevelBoxStyle = {
+const topLevelBoxStyle = {
   margin: '0',
   padding: '0',
   height: '100%',
@@ -8,7 +8,7 @@ const toLevelBoxStyle = {
 
 const globalStyles = globalCss({
   html: {
-    ...toLevelBoxStyle,
+    ...topLevelBoxStyle,
     boxSizing: 'border-box',
     '& *': {
       boxSizing: 'inherit',
@@ -18,10 +18,10 @@ const globalStyles = globalCss({
     },
   },
   body: {
-    ...toLevelBoxStyle,
+    ...topLevelBoxStyle,
   },
   '#__next': {
-    ...toLevelBoxStyle,
+    ...topLevelBoxStyle,
   },
 });
 
