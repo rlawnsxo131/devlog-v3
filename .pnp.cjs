@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@radix-ui/colors", "npm:0.1.8"],\
             ["@stitches/react", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:1.2.8"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:13.3.0"],\
@@ -1458,6 +1459,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@npmcli/move-file", "npm:2.0.1"],\
             ["mkdirp", "npm:1.0.4"],\
             ["rimraf", "npm:3.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@radix-ui/colors", [\
+        ["npm:0.1.8", {\
+          "packageLocation": "./.yarn/cache/@radix-ui-colors-npm-0.1.8-351c651cab-35fb8e48b1.zip/node_modules/@radix-ui/colors/",\
+          "packageDependencies": [\
+            ["@radix-ui/colors", "npm:0.1.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2953,6 +2963,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["devlog-v3", "workspace:."],\
+            ["@radix-ui/colors", "npm:0.1.8"],\
             ["@stitches/react", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:1.2.8"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:13.3.0"],\

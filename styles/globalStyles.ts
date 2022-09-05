@@ -1,16 +1,15 @@
 import { globalCss } from './_stitches.config';
 
+const toLevelBoxStyle = {
+  margin: '0',
+  padding: '0',
+  height: '100%',
+};
+
 const globalStyles = globalCss({
   html: {
-    margin: '0',
-    padding: '0',
-    height: '100%',
+    ...toLevelBoxStyle,
     boxSizing: 'border-box',
-  },
-  body: {
-    margin: '0',
-    padding: '0',
-    height: '100%',
     '& *': {
       boxSizing: 'inherit',
       fontFamily:
@@ -18,10 +17,11 @@ const globalStyles = globalCss({
       textRendering: 'optimizeLegibility',
     },
   },
+  body: {
+    ...toLevelBoxStyle,
+  },
   '#__next': {
-    margin: '0',
-    padding: '0',
-    height: '100%',
+    ...toLevelBoxStyle,
   },
 });
 

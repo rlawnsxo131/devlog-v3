@@ -10,7 +10,7 @@ function Button({ children }: ButtonProps) {
 
 const button = css({
   // base styles
-  color: '$red600',
+  color: '$blue7',
   variants: {
     variant: {
       primary: {},
