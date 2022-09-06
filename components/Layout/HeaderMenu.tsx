@@ -1,28 +1,23 @@
 import { css } from '@/styles/_stitches.config';
-import { MenuIcon } from '@/icons/index';
-import {
-  buttonBasicStyles,
-  buttonWithChildrenBasicStyles,
-} from '@/styles/basicStyles';
+import useHeaderMenu from './hooks/useHeaderMenu';
+import HeaderMenuNavigation from './HeaderMenuNavigation';
+import HeaderMenuButton from './HeaderMenuButton';
 
 interface Props {}
 
 function HeaderMenu(props: Props) {
+  const { visible, onClick } = useHeaderMenu();
+
   return (
     <div className={block()}>
-      <button className={button()}>
-        <MenuIcon />
-      </button>
+      <HeaderMenuButton onClick={onClick} />
+      <HeaderMenuNavigation visible={visible} />
     </div>
   );
 }
 
-const block = css({});
-
-const button = css({
-  ...buttonBasicStyles,
-  ...buttonWithChildrenBasicStyles,
-  padding: '0.5rem',
+const block = css({
+  position: 'relative',
 });
 
 export default HeaderMenu;

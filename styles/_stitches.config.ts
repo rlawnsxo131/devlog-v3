@@ -11,7 +11,7 @@ import {
   cyanDark,
 } from '@radix-ui/colors';
 
-export const { createTheme, globalCss, getCssText, config, css, styled } =
+export const { createTheme, globalCss, getCssText, config, css, keyframes } =
   createStitches({
     theme: {
       colors: {
@@ -20,6 +20,14 @@ export const { createTheme, globalCss, getCssText, config, css, styled } =
         ...cyan,
         ...red,
         ...green,
+        bg: '$gray2',
+        'bg-nav': '$gray2',
+      },
+      shadows: {
+        headerNavigation: '1px 1px 3px 1px #adb5bd',
+      },
+      zIndices: {
+        header: 10,
       },
     },
     media: {
@@ -51,5 +59,10 @@ export const darkTheme = createTheme('dark', {
     ...cyanDark,
     ...redDark,
     ...greenDark,
+    bg: '$gray2',
+    'bg-nav': '$cyan2',
+  },
+  shadows: {
+    headerNavigation: '1px 1px 3px 1px #18191A',
   },
 });

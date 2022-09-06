@@ -5,5 +5,5 @@ export const svgBasicFillCss = css({
 });
 
 export const svgBasicFillLightCss = css({
-  fill: '$gray1',
+  fill: '$gray2',
 });

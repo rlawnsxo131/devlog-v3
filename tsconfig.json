@@ -20,6 +20,7 @@
       "@/styles/*": ["styles/*"],
       "@/icons/*": ["image/icons/*"],
       "@/store/*": ["store/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/lib": ["lib"],
       "@/lib/*": ["lib/*"],
       "@/constants": ["constants"],

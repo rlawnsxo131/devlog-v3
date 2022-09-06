@@ -3,6 +3,8 @@ import ThemeButton from '../ThemeButton';
 import Header from './Header';
 import HeaderLogo from './HeaderLogo';
 import HeaderMenu from './HeaderMenu';
+import HeaderMenuButton from './HeaderMenuButton';
+import HeaderMenuNavigation from './HeaderMenuNavigation';
 import Main from './Main';
 
 interface Props {

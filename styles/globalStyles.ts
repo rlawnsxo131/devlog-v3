@@ -21,7 +21,7 @@ const globalStyles = globalCss({
         background: '$cyan9',
       },
     },
-    background: '$cyan1',
+    background: '$bg',
   },
   body: {
     ...topLevelBoxStyle,

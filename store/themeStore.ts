@@ -1,8 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import create from 'zustand';
-import { Storage } from '@/lib';
+import { Storage, utils } from '@/lib';
 import { keys } from '@/constants';
-import { setThemeForDocumentAndStorage } from '@/lib/utils';
 
 interface UseThemeStore {
   theme: Theme;
@@ -14,11 +13,11 @@ const useThemeStore = create<UseThemeStore>((set) => ({
   theme: 'light',
   setLightTheme: () => {
     set({ theme: 'light' });
-    setThemeForDocumentAndStorage('light');
+    utils.setThemeForDocumentAndStorage('light');
   },
   setDarkTheme: () => {
     set({ theme: 'dark' });
-    setThemeForDocumentAndStorage('dark');
+    utils.setThemeForDocumentAndStorage('dark');
   },
 }));
 
@@ -29,13 +28,10 @@ export function useThemeState() {
 export function useThemeActions() {
   const { setLightTheme, setDarkTheme } = useThemeStore((store) => store);
 
-  return useMemo(
-    () => ({
-      setLightTheme,
-      setDarkTheme,
-    }),
-    [setLightTheme, setDarkTheme],
-  );
+  return {
+    setLightTheme,
+    setDarkTheme,
+  };
 }
 
 export function useThemeEffect() {

@@ -16,7 +16,6 @@ function Header({ leftSideItems, rightSideItems }: Props) {
 }
 
 const block = css({
-  border: '1px solid black',
   position: 'sticky',
   top: '0',
   left: '0',
@@ -24,7 +23,8 @@ const block = css({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  height: '3.25rem',
+  height: '4rem',
+  zIndex: '$header',
   ...layoutBasicResponsiveStyles,
 });
 
