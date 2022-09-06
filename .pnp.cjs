@@ -49,7 +49,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:18.2.0"],\
-            ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"]\
+            ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
+            ["zustand", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -2979,7 +2980,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:18.2.0"],\
-            ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"]\
+            ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
+            ["zustand", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -7495,6 +7497,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yocto-queue-npm-0.1.0-c6c9a7db29-f77b3d8d00.zip/node_modules/yocto-queue/",\
           "packageDependencies": [\
             ["yocto-queue", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["zustand", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/zustand-npm-4.1.1-60b4581ecd-03eefb193e.zip/node_modules/zustand/",\
+          "packageDependencies": [\
+            ["zustand", "npm:4.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/zustand-virtual-c771c3fba2/0/cache/zustand-npm-4.1.1-60b4581ecd-03eefb193e.zip/node_modules/zustand/",\
+          "packageDependencies": [\
+            ["zustand", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.1"],\
+            ["@types/immer", null],\
+            ["@types/react", "npm:18.0.18"],\
+            ["immer", null],\
+            ["react", "npm:18.2.0"],\
+            ["use-sync-external-store", "virtual:008c96fb0e80a84bd4653c6cd00b78b94ad5dc521208063ed7fe08fa792349c75f607eba6d50fa4afda2bdc84d8dd07093dca3573ebd05cdbfa9b72e5da5617a#npm:1.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/immer",\
+            "@types/react",\
+            "immer",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

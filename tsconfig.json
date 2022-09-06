@@ -5,7 +5,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -17,7 +17,13 @@
     "baseUrl": "./",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/icons/*": ["image/icons/*"],
+      "@/store/*": ["store/*"],
+      "@/lib": ["lib"],
+      "@/lib/*": ["lib/*"],
+      "@/constants": ["constants"],
+      "@/constants/*": ["constants/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

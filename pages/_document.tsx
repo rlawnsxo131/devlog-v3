@@ -3,12 +3,11 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   const themeScript = `
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (localStorage.theme === '"dark"' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.classList.add('${darkTheme}');
     } else {
-      document.documentElement.classList.remove('${darkTheme}');
+      document.documentElement.classList.remove('${darkTheme}')
     }
-    // document.documentElement.classList.add('${darkTheme}');
   `;
 
   return (
