@@ -21,6 +21,8 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         ...red,
         ...green,
         bg: '$gray2',
+        'bg-primary': '$cyan9',
+        'bg-primary-hover': '$cyan10',
         'bg-nav': '$gray2',
       },
       shadows: {
@@ -60,7 +62,9 @@ export const darkTheme = createTheme('dark', {
     ...redDark,
     ...greenDark,
     bg: '$gray2',
-    'bg-nav': '$cyan2',
+    'bg-primary': '$cyan6',
+    'bg-primary-hover': '$cyan7',
+    'bg-nav': '$gray3',
   },
   shadows: {
     headerNavigation: '1px 1px 3px 1px #18191A',

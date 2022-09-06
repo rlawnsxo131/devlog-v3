@@ -13,9 +13,9 @@ function ThemeButton(props: Props) {
   const { theme, onClick } = useThemeButton();
 
   return (
-    <div className={block()} onClick={onClick}>
+    <button className={block()} onClick={onClick}>
       {theme === 'light' ? <LightIcon /> : <NightIcon />}
-    </div>
+    </button>
   );
 }
 

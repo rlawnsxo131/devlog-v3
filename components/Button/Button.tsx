@@ -22,10 +22,11 @@ const button = css({
   variants: {
     variant: {
       primary: {
-        background: '$cyan9',
-        border: '1px solid $cyan3',
+        background: '$bg-primary',
+        border: '1px solid $bg-primary',
         '&:hover': {
-          background: '$cyan10',
+          background: '$bg-primary-hover',
+          border: '1px solid $bg-primary-hover',
         },
       },
       secondary: {},
