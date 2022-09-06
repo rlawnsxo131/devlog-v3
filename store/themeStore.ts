@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import create from 'zustand';
 import { Storage, utils } from '@/lib';
 import { keys } from '@/constants';
