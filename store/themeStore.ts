@@ -35,7 +35,7 @@ export function useThemeActions() {
 }
 
 export function useThemeEffect() {
-  const { setDarkTheme } = useThemeStore((store) => store);
+  const setDarkTheme = useThemeStore((store) => store.setDarkTheme);
 
   useEffect(() => {
     const storageTheme = Storage.getItem(keys.ThemeKey);
