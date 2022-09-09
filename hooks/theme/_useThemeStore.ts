@@ -1,5 +1,6 @@
 import create from 'zustand';
 import { utils } from '@/lib';
+import { Theme } from '@/types/variables';
 
 interface UseThemeStore {
   theme: Theme;
