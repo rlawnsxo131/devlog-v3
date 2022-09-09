@@ -20,15 +20,18 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
         // background
         bg: '$gray2',
-        'bg-primary': '$cyan9',
-        'bg-primary-hover': '$cyan10',
         'bg-nav': '$gray2',
+        'bg-info-section': '$gray2',
+        'bg-hover': '$cyan4',
+        'bg-button-primary': '$cyan9',
+        'bg-button-primary-hover': '$cyan10',
 
         // text
         text: '$gray12',
         'text-anchor-active': '$cyan9',
       },
       shadows: {
+        default: '1px 1px 3px 1px #adb5bd',
         headerNavigation: '1px 1px 3px 1px #adb5bd',
       },
       zIndices: {
@@ -66,15 +69,18 @@ export const darkTheme = createTheme('dark', {
 
     // background
     bg: '$gray2',
-    'bg-primary': '$cyan6',
-    'bg-primary-hover': '$cyan7',
     'bg-nav': '$gray3',
+    'bg-info-section': '$gray3',
+    'bg-hover': '$cyan4',
+    'bg-button-primary': '$cyan6',
+    'bg-button-primary-hover': '$cyan7',
 
     // text
     text: '$gray12',
     'text-anchor-active': '$cyan9',
   },
   shadows: {
+    default: '1px 1px 3px 1px #18191A',
     headerNavigation: '1px 1px 3px 1px #18191A',
   },
 });

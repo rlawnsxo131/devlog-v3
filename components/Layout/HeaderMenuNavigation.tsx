@@ -46,7 +46,6 @@ const nav = css({
   position: 'absolute',
   top: '3rem',
   right: '0',
-  padding: '0.25rem 0',
   borderRadius: '0.25rem',
   transformOrigin: 'top',
   background: '$bg-nav',
@@ -73,16 +72,19 @@ const ul = css({
   padding: '0',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
   '& li': {
     display: 'flex',
-    justifyContent: 'center',
-    padding: '0.5rem 0.25rem',
+    flexDirection: 'column',
+    '&:hover': {
+      background: '$bg-hover',
+    },
   },
 });
 
 const anchor = css({
+  textAlign: 'center',
   color: '$gray12',
+  padding: '0.75rem 0.25rem',
   variants: {
     variant: {
       default: {

@@ -11,6 +11,7 @@ function Main({ children }: Props) {
 
 const block = css({
   ...layoutBasicResponsiveStyle,
+  marginTop: '1.5rem',
 });
 
 export default Main;

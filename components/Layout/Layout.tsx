@@ -1,4 +1,5 @@
 import { css } from '@/styles/_stitches.config';
+import JohnContactLink from '../JohnContactLink';
 import ThemeButton from '../ThemeButton';
 import Header from './Header';
 import HeaderLogo from './HeaderLogo';
@@ -21,6 +22,7 @@ function Layout({ children }: Props) {
           </>
         }
       />
+      <JohnContactLink />
       <Main>{children}</Main>
     </div>
   );
