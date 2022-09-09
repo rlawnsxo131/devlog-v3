@@ -1,4 +1,4 @@
-import { buttonBasicStyles } from '@/styles/basicStyles';
+import { buttonBasicStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { VariantProps } from '@stitches/react';
 
@@ -12,7 +12,7 @@ function Button({ children, variant }: Props) {
 }
 
 const button = css({
-  ...buttonBasicStyles,
+  ...buttonBasicStyle,
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',

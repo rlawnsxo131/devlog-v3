@@ -1,4 +1,4 @@
-import { layoutBasicResponsiveStyles } from '@/styles/basicStyles';
+import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {
@@ -25,7 +25,7 @@ const block = css({
   alignItems: 'center',
   height: '4rem',
   zIndex: '$header',
-  ...layoutBasicResponsiveStyles,
+  ...layoutBasicResponsiveStyle,
 });
 
 const items = css({

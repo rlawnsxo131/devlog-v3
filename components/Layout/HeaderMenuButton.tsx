@@ -1,8 +1,5 @@
 import MenuIcon from '@/icons/MenuIcon';
-import {
-  buttonBasicStyles,
-  buttonWithSVGBasicStyles,
-} from '@/styles/basicStyles';
+import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {
@@ -18,8 +15,8 @@ function HeaderMenuButton({ onClick }: Props) {
 }
 
 const button = css({
-  ...buttonBasicStyles,
-  ...buttonWithSVGBasicStyles,
+  ...buttonBasicStyle,
+  ...buttonWithSVGBasicStyle,
   padding: '0.5rem',
 });
 

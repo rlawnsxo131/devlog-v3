@@ -1,12 +1,12 @@
 import { globalCss } from './_stitches.config';
 
-const topLevelBoxStyles = {
+const topLevelBoxStyle = {
   margin: '0',
   padding: '0',
   height: '100%',
 };
 
-const topLevelBoxChildrenStyles = {
+const topLevelBoxChildrenStyle = {
   boxSizing: 'inherit',
   fontFamily:
     '"Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif',
@@ -18,20 +18,20 @@ const topLevelBoxChildrenStyles = {
   },
 };
 
-const globalStyles = globalCss({
+const globalStyle = globalCss({
   html: {
-    ...topLevelBoxStyles,
+    ...topLevelBoxStyle,
     boxSizing: 'border-box',
     background: '$bg',
     '& *': {
-      ...topLevelBoxChildrenStyles,
+      ...topLevelBoxChildrenStyle,
     },
   },
   body: {
-    ...topLevelBoxStyles,
+    ...topLevelBoxStyle,
   },
   '#__next': {
-    ...topLevelBoxStyles,
+    ...topLevelBoxStyle,
   },
   a: {
     cursor: 'pointer',
@@ -39,4 +39,4 @@ const globalStyles = globalCss({
   },
 });
 
-export default globalStyles;
+export default globalStyle;

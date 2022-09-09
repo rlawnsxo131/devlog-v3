@@ -1,8 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import {
-  buttonBasicStyles,
-  buttonWithSVGBasicStyles,
-} from '@/styles/basicStyles';
+import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import { LightIcon, NightIcon } from '@/icons/index';
 
 import useThemeButton from './hooks/useThemeButton';
@@ -20,8 +17,8 @@ function ThemeButton(props: Props) {
 }
 
 const block = css({
-  ...buttonBasicStyles,
-  ...buttonWithSVGBasicStyles,
+  ...buttonBasicStyle,
+  ...buttonWithSVGBasicStyle,
   padding: '0.5rem',
 });
 

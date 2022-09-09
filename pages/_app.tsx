@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 import useThemeEffect from '@/hooks/theme/useThemeEffect';
-import globalStyles from '@/styles/globalStyles';
+import globalStyle from '@/styles/globalStyle';
 
 export default function App({ Component, pageProps }) {
-  globalStyles();
+  globalStyle();
   useThemeEffect();
 
   return (

@@ -1,4 +1,4 @@
-export const buttonBasicStyles = {
+export const buttonBasicStyle = {
   padding: '0',
   border: '0',
   boxSizing: 'border-box',
@@ -6,14 +6,14 @@ export const buttonBasicStyles = {
   cursor: 'pointer',
 };
 
-export const buttonWithSVGBasicStyles = {
+export const buttonWithSVGBasicStyle = {
   background: 'inherit',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 };
 
-export const layoutBasicResponsiveStyles = {
+export const layoutBasicResponsiveStyle = {
   '@xxxsmall': {
     width: '93%',
   },

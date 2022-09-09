@@ -1,4 +1,4 @@
-import { layoutBasicResponsiveStyles } from '@/styles/basicStyles';
+import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {
@@ -10,7 +10,7 @@ function Main({ children }: Props) {
 }
 
 const block = css({
-  ...layoutBasicResponsiveStyles,
+  ...layoutBasicResponsiveStyle,
 });
 
 export default Main;
