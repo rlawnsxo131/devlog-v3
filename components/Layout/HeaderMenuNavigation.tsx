@@ -3,18 +3,14 @@ import transitions from '@/styles/transitions';
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useHeaderMenuNavigation from './hooks/useHeaderMenuNavigation';
 
 interface Props {
   visible: boolean;
 }
 
 function HeaderMenuNavigation({ visible }: Props) {
-  const router = useRouter();
-  const currentRoute = router.pathname;
-  const getRouteVariant = (path: string) => {
-    return currentRoute === path ? 'active' : 'default';
-  };
-  const closed = useTransitionTimeoutEffect({ visible });
+  const { getRouteVariant, closed } = useHeaderMenuNavigation({ visible });
 
   if (!visible && closed) return null;
 
@@ -75,6 +71,14 @@ const ul = css({
   '& li': {
     display: 'flex',
     flexDirection: 'column',
+    '&:first-of-type': {
+      borderTopLeftRadius: '0.25rem',
+      borderTopRightRadius: '0.25rem',
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: '0.25rem',
+      borderBottomRightRadius: '0.25rem',
+    },
     '&:hover': {
       background: '$bg-hover',
     },

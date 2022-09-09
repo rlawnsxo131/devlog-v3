@@ -6,6 +6,7 @@
 * Yarn Berry
 * TypeScript
 * Next.js
+* Zustand
 * Stitches
 
 ### V1 Repository

@@ -1,9 +1,9 @@
 import { css } from '@/styles/_stitches.config';
-import JohnContactLink from '../JohnContactLink';
 import ThemeButton from '../ThemeButton';
 import Header from './Header';
 import HeaderLogo from './HeaderLogo';
 import HeaderMenu from './HeaderMenu';
+import JohnContactLink from './JohnContactLink';
 import Main from './Main';
 
 interface Props {

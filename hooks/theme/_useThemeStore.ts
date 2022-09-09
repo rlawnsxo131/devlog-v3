@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import create from 'zustand';
-import { Storage, utils } from '@/lib';
-import { keys } from 'constant';
+import { utils } from '@/lib';
 
 interface UseThemeStore {
   theme: Theme;
