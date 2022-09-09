@@ -5,12 +5,12 @@ export default function InfoPage() {
     <div className={block()}>
       <section className={section()}>
         <h3>Personal Development blog by John</h3>
-        <pre>
+        <p>
           2018년 1월, 28살이 되던해 int 가 무엇인지 배운 늦깎이 개발자 입니다.
           {'\n\n'}
           Serverless 한 BackEnd Architecture 를 선호하고, FrontEnd 의 자연스런
           DataFlow 를 중요히 생각합니다.
-        </pre>
+        </p>
       </section>
     </div>
   );
@@ -33,7 +33,7 @@ const section = css({
     margin: '0 0 1.5rem 0',
     fontSize: '1.5rem',
   },
-  '& pre': {
+  '& p': {
     margin: '0',
     display: 'flex',
     flexFlow: 'row wrap',
