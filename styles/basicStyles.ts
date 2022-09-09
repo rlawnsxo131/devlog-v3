@@ -6,7 +6,7 @@ export const buttonBasicStyles = {
   cursor: 'pointer',
 };
 
-export const buttonWithChildrenBasicStyles = {
+export const buttonWithSVGBasicStyles = {
   background: 'inherit',
   display: 'flex',
   justifyContent: 'center',

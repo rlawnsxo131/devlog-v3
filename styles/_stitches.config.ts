@@ -3,10 +3,8 @@ import {
   whiteA,
   gray,
   red,
-  green,
   grayDark,
   redDark,
-  greenDark,
   cyan,
   cyanDark,
 } from '@radix-ui/colors';
@@ -19,11 +17,16 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         ...gray,
         ...cyan,
         ...red,
-        ...green,
+
+        // background
         bg: '$gray2',
         'bg-primary': '$cyan9',
         'bg-primary-hover': '$cyan10',
         'bg-nav': '$gray2',
+
+        // text
+        text: '$gray12',
+        'text-anchor-active': '$cyan9',
       },
       shadows: {
         headerNavigation: '1px 1px 3px 1px #adb5bd',
@@ -60,11 +63,16 @@ export const darkTheme = createTheme('dark', {
     ...grayDark,
     ...cyanDark,
     ...redDark,
-    ...greenDark,
+
+    // background
     bg: '$gray2',
     'bg-primary': '$cyan6',
     'bg-primary-hover': '$cyan7',
     'bg-nav': '$gray3',
+
+    // text
+    text: '$gray12',
+    'text-anchor-active': '$cyan9',
   },
   shadows: {
     headerNavigation: '1px 1px 3px 1px #18191A',

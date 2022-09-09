@@ -1,7 +1,7 @@
 import { css } from '@/styles/_stitches.config';
 import {
   buttonBasicStyles,
-  buttonWithChildrenBasicStyles,
+  buttonWithSVGBasicStyles,
 } from '@/styles/basicStyles';
 import { LightIcon, NightIcon } from '@/icons/index';
 
@@ -21,7 +21,7 @@ function ThemeButton(props: Props) {
 
 const block = css({
   ...buttonBasicStyles,
-  ...buttonWithChildrenBasicStyles,
+  ...buttonWithSVGBasicStyles,
   padding: '0.5rem',
 });
 

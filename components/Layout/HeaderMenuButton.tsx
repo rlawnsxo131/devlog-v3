@@ -1,7 +1,7 @@
 import MenuIcon from '@/icons/MenuIcon';
 import {
   buttonBasicStyles,
-  buttonWithChildrenBasicStyles,
+  buttonWithSVGBasicStyles,
 } from '@/styles/basicStyles';
 import { css } from '@/styles/_stitches.config';
 
@@ -19,7 +19,7 @@ function HeaderMenuButton({ onClick }: Props) {
 
 const button = css({
   ...buttonBasicStyles,
-  ...buttonWithChildrenBasicStyles,
+  ...buttonWithSVGBasicStyles,
   padding: '0.5rem',
 });
 

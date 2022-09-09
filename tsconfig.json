@@ -23,8 +23,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/lib": ["lib"],
       "@/lib/*": ["lib/*"],
-      "@/constants": ["constants"],
-      "@/constants/*": ["constants/*"],
+      "@/constant": ["constant"],
+      "@/constant/*": ["constant/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
