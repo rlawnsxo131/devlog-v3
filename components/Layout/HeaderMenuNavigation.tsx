@@ -1,8 +1,6 @@
-import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 import transitions from '@/styles/transitions';
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import useHeaderMenuNavigation from './hooks/useHeaderMenuNavigation';
 
 interface Props {
@@ -10,14 +8,16 @@ interface Props {
 }
 
 function HeaderMenuNavigation({ visible }: Props) {
-  const { getRouteVariant, closed } = useHeaderMenuNavigation({ visible });
+  const { closed, navVariant, getRouteVariant } = useHeaderMenuNavigation({
+    visible,
+  });
 
   if (!visible && closed) return null;
 
   return (
     <nav
       className={nav({
-        variant: visible ? 'enabled' : 'disabled',
+        variant: navVariant,
       })}
     >
       <ul className={ul()}>
@@ -98,6 +98,9 @@ const anchor = css({
         color: '$text-anchor-active',
       },
     },
+  },
+  defaultVariants: {
+    variant: 'default',
   },
 });
 
