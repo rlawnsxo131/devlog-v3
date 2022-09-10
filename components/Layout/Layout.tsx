@@ -21,14 +21,15 @@ function Layout({ children }: Props) {
             <HeaderMenu />
           </>
         }
+        bottomSideItems={<JohnContactLink />}
       />
-      <JohnContactLink />
       <Main>{children}</Main>
     </div>
   );
 }
 
 const block = css({
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

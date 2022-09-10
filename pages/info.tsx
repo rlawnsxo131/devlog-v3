@@ -14,6 +14,21 @@ export default function InfoPage() {
           자연스런 DataFlow 를 중요히 생각합니다.
         </p>
       </section>
+      <section className={section()}>
+        <h3>DevLog Tech Stack</h3>
+        <p>
+          <strong>V2</strong>
+          {'\n'}
+          TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+          React.js, Webpack, React Router, Loadable Components, Unified,
+          Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway, Lambda /
+          Lambda@Edge{'\n\n'}
+          <strong>V1</strong>
+          {'\n'}TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+          Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront, API
+          Gateway, Lambda / Lambda@Edge
+        </p>
+      </section>
     </div>
   );
 }
@@ -42,5 +57,8 @@ const section = css({
     lineHeight: '1.5',
     whiteSpace: 'pre-wrap',
     fontSize: '1.125rem',
+  },
+  '& + &': {
+    marginTop: '1.5rem',
   },
 });

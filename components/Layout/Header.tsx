@@ -4,27 +4,45 @@ import { css } from '@/styles/_stitches.config';
 interface Props {
   leftSideItems: React.ReactNode;
   rightSideItems: React.ReactNode;
+  bottomSideItems: React.ReactNode;
 }
 
-function Header({ leftSideItems, rightSideItems }: Props) {
+function Header({ leftSideItems, rightSideItems, bottomSideItems }: Props) {
   return (
     <header className={block()}>
-      <div className={items()}>{leftSideItems}</div>
-      <div className={items({ gap: 'enabled' })}>{rightSideItems}</div>
+      <div className={contentsBlock()}>
+        <div className={items()}>{leftSideItems}</div>
+        <div className={items({ gap: 'enabled' })}>{rightSideItems}</div>
+      </div>
+      <div className={bottomContentsBlock()}>{bottomSideItems}</div>
     </header>
   );
 }
 
 const block = css({
-  position: 'sticky',
+  position: 'fixed',
   top: '0',
   left: '0',
   width: '100%',
   display: 'flex',
-  justifyContent: 'space-between',
+  flexDirection: 'column',
+  justifyContent: 'center',
   alignItems: 'center',
-  height: '4rem',
+  background: '$bg',
   zIndex: '$header',
+});
+
+const contentsBlock = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+  height: '4rem',
+  ...layoutBasicResponsiveStyle,
+});
+
+const bottomContentsBlock = css({
+  display: 'flex',
+  alignItems: 'center',
+  height: '2.725rem',
   ...layoutBasicResponsiveStyle,
 });
 

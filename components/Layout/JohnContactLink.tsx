@@ -38,7 +38,6 @@ function JohnContactLink(props: Props) {
 const block = css({
   display: 'flex',
   alignItems: 'center',
-  ...layoutBasicResponsiveStyle,
 });
 
 const wrapAnchor = css({
