@@ -23,7 +23,7 @@ function HeaderMenuNavigation({ visible }: Props) {
       <ul className={ul()}>
         <li>
           <Link href={'/'}>
-            <a className={anchor({ variant: getRouteVariant('/') })}>새글</a>
+            <a className={anchor({ variant: getRouteVariant('/') })}>포스트</a>
           </Link>
         </li>
         <li>
