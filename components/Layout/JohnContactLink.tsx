@@ -1,4 +1,4 @@
-import { EmailIcon, GithubIcon } from '@/icons/index';
+import { EmailIcon, GithubIcon, LinkedinIcon } from '@/icons/index';
 import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
@@ -22,6 +22,14 @@ function JohnContactLink(props: Props) {
         target="_blank"
       >
         <EmailIcon />
+      </a>
+      <a
+        className={wrapAnchor()}
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/juntae-kim-8441ba238/"
+        target="_blank"
+      >
+        <LinkedinIcon />
       </a>
     </div>
   );

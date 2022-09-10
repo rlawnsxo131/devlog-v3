@@ -41,6 +41,6 @@ const section = css({
     flexFlow: 'row wrap',
     lineHeight: '1.5',
     whiteSpace: 'pre-wrap',
-    fontSize: '1.25rem',
+    fontSize: '1.125rem',
   },
 });
