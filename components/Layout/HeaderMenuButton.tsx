@@ -1,3 +1,4 @@
+import { classNames } from '@/constant';
 import MenuIcon from '@/icons/MenuIcon';
 import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
@@ -8,8 +9,11 @@ interface Props {
 
 function HeaderMenuButton({ onClick }: Props) {
   return (
-    <button className={button()} onClick={onClick}>
-      <MenuIcon />
+    <button
+      className={`${button()} ${classNames.HeaderNavigationClassName}`}
+      onClick={onClick}
+    >
+      <MenuIcon className={classNames.HeaderNavigationClassName} />
     </button>
   );
 }

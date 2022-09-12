@@ -1,3 +1,4 @@
+import { classNames } from '@/constant';
 import transitions from '@/styles/transitions';
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
@@ -16,19 +17,29 @@ function HeaderMenuNavigation({ visible }: Props) {
 
   return (
     <nav
-      className={nav({
+      className={`${nav({
         variant: navVariant,
-      })}
+      })} ${classNames.HeaderNavigationClassName}`}
     >
-      <ul className={ul()}>
-        <li>
+      <ul className={`${ul()} ${classNames.HeaderNavigationClassName}`}>
+        <li className={classNames.HeaderNavigationClassName}>
           <Link href={'/'}>
-            <a className={anchor({ variant: getRouteVariant('/') })}>포스트</a>
+            <a
+              className={`${anchor({ variant: getRouteVariant('/') })} ${
+                classNames.HeaderNavigationClassName
+              }`}
+            >
+              포스트
+            </a>
           </Link>
         </li>
-        <li>
+        <li className={classNames.HeaderNavigationClassName}>
           <Link href={'/info'}>
-            <a className={anchor({ variant: getRouteVariant('/info') })}>
+            <a
+              className={`${anchor({ variant: getRouteVariant('/info') })} ${
+                classNames.HeaderNavigationClassName
+              }`}
+            >
               소개
             </a>
           </Link>
