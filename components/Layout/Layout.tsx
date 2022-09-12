@@ -3,7 +3,6 @@ import ThemeButton from '../ThemeButton';
 import Header from './Header';
 import HeaderLogo from './HeaderLogo';
 import HeaderMenu from './HeaderMenu';
-import JohnContactLink from './JohnContactLink';
 import Main from './Main';
 
 interface Props {
@@ -21,9 +20,9 @@ function Layout({ children }: Props) {
             <HeaderMenu />
           </>
         }
-        bottomSideItems={<JohnContactLink />}
       />
       <Main>{children}</Main>
+      <div className={fakePaddingArea()} />
     </div>
   );
 }
@@ -34,7 +33,10 @@ const block = css({
   flexDirection: 'column',
   alignItems: 'center',
   height: '100%',
-  overflowY: 'scroll',
+});
+
+const fakePaddingArea = css({
+  padding: '3rem',
 });
 
 export default Layout;

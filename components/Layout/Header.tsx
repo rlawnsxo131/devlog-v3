@@ -4,17 +4,15 @@ import { css } from '@/styles/_stitches.config';
 interface Props {
   leftSideItems: React.ReactNode;
   rightSideItems: React.ReactNode;
-  bottomSideItems: React.ReactNode;
 }
 
-function Header({ leftSideItems, rightSideItems, bottomSideItems }: Props) {
+function Header({ leftSideItems, rightSideItems }: Props) {
   return (
     <header className={block()}>
       <div className={contentsBlock()}>
         <div className={items()}>{leftSideItems}</div>
         <div className={items({ gap: 'enabled' })}>{rightSideItems}</div>
       </div>
-      <div className={bottomContentsBlock()}>{bottomSideItems}</div>
     </header>
   );
 }
@@ -36,13 +34,6 @@ const contentsBlock = css({
   display: 'flex',
   justifyContent: 'space-between',
   height: '4rem',
-  ...layoutBasicResponsiveStyle,
-});
-
-const bottomContentsBlock = css({
-  display: 'flex',
-  alignItems: 'center',
-  height: '2.725rem',
   ...layoutBasicResponsiveStyle,
 });
 

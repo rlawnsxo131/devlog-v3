@@ -1,8 +1,10 @@
 import { css } from '@/styles/_stitches.config';
+import InfoContactLink from './components/InfoContactLink';
 
 export default function InfoPage() {
   return (
     <div className={block()}>
+      <InfoContactLink />
       <section className={section()}>
         <h3>Personal Development blog by John</h3>
         <p>

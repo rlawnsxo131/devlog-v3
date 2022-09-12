@@ -1,10 +1,9 @@
 import { EmailIcon, GithubIcon, LinkedinIcon } from '@/icons/index';
-import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {}
 
-function JohnContactLink(props: Props) {
+function InfoContactLink(props: Props) {
   return (
     <div className={block()}>
       <a
@@ -38,6 +37,11 @@ function JohnContactLink(props: Props) {
 const block = css({
   display: 'flex',
   alignItems: 'center',
+  marginBottom: '1.5rem',
+  padding: '1rem',
+  background: '$bg-info-section',
+  boxShadow: '$default',
+  borderRadius: '4px',
 });
 
 const wrapAnchor = css({
@@ -55,4 +59,4 @@ const wrapAnchor = css({
   },
 });
 
-export default JohnContactLink;
+export default InfoContactLink;

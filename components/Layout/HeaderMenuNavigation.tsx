@@ -63,7 +63,7 @@ const nav = css({
 
 const ul = css({
   listStyle: 'none',
-  width: '10rem',
+  width: '15rem',
   margin: '0',
   padding: '0',
   display: 'flex',
@@ -89,6 +89,7 @@ const anchor = css({
   textAlign: 'center',
   color: '$gray12',
   padding: '0.75rem 0.25rem',
+  fontSize: '1.125rem',
   variants: {
     variant: {
       default: {

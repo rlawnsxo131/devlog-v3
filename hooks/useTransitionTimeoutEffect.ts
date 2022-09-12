@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-interface UseTransitionTimeoutEffectParams {
+interface Params {
   visible: boolean;
   duration?: number;
 }
@@ -8,7 +8,7 @@ interface UseTransitionTimeoutEffectParams {
 export default function useTransitionTimeoutEffect({
   visible,
   duration = 250,
-}: UseTransitionTimeoutEffectParams) {
+}: Params) {
   const [closed, setClosed] = useState(true);
 
   useEffect(() => {

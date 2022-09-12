@@ -2,13 +2,11 @@ import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
-interface UseHeaderMenuNavigation {
+interface Params {
   visible: boolean;
 }
 
-export default function useHeaderMenuNavigation({
-  visible,
-}: UseHeaderMenuNavigation) {
+export default function useHeaderMenuNavigation({ visible }: Params) {
   const router = useRouter();
   const currentRoute = router.pathname;
   const closed = useTransitionTimeoutEffect({ visible });
