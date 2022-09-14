@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { classNames } from '@/constant';
 import useRoutePathname from '@/hooks/useRoutePathname';
 import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
+import { headerNavigationClassName } from '@/styles/classNames';
 
 export default function useHeaderMenu() {
   const routePathname = useRoutePathname();
@@ -25,9 +25,9 @@ export default function useHeaderMenu() {
 
   const generateNavigationClassName = (className?: string) => {
     if (className) {
-      return `${className} ${classNames.HeaderNavigationClassName}`;
+      return `${className} ${headerNavigationClassName}`;
     }
-    return classNames.HeaderNavigationClassName;
+    return headerNavigationClassName;
   };
 
   useEffect(() => {
@@ -36,12 +36,13 @@ export default function useHeaderMenu() {
 
   useEffect(() => {
     function onMouseOutsideClick(e) {
-      const regex = new RegExp(classNames.HeaderNavigationClassName, 'g');
+      const regex = new RegExp(headerNavigationClassName, 'g');
       const className = e.target.className;
       const svgBaseVal = className.baseVal;
       if (regex.test(className) || regex.test(svgBaseVal)) return;
       setVisible(false);
     }
+
     globalThis.addEventListener('click', onMouseOutsideClick);
     return () => {
       globalThis.removeEventListener('click', onMouseOutsideClick);
