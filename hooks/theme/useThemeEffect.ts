@@ -2,18 +2,32 @@ import { useEffect } from 'react';
 import { keys } from '@/constant';
 import { Storage } from '@/lib';
 import useThemeStore from './_useThemeStore';
+import shallow from 'zustand/shallow';
 
 export default function useThemeEffect() {
-  const setDarkTheme = useThemeStore((store) => store.setDarkTheme);
+  const { setDarkTheme, setLightTheme } = useThemeStore(
+    (store) => ({
+      setDarkTheme: store.setDarkTheme,
+      setLightTheme: store.setLightTheme,
+    }),
+    shallow,
+  );
 
   useEffect(() => {
     const storageTheme = Storage.getItem(keys.ThemeKey);
-    const systemPrefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)',
-    ).matches;
-
-    if (systemPrefersDark || storageTheme === 'dark') {
-      setDarkTheme();
+    if (storageTheme) {
+      if (storageTheme === 'dark') {
+        setDarkTheme();
+        return;
+      }
+      setLightTheme();
+      return;
     }
-  }, [setDarkTheme]);
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setDarkTheme();
+      return;
+    }
+    setLightTheme();
+  }, [setDarkTheme, setLightTheme]);
 }

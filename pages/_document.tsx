@@ -3,11 +3,24 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   const themeScript = `
-    if (localStorage.theme === '"dark"' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('${darkTheme}');
-    } else {
-      document.documentElement.classList.remove('${darkTheme}')
+    function initializeTheme() {
+      if (localStorage.theme) {
+        if (localStorage.theme === '"dark"') {
+          document.documentElement.classList.add('${darkTheme}');
+          return;
+        }
+        document.documentElement.classList.remove('${darkTheme}');
+        return;
+      }
+      
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('${darkTheme}');
+        return;
+      }
+      document.documentElement.classList.remove('${darkTheme}');
     }
+    
+    initializeTheme();
   `;
 
   return (
