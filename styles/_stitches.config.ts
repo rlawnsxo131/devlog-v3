@@ -1,4 +1,4 @@
-import { createStitches, CSS } from '@stitches/react';
+import { createStitches, CSS } from '@stitches/core';
 import {
   whiteA,
   gray,
