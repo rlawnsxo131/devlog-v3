@@ -44,6 +44,7 @@ export default function useHeaderMenu() {
     }
 
     globalThis.addEventListener('click', onMouseOutsideClick);
+
     return () => {
       globalThis.removeEventListener('click', onMouseOutsideClick);
     };
