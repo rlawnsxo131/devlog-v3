@@ -1,6 +1,6 @@
 import { buttonBasicStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
-import { VariantProps } from '@stitches/react';
+import { VariantProps } from '@stitches/core';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: VariantProps<typeof button>;
