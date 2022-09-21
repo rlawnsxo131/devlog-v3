@@ -3,9 +3,9 @@ import { css } from '@/styles/_stitches.config';
 
 interface Props {}
 
-function InfoContactLink(props: Props) {
+function InfoContactLinkSection(props: Props) {
   return (
-    <div className={block()}>
+    <section className={block()}>
       <a
         className={wrapAnchor()}
         rel="noopener noreferrer"
@@ -30,7 +30,7 @@ function InfoContactLink(props: Props) {
       >
         <LinkedinIcon />
       </a>
-    </div>
+    </section>
   );
 }
 
@@ -59,4 +59,4 @@ const wrapAnchor = css({
   },
 });
 
-export default InfoContactLink;
+export default InfoContactLinkSection;

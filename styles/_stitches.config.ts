@@ -19,9 +19,9 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         ...red,
 
         // background
-        bg: '$gray2',
-        'bg-nav': '$gray2',
-        'bg-info-section': '$gray2',
+        bg: '$whiteA12',
+        'bg-nav': '$whiteA12',
+        'bg-info-section': '$whiteA12',
         'bg-hover': '$cyan4',
         'bg-button-primary': '$cyan9',
         'bg-button-primary-hover': '$cyan10',

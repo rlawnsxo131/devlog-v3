@@ -7,17 +7,17 @@ export default function Document() {
       if (localStorage.theme) {
         if (localStorage.theme === '"dark"') {
           document.documentElement.classList.add('${darkTheme}');
-          return;
+        } else {
+          document.documentElement.classList.remove('${darkTheme}');
         }
-        document.documentElement.classList.remove('${darkTheme}');
         return;
       }
       
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('${darkTheme}');
-        return;
+      } else {
+        document.documentElement.classList.remove('${darkTheme}');
       }
-      document.documentElement.classList.remove('${darkTheme}');
     }
     
     initializeTheme();

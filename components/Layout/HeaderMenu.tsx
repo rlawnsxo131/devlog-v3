@@ -12,7 +12,7 @@ function HeaderMenu(props: Props) {
     visible,
     closed,
     navVariant,
-    onMenuButtonClick,
+    handleVisible,
     getRouteVariant,
     generateNavigationClassName,
   } = useHeaderMenu();
@@ -21,7 +21,7 @@ function HeaderMenu(props: Props) {
     <div className={block()}>
       <button
         className={generateNavigationClassName(button())}
-        onClick={onMenuButtonClick}
+        onClick={handleVisible}
       >
         <MenuIcon className={generateNavigationClassName()} />
       </button>

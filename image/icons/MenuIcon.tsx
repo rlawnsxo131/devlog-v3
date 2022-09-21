@@ -1,4 +1,4 @@
-import { svgBasicFillCss, svgBasicFillLightCss } from '@/styles/basicStyleCss';
+import { svgBasicFillCss, svgBasicFillThemeCss } from '@/styles/basicStyleCss';
 
 interface Props extends React.SVGProps<HTMLOrSVGElement> {}
 
@@ -15,7 +15,7 @@ function MenuIcon({ className }: Props) {
       <g className={className}>
         <path
           d="M0,0h24v24H0V0z"
-          className={`${svgBasicFillLightCss()} ${className}`}
+          className={`${svgBasicFillThemeCss()} ${className}`}
         />
       </g>
       <g className={className}>

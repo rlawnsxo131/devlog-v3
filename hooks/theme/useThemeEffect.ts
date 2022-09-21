@@ -18,16 +18,16 @@ export default function useThemeEffect() {
     if (storageTheme) {
       if (storageTheme === 'dark') {
         setDarkTheme();
-        return;
+      } else {
+        setLightTheme();
       }
-      setLightTheme();
       return;
     }
 
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkTheme();
-      return;
+    } else {
+      setLightTheme();
     }
-    setLightTheme();
   }, [setDarkTheme, setLightTheme]);
 }

@@ -4,6 +4,6 @@ export const svgBasicFillCss = css({
   fill: '$gray12',
 });
 
-export const svgBasicFillLightCss = css({
-  fill: '$gray2',
+export const svgBasicFillThemeCss = css({
+  fill: '$bg',
 });

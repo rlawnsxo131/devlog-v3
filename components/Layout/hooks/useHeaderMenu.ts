@@ -12,7 +12,7 @@ export default function useHeaderMenu() {
     return visible ? 'enabled' : 'disabled';
   }, [visible]);
 
-  const onMenuButtonClick = () => {
+  const handleVisible = () => {
     setVisible((prev) => !prev);
   };
 
@@ -54,7 +54,7 @@ export default function useHeaderMenu() {
     visible,
     closed,
     navVariant,
-    onMenuButtonClick,
+    handleVisible,
     getRouteVariant,
     generateNavigationClassName,
   };
