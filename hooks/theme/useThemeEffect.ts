@@ -26,8 +26,8 @@ export default function useThemeEffect() {
 
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkTheme();
-    } else {
-      setLightTheme();
+      return;
     }
+    setLightTheme();
   }, [setDarkTheme, setLightTheme]);
 }

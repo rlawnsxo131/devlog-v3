@@ -5,15 +5,15 @@ import { headerNavigationClassName } from '@/styles/classNames';
 
 export default function useHeaderMenu() {
   const routePathname = useRoutePathname();
-  const [visible, setVisible] = useState(false);
-  const closed = useTransitionTimeoutEffect({ visible });
+  const [navVisible, setNavVisible] = useState(false);
+  const navClosed = useTransitionTimeoutEffect({ visible: navVisible });
 
   const navVariant = useMemo<'enabled' | 'disabled'>(() => {
-    return visible ? 'enabled' : 'disabled';
-  }, [visible]);
+    return navVisible ? 'enabled' : 'disabled';
+  }, [navVisible]);
 
-  const handleVisible = () => {
-    setVisible((prev) => !prev);
+  const handleNavVisible = () => {
+    setNavVisible((prev) => !prev);
   };
 
   /**
@@ -31,7 +31,7 @@ export default function useHeaderMenu() {
   };
 
   useEffect(() => {
-    setVisible(false);
+    setNavVisible(false);
   }, [routePathname]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function useHeaderMenu() {
       const className = e.target.className;
       const svgBaseVal = className.baseVal;
       if (regex.test(className) || regex.test(svgBaseVal)) return;
-      setVisible(false);
+      setNavVisible(false);
     }
 
     globalThis.addEventListener('click', onMouseOutsideClick);
@@ -51,10 +51,10 @@ export default function useHeaderMenu() {
   }, []);
 
   return {
-    visible,
-    closed,
+    navVisible,
+    navClosed,
     navVariant,
-    handleVisible,
+    handleNavVisible,
     getRouteVariant,
     generateNavigationClassName,
   };

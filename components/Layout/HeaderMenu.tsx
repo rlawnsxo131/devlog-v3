@@ -9,10 +9,10 @@ interface Props {}
 
 function HeaderMenu(props: Props) {
   const {
-    visible,
-    closed,
+    navVisible,
+    navClosed,
     navVariant,
-    handleVisible,
+    handleNavVisible,
     getRouteVariant,
     generateNavigationClassName,
   } = useHeaderMenu();
@@ -21,11 +21,11 @@ function HeaderMenu(props: Props) {
     <div className={block()}>
       <button
         className={generateNavigationClassName(button())}
-        onClick={handleVisible}
+        onClick={handleNavVisible}
       >
         <MenuIcon className={generateNavigationClassName()} />
       </button>
-      {!visible && closed ? null : (
+      {!navVisible && navClosed ? null : (
         <nav
           className={generateNavigationClassName(
             nav({

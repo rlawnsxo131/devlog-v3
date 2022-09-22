@@ -15,9 +15,9 @@ export default function Document() {
       
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('${darkTheme}');
-      } else {
-        document.documentElement.classList.remove('${darkTheme}');
+        return;
       }
+      document.documentElement.classList.remove('${darkTheme}');
     }
     
     initializeTheme();
