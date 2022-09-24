@@ -1,9 +1,9 @@
 import { css } from './_stitches.config';
 
-export const svgBasicFillCss = css({
-  fill: '$gray12',
+export const svgContentFillCss = css({
+  fill: '$fill-content',
 });
 
-export const svgBasicFillThemeCss = css({
-  fill: '$bg',
+export const svgBackgroundFillCss = css({
+  fill: '$fill-background',
 });

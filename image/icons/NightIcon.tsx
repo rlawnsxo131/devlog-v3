@@ -1,4 +1,7 @@
-import { svgBasicFillCss, svgBasicFillThemeCss } from '@/styles/basicStyleCss';
+import {
+  svgContentFillCss,
+  svgBackgroundFillCss,
+} from '@/styles/basicStyleCss';
 
 interface Props {}
 
@@ -10,10 +13,10 @@ function NightIcon(props: Props) {
       height="24"
       viewBox="0 0 24 24"
       width="24"
-      className={svgBasicFillCss()}
+      className={svgContentFillCss()}
     >
       <g>
-        <path d="M0,0h24v24H0V0z" className={svgBasicFillThemeCss()} />
+        <path d="M0,0h24v24H0V0z" className={svgBackgroundFillCss()} />
       </g>
       <g>
         <g>

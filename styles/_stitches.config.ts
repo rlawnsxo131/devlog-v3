@@ -29,6 +29,10 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         // text
         text: '$gray12',
         'text-anchor-active': '$cyan9',
+
+        // fill
+        'fill-content': '$gray12',
+        'fill-background': '$whiteA12',
       },
       shadows: {
         default: '1px 1px 3px 1px #adb5bd',
@@ -78,6 +82,10 @@ export const darkTheme = createTheme('dark', {
     // text
     text: '$gray12',
     'text-anchor-active': '$cyan9',
+
+    // fill
+    'fill-content': '$gray12',
+    'fill-background': '$gray2',
   },
   shadows: {
     default: '1px 1px 3px 1px #18191A',
