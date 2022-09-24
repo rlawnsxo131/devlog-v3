@@ -82,7 +82,7 @@ const nav = css({
   borderRadius: '0.25rem',
   transformOrigin: 'top',
   background: '$bg-nav',
-  boxShadow: '$headerNavigation',
+  boxShadow: '$header-navigation',
   variants: {
     variant: {
       enabled: {

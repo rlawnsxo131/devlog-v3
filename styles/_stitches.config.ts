@@ -36,7 +36,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       },
       shadows: {
         default: '1px 1px 3px 1px #adb5bd',
-        headerNavigation: '1px 1px 3px 1px #adb5bd',
+        'header-navigation': '1px 1px 3px 1px #adb5bd',
       },
       zIndices: {
         header: 10,
@@ -89,6 +89,6 @@ export const darkTheme = createTheme('dark', {
   },
   shadows: {
     default: '1px 1px 3px 1px #18191A',
-    headerNavigation: '1px 1px 3px 1px #18191A',
+    'header-navigation': '1px 1px 3px 1px #18191A',
   },
 });
