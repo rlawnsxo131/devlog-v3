@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import useThemeButton from '../ThemeButton/hooks/useThemeButton';
+import useThemeButton from './useThemeButton';
 
 describe('useThemeButton', () => {
   it('onClick', () => {
