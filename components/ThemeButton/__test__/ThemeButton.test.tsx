@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event'; @TODO: 버전 올라가면 다시 변경하기
-import ThemeButton from '.';
+import ThemeButton from '..';
 
 function renderThemeButton() {
   const result = render(<ThemeButton />);
