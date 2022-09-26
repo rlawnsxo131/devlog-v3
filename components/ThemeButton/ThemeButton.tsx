@@ -10,7 +10,11 @@ function ThemeButton(props: Props) {
 
   return (
     <button className={block()} onClick={onClick}>
-      {theme === 'light' ? <LightIcon /> : <NightIcon />}
+      {theme === 'light' ? (
+        <LightIcon aria-label="light-icon" />
+      ) : (
+        <NightIcon aria-label="night-icon" />
+      )}
     </button>
   );
 }

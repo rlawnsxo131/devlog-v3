@@ -3,9 +3,9 @@ import {
   svgBackgroundFillCss,
 } from '@/styles/basicStyleCss';
 
-interface Props extends React.SVGProps<HTMLOrSVGElement> {}
+interface Props extends React.SVGProps<SVGSVGElement> {}
 
-function MenuIcon({ className }: Props) {
+function MenuIcon({ className, ...props }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +14,7 @@ function MenuIcon({ className }: Props) {
       width="24"
       height="24"
       className={`${svgContentFillCss()} ${className}`}
+      {...props}
     >
       <g className={className}>
         <path

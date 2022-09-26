@@ -3,7 +3,7 @@ import {
   svgBackgroundFillCss,
 } from '@/styles/basicStyleCss';
 
-interface Props {}
+interface Props extends React.SVGProps<SVGSVGElement> {}
 
 function NightIcon(props: Props) {
   return (
@@ -14,6 +14,7 @@ function NightIcon(props: Props) {
       viewBox="0 0 24 24"
       width="24"
       className={svgContentFillCss()}
+      {...props}
     >
       <g>
         <path d="M0,0h24v24H0V0z" className={svgBackgroundFillCss()} />

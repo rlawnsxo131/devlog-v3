@@ -24,7 +24,9 @@ const customJestConfig = {
     '^@/icons/(.*)$': '<rootDir>/image/icons/$1',
     '^@/store/(.*)$': '<rootDir>/store/$1',
     '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
+    '^@/lib': '<rootDir>/lib',
     '^@/lib/(.*)$': '<rootDir>/lib/$1',
+    '^@/constant': '<rootDir>/constant',
     '^@/constant/(.*)$': '<rootDir>/constant/$1',
   },
 };
