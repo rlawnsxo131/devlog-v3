@@ -30,6 +30,7 @@ const customJestConfig = {
     '^@/lib/(.*)$': '<rootDir>/lib/$1',
     '^@/constants': '<rootDir>/constants',
     '^@/constants/(.*)$': '<rootDir>/constants/$1',
+    '^@/__test__utils/(.*)$': '<rootDir>/__test__utils/$1',
   },
 };
 
