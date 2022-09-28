@@ -16,6 +16,8 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testMatch: ['<rootDir>/**/**/*.test.(ts|tsx)'],
   testEnvironment: 'jest-environment-jsdom',
+  // johns custom options
+  restoreMocks: true,
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/types/(.*)$': '<rootDir>/@types/$1',
@@ -26,8 +28,8 @@ const customJestConfig = {
     '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@/lib': '<rootDir>/lib',
     '^@/lib/(.*)$': '<rootDir>/lib/$1',
-    '^@/constant': '<rootDir>/constant',
-    '^@/constant/(.*)$': '<rootDir>/constant/$1',
+    '^@/constants': '<rootDir>/constants',
+    '^@/constants/(.*)$': '<rootDir>/constants/$1',
   },
 };
 

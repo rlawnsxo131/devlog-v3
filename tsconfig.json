@@ -24,8 +24,9 @@
       "@/hooks/*": ["hooks/*"],
       "@/lib": ["lib"],
       "@/lib/*": ["lib/*"],
-      "@/constant": ["constant"],
-      "@/constant/*": ["constant/*"],
+      "@/constants": ["constants"],
+      "@/constants/*": ["constants/*"],
+      "@/__test__utils/*": ["__test__utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

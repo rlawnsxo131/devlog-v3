@@ -1,6 +1,6 @@
+import { keys } from '@/constants';
 import { Storage } from '@/lib';
 import { Theme } from '@/types/variables';
-import { keys } from 'constant';
 
 export function setThemeForDocumentAndStorage(theme: Theme) {
   if (theme === 'light') {

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { keys } from '@/constant';
+import { keys } from '@/constants';
 import { Storage } from '@/lib';
 import useThemeStore from './_useThemeStore';
 import shallow from 'zustand/shallow';
