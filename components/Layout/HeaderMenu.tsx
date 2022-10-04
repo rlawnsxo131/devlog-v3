@@ -9,7 +9,7 @@ interface Props {}
 
 function HeaderMenu(props: Props) {
   const {
-    parentsRef,
+    parentRef,
     navVisible,
     navClosed,
     navVariant,
@@ -18,7 +18,7 @@ function HeaderMenu(props: Props) {
   } = useHeaderMenu();
 
   return (
-    <div className={block()} ref={parentsRef}>
+    <div className={block()} ref={parentRef}>
       <button className={button()} onClick={handleNavVisible}>
         <MenuIcon aria-label="menu-icon" />
       </button>

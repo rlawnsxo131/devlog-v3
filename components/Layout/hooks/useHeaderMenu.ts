@@ -4,7 +4,7 @@ import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 
 export default function useHeaderMenu() {
   const routePathname = useRoutePathname();
-  const parentsRef = useRef<HTMLDivElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
   const [navVisible, setNavVisible] = useState(false);
   const navClosed = useTransitionTimeoutEffect({ visible: navVisible });
 
@@ -26,7 +26,7 @@ export default function useHeaderMenu() {
 
   useEffect(() => {
     function onMouseOutsideClick(e: React.BaseSyntheticEvent | MouseEvent) {
-      if (parentsRef.current && !parentsRef.current.contains(e.target)) {
+      if (parentRef.current && !parentRef.current.contains(e.target)) {
         setNavVisible(false);
       }
     }
@@ -36,10 +36,10 @@ export default function useHeaderMenu() {
     return () => {
       globalThis.removeEventListener('click', onMouseOutsideClick, true);
     };
-  }, [parentsRef]);
+  }, [parentRef]);
 
   return {
-    parentsRef,
+    parentRef,
     navVisible,
     navClosed,
     navVariant,
