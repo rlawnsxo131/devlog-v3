@@ -26,7 +26,7 @@
       "@/lib/*": ["lib/*"],
       "@/constants": ["constants"],
       "@/constants/*": ["constants/*"],
-      "@/__test__utils/*": ["__test__utils/*"]
+      "@/__test_utils__/*": ["__test_utils__/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

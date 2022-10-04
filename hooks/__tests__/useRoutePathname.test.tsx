@@ -1,19 +1,27 @@
+import { useRouter } from 'next/router';
 import useRoutePathname from '../useRoutePathname';
 
-const pathname = '/test';
+// const pathname = '/test';
+// jest.mock('next/router', () => ({
+//   useRouter() {
+//     return {
+//       route: '/',
+//       pathname,
+//       query: '',
+//       asPath: '',
+//     };
+//   },
+// }));
+
 jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      route: '/',
-      pathname,
-      query: '',
-      asPath: '',
-    };
-  },
+  useRouter: jest.fn(),
 }));
 
 describe('useRoutePathname', () => {
   it('routePathname to be /test', () => {
+    const pathname = '/test';
+    (useRouter as jest.Mock).mockImplementationOnce(() => ({ pathname }));
+
     expect(useRoutePathname()).toBe(pathname);
   });
 });

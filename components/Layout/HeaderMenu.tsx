@@ -9,51 +9,32 @@ interface Props {}
 
 function HeaderMenu(props: Props) {
   const {
+    parentsRef,
     navVisible,
     navClosed,
     navVariant,
     handleNavVisible,
     getRouteVariant,
-    generateNavigationClassName,
   } = useHeaderMenu();
 
   return (
-    <div className={block()}>
-      <button
-        className={generateNavigationClassName(button())}
-        onClick={handleNavVisible}
-      >
-        <MenuIcon className={generateNavigationClassName()} />
+    <div className={block()} ref={parentsRef}>
+      <button className={button()} onClick={handleNavVisible}>
+        <MenuIcon aria-label="menu-icon" />
       </button>
       {!navVisible && navClosed ? null : (
-        <nav
-          className={generateNavigationClassName(
-            nav({
-              variant: navVariant,
-            }),
-          )}
-        >
-          <ul className={generateNavigationClassName(ul())}>
-            <li className={generateNavigationClassName()}>
+        <nav className={nav({ variant: navVariant })}>
+          <ul className={ul()}>
+            <li>
               <Link href={'/'}>
-                <a
-                  className={generateNavigationClassName(
-                    anchor({ variant: getRouteVariant('/') }),
-                  )}
-                >
+                <a className={anchor({ variant: getRouteVariant('/') })}>
                   포스트
                 </a>
               </Link>
             </li>
-            <li className={generateNavigationClassName()}>
+            <li>
               <Link href={'/info'}>
-                <a
-                  className={generateNavigationClassName(
-                    anchor({
-                      variant: getRouteVariant('/info'),
-                    }),
-                  )}
-                >
+                <a className={anchor({ variant: getRouteVariant('/info') })}>
                   소개
                 </a>
               </Link>

@@ -20,4 +20,10 @@ describe('<HeaderLogo />', () => {
 
     expect(LogoText()).toBeInTheDocument();
   });
+
+  it('anchor path is /', () => {
+    const { LogoText } = renderHeaderLogo();
+
+    expect(LogoText().closest('a')).toHaveAttribute('href', '/');
+  });
 });

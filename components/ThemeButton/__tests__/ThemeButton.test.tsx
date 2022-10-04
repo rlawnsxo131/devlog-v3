@@ -32,6 +32,7 @@ function renderThemeButton() {
 describe('<ThemeButton />', () => {
   it('render', () => {
     const { Button } = renderThemeButton();
+
     expect(Button()).toBeInTheDocument();
   });
 

@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import useRoutePathname from '@/hooks/useRoutePathname';
 import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
-import { headerNavigationClassName } from '@/styles/classNames';
 
 export default function useHeaderMenu() {
   const routePathname = useRoutePathname();
+  const parentsRef = useRef<HTMLDivElement>(null);
   const [navVisible, setNavVisible] = useState(false);
   const navClosed = useTransitionTimeoutEffect({ visible: navVisible });
 
@@ -16,18 +16,8 @@ export default function useHeaderMenu() {
     setNavVisible((prev) => !prev);
   };
 
-  /**
-   * get or generate value functions
-   */
   const getRouteVariant = (path: string) => {
     return routePathname === path ? 'active' : 'default';
-  };
-
-  const generateNavigationClassName = (className?: string) => {
-    if (className) {
-      return `${className} ${headerNavigationClassName}`;
-    }
-    return headerNavigationClassName;
   };
 
   useEffect(() => {
@@ -35,27 +25,25 @@ export default function useHeaderMenu() {
   }, [routePathname]);
 
   useEffect(() => {
-    function onMouseOutsideClick(e) {
-      const regex = new RegExp(headerNavigationClassName, 'g');
-      const className = e.target.className;
-      const svgBaseVal = className.baseVal;
-      if (regex.test(className) || regex.test(svgBaseVal)) return;
-      setNavVisible(false);
+    function onMouseOutsideClick(e: React.BaseSyntheticEvent | MouseEvent) {
+      if (parentsRef.current && !parentsRef.current.contains(e.target)) {
+        setNavVisible(false);
+      }
     }
 
-    globalThis.addEventListener('click', onMouseOutsideClick);
+    globalThis.addEventListener('click', onMouseOutsideClick, true);
 
     return () => {
-      globalThis.removeEventListener('click', onMouseOutsideClick);
+      globalThis.removeEventListener('click', onMouseOutsideClick, true);
     };
-  }, []);
+  }, [parentsRef]);
 
   return {
+    parentsRef,
     navVisible,
     navClosed,
     navVariant,
     handleNavVisible,
     getRouteVariant,
-    generateNavigationClassName,
   };
 }

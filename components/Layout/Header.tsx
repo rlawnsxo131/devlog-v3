@@ -9,7 +9,7 @@ interface Props {
 function Header({ leftSideItems, rightSideItems }: Props) {
   return (
     <header className={block()}>
-      <div className={contentsBlock()}>
+      <div className={contentBlock()}>
         <div className={items()}>{leftSideItems}</div>
         <div className={items({ gap: 'enabled' })}>{rightSideItems}</div>
       </div>
@@ -30,11 +30,11 @@ const block = css({
   zIndex: '$header',
 });
 
-const contentsBlock = css({
+const contentBlock = css({
+  ...layoutBasicResponsiveStyle,
   display: 'flex',
   justifyContent: 'space-between',
   height: '4rem',
-  ...layoutBasicResponsiveStyle,
 });
 
 const items = css({
