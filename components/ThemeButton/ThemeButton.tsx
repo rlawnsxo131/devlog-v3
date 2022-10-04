@@ -6,10 +6,10 @@ import useThemeButton from './hooks/useThemeButton';
 interface Props {}
 
 function ThemeButton(props: Props) {
-  const { theme, onClick } = useThemeButton();
+  const { theme, handleTheme } = useThemeButton();
 
   return (
-    <button className={block()} onClick={onClick}>
+    <button className={block()} onClick={handleTheme}>
       {theme === 'light' ? (
         <LightIcon aria-label="light-icon" />
       ) : (

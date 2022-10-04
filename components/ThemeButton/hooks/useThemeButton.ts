@@ -5,7 +5,7 @@ export default function useThemeButton() {
   const theme = useThemeState();
   const { setLightTheme, setDarkTheme } = useThemeActions();
 
-  const onClick = () => {
+  const handleTheme = () => {
     if (theme === 'light') {
       setDarkTheme();
       return;
@@ -15,6 +15,6 @@ export default function useThemeButton() {
 
   return {
     theme,
-    onClick,
+    handleTheme,
   };
 }

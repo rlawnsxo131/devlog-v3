@@ -7,7 +7,7 @@ describe('useThemeButton', () => {
 
     expect(result.current.theme).toBe('light');
 
-    act(() => result.current.onClick());
+    act(() => result.current.handleTheme());
 
     expect(result.current.theme).toBe('dark');
   });
