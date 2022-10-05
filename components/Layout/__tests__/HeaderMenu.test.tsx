@@ -34,6 +34,8 @@ function renderHeaderMenu() {
 }
 
 describe('<HeaderMenu />', () => {
+  const duration = 250;
+
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -52,11 +54,13 @@ describe('<HeaderMenu />', () => {
     const { HeaderMenuNavigation, clickMenuButton } = renderHeaderMenu();
 
     clickMenuButton();
+    jest.advanceTimersByTime(duration);
     await waitFor(() => {
       expect(HeaderMenuNavigation()).toBeInTheDocument();
     });
 
     clickMenuButton();
+    jest.advanceTimersByTime(duration);
     await waitForElementToBeRemoved(() => HeaderMenuNavigation());
     expect(HeaderMenuNavigation()).toBeNull();
   });
