@@ -1,4 +1,5 @@
 import {
+  act,
   render,
   waitFor,
   waitForElementToBeRemoved,
@@ -54,13 +55,17 @@ describe('<HeaderMenu />', () => {
     const { HeaderMenuNavigation, clickMenuButton } = renderHeaderMenu();
 
     clickMenuButton();
-    jest.advanceTimersByTime(duration);
+    act(() => {
+      jest.advanceTimersByTime(duration);
+    });
     await waitFor(() => {
       expect(HeaderMenuNavigation()).toBeInTheDocument();
     });
 
     clickMenuButton();
-    jest.advanceTimersByTime(duration);
+    act(() => {
+      jest.advanceTimersByTime(duration);
+    });
     await waitForElementToBeRemoved(() => HeaderMenuNavigation());
     expect(HeaderMenuNavigation()).toBeNull();
   });
