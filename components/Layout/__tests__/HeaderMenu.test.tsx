@@ -1,4 +1,9 @@
-import { act, fireEvent, render } from '@testing-library/react';
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import HeaderMenu from '../HeaderMenu';
 
 jest.mock('next/router', () => ({
@@ -14,27 +19,22 @@ function renderHeaderMenu() {
 
   const HeaderMenuButton = () => result.getByRole('button');
 
-  const HeaderMenuNavigation = () => result.getByRole('navigation');
-
-  const HeaderMenuNavigationOfHidden = () =>
-    result.getByRole('navigation', { hidden: true });
+  const HeaderMenuNavigation = () => result.queryByRole('navigation');
 
   function clickMenuButton() {
-    fireEvent.click(HeaderMenuButton());
+    userEvent.click(HeaderMenuButton());
   }
 
   return {
+    result,
     HeaderMenuButton,
     HeaderMenuNavigation,
-    HeaderMenuNavigationOfHidden,
     clickMenuButton,
   };
 }
 
 describe('<HeaderMenu />', () => {
-  const duration = 250;
-
-  beforeAll(() => {
+  beforeEach(() => {
     jest.useFakeTimers();
   });
 
@@ -48,25 +48,18 @@ describe('<HeaderMenu />', () => {
     expect(HeaderMenuButton()).toBeInTheDocument();
   });
 
-  it('toggle <HeaderMenuButton />', async () => {
-    const {
-      HeaderMenuNavigation,
-      HeaderMenuNavigationOfHidden,
-      clickMenuButton,
-    } = renderHeaderMenu();
+  it('toggle menu button', async () => {
+    const { HeaderMenuNavigation, clickMenuButton } = renderHeaderMenu();
 
     clickMenuButton();
-    act(() => {
-      jest.advanceTimersByTime(duration);
+    await waitFor(() => {
       expect(HeaderMenuNavigation()).toBeInTheDocument();
     });
 
     clickMenuButton();
-    act(() => {
-      jest.advanceTimersByTime(duration);
-      expect(HeaderMenuNavigationOfHidden()).toBeInTheDocument();
-    });
+    await waitForElementToBeRemoved(() => HeaderMenuNavigation());
+    expect(HeaderMenuNavigation()).toBeNull();
   });
 
-  it('click the links inside the <HeaderMenuNavigation />', () => {});
+  it('click the links inside the menu navigation', () => {});
 });

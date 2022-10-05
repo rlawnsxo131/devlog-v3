@@ -1,5 +1,5 @@
-import { render, fireEvent } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event'; @TODO: 버전 올라가면 다시 변경하기
+import { render, waitForElementToBeRemoved } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ThemeButton from '..';
 
 function renderThemeButton() {
@@ -18,7 +18,7 @@ function renderThemeButton() {
     });
 
   function clickThemeButton() {
-    fireEvent.click(Button());
+    userEvent.click(Button());
   }
 
   return {
@@ -36,13 +36,14 @@ describe('<ThemeButton />', () => {
     expect(Button()).toBeInTheDocument();
   });
 
-  it('click button', () => {
+  it('click button', async () => {
     const { LightIconSVG, NightIconSVG, clickThemeButton } =
       renderThemeButton();
 
     expect(LightIconSVG()).toBeInTheDocument();
 
     clickThemeButton();
+    await waitForElementToBeRemoved(() => LightIconSVG());
 
     expect(NightIconSVG()).toBeInTheDocument();
   });

@@ -4,7 +4,7 @@ import useTransitionTimeoutEffect from '../useTransitionTimeoutEffect';
 describe('useTransitionTimeoutEffect', () => {
   const duration = 250;
 
-  beforeAll(() => {
+  beforeEach(() => {
     jest.useFakeTimers();
   });
 
@@ -12,7 +12,7 @@ describe('useTransitionTimeoutEffect', () => {
     jest.clearAllTimers();
   });
 
-  it('closed is false', async () => {
+  it('closed is false', () => {
     const { result } = renderHook(() =>
       useTransitionTimeoutEffect({ visible: true, duration }),
     );

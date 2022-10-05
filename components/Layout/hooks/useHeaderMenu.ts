@@ -25,16 +25,18 @@ export default function useHeaderMenu() {
   }, [routePathname]);
 
   useEffect(() => {
-    function onMouseOutsideClick(e: React.BaseSyntheticEvent | MouseEvent) {
+    function listener(e: React.BaseSyntheticEvent | MouseEvent | TouchEvent) {
       if (parentRef.current && !parentRef.current.contains(e.target)) {
         setNavVisible(false);
       }
     }
 
-    globalThis.addEventListener('click', onMouseOutsideClick, true);
+    globalThis.addEventListener('mousedown', listener);
+    globalThis.addEventListener('touchstart', listener);
 
     return () => {
-      globalThis.removeEventListener('click', onMouseOutsideClick, true);
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
     };
   }, [parentRef]);
 
