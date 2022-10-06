@@ -32,8 +32,8 @@ export default function useHeaderMenu() {
       }
     }
 
-    globalThis.addEventListener('mousedown', listener);
-    globalThis.addEventListener('touchstart', listener);
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
 
     return () => {
       document.removeEventListener('mousedown', listener);
