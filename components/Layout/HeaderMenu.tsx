@@ -105,7 +105,6 @@ const ul = css({
 
 const anchor = css({
   textAlign: 'center',
-  color: '$gray12',
   padding: '0.75rem 0.25rem',
   fontSize: '1.125rem',
   variants: {

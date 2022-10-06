@@ -13,7 +13,7 @@ const topLevelBoxChildrenStyle = {
   textRendering: 'optimizeLegibility',
   color: '$text',
   '&::selection': {
-    color: '$whiteA12',
+    color: '$text-selection',
     background: '$cyan9',
   },
 };

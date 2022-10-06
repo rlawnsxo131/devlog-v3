@@ -1,38 +1,34 @@
 import { createStitches, CSS } from '@stitches/core';
-import {
-  whiteA,
-  gray,
-  red,
-  grayDark,
-  redDark,
-  cyan,
-  cyanDark,
-} from '@radix-ui/colors';
+import { gray, red, grayDark, redDark, cyan, cyanDark } from '@radix-ui/colors';
 
 export const { createTheme, globalCss, getCssText, config, css, keyframes } =
   createStitches({
     theme: {
       colors: {
-        ...whiteA,
         ...gray,
         ...cyan,
         ...red,
 
+        // custom
+        white: '#FFFFFF',
+
         // background
-        bg: '$whiteA12',
-        'bg-nav': '$whiteA12',
-        'bg-info-section': '$whiteA12',
+        bg: '$white',
+        'bg-nav': '$white',
+        'bg-info-section': '$white',
         'bg-hover': '$cyan4',
         'bg-button-primary': '$cyan9',
         'bg-button-primary-hover': '$cyan10',
 
         // text
         text: '$gray12',
+        'text-selection': '$white',
+        'text-button': '$white',
         'text-anchor-active': '$cyan9',
 
         // fill
         'fill-content': '$gray12',
-        'fill-background': '$whiteA12',
+        'fill-background': '$white',
       },
       shadows: {
         default: '1px 1px 3px 1px #adb5bd',
@@ -66,7 +62,6 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
 export const darkTheme = createTheme('dark', {
   colors: {
-    ...whiteA,
     ...grayDark,
     ...cyanDark,
     ...redDark,
@@ -81,6 +76,8 @@ export const darkTheme = createTheme('dark', {
 
     // text
     text: '$gray12',
+    'text-selection': '$white',
+    'text-button': '$white',
     'text-anchor-active': '$cyan9',
 
     // fill

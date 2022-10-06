@@ -17,7 +17,7 @@ const button = css({
   justifyContent: 'center',
   fontWeight: '600',
   borderRadius: '4px',
-  color: '$whiteA12',
+  color: '$text-button',
   variants: {
     variant: {
       primary: {
