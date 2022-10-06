@@ -1,4 +1,9 @@
-import { EmailIcon, GithubIcon, LinkedinIcon } from '@/icons/index';
+import {
+  EmailIcon,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from '@/icons/index';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {}
@@ -17,18 +22,26 @@ function InfoContactLinkSection(props: Props) {
       <a
         className={wrapAnchor()}
         rel="noopener noreferrer"
-        href="mailto:public.juntae@gmail.com"
-        target="_blank"
-      >
-        <EmailIcon />
-      </a>
-      <a
-        className={wrapAnchor()}
-        rel="noopener noreferrer"
         href="https://www.linkedin.com/in/juntae-kim-8441ba238/"
         target="_blank"
       >
         <LinkedinIcon />
+      </a>
+      <a
+        className={wrapAnchor()}
+        rel="noopener noreferrer"
+        href="https://twitter.com/john_xxoo"
+        target="_blank"
+      >
+        <TwitterIcon />
+      </a>
+      <a
+        className={wrapAnchor()}
+        rel="noopener noreferrer"
+        href="mailto:public.juntae@gmail.com"
+        target="_blank"
+      >
+        <EmailIcon />
       </a>
     </section>
   );

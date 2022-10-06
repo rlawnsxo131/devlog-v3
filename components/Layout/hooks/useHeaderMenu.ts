@@ -26,7 +26,8 @@ export default function useHeaderMenu() {
 
   useEffect(() => {
     function listener(e: React.BaseSyntheticEvent | MouseEvent | TouchEvent) {
-      if (parentRef.current && !parentRef.current.contains(e.target)) {
+      if (!parentRef.current) return;
+      if (!parentRef.current.contains(e.target)) {
         setNavVisible(false);
       }
     }
