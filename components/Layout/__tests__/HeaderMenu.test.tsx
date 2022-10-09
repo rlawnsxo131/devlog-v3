@@ -22,6 +22,16 @@ function renderHeaderMenu() {
 
   const HeaderMenuNavigation = () => result.queryByRole('navigation');
 
+  const PostAnchor = () =>
+    result.getByText('포스트', {
+      selector: 'a',
+    });
+
+  const InfoAnchor = () =>
+    result.getByText('소개', {
+      selector: 'a',
+    });
+
   function clickMenuButton() {
     userEvent.click(HeaderMenuButton());
   }
@@ -30,6 +40,8 @@ function renderHeaderMenu() {
     result,
     HeaderMenuButton,
     HeaderMenuNavigation,
+    PostAnchor,
+    InfoAnchor,
     clickMenuButton,
   };
 }
@@ -70,5 +82,19 @@ describe('<HeaderMenu />', () => {
     expect(HeaderMenuNavigation()).toBeNull();
   });
 
-  it('click the links inside the menu navigation', () => {});
+  it('click the links inside the menu navigation', async () => {
+    const { HeaderMenuNavigation, PostAnchor, InfoAnchor, clickMenuButton } =
+      renderHeaderMenu();
+
+    clickMenuButton();
+    act(() => {
+      jest.advanceTimersByTime(duration);
+    });
+    await waitFor(() => {
+      expect(HeaderMenuNavigation()).toBeInTheDocument();
+    });
+
+    expect(PostAnchor()).toHaveAttribute('href', '/');
+    expect(InfoAnchor()).toHaveAttribute('href', '/info');
+  });
 });
