@@ -14,6 +14,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
         // background
         bg: '$white',
+        'bg-content': '$white',
         'bg-nav': '$white',
         'bg-info-section': '$white',
         'bg-hover': '$cyan4',
@@ -68,6 +69,7 @@ export const darkTheme = createTheme('dark', {
 
     // background
     bg: '$gray2',
+    'bg-content': '$gray3',
     'bg-nav': '$gray3',
     'bg-info-section': '$gray3',
     'bg-hover': '$cyan4',

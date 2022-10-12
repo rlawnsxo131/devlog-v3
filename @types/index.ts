@@ -2,6 +2,7 @@ export type Theme = 'light' | 'dark';
 
 export interface FrontMatter {
   title: string;
+  description: string;
   tags: string[];
   thumbnail: string;
   date: string;

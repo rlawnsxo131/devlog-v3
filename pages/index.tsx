@@ -9,7 +9,7 @@ interface Props {
 
 export default function IndexPage({ posts }: Props) {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}

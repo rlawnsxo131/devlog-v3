@@ -33,7 +33,7 @@ export default class PostService {
           const post: Post = {
             title: attributes.title,
             body,
-            description: body.slice(0, 200),
+            description: attributes.description,
             tags: attributes.tags,
             date: new Date(attributes.date).toISOString().substring(0, 19),
             thumbnail: attributes.thumbnail,
