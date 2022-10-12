@@ -6,15 +6,15 @@ export interface FrontMatter {
   thumbnail: string;
   date: string;
   published: boolean;
-  url_slug: string;
+  slug: string;
 }
 
 export interface Post {
   title: string;
   body: string;
-  previewDescription: string;
+  description: string;
   tags: string[];
   thumbnail: string;
   date: string;
-  url_slug: string;
+  slug: string;
 }

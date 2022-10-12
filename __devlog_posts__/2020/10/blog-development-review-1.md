@@ -2,10 +2,10 @@
 title: 블로그 개발 후기 1탄 - Typescript
 tags:
   - Typescript
-thumbnail: 'https://thumbnail_url'
+thumbnail: https://image-devlog.juntae.kim/post/image/jpeg/typescript.jpg
 date: 2020-10-19
 published: true
-url_slug: blog-development-review-1
+slug: blog-development-review-1
 ---
 
 개발용 블로그를 직접 만든 이유는 너무 여러가지 인지라 생략하고,

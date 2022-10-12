@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function Main({ children }: Props) {
+function AppMain({ children }: Props) {
   return <main className={block()}>{children}</main>;
 }
 
@@ -14,4 +14,4 @@ const block = css({
   marginTop: '6.225rem',
 });
 
-export default Main;
+export default AppMain;

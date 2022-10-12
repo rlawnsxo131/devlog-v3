@@ -3,7 +3,7 @@ import {
   GithubIcon,
   LinkedinIcon,
   TwitterIcon,
-} from '@/icons/index';
+} from '@/components/img/icons/index';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {}

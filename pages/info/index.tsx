@@ -1,6 +1,8 @@
+import {
+  InfoContactLinkSection,
+  InfoDescriptionSection,
+} from '@/components/info';
 import { css } from '@/styles/_stitches.config';
-import InfoContactLinkSection from './components/InfoContactLinkSection';
-import InfoDescriptionSection from './components/InfoDescriptionSection';
 
 export default function InfoPage() {
   return (

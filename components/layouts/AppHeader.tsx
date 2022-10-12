@@ -6,7 +6,7 @@ interface Props {
   rightSideItems: React.ReactNode;
 }
 
-function Header({ leftSideItems, rightSideItems }: Props) {
+function AppHeader({ leftSideItems, rightSideItems }: Props) {
   return (
     <header className={block()}>
       <div className={contentBlock()}>
@@ -55,4 +55,4 @@ const items = css({
   },
 });
 
-export default Header;
+export default AppHeader;

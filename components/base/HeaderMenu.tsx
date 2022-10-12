@@ -1,5 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import MenuIcon from '@/icons/MenuIcon';
+import MenuIcon from '@/components/img/icons/MenuIcon';
 import Link from 'next/link';
 import useHeaderMenu from './hooks/useHeaderMenu';
 import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
