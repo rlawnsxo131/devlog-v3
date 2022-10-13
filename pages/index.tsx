@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { Post } from '@/types';
 import PostService from '@/services';
 import { PostCard } from '@/components/post';
+import { PostListLayout } from '@/components/layouts';
 
 interface Props {
   posts: Post[];
@@ -9,11 +10,11 @@ interface Props {
 
 export default function IndexPage({ posts }: Props) {
   return (
-    <div style={{ display: 'flex' }}>
+    <PostListLayout>
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}
-    </div>
+    </PostListLayout>
   );
 }
 

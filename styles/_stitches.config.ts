@@ -26,6 +26,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         'text-selection': '$white',
         'text-button': '$white',
         'text-anchor-active': '$cyan9',
+        'text-description': '$gray11',
 
         // fill
         'fill-content': '$gray12',
@@ -34,6 +35,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       shadows: {
         default: '1px 1px 3px 1px #adb5bd',
         'header-navigation': '1px 1px 3px 1px #adb5bd',
+        'post-card': '1px 1px 5px 2px #F1F3F5',
       },
       zIndices: {
         header: 10,
@@ -42,7 +44,10 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
     media: {
       xxxsmall: '(min-width: 0px)',
       xxsmall: '(min-width: 320px)',
-      xsamll: '(min-width: 375px)',
+      xxsmallmedium: '(min-width: 345px)',
+      xsmall: '(min-width: 375px)',
+      xsmallmedium: '(min-width: 420px)',
+      xsmalllarge: '(min-width: 600px)',
       small: '(min-width: 768px)',
       medium: '(min-width: 1024px)',
     },
@@ -81,6 +86,7 @@ export const darkTheme = createTheme('dark', {
     'text-selection': '$white',
     'text-button': '$white',
     'text-anchor-active': '$cyan9',
+    'text-description': '$gray11',
 
     // fill
     'fill-content': '$gray12',
@@ -89,5 +95,6 @@ export const darkTheme = createTheme('dark', {
   shadows: {
     default: '1px 1px 3px 1px #18191A',
     'header-navigation': '1px 1px 3px 1px #18191A',
+    'post-card': 'none',
   },
 });

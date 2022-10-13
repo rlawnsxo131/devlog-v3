@@ -3,7 +3,6 @@ import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HumanIcon } from '../img/icons';
 
 interface Props {
   post: Post;
@@ -12,19 +11,6 @@ interface Props {
 function PostCard({ post }: Props) {
   return (
     <article className={block()}>
-      <div className={content()}>
-        <Link href={`/post/${post.slug}`}>
-          <a>
-            <div className={john()}>
-              <HumanIcon />
-              <span>by John</span>
-            </div>
-            <h4>{post.title}</h4>
-            <p>{post.description}</p>
-            <time>{post.date}</time>
-          </a>
-        </Link>
-      </div>
       <div className={thumbnail()}>
         <Link href={`/post/${post.slug}`}>
           <a>
@@ -36,6 +22,22 @@ function PostCard({ post }: Props) {
           </a>
         </Link>
       </div>
+      <div className={content()}>
+        <Link href={`/post/${post.slug}`}>
+          <a>
+            <h4>{post.title}</h4>
+            <p>{post.description}</p>
+          </a>
+        </Link>
+      </div>
+      <div className={footer()}>
+        <div className={footerTagBlock()}>
+          {post.tags.map((v) => (
+            <span key={`${post.slug}_${v}`}>{v}</span>
+          ))}
+        </div>
+        <time>{post.date}</time>
+      </div>
     </article>
   );
 }
@@ -43,58 +45,23 @@ function PostCard({ post }: Props) {
 const block = css({
   position: 'relative',
   display: 'flex',
-  width: '256px',
-  height: '8.375rem',
-  '& + &': {
-    marginLeft: '1rem',
-  },
-  //   '&:hover': {
-  //     cursor: 'pointer',
-  //     '@medium': {
-  //       transform: 'translateY(-0.5rem)',
-  //     },
-  //   },
-});
-
-const content = css({
-  flex: '3 1 0',
-  display: 'flex',
   flexDirection: 'column',
-  marginRight: '1.25rem',
   overflow: 'hidden',
-  '& h4': {
-    margin: '0.5rem 0 1rem 0',
-    fontSize: '1.375rem',
-    fontWeight: 'bold',
-    overflow: 'hidden',
-    lineClamp: '1',
-    display: '-webkit-box',
-    '-webkit-line-clamp': 1,
-    '-webkit-box-orient': 'vertical',
-    wordBreak: 'break-word',
-    overflowWrap: 'break-word',
-    textOverflow: 'ellipsis',
-  },
-  '& p': {
-    margin: 0,
-    height: '6.7rem',
-    lineHeight: '1.75',
-    fontSize: '1rem',
-    overflow: 'hidden',
-    lineClamp: '2',
-    display: '-webkit-box',
-    '-webkit-line-clamp': 2,
-    '-webkit-box-orient': 'vertical',
-    wordBreak: 'break-word',
-    overflowWrap: 'break-word',
-    textOverflow: 'ellipsis',
+  borderRadius: '0.5rem',
+  boxShadow: '$post-card',
+  background: '$bg-content',
+  transition: 'transform 0.25s ease-in',
+  '&:hover': {
+    '@medium': {
+      transform: 'translateY(-0.5rem)',
+    },
   },
 });
 
 const thumbnail = css({
-  flex: '1 1 0',
   position: 'relative',
-  padding: '1rem',
+  width: '100%',
+  paddingTop: '52.19206680584551%',
   '& img, svg': {
     position: 'absolute',
     display: 'block',
@@ -106,10 +73,53 @@ const thumbnail = css({
   },
 });
 
-const john = css({
+const content = css({
+  flex: '1 1 0',
   display: 'flex',
-  alignItems: 'flex-end',
-  gap: '0.5rem',
+  flexDirection: 'column',
+  '& h4, p': {
+    overflow: 'hidden',
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+    textOverflow: 'ellipsis',
+  },
+  '& h4': {
+    margin: '0',
+    fontSize: '1.125rem',
+    fontWeight: '500',
+    lineClamp: '1',
+    '-webkit-line-clamp': 1,
+  },
+  '& p': {
+    margin: '0.875rem 0 0 0',
+    display: 'block',
+    height: '2.5rem',
+    lineHeight: '1.5',
+    fontSize: '0.875rem',
+    lineClamp: '2',
+    '-webkit-line-clamp': 2,
+    color: '$text-description',
+  },
+  '& a': {
+    padding: '0.875rem 0.875rem 0 0.875rem',
+  },
+});
+
+const footer = css({
+  flex: '1 1 0',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  padding: '1rem',
+});
+
+const footerTagBlock = css({
+  display: 'flex',
+  'span + span': {
+    marginLeft: '0.5rem',
+  },
 });
 
 export default PostCard;

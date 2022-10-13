@@ -1,12 +1,13 @@
 ---
-title: 블로그 개발 후기 2탄 - GraphQL(with. REST API)
-description: 난 graphql 을 오해하고 있었다.
+title: Goodbye Next.js, Hello React.js
+description: Next.js 를 React.js 로 갈아 엎어보았다.
 tags:
-  - GraphQL
-thumbnail: https://image-devlog.juntae.kim/post/image/png/graphql.png
-date: 2020-10-26
+  - Next.js
+  - React.js
+thumbnail: https://image-devlog.juntae.kim/post/image/jpeg/next-react.jpg
+date: 2021-03-11
 published: true
-slug: blog-development-review-2
+slug: good-bye-nextjs
 ---
 
 개발용 블로그를 직접 만든 이유는 너무 여러가지 인지라 생략하고,

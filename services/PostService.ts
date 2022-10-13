@@ -28,7 +28,6 @@ export default class PostService {
       .reduce<Post[]>((acc, path) => {
         const file = fs.readFileSync(path, { encoding: 'utf8' });
         const { attributes, body } = frontMatter<FrontMatter>(file);
-
         if (attributes.published) {
           const post: Post = {
             title: attributes.title,

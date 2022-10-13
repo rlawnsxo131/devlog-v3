@@ -1,12 +1,12 @@
 ---
-title: 블로그 개발 후기 2탄 - GraphQL(with. REST API)
-description: 난 graphql 을 오해하고 있었다.
+title: 블로그 개발 후기 3탄 - Next.js
+description: Next.js 여러모로 마음에 든다.
 tags:
-  - GraphQL
-thumbnail: https://image-devlog.juntae.kim/post/image/png/graphql.png
-date: 2020-10-26
+  - Next.js
+thumbnail: https://image-devlog.juntae.kim/post/image/png/NextJS.png
+date: 2020-11-26
 published: true
-slug: blog-development-review-2
+slug: blog-development-review-3
 ---
 
 개발용 블로그를 직접 만든 이유는 너무 여러가지 인지라 생략하고,
