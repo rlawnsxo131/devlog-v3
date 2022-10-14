@@ -42,7 +42,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       },
     },
     media: {
-      xxxs1: '(min-width: 0px)',
+      xxxs: '(min-width: 0px)',
       xxs1: '(min-width: 320px)',
       xxs2: '(min-width: 345px)',
       xs1: '(min-width: 375px)',

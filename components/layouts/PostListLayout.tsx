@@ -11,7 +11,7 @@ function PostListLayout({ children }: Props) {
 const block = css({
   width: '100%',
   display: 'grid',
-  '@xxxs1': {
+  '@xxxs': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',

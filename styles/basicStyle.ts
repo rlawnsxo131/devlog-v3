@@ -14,7 +14,7 @@ export const buttonWithSVGBasicStyle = {
 };
 
 export const layoutBasicResponsiveStyle = {
-  '@xxxs1': {
+  '@xxxs': {
     width: '93%',
   },
   '@m1': {
