@@ -33,9 +33,9 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         'fill-background': '$white',
       },
       shadows: {
-        default: '1px 1px 3px 1px #adb5bd',
+        default1: '1px 1px 3px 1px #adb5bd',
+        default2: '1px 1px 5px 2px #F1F3F5',
         'header-navigation': '1px 1px 3px 1px #adb5bd',
-        'post-card': '1px 1px 5px 2px #F1F3F5',
       },
       zIndices: {
         header: 10,
@@ -49,7 +49,11 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       xs2: '(min-width: 420px)',
       xs3: '(min-width: 600px)',
       s1: '(min-width: 768px)',
+      s2: '(min-width: 820px)',
       m1: '(min-width: 1024px)',
+      m2: '(min-width: 1200px)',
+      l1: '(min-width: 1440px)',
+      l2: '(min-width: 1920px)',
     },
     utils: {
       mediaQuery: ({
@@ -93,8 +97,8 @@ export const darkTheme = createTheme('dark', {
     'fill-background': '$gray2',
   },
   shadows: {
-    default: '1px 1px 3px 1px #18191A',
+    default1: '1px 1px 3px 1px #18191A',
+    default2: 'none',
     'header-navigation': '1px 1px 3px 1px #18191A',
-    'post-card': 'none',
   },
 });

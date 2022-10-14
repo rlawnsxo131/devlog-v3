@@ -41,7 +41,7 @@ const section = css({
   flexDirection: 'column',
   padding: '1rem',
   background: '$bg-info-section',
-  boxShadow: '$default',
+  boxShadow: '$default1',
   borderRadius: '4px',
   '& h3': {
     margin: '0 0 1.5rem 0',

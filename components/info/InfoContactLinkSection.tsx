@@ -53,7 +53,7 @@ const block = css({
   marginBottom: '1.5rem',
   padding: '1rem',
   background: '$bg-info-section',
-  boxShadow: '$default',
+  boxShadow: '$default1',
   borderRadius: '4px',
 });
 

@@ -20,4 +20,19 @@ export const layoutBasicResponsiveStyle = {
   '@m1': {
     width: '768px',
   },
+  '@m2': {
+    width: '860px',
+  },
+  '@l1': {
+    width: '1200px',
+  },
+};
+
+export const textWrapBaseStyle = {
+  overflow: 'hidden',
+  display: '-webkit-box',
+  '-webkit-box-orient': 'vertical',
+  wordBreak: 'break-word',
+  overflowWrap: 'break-word',
+  textOverflow: 'ellipsis',
 };

@@ -12,24 +12,14 @@ const block = css({
   width: '100%',
   display: 'grid',
   '@xxxs': {
-    gridAutoRows: '19rem',
-    gridTemplateColumns: 'repeat(1, 1fr)',
-    gap: '1rem 0',
-  },
-  '@xxs1': {
     gridAutoRows: '21rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',
   },
-  '@xs1': {
-    gridAutoRows: '22rem',
-    gridTemplateColumns: 'repeat(1, 1fr)',
-    gap: '1rem 0',
-  },
   '@xs2': {
-    gridAutoRows: '28rem',
+    gridAutoRows: '27rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
-    gap: '1rem 0',
+    gap: '1rem 1rem',
   },
   '@xs3': {
     gridAutoRows: '21rem',
@@ -37,14 +27,29 @@ const block = css({
     gap: '1rem 1rem',
   },
   '@s1': {
-    gridAutoRows: '25rem',
+    gridAutoRows: '24rem',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '1rem 1rem',
+  },
+  '@s2': {
+    gridAutoRows: '24rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem 1rem',
   },
   '@m1': {
+    gridAutoRows: '24rem',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '1rem 1rem',
+  },
+  '@m2': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1rem 1rem',
+  },
+  '@l1': {
+    gridAutoRows: '19rem',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: '1rem 1rem',
   },
 });
 

@@ -2137,6 +2137,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.29.3":
+  version: 2.29.3
+  resolution: "date-fns@npm:2.29.3"
+  checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -2248,6 +2255,7 @@ __metadata:
     "@types/node": ^18.8.2
     "@types/react": ^18.0.21
     "@types/testing-library__jest-dom": ^5.14.5
+    date-fns: ^2.29.3
     eslint: ^8.24.0
     eslint-config-next: ^12.3.1
     front-matter: ^4.0.2

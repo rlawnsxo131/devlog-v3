@@ -1,8 +1,10 @@
 import { optimizeImage } from '@/lib/utils';
+import { textWrapBaseStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import { format } from 'date-fns';
 
 interface Props {
   post: Post;
@@ -31,12 +33,22 @@ function PostCard({ post }: Props) {
         </Link>
       </div>
       <div className={footer()}>
-        <div className={footerTagBlock()}>
-          {post.tags.map((v) => (
-            <span key={`${post.slug}_${v}`}>{v}</span>
-          ))}
-        </div>
-        <time>{post.date}</time>
+        <Link href={`/post/${post.slug}`}>
+          <a>
+            <div className={footerTextBlock()}>
+              <span className="john">John</span>
+              <span className="separator">·</span>
+              <time>{format(new Date(post.date), 'yyyy-MM-dd')}</time>
+            </div>
+            <div className={footerLinkItemBlock()}>
+              <div className={footerTagsBlock()}>
+                {post.tags.map((v) => (
+                  <span key={`${post.slug}_${v}`}>#{v}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        </Link>
       </div>
     </article>
   );
@@ -48,24 +60,32 @@ const block = css({
   flexDirection: 'column',
   overflow: 'hidden',
   borderRadius: '0.5rem',
-  boxShadow: '$post-card',
-  background: '$bg-content',
-  transition: 'transform 0.25s ease-in',
+  '& a': {
+    flex: '1 1 0',
+  },
   '&:hover': {
-    '@m1': {
-      transform: 'translateY(-0.5rem)',
+    '& img, svg': {
+      transform: 'scale(1.1)',
+      transition: 'transform 0.25s ease-in',
     },
   },
+  '&:not(:hover)': {
+    transition: 'transform 0.25s ease-out',
+  },
+  // border: '1px solid black',
 });
 
 const thumbnail = css({
   position: 'relative',
   width: '100%',
   paddingTop: '52.19206680584551%',
+  overflow: 'hidden',
+  borderRadius: '0.5rem',
   '& img, svg': {
+    borderRadius: '0.5rem',
     position: 'absolute',
     display: 'block',
-    top: '0',
+    top: '-10%',
     left: '0',
     width: '100%',
     height: '100%',
@@ -78,32 +98,22 @@ const content = css({
   display: 'flex',
   flexDirection: 'column',
   '& h4, p': {
-    overflow: 'hidden',
-    display: '-webkit-box',
-    '-webkit-box-orient': 'vertical',
-    wordBreak: 'break-word',
-    overflowWrap: 'break-word',
-    textOverflow: 'ellipsis',
+    ...textWrapBaseStyle,
   },
   '& h4': {
-    margin: '0',
+    margin: '1rem 0 0 0',
     fontSize: '1.125rem',
     fontWeight: '500',
     lineClamp: '1',
     '-webkit-line-clamp': 1,
   },
   '& p': {
-    margin: '0.875rem 0 0 0',
-    display: 'block',
-    height: '2.5rem',
-    lineHeight: '1.5',
+    margin: '0.5rem 0 0 0',
     fontSize: '0.875rem',
-    lineClamp: '2',
-    '-webkit-line-clamp': 2,
+    fontWeight: '400',
     color: '$text-description',
-  },
-  '& a': {
-    padding: '0.875rem 0.875rem 0 0.875rem',
+    lineClamp: '1',
+    '-webkit-line-clamp': 2,
   },
 });
 
@@ -111,12 +121,40 @@ const footer = css({
   flex: '1 1 0',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between',
-  padding: '1rem',
+  paddingTop: '1rem',
+  a: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    fontSize: '0.875rem',
+  },
+  '& span, time': {
+    fontSize: '0.875rem',
+    color: '$text-description',
+  },
 });
 
-const footerTagBlock = css({
+const footerTextBlock = css({
   display: 'flex',
+  '& .john': {
+    color: '$text',
+  },
+  '& .separator': {
+    margin: '0 0.25rem',
+    fontWeight: 'bold',
+    fontSize: '1rem',
+  },
+});
+
+const footerLinkItemBlock = css({
+  flex: '1 1 0',
+  display: 'flex',
+  alignItems: 'center',
+});
+
+const footerTagsBlock = css({
+  display: 'flex',
+  // alignItems: 'center',
   'span + span': {
     marginLeft: '0.5rem',
   },
