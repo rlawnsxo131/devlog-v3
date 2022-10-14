@@ -15,8 +15,7 @@ export default class PostService {
 
   public getAllPosts() {
     const filePath = this.getFilePath();
-    const posts = this.getPostsWithSortFor(filePath);
-    return posts;
+    return this.getPostsWithSortFor(filePath);
   }
 
   private getFilePath() {
