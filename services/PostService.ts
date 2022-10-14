@@ -4,8 +4,8 @@ import { sync } from 'glob';
 import frontMatter from 'front-matter';
 
 export default class PostService {
-  private static instance: PostService;
   private readonly postPath = `${process.cwd()}/__devlog_posts__`;
+  private static instance: PostService;
 
   private constructor() {}
 
