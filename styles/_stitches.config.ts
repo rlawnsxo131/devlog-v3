@@ -42,14 +42,14 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       },
     },
     media: {
-      xxxsmall: '(min-width: 0px)',
-      xxsmall: '(min-width: 320px)',
-      xxsmallmedium: '(min-width: 345px)',
-      xsmall: '(min-width: 375px)',
-      xsmallmedium: '(min-width: 420px)',
-      xsmalllarge: '(min-width: 600px)',
-      small: '(min-width: 768px)',
-      medium: '(min-width: 1024px)',
+      xxxs1: '(min-width: 0px)',
+      xxs1: '(min-width: 320px)',
+      xxs2: '(min-width: 345px)',
+      xs1: '(min-width: 375px)',
+      xs2: '(min-width: 420px)',
+      xs3: '(min-width: 600px)',
+      s1: '(min-width: 768px)',
+      m1: '(min-width: 1024px)',
     },
     utils: {
       mediaQuery: ({

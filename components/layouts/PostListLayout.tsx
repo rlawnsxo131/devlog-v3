@@ -11,37 +11,37 @@ function PostListLayout({ children }: Props) {
 const block = css({
   width: '100%',
   display: 'grid',
-  '@xxxsmall': {
+  '@xxxs1': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',
   },
-  '@xxsmall': {
+  '@xxs1': {
     gridAutoRows: '21rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',
   },
-  '@xsmall': {
+  '@xs1': {
     gridAutoRows: '22rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',
   },
-  '@xsmallmedium': {
+  '@xs2': {
     gridAutoRows: '28rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 0',
   },
-  '@xsmalllarge': {
+  '@xs3': {
     gridAutoRows: '21rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem 1rem',
   },
-  '@small': {
+  '@s1': {
     gridAutoRows: '25rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem 1rem',
   },
-  '@medium': {
+  '@m1': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '1.5rem 1rem',

@@ -52,7 +52,7 @@ const block = css({
   background: '$bg-content',
   transition: 'transform 0.25s ease-in',
   '&:hover': {
-    '@medium': {
+    '@m1': {
       transform: 'translateY(-0.5rem)',
     },
   },

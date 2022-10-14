@@ -14,10 +14,10 @@ export const buttonWithSVGBasicStyle = {
 };
 
 export const layoutBasicResponsiveStyle = {
-  '@xxxsmall': {
+  '@xxxs1': {
     width: '93%',
   },
-  '@medium': {
+  '@m1': {
     width: '768px',
   },
 };
