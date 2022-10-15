@@ -71,12 +71,14 @@ const block = css({
   },
   '&:hover': {
     '& img, svg': {
+      transition: '0.25s ease-in',
       transform: 'scale(1.1)',
-      transition: 'transform 0.25s ease-in',
     },
   },
   '&:not(:hover)': {
-    transition: 'transform 0.25s ease-out',
+    '& img, svg': {
+      transition: '0.25s ease-out',
+    },
   },
 });
 
