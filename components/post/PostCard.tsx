@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { LinkIcon } from '../img/icons';
-import PostCardImageSkeleton from './PostCardImageSkeleton';
+import PostCardThumbnailSkeleton from './PostCardThumbnailSkeleton';
 import usePostCard from './hooks/usePostCard';
 
 interface Props {
@@ -29,7 +29,7 @@ function PostCard({ post }: Props) {
               loading="lazy"
               onLoadingComplete={onLoadingComplete}
             />
-            {!isLoadingImageComplete && <PostCardImageSkeleton />}
+            {!isLoadingImageComplete && <PostCardThumbnailSkeleton />}
           </a>
         </Link>
       </div>
