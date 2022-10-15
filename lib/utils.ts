@@ -28,3 +28,20 @@ export function optimizeImage(url: string, width?: number) {
 
   return replaced.concat(`?w=${width}`);
 }
+
+export function copyClipBoard(value: string, callback: () => void) {
+  try {
+    navigator.clipboard.writeText(value).then(() => {
+      callback();
+    });
+  } catch (e) {
+    let input = document.createElement('input');
+    input.value = value;
+    document.body.appendChild(input);
+    input.select();
+    input.setSelectionRange(0, input.value.length),
+      document.execCommand('Copy');
+    document.body.removeChild(input);
+    callback();
+  }
+}

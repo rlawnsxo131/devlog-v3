@@ -6,12 +6,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { LinkIcon } from '../img/icons';
+import PostCardImageSkeleton from './PostCardImageSkeleton';
+import usePostCard from './hooks/usePostCard';
 
 interface Props {
   post: Post;
 }
 
 function PostCard({ post }: Props) {
+  const { isLoadingImageComplete, onLoadingComplete, onCopyURLToClipboard } =
+    usePostCard();
+
   return (
     <article className={block()}>
       <div className={thumbnail()}>
@@ -21,7 +26,10 @@ function PostCard({ post }: Props) {
               src={optimizeImage(post.thumbnail, 640)}
               alt="post-thumbnail"
               layout="fill"
+              loading="lazy"
+              onLoadingComplete={onLoadingComplete}
             />
+            {!isLoadingImageComplete && <PostCardImageSkeleton />}
           </a>
         </Link>
       </div>
@@ -51,7 +59,12 @@ function PostCard({ post }: Props) {
               </Link>
             ))}
           </div>
-          <button type="button" className={footerCopyLinkButton()}>
+          <button
+            type="button"
+            value={post.slug}
+            className={footerCopyLinkButton()}
+            onClick={onCopyURLToClipboard}
+          >
             <LinkIcon />
           </button>
         </div>
@@ -77,7 +90,7 @@ const block = css({
   },
   '&:not(:hover)': {
     '& img, svg': {
-      transition: '0.25s ease-out',
+      transition: 'transform 0.25s ease-out',
     },
   },
 });
@@ -85,17 +98,24 @@ const block = css({
 const thumbnail = css({
   position: 'relative',
   width: '100%',
-  paddingTop: '52.19206680584551%',
+  height: '52.19206680584551%',
   overflow: 'hidden',
   borderRadius: '0.5rem',
+  '& a': {
+    flex: '1 1 0',
+    display: 'block',
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+  },
   '& img, svg': {
-    borderRadius: '0.5rem',
     position: 'absolute',
     display: 'block',
     left: '0',
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+    borderRadius: '0.5rem',
   },
 });
 
@@ -114,6 +134,7 @@ const content = css({
     '-webkit-line-clamp': 1,
   },
   '& p': {
+    height: '2.125rem',
     margin: '0.5rem 0 0 0',
     fontSize: '0.875rem',
     fontWeight: '400',
@@ -128,7 +149,7 @@ const footer = css({
   display: 'flex',
   flexDirection: 'column',
   paddingTop: '1rem',
-  a: {
+  '& a': {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

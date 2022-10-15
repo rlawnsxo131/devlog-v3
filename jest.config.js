@@ -19,7 +19,6 @@ const customJestConfig = {
   // johns custom options
   restoreMocks: true,
   moduleNameMapper: {
-    '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/types/(.*)$': '<rootDir>/@types/$1',
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/styles/(.*)$': '<rootDir>/styles/$1',
