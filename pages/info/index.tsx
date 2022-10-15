@@ -2,19 +2,13 @@ import {
   InfoContactLinkSection,
   InfoDescriptionSection,
 } from '@/components/info';
-import { css } from '@/styles/_stitches.config';
+import { MainContentLayout } from '@/components/layouts';
 
 export default function InfoPage() {
   return (
-    <div className={block()}>
+    <MainContentLayout>
       <InfoContactLinkSection />
       <InfoDescriptionSection />
-    </div>
+    </MainContentLayout>
   );
 }
-
-const block = css({
-  display: 'flex',
-  flexDirection: 'column',
-  borderRadius: '4px',
-});

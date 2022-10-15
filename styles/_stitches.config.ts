@@ -27,6 +27,8 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         'text-button': '$white',
         'text-anchor-active': '$cyan9',
         'text-description': '$gray11',
+        'text-underline': '$cyan9',
+        'text-underline-hover': '$cyan10',
 
         // fill
         'fill-content': '$gray12',
@@ -91,6 +93,8 @@ export const darkTheme = createTheme('dark', {
     'text-button': '$white',
     'text-anchor-active': '$cyan9',
     'text-description': '$gray11',
+    'text-underline': '$cyan9',
+    'text-underline-hover': '$cyan10',
 
     // fill
     'fill-content': '$gray12',

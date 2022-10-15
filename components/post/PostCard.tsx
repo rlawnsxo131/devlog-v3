@@ -1,10 +1,11 @@
 import { optimizeImage } from '@/lib/utils';
-import { textWrapBaseStyle } from '@/styles/basicStyle';
+import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { LinkIcon } from '../img/icons';
 
 interface Props {
   post: Post;
@@ -40,15 +41,20 @@ function PostCard({ post }: Props) {
               <span className="separator">·</span>
               <time>{format(new Date(post.date), 'yyyy-MM-dd')}</time>
             </div>
-            <div className={footerLinkItemBlock()}>
-              <div className={footerTagsBlock()}>
-                {post.tags.map((v) => (
-                  <span key={`${post.slug}_${v}`}>#{v}</span>
-                ))}
-              </div>
-            </div>
           </a>
         </Link>
+        <div className={footerLinkItemBlock()}>
+          <div className={footerTagsBlock()}>
+            {post.tags.map((tag) => (
+              <Link key={`${post.slug}_${tag}`} href={`/posts/${tag}`}>
+                <a>#{tag}</a>
+              </Link>
+            ))}
+          </div>
+          <button type="button" className={footerCopyLinkButton()}>
+            <LinkIcon />
+          </button>
+        </div>
       </div>
     </article>
   );
@@ -72,7 +78,6 @@ const block = css({
   '&:not(:hover)': {
     transition: 'transform 0.25s ease-out',
   },
-  // border: '1px solid black',
 });
 
 const thumbnail = css({
@@ -85,7 +90,6 @@ const thumbnail = css({
     borderRadius: '0.5rem',
     position: 'absolute',
     display: 'block',
-    top: '-10%',
     left: '0',
     width: '100%',
     height: '100%',
@@ -149,15 +153,30 @@ const footerTextBlock = css({
 const footerLinkItemBlock = css({
   flex: '1 1 0',
   display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
 });
 
 const footerTagsBlock = css({
   display: 'flex',
-  // alignItems: 'center',
-  'span + span': {
+  '& a': {
+    color: '$text-underline',
+    '&:hover': {
+      color: '$text-underline-hover',
+      textDecoration: 'underline',
+    },
+  },
+  'a + a': {
     marginLeft: '0.5rem',
   },
+});
+
+const footerCopyLinkButton = css({
+  ...buttonBasicStyle,
+  background: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  padding: '0 0.25rem',
 });
 
 export default PostCard;

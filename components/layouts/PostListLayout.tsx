@@ -17,9 +17,17 @@ const block = css({
     gap: '1rem 0',
   },
   '@xs2': {
-    gridAutoRows: '27rem',
+    gridAutoRows: '23rem',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gap: '1rem 1rem',
+  },
+  mediaQuery: {
+    minWidth: 490,
+    styles: {
+      gridAutoRows: '26rem',
+      gridTemplateColumns: 'repeat(1, 1fr)',
+      gap: '1rem 1rem',
+    },
   },
   '@xs3': {
     gridAutoRows: '21rem',
@@ -27,7 +35,7 @@ const block = css({
     gap: '1rem 1rem',
   },
   '@s1': {
-    gridAutoRows: '24rem',
+    gridAutoRows: '22rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem 1rem',
   },
@@ -37,7 +45,7 @@ const block = css({
     gap: '1rem 1rem',
   },
   '@m1': {
-    gridAutoRows: '24rem',
+    gridAutoRows: '22rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem 1rem',
   },
