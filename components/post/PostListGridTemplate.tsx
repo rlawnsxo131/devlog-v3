@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function PostListLayout({ children }: Props) {
+function PostListGridTemplate({ children }: Props) {
   return <div className={block()}>{children}</div>;
 }
 
@@ -61,4 +61,4 @@ const block = css({
   },
 });
 
-export default PostListLayout;
+export default PostListGridTemplate;

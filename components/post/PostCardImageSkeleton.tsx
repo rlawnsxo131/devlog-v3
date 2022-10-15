@@ -2,7 +2,7 @@ import { css } from '@/styles/_stitches.config';
 
 interface Props {}
 
-function PostCardImageSkeleton(props: Props) {
+function PostCardThumbnailSkeleton(props: Props) {
   return <div className={block()} />;
 }
 
@@ -16,4 +16,4 @@ const block = css({
   background: '$bg-skeleton',
 });
 
-export default PostCardImageSkeleton;
+export default PostCardThumbnailSkeleton;

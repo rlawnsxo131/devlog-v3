@@ -102,11 +102,11 @@ const thumbnail = css({
   overflow: 'hidden',
   borderRadius: '0.5rem',
   '& a': {
-    flex: '1 1 0',
-    display: 'block',
     position: 'relative',
     width: '100%',
     height: '100%',
+    flex: '1 1 0',
+    display: 'block',
   },
   '& img, svg': {
     position: 'absolute',
