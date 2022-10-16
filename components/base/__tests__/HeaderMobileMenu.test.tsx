@@ -5,7 +5,7 @@ import {
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import HeaderMenu from '../HeaderMenu';
+import HeaderMobileMenu from '../HeaderMobileMenu';
 
 jest.mock('next/router', () => ({
   useRouter() {
@@ -15,8 +15,8 @@ jest.mock('next/router', () => ({
   },
 }));
 
-function renderHeaderMenu() {
-  const result = render(<HeaderMenu />);
+function renderHeaderMobileMenu() {
+  const result = render(<HeaderMobileMenu />);
 
   const HeaderMenuButton = () => result.getByRole('button');
 
@@ -24,6 +24,11 @@ function renderHeaderMenu() {
 
   const PostAnchor = () =>
     result.getByText('포스트', {
+      selector: 'a',
+    });
+
+  const TagAnchor = () =>
+    result.getByText('태그', {
       selector: 'a',
     });
 
@@ -41,12 +46,13 @@ function renderHeaderMenu() {
     HeaderMenuButton,
     HeaderMenuNavigation,
     PostAnchor,
+    TagAnchor,
     InfoAnchor,
     clickMenuButton,
   };
 }
 
-describe('<HeaderMenu />', () => {
+describe('<HeaderMobileMenu />', () => {
   const duration = 250;
 
   beforeEach(() => {
@@ -58,13 +64,13 @@ describe('<HeaderMenu />', () => {
   });
 
   it('render', () => {
-    const { HeaderMenuButton } = renderHeaderMenu();
+    const { HeaderMenuButton } = renderHeaderMobileMenu();
 
     expect(HeaderMenuButton()).toBeInTheDocument();
   });
 
   it('toggle menu button', async () => {
-    const { HeaderMenuNavigation, clickMenuButton } = renderHeaderMenu();
+    const { HeaderMenuNavigation, clickMenuButton } = renderHeaderMobileMenu();
 
     clickMenuButton();
     act(() => {
@@ -83,8 +89,13 @@ describe('<HeaderMenu />', () => {
   });
 
   it('click the links inside the menu navigation', async () => {
-    const { HeaderMenuNavigation, PostAnchor, InfoAnchor, clickMenuButton } =
-      renderHeaderMenu();
+    const {
+      HeaderMenuNavigation,
+      PostAnchor,
+      TagAnchor,
+      InfoAnchor,
+      clickMenuButton,
+    } = renderHeaderMobileMenu();
 
     clickMenuButton();
     act(() => {
@@ -95,6 +106,7 @@ describe('<HeaderMenu />', () => {
     });
 
     expect(PostAnchor()).toHaveAttribute('href', '/');
+    expect(TagAnchor()).toHaveAttribute('href', '/tag');
     expect(InfoAnchor()).toHaveAttribute('href', '/info');
   });
 });

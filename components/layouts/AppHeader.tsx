@@ -46,7 +46,9 @@ const items = css({
         gap: '0',
       },
       enabled: {
-        gap: '0.25rem',
+        '& > * + *': {
+          marginLeft: '0.5rem',
+        },
       },
     },
   },

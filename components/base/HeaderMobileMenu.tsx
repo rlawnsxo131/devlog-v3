@@ -1,13 +1,13 @@
 import { css } from '@/styles/_stitches.config';
 import MenuIcon from '@/components/img/icons/MenuIcon';
 import Link from 'next/link';
-import useHeaderMenu from './hooks/useHeaderMenu';
+import useHeaderMobileMenu from './hooks/useHeaderMobileMenu';
 import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import transitions from '@/styles/transitions';
 
 interface Props {}
 
-function HeaderMenu(props: Props) {
+function HeaderMobileMenu(props: Props) {
   const {
     parentRef,
     navVisible,
@@ -15,7 +15,7 @@ function HeaderMenu(props: Props) {
     navVariant,
     handleNavVisible,
     getRouteVariant,
-  } = useHeaderMenu();
+  } = useHeaderMobileMenu();
 
   return (
     <div className={block()} ref={parentRef}>
@@ -29,6 +29,13 @@ function HeaderMenu(props: Props) {
               <Link href={'/'}>
                 <a className={anchor({ variant: getRouteVariant('/') })}>
                   포스트
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/tag'}>
+                <a className={anchor({ variant: getRouteVariant('/tag') })}>
+                  태그
                 </a>
               </Link>
             </li>
@@ -48,6 +55,9 @@ function HeaderMenu(props: Props) {
 
 const block = css({
   position: 'relative',
+  '@xs4': {
+    display: 'none',
+  },
 });
 
 const button = css({
@@ -122,4 +132,4 @@ const anchor = css({
   },
 });
 
-export default HeaderMenu;
+export default HeaderMobileMenu;

@@ -4,9 +4,9 @@
   "scripts": {
     "sdk": "yarn dlx @yarnpkg/sdks vscode",
     "sdk:update": "yarn dlx @yarnpkg/sdks",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start:dev": "next dev",
+    "build:prod": "next build",
+    "start:prod": "next start",
     "lint": "next lint",
     "test": "jest --coverage"
   },

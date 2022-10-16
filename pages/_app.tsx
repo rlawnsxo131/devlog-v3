@@ -1,5 +1,7 @@
-import { HeaderLogo, HeaderMenu } from '@/components/base';
+import { HeaderLogo, HeaderMobileMenu } from '@/components/base';
+import HeaderWebMenu from '@/components/base/HeaderWebMenu';
 import { AppLayout } from '@/components/layouts';
+import RssButton from '@/components/system/RssButton/RssButton';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
 import useThemeEffect from '@/hooks/theme/useThemeEffect';
@@ -16,8 +18,10 @@ export default function App({ Component, pageProps }) {
           leftSideItems={<HeaderLogo />}
           rightSideItems={
             <>
+              <HeaderWebMenu />
+              <RssButton />
               <ThemeButton />
-              <HeaderMenu />
+              <HeaderMobileMenu />
             </>
           }
         />

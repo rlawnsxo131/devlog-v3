@@ -6,3 +6,4 @@ export { default as GithubIcon } from './GithubIcon';
 export { default as LinkedinIcon } from './LinkedinIcon';
 export { default as TwitterIcon } from './TwitterIcon';
 export { default as LinkIcon } from './LinkIcon';
+export { default as RssIcon } from './RssIcon';

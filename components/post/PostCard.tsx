@@ -79,6 +79,7 @@ const block = css({
   flexDirection: 'column',
   overflow: 'hidden',
   borderRadius: '0.5rem',
+  isolation: 'isolate',
   '& a': {
     flex: '1 1 0',
   },
