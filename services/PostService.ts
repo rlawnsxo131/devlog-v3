@@ -13,7 +13,7 @@ export default class PostService {
     return this.instance || (this.instance = new this());
   }
 
-  public getAllPosts() {
+  public async getAllPosts() {
     const filePath = this.getFilePath();
     return this.getPostsWithSortFor(filePath);
   }

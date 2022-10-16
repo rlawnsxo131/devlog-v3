@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function PostListGridTemplate({ children }: Props) {
+function PostCardGridTemplate({ children }: Props) {
   return <div className={block()}>{children}</div>;
 }
 
@@ -61,4 +61,4 @@ const block = css({
   },
 });
 
-export default PostListGridTemplate;
+export default PostCardGridTemplate;

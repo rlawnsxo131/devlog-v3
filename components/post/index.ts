@@ -1,2 +1,2 @@
 export { default as PostCard } from './PostCard';
-export { default as PostListGridTemplate } from './PostListGridTemplate';
+export { default as PostCardGridTemplate } from './PostCardGridTemplate';
