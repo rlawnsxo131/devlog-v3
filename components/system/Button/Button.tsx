@@ -7,7 +7,11 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button({ children, variant }: Props) {
-  return <button className={button({ ...variant })}>{children}</button>;
+  return (
+    <button type="button" className={button({ ...variant })}>
+      {children}
+    </button>
+  );
 }
 
 const button = css({

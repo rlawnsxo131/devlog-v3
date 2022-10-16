@@ -19,7 +19,7 @@ function HeaderMenu(props: Props) {
 
   return (
     <div className={block()} ref={parentRef}>
-      <button className={button()} onClick={handleNavVisible}>
+      <button type="button" className={button()} onClick={handleNavVisible}>
         <MenuIcon aria-label="menu-icon" />
       </button>
       {!navVisible && navClosed ? null : (
