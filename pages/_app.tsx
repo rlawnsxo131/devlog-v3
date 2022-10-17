@@ -1,7 +1,7 @@
 import { HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
 import { AppLayout } from '@/components/layouts';
-import RssButton from '@/components/system/RssButton/RssButton';
+import RssButton from '@/components/system/RssButton';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
 import useThemeEffect from '@/hooks/theme/useThemeEffect';
