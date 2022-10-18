@@ -64,7 +64,9 @@ function PostCard({ post }: Props) {
           </div>
           <button
             type="button"
-            value={post.slug}
+            data-title={post.title}
+            data-description={post.description}
+            data-slug={post.slug}
             className={footerCopyLinkButton()}
             onClick={handleCopyURLToClipboard}
           >

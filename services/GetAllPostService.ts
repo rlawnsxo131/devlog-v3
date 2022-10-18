@@ -3,9 +3,9 @@ import { FrontMatter, Post } from '@/types';
 import { sync } from 'glob';
 import frontMatter from 'front-matter';
 
-export default class PostService {
+export default class GetAllPostService {
   private readonly postPath = `${process.cwd()}/__devlog_posts__`;
-  private static instance: PostService;
+  private static instance: GetAllPostService;
 
   private constructor() {}
 
@@ -13,7 +13,7 @@ export default class PostService {
     return this.instance || (this.instance = new this());
   }
 
-  public async getAllPosts() {
+  public async excute() {
     const filePath = this.getFilePath();
     return this.getPostsWithSortFor(filePath);
   }

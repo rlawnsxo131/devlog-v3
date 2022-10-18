@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { Post } from '@/types';
-import PostService from '@/services';
 import { PostCard, PostCardGridTemplate } from '@/components/post';
+import { GetAllPostService } from '@/services';
 
 interface Props {
   posts: Post[];
@@ -18,7 +18,7 @@ export default function IndexPage({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await PostService.getInstance().getAllPosts();
+  const posts = await GetAllPostService.getInstance().excute();
 
   return {
     props: {
