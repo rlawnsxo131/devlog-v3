@@ -6,13 +6,13 @@ export default function usePostCard() {
   const { info } = useToast();
   const [isLoadingImageComplete, setIsLoadingImageComplete] = useState(false);
 
-  const onLoadingComplete = ({ naturalHeight, naturalWidth }) => {
+  const handleLoadingComplete = ({ naturalHeight, naturalWidth }) => {
     if (naturalHeight && naturalWidth) {
       setIsLoadingImageComplete(true);
     }
   };
 
-  const onCopyURLToClipboard = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyURLToClipboard = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { value } = e.currentTarget;
     const url = `${location.href}${value}`;
     utils.copyClipBoard(url, () => info('포스트 주소가 복사 되었습니다.'));
@@ -20,7 +20,7 @@ export default function usePostCard() {
 
   return {
     isLoadingImageComplete,
-    onLoadingComplete,
-    onCopyURLToClipboard,
+    handleLoadingComplete,
+    handleCopyURLToClipboard,
   };
 }

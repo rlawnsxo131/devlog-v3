@@ -14,8 +14,11 @@ interface Props {
 }
 
 function PostCard({ post }: Props) {
-  const { isLoadingImageComplete, onLoadingComplete, onCopyURLToClipboard } =
-    usePostCard();
+  const {
+    isLoadingImageComplete,
+    handleLoadingComplete,
+    handleCopyURLToClipboard,
+  } = usePostCard();
 
   return (
     <article className={block()}>
@@ -27,7 +30,7 @@ function PostCard({ post }: Props) {
               alt="post-thumbnail"
               layout="fill"
               loading="lazy"
-              onLoadingComplete={onLoadingComplete}
+              onLoadingComplete={handleLoadingComplete}
             />
             {!isLoadingImageComplete && <PostCardThumbnailSkeleton />}
           </a>
@@ -63,7 +66,7 @@ function PostCard({ post }: Props) {
             type="button"
             value={post.slug}
             className={footerCopyLinkButton()}
-            onClick={onCopyURLToClipboard}
+            onClick={handleCopyURLToClipboard}
           >
             <LinkIcon />
           </button>
