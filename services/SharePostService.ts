@@ -23,7 +23,7 @@ export default class SharePostService {
     fallbackCallback: () => void,
   ) {
     try {
-      const _ = await this.shareMobileWithNavigationAPI({
+      await this.shareMobileWithNavigationAPI({
         ...params,
       });
     } catch (e) {
@@ -31,7 +31,7 @@ export default class SharePostService {
         console.error('share cancel error: aborted');
         return;
       }
-      await this.copyToClipBoard(params.url, fallbackCallback);
+      this.copyToClipBoard(params.url, fallbackCallback);
     }
   }
 
@@ -47,10 +47,11 @@ export default class SharePostService {
     });
   }
 
-  private async copyToClipBoard(value: string, callback: () => void) {
+  private copyToClipBoard(value: string, callback: () => void) {
     try {
-      await navigator.clipboard.writeText(value);
-      callback();
+      navigator.clipboard.writeText(value).then((_) => {
+        callback();
+      });
     } catch (e) {
       const input = document.createElement('input');
       input.value = value;
