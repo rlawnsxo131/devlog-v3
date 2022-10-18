@@ -26,9 +26,9 @@ export default class SharePostService {
       await this.shareMobileWithNavigationAPI({
         ...params,
       });
-    } catch (e) {
-      if (e.toString().includes('AbortError')) {
-        console.error('share cancel error: aborted');
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        console.log('share cancel error: AbortError');
         return;
       }
       this.copyToClipBoard(params.url, fallbackCallback);
@@ -52,7 +52,7 @@ export default class SharePostService {
       navigator.clipboard.writeText(value).then((_) => {
         callback();
       });
-    } catch (e) {
+    } catch (err) {
       const input = document.createElement('input');
       input.value = value;
       document.body.appendChild(input);

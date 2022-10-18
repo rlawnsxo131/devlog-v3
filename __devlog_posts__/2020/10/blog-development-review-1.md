@@ -1,6 +1,6 @@
 ---
 title: 블로그 개발 후기 1탄 - Typescript
-description: 타입스크립트 한번쓰고 두번쓰고 계속써야지.타입스크립트 한번쓰고 두번쓰고 계속써야지.타입스크립트 한번쓰고 두번쓰고 계속써야지.타입스크립트 한번쓰고 두번쓰고 계속써야지.
+description: 타입스크립트 너무 좋다.
 tags:
   - Typescript
 thumbnail: https://image-devlog.juntae.kim/post/image/jpeg/typescript.jpg

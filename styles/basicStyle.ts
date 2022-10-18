@@ -36,3 +36,11 @@ export const textWrapBaseStyle = {
   overflowWrap: 'break-word',
   textOverflow: 'ellipsis',
 };
+
+export const textUnderlineForHoverStyle = {
+  color: '$text-underline',
+  '&:hover': {
+    color: '$text-underline-hover',
+    textDecoration: 'underline',
+  },
+};

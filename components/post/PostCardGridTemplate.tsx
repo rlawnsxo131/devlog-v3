@@ -24,7 +24,7 @@ const block = css({
   mediaQuery: {
     minWidth: 490,
     styles: {
-      gridAutoRows: '26rem',
+      gridAutoRows: '27rem',
       gridTemplateColumns: 'repeat(1, 1fr)',
       gap: '1.5rem 1rem',
     },

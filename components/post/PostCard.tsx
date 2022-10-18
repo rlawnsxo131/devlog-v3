@@ -1,5 +1,9 @@
 import { optimizeImage } from '@/lib/utils';
-import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
+import {
+  buttonBasicStyle,
+  textUnderlineForHoverStyle,
+  textWrapBaseStyle,
+} from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
@@ -189,11 +193,7 @@ const footerLinkItemBlock = css({
 const footerTagsBlock = css({
   display: 'flex',
   '& a': {
-    color: '$text-underline',
-    '&:hover': {
-      color: '$text-underline-hover',
-      textDecoration: 'underline',
-    },
+    ...textUnderlineForHoverStyle,
   },
   'a + a': {
     marginLeft: '0.5rem',

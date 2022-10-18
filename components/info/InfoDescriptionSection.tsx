@@ -1,3 +1,4 @@
+import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 
 interface Props {}
@@ -6,15 +7,40 @@ function InfoDescriptionSection(props: Props) {
   return (
     <>
       <section className={section()}>
-        <h3>Personal Development blog by John</h3>
-        <p>
-          2018년 1월, 28살이 되던해 int 가 무엇인지 배운 웹개발자 입니다.
-          {'\n\n'}Frontend 개발을 주로 합니다.{'\n'}필요에 따라 BackEnd API 를
-          개발하거나 배포를 구성하기도 합니다.
-          {'\n\n'}
-          Serverless 한 BackEnd Architecture 를 선호하고,{'\n'}FrontEnd 의
-          자연스런 DataFlow 를 중요히 생각합니다.
-        </p>
+        <h3>Info</h3>
+        <ul>
+          <li>
+            <a
+              rel="noopener noreferrer"
+              href="https://www.11stcorp.com/company"
+              target="_blank"
+            >
+              11번가
+            </a>
+            프론트엔드 개발자 ( 2022.10 ~)
+          </li>
+          <li>
+            <a
+              rel="noopener noreferrer"
+              href="https://cleaninglab.co.kr/"
+              target="_blank"
+            >
+              생활연구소
+            </a>
+            웹 풀스택 개발자 ( 2019.04 ~ 2022.10 )
+          </li>
+          <li>
+            <a
+              rel="noopener noreferrer"
+              href="https://itcampus.hankyung.com/"
+              target="_blank"
+            >
+              한경닷컴 it 교육센터
+            </a>
+            자바기반 웹 풀스택 개발자 양성과정 수료 ( 2018.01 ~ 2018.06 )
+          </li>
+          <li>강동대학교 텍스타일디자인 학과 졸업 ( 2010 ~ 2015 )</li>
+        </ul>
       </section>
       <section className={section()}>
         <h3>DevLog Tech Stack</h3>
@@ -54,6 +80,17 @@ const section = css({
     lineHeight: '1.5',
     whiteSpace: 'pre-wrap',
     fontSize: '1.125rem',
+  },
+  '& ul': {
+    margin: '0 0 0 1.125rem',
+    padding: '0',
+    'li + li': {
+      marginTop: '0.725rem',
+    },
+    '& a': {
+      ...textUnderlineForHoverStyle,
+      margin: '0 0.25rem 0 0',
+    },
   },
   '& + &': {
     marginTop: '1.5rem',
