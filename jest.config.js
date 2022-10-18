@@ -31,7 +31,6 @@ const customJestConfig = {
     '^@/services/(.*)$': '<rootDir>/services/$1',
     '^@/constants': '<rootDir>/constants',
     '^@/constants/(.*)$': '<rootDir>/constants/$1',
-    '^@/__test_utils__/(.*)$': '<rootDir>/__test_utils__/$1',
   },
 };
 
