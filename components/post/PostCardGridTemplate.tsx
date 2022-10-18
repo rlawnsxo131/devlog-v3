@@ -37,27 +37,27 @@ const block = css({
   '@s1': {
     gridAutoRows: '22rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1.5rem 1.5rem',
   },
   '@s2': {
     gridAutoRows: '24rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1.5rem 1.5rem',
   },
   '@m1': {
     gridAutoRows: '22rem',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1.5rem 1.5rem',
   },
   '@m2': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1.5rem 1.5rem',
   },
   '@l1': {
     gridAutoRows: '19rem',
     gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '1.5rem 1rem',
+    gap: '1.5rem 1.5rem',
   },
 });
 
