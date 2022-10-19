@@ -13,10 +13,12 @@ export default function usePostCard() {
     }
   };
 
-  const handleCopyURLToClipboard = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyURLToClipboard = async (
+    e: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     const { title, description, slug } = e.currentTarget.dataset;
     const url = `${location.href}${slug}`;
-    SharePostService.getInstance().excute(
+    await SharePostService.getInstance().excute(
       {
         title,
         text: description,
