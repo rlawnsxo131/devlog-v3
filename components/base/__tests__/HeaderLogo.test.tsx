@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
+import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
 import HeaderLogo from '../HeaderLogo';
 
 function renderHeaderLogo() {
-  const result = render(<HeaderLogo />);
+  const result = renderWithGlobalHoc(<HeaderLogo />);
 
   const LogoText = () =>
     result.getByText('DevLog', {

@@ -1,5 +1,5 @@
-import useThemeStore from './_useThemeStore';
+import { useGlobalContextState } from 'contexts/GlobalContext';
 
 export default function useThemeState() {
-  return useThemeStore((store) => store.theme);
+  return useGlobalContextState().theme;
 }

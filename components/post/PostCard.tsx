@@ -1,9 +1,5 @@
 import { optimizeImage } from '@/lib/utils';
-import {
-  buttonBasicStyle,
-  textUnderlineForHoverStyle,
-  textWrapBaseStyle,
-} from '@/styles/basicStyle';
+import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
@@ -12,6 +8,7 @@ import { format } from 'date-fns';
 import { LinkIcon } from '../img/icons';
 import PostCardThumbnailSkeleton from './PostCardThumbnailSkeleton';
 import usePostCard from './hooks/usePostCard';
+import UnderlineLink from '../system/UnderlineLink';
 
 interface Props {
   post: Post;
@@ -61,9 +58,9 @@ function PostCard({ post }: Props) {
         <div className={footerLinkItemBlock()}>
           <div className={footerTagsBlock()}>
             {post.tags.map((tag) => (
-              <Link key={`${post.slug}_${tag}`} href={`/posts/${tag}`}>
-                <a>#{tag}</a>
-              </Link>
+              <UnderlineLink key={`${post.slug}_${tag}`} href={`/posts/${tag}`}>
+                #{tag}
+              </UnderlineLink>
             ))}
           </div>
           <button
@@ -138,7 +135,7 @@ const content = css({
   },
   '& h4': {
     margin: '1rem 0 0 0',
-    fontSize: '1.125rem',
+    fontSize: '1rem',
     fontWeight: '500',
     lineClamp: '1',
     '-webkit-line-clamp': 1,
@@ -192,9 +189,6 @@ const footerLinkItemBlock = css({
 
 const footerTagsBlock = css({
   display: 'flex',
-  '& a': {
-    ...textUnderlineForHoverStyle,
-  },
   'a + a': {
     marginLeft: '0.5rem',
   },

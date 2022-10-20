@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import useToast from '@/hooks/useToast';
-import { utils } from '@/lib';
 import SharePostService from '@/services/SharePostService';
 
 export default function usePostCard() {

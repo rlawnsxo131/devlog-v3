@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
 import HeaderWebMenu from '../HeaderWebMenu';
 
 jest.mock('next/router', () => ({
@@ -10,7 +10,7 @@ jest.mock('next/router', () => ({
 }));
 
 function renderHeaderWebMenu() {
-  const result = render(<HeaderWebMenu />);
+  const result = renderWithGlobalHoc(<HeaderWebMenu />);
 
   const PostAnchor = () =>
     result.getByText('포스트', {

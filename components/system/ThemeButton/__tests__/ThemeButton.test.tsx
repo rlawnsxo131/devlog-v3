@@ -1,9 +1,10 @@
-import { render, waitForElementToBeRemoved } from '@testing-library/react';
+import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
+import { waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ThemeButton from '..';
 
 function renderThemeButton() {
-  const result = render(<ThemeButton />);
+  const result = renderWithGlobalHoc(<ThemeButton />);
 
   const Button = () => result.getByRole('button');
 

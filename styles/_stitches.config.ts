@@ -34,6 +34,11 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         // fill
         'fill-content': '$gray12',
         'fill-background': '$white',
+
+        // markdown
+        'bg-markdown-pre': '$gray3',
+        'text-markdown-description': '$gray12',
+        'text-markdown-inline-code': '$cyan9',
       },
       shadows: {
         default1: '1px 1px 3px 1px #adb5bd',
@@ -102,6 +107,11 @@ export const darkTheme = createTheme('dark', {
     // fill
     'fill-content': '$gray12',
     'fill-background': '$gray2',
+
+    // markdown
+    'bg-markdown-pre': '$gray3',
+    'text-markdown-description': '$gray11',
+    'text-markdown-inline-code': '$cyan9',
   },
   shadows: {
     default1: '1px 1px 3px 1px #18191A',

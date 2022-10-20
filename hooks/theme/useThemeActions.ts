@@ -1,17 +1,22 @@
-import useThemeStore from './_useThemeStore';
-import shallow from 'zustand/shallow';
+import { useGlobalContextDispatch } from 'contexts/GlobalContext';
+import { useMemo } from 'react';
 
 export default function useThemeActions() {
-  const { setLightTheme, setDarkTheme } = useThemeStore(
-    (store) => ({
-      setLightTheme: store.setLightTheme,
-      setDarkTheme: store.setDarkTheme,
-    }),
-    shallow,
-  );
+  const dispatch = useGlobalContextDispatch();
 
-  return {
-    setLightTheme,
-    setDarkTheme,
-  };
+  return useMemo(
+    () => ({
+      setLightTheme() {
+        dispatch({
+          type: 'SET_LIGHT_THEME',
+        });
+      },
+      setDarkTheme() {
+        dispatch({
+          type: 'SET_DARK_THEME',
+        });
+      },
+    }),
+    [dispatch],
+  );
 }

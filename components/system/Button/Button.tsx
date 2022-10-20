@@ -1,5 +1,6 @@
-import { buttonBasicStyle } from '@/styles/basicStyle';
+import { memo } from 'react';
 import { css } from '@/styles/_stitches.config';
+import { buttonBasicStyle } from '@/styles/basicStyle';
 import { VariantProps } from '@stitches/core';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -65,4 +66,4 @@ const button = css({
   },
 });
 
-export default Button;
+export default memo(Button);

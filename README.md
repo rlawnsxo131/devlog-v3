@@ -6,8 +6,20 @@
 * Yarn Berry
 * TypeScript
 * Next.js
-* Zustand
 * Stitches
+
+#### markdown
+* next-mdx-remote
+* unified
+* remark
+* remark-math 
+* rehype-katex
+* rehype-autolink-headings
+* rehype-prism-plus
+* remark-toc
+* remark-slug
+* remark-gfm
+* unist-util-visit 
 
 ### V1 Repository
 * <https://github.com/rlawnsxo131/devlog-client>

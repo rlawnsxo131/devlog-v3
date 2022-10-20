@@ -23,7 +23,7 @@ const customJestConfig = {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/styles/(.*)$': '<rootDir>/styles/$1',
     '^@/icons/(.*)$': '<rootDir>/image/icons/$1',
-    '^@/store/(.*)$': '<rootDir>/store/$1',
+    '^@/contexts/(.*)': '<rootDir>/contexts/$1',
     '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@/lib': '<rootDir>/lib',
     '^@/lib/(.*)$': '<rootDir>/lib/$1',
@@ -31,6 +31,7 @@ const customJestConfig = {
     '^@/services/(.*)$': '<rootDir>/services/$1',
     '^@/constants': '<rootDir>/constants',
     '^@/constants/(.*)$': '<rootDir>/constants/$1',
+    '^@/__test_utils__/(.*)$': '<rootDir>/__test_utils__/$1',
   },
 };
 

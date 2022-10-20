@@ -21,7 +21,7 @@
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
       "@/icons/*": ["components/img/icons/*"],
-      "@/store/*": ["store/*"],
+      "@/contexts/*": ["contexts/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib": ["lib"],
       "@/lib/*": ["lib/*"],

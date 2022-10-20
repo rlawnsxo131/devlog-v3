@@ -7,8 +7,10 @@ function InfoDescriptionSection(props: Props) {
   return (
     <>
       <section className={section()}>
-        <h3>Info</h3>
-        <ul>
+        <div className={titleBlock()}>
+          <h3>Info</h3>
+        </div>
+        <ul className={listBlock()}>
           <li>
             <a
               rel="noopener noreferrer"
@@ -17,7 +19,7 @@ function InfoDescriptionSection(props: Props) {
             >
               11번가
             </a>
-            프론트엔드 개발자 ( 2022.10 ~)
+            웹 프론트엔드 개발자 ( 2022.10 ~)
           </li>
           <li>
             <a
@@ -43,8 +45,10 @@ function InfoDescriptionSection(props: Props) {
         </ul>
       </section>
       <section className={section()}>
-        <h3>DevLog Tech Stack</h3>
-        <p>
+        <div className={titleBlock()}>
+          <h3>DevLog Tech Stack</h3>
+        </div>
+        <p className={descriptionBlock()}>
           <strong>V2</strong>
           {'\n'}
           TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
@@ -69,32 +73,41 @@ const section = css({
   background: '$bg-info-section',
   boxShadow: '$default1',
   borderRadius: '4px',
-  '& h3': {
-    margin: '0 0 1.5rem 0',
-    fontSize: '1.5rem',
-  },
-  '& p': {
-    margin: '0',
-    display: 'flex',
-    flexFlow: 'row wrap',
-    lineHeight: '1.5',
-    whiteSpace: 'pre-wrap',
-    fontSize: '1.125rem',
-  },
-  '& ul': {
-    margin: '0 0 0 1.125rem',
-    padding: '0',
-    'li + li': {
-      marginTop: '0.725rem',
-    },
-    '& a': {
-      ...textUnderlineForHoverStyle,
-      margin: '0 0.25rem 0 0',
-    },
-  },
+  color: '$text',
   '& + &': {
     marginTop: '1.5rem',
   },
+});
+
+const listBlock = css({
+  margin: '0 0 0 1.125rem',
+  padding: '0',
+  'li + li': {
+    marginTop: '0.725rem',
+  },
+  '& a': {
+    ...textUnderlineForHoverStyle,
+    margin: '0 0.25rem 0 0',
+  },
+});
+
+const titleBlock = css({
+  display: 'flex',
+  alignItems: 'flex-end',
+  marginBottom: '1rem',
+  '& h3': {
+    margin: '0',
+    fontSize: '1.5rem',
+  },
+});
+
+const descriptionBlock = css({
+  margin: '0',
+  display: 'flex',
+  flexFlow: 'row wrap',
+  lineHeight: '1.5',
+  whiteSpace: 'pre-wrap',
+  fontSize: '1.125rem',
 });
 
 export default InfoDescriptionSection;

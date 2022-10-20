@@ -1,6 +1,6 @@
+import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
 import {
   act,
-  render,
   waitFor,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
@@ -16,7 +16,7 @@ jest.mock('next/router', () => ({
 }));
 
 function renderHeaderMobileMenu() {
-  const result = render(<HeaderMobileMenu />);
+  const result = renderWithGlobalHoc(<HeaderMobileMenu />);
 
   const HeaderMenuButton = () => result.getByRole('button');
 
