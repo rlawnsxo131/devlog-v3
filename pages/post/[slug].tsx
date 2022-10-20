@@ -148,6 +148,7 @@ const block = css({
     '-moz-hyphens': 'none',
     '-ms-hyphens': 'none',
     hyphens: 'none',
+    letterSpacing: '1px',
   },
 
   'code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection, pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection':
