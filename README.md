@@ -7,19 +7,18 @@
 * TypeScript
 * Next.js
 * Stitches
-
-#### markdown
-* next-mdx-remote
-* unified
-* remark
-* remark-math 
-* rehype-katex
-* rehype-autolink-headings
-* rehype-prism-plus
-* remark-toc
-* remark-slug
-* remark-gfm
-* unist-util-visit 
+* Markdown related dependencies
+  * next-mdx-remote
+  * unified
+  * remark
+  * remark-math 
+  * rehype-katex
+  * rehype-autolink-headings
+  * rehype-prism-plus
+  * remark-toc
+  * remark-slug
+  * remark-gfm
+  * unist-util-visit 
 
 ### V1 Repository
 * <https://github.com/rlawnsxo131/devlog-client>
