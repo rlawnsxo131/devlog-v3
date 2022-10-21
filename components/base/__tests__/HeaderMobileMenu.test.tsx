@@ -27,11 +27,6 @@ function renderHeaderMobileMenu() {
       selector: 'a',
     });
 
-  const TagAnchor = () =>
-    result.getByText('태그', {
-      selector: 'a',
-    });
-
   const InfoAnchor = () =>
     result.getByText('소개', {
       selector: 'a',
@@ -46,7 +41,6 @@ function renderHeaderMobileMenu() {
     HeaderMenuButton,
     HeaderMenuNavigation,
     PostAnchor,
-    TagAnchor,
     InfoAnchor,
     clickMenuButton,
   };
@@ -89,13 +83,8 @@ describe('<HeaderMobileMenu />', () => {
   });
 
   it('click the links inside the menu navigation', async () => {
-    const {
-      HeaderMenuNavigation,
-      PostAnchor,
-      TagAnchor,
-      InfoAnchor,
-      clickMenuButton,
-    } = renderHeaderMobileMenu();
+    const { HeaderMenuNavigation, PostAnchor, InfoAnchor, clickMenuButton } =
+      renderHeaderMobileMenu();
 
     clickMenuButton();
     act(() => {

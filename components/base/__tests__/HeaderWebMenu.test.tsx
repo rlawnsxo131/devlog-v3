@@ -17,11 +17,6 @@ function renderHeaderWebMenu() {
       selector: 'a',
     });
 
-  const TagAnchor = () =>
-    result.getByText('태그', {
-      selector: 'a',
-    });
-
   const InfoAnchor = () =>
     result.getByText('소개', {
       selector: 'a',
@@ -29,22 +24,20 @@ function renderHeaderWebMenu() {
 
   return {
     PostAnchor,
-    TagAnchor,
     InfoAnchor,
   };
 }
 
 describe('<HeaderWebMenu />', () => {
   it('render', () => {
-    const { PostAnchor, TagAnchor, InfoAnchor } = renderHeaderWebMenu();
+    const { PostAnchor, InfoAnchor } = renderHeaderWebMenu();
 
     expect(PostAnchor()).toBeInTheDocument();
-    expect(TagAnchor()).toBeInTheDocument();
     expect(InfoAnchor()).toBeInTheDocument();
   });
 
   it('click the links inside the menu navigation', async () => {
-    const { PostAnchor, TagAnchor, InfoAnchor } = renderHeaderWebMenu();
+    const { PostAnchor, InfoAnchor } = renderHeaderWebMenu();
 
     expect(PostAnchor()).toHaveAttribute('href', '/');
     expect(InfoAnchor()).toHaveAttribute('href', '/info');
