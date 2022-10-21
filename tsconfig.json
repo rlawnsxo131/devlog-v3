@@ -19,6 +19,7 @@
       "@/types": ["@types"],
       "@/types/*": ["@types/*"],
       "@/components/*": ["components/*"],
+      "@/components/hooks/*": ["components/hooks/*"],
       "@/styles/*": ["styles/*"],
       "@/icons/*": ["components/img/icons/*"],
       "@/contexts/*": ["contexts/*"],

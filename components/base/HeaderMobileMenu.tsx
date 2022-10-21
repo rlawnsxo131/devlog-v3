@@ -1,7 +1,7 @@
 import { css } from '@/styles/_stitches.config';
 import MenuIcon from '@/components/img/icons/MenuIcon';
 import Link from 'next/link';
-import useHeaderMobileMenu from './hooks/useHeaderMobileMenu';
+import useHeaderMobileMenu from '@/components/base/hooks/useHeaderMobileMenu';
 import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import transitions from '@/styles/transitions';
 

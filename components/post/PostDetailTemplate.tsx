@@ -2,9 +2,9 @@ import { css } from '@/styles/_stitches.config';
 import formatDate, { optimizeImage } from '@/lib/utils';
 import Image from 'next/image';
 import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
-import PostDetailImageSkeleton from './PostDetailImageSkeleton';
+import PostDetailImageSkeleton from '@/components/post/PostDetailImageSkeleton';
 import Link from 'next/link';
-import Separator from '../system/Separator';
+import Separator from '@/components/system/Separator';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
 
 interface Props {
