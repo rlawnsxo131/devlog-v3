@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import useRoutePathname from '../useRoutePathname';
+import useRoutePathname from '@/hooks/useRoutePathname';
 
 // const pathname = '/test';
 // jest.mock('next/router', () => ({

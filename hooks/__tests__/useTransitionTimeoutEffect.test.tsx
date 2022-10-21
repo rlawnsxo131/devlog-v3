@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import useTransitionTimeoutEffect from '../useTransitionTimeoutEffect';
+import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 
 describe('useTransitionTimeoutEffect', () => {
   const duration = 250;

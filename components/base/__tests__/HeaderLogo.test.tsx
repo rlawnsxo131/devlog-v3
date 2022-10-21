@@ -1,5 +1,5 @@
 import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
-import HeaderLogo from '../HeaderLogo';
+import HeaderLogo from '@/components/base/HeaderLogo';
 
 function renderHeaderLogo() {
   const result = renderWithGlobalHoc(<HeaderLogo />);

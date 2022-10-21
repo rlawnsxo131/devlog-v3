@@ -5,7 +5,7 @@ import {
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import HeaderMobileMenu from '../HeaderMobileMenu';
+import HeaderMobileMenu from '@/components/base/HeaderMobileMenu';
 
 jest.mock('next/router', () => ({
   useRouter() {
