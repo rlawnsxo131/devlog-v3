@@ -19,31 +19,10 @@ const block = css({
    * my custom
    */
   '*': {
-    lineHeight: '1.5',
+    lineHeight: '1.7',
   },
 
-  'p, li': {
-    color: '$text-markdown-description',
-  },
-
-  li: {
-    '&::marker': {
-      fontWeight: 'bold',
-    },
-  },
-
-  'li + li': {
-    marginTop: '0.25rem',
-  },
-
-  pre: {
-    overflowX: 'auto',
-    background: '$bg-markdown-pre',
-    padding: '1em',
-    margin: '0.5em 0px',
-    overflow: 'auto',
-    borderRadius: '0.5em',
-  },
+  color: '$text-markdown-description',
 
   a: {
     textDecoration: 'underline',
@@ -58,9 +37,34 @@ const block = css({
     height: 'auto',
   },
 
-  blockquote: {},
+  li: {
+    '&::marker': {
+      fontWeight: 'bold',
+    },
+  },
 
-  'code:not([class*=".language-"])': {
+  'li + li': {
+    marginTop: '0.25rem',
+  },
+
+  pre: {
+    background: '$bg-markdown-pre',
+    padding: '1em',
+    margin: '0.5em 0px',
+    borderRadius: '0.5em',
+    overflow: 'auto',
+  },
+
+  blockquote: {
+    background: '$bg-markdown-pre',
+    padding: '1.25em',
+    margin: '0.5em 0px',
+    overflow: 'auto',
+    borderLeft: '5px solid $cyan9',
+  },
+
+  // inline code
+  'pre:not([class*="language-"]), code:not([class*="language-"])': {
     color: '$text-markdown-inline-code',
     background: '$bg-markdown-pre',
     fontWeight: '500',
@@ -69,6 +73,11 @@ const block = css({
     borderRadius: '0.25rem',
     fontFamily:
       'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
+    '> *': {
+      padding: '1rem 0.5rem',
+      borderRadius: '0.25rem',
+      color: '$text-markdown-description',
+    },
   },
 
   /**
@@ -210,7 +219,7 @@ const block = css({
     color: '#ffffff',
   },
 
-  // /* The following rules are pretty similar across themes, but feel free to adjust them */
+  /* The following rules are pretty similar across themes, but feel free to adjust them */
   '.token.bold': {
     fontWeight: 'bold',
   },

@@ -5,6 +5,7 @@ import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 import PostDetailImageSkeleton from './PostDetailImageSkeleton';
 import Link from 'next/link';
 import Separator from '../system/Separator';
+import { linkTagBaseStyle } from '@/styles/basicStyle';
 
 interface Props {
   children: React.ReactNode;
@@ -90,16 +91,7 @@ const postTagsBlock = css({
   alignItems: 'center',
   marginTop: '1.25rem',
   '& a': {
-    padding: '0.25rem 1rem',
-    background: '$bg-content',
-    color: '$text',
-    borderRadius: '0.3rem',
-    '& + &': {
-      marginLeft: '0.5rem',
-    },
-    '&:hover': {
-      background: '$bg-content-hover',
-    },
+    ...linkTagBaseStyle,
   },
 });
 

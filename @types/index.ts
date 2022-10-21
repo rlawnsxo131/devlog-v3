@@ -19,3 +19,7 @@ export interface Post {
   date: string;
   slug: string;
 }
+
+export interface CountTag {
+  [index: string]: number;
+}

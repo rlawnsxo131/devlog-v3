@@ -39,6 +39,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
         // markdown
         'bg-markdown-pre': '$gray3',
+        'bg-markdown-blockquote': '$gray3',
         'text-markdown-description': '$gray12',
         'text-markdown-inline-code': '$cyan11',
       },
@@ -117,6 +118,7 @@ export const darkTheme = createTheme('dark', {
 
     // markdown
     'bg-markdown-pre': '$gray3',
+    'bg-markdown-blockquote': '$gray3',
     'text-markdown-description': 'hsl(0 0% 70% / 1)',
     'text-markdown-inline-code': '$cyan9',
   },

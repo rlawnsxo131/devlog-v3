@@ -676,7 +676,7 @@ package:
 여러분이 새로운 어플리케이션을 리액트로 작성해야 한다면. 그런데 서버사이드 렌더링이 필요하다면. 서버사이드 렌더링을 직접 구현할때의 복잡함과 피로도가 부담되신다면 **Next.js** 를 선택하는건 어떨까요?
 
 # Ref
-[Next.js 공식 홈페이지](https://nextjs.org/)
-[Next.js Apollo Client 설정 내 깃헙](https://github.com/rlawnsxo131/devlog-client/blob/master/graphql/apollo.tsx)
-[[번역] 깊이 있는 리액트 개발 환경 구축하기](https://sujinlee.me/webpack-react-tutorial/)
-[Typescript React 개발 환경 직접 만들기](https://velog.io/@jhj46456/Typescript-React-개발-환경-직접-만들기)
+* [Next.js 공식 홈페이지](https://nextjs.org/)
+* [Next.js Apollo Client 설정 내 깃헙](https://github.com/rlawnsxo131/devlog-client/blob/master/graphql/apollo.tsx)
+* [[번역] 깊이 있는 리액트 개발 환경 구축하기](https://sujinlee.me/webpack-react-tutorial/)
+* [Typescript React 개발 환경 직접 만들기](https://velog.io/@jhj46456/Typescript-React-개발-환경-직접-만들기)

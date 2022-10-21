@@ -46,3 +46,17 @@ export const textUnderlineForHoverStyle: StitchesCSS = {
     textDecoration: 'underline',
   },
 };
+
+export const linkTagBaseStyle: StitchesCSS = {
+  padding: '0.25rem 1rem',
+  background: '$bg-content',
+  color: '$text',
+  fontSize: '0.875rem',
+  borderRadius: '0.3rem',
+  '& + &': {
+    marginLeft: '0.5rem',
+  },
+  '&:hover': {
+    background: '$bg-content-hover',
+  },
+};
