@@ -11,7 +11,7 @@ export default function usePostCard() {
   ) => {
     const { title, description, slug } = e.currentTarget.dataset;
     const url = `${location.href}${slug}`;
-    sharePost(
+    await sharePost(
       {
         title,
         text: description,
