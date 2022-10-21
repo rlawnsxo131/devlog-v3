@@ -24,7 +24,7 @@ const block = css({
 });
 
 const fakePaddingArea = css({
-  height: '3rem',
+  height: '5rem',
 });
 
 AppLayout.Header = AppHeader;

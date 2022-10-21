@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function PostCardGirdContainer({ children }: Props) {
+function PostCardGirdTemplate({ children }: Props) {
   return <div className={block()}>{children}</div>;
 }
 
@@ -61,4 +61,4 @@ const block = css({
   },
 });
 
-export default PostCardGirdContainer;
+export default PostCardGirdTemplate;

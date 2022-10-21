@@ -1,4 +1,4 @@
-import { createStitches, CSS } from '@stitches/core';
+import { createStitches, CSS, ScaleValue } from '@stitches/core';
 import { gray, red, grayDark, redDark, cyan, cyanDark } from '@radix-ui/colors';
 
 export const { createTheme, globalCss, getCssText, config, css, keyframes } =
@@ -14,7 +14,9 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
         // background
         bg: '$white',
-        'bg-content': '$white',
+        'bg-content': '$gray3',
+        'bg-content-hover': '$gray5',
+
         'bg-nav': '$white',
         'bg-info-section': '$white',
         'bg-hover': '$cyan4',
@@ -24,12 +26,12 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
 
         // text
         text: '$gray12',
+        'text-sub': '$gray11',
         'text-selection': '$white',
         'text-button': '$white',
-        'text-anchor-active': '$cyan9',
-        'text-description': '$gray11',
-        'text-underline': '$cyan9',
-        'text-underline-hover': '$cyan10',
+        'text-anchor-active': '$cyan10',
+        'text-underline': '$cyan10',
+        'text-underline-hover': '$cyan11',
 
         // fill
         'fill-content': '$gray12',
@@ -38,7 +40,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         // markdown
         'bg-markdown-pre': '$gray3',
         'text-markdown-description': '$gray12',
-        'text-markdown-inline-code': '$cyan9',
+        'text-markdown-inline-code': '$cyan11',
       },
       shadows: {
         default1: '1px 1px 3px 1px #adb5bd',
@@ -76,6 +78,10 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
           ...styles,
         },
       }),
+      marginX: (value: ScaleValue<'space'>) => ({
+        marginLeft: value,
+        marginRight: value,
+      }),
     },
   });
 
@@ -87,7 +93,8 @@ export const darkTheme = createTheme('dark', {
 
     // background
     bg: '$gray2',
-    'bg-content': '$gray3',
+    'bg-content': '$gray5',
+    'bg-content-hover': '$gray7',
     'bg-nav': '$gray3',
     'bg-info-section': '$gray3',
     'bg-hover': '$cyan4',
@@ -97,10 +104,10 @@ export const darkTheme = createTheme('dark', {
 
     // text
     text: '$gray12',
+    'text-sub': '$gray11',
     'text-selection': '$white',
     'text-button': '$white',
     'text-anchor-active': '$cyan9',
-    'text-description': '$gray11',
     'text-underline': '$cyan9',
     'text-underline-hover': '$cyan10',
 
@@ -110,7 +117,7 @@ export const darkTheme = createTheme('dark', {
 
     // markdown
     'bg-markdown-pre': '$gray3',
-    'text-markdown-description': '$gray11',
+    'text-markdown-description': 'hsl(0 0% 70% / 1)',
     'text-markdown-inline-code': '$cyan9',
   },
   shadows: {
@@ -119,3 +126,5 @@ export const darkTheme = createTheme('dark', {
     'header-navigation': '1px 1px 3px 1px #18191A',
   },
 });
+
+export type StitchesCSS = CSS<typeof config>;

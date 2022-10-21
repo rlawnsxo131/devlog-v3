@@ -1,1 +1,1 @@
-export { default as MarkdownRender } from './MarkdownRender';
+export { default as MDXRemoteContainer } from './MDXRemoteContainer';

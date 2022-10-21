@@ -1,25 +1,22 @@
-import { optimizeImage } from '@/lib/utils';
+import formatDate, { optimizeImage } from '@/lib/utils';
 import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { format } from 'date-fns';
 import { LinkIcon } from '../img/icons';
 import PostCardThumbnailSkeleton from './PostCardThumbnailSkeleton';
 import usePostCard from './hooks/usePostCard';
 import UnderlineLink from '../system/UnderlineLink';
+import Separator from '../system/Separator';
 
 interface Props {
   post: Post;
 }
 
 function PostCard({ post }: Props) {
-  const {
-    isLoadingImageComplete,
-    handleLoadingComplete,
-    handleCopyURLToClipboard,
-  } = usePostCard();
+  const { isLoadingComplete, onLoadingComplete, handleCopyURLToClipboard } =
+    usePostCard();
 
   return (
     <article className={block()}>
@@ -29,11 +26,11 @@ function PostCard({ post }: Props) {
             <Image
               src={optimizeImage(post.thumbnail, 640)}
               alt="post-thumbnail"
-              layout="fill"
               loading="lazy"
-              onLoadingComplete={handleLoadingComplete}
+              layout="fill"
+              onLoadingComplete={onLoadingComplete}
             />
-            {!isLoadingImageComplete && <PostCardThumbnailSkeleton />}
+            {!isLoadingComplete && <PostCardThumbnailSkeleton />}
           </a>
         </Link>
       </div>
@@ -50,8 +47,14 @@ function PostCard({ post }: Props) {
           <a>
             <div className={footerTextBlock()}>
               <span className="john">John</span>
-              <span className="separator">·</span>
-              <time>{format(new Date(post.date), 'yyyy-MM-dd')}</time>
+              <Separator
+                cssProps={{
+                  margin: '0 0.25rem',
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                }}
+              />
+              <time>{formatDate(post.date)}</time>
             </div>
           </a>
         </Link>
@@ -89,15 +92,17 @@ const block = css({
   '& a': {
     flex: '1 1 0',
   },
-  '&:hover': {
-    '& img, svg': {
-      transition: '0.25s ease-in',
-      transform: 'scale(1.1)',
+  '@m1': {
+    '&:hover': {
+      '& img, svg': {
+        transition: '0.25s ease-in',
+        transform: 'scale(1.1)',
+      },
     },
-  },
-  '&:not(:hover)': {
-    '& img, svg': {
-      transition: 'transform 0.25s ease-out',
+    '&:not(:hover)': {
+      '& img, svg': {
+        transition: 'transform 0.25s ease-out',
+      },
     },
   },
 });
@@ -145,7 +150,7 @@ const content = css({
     margin: '0.5rem 0 0 0',
     fontSize: '0.875rem',
     fontWeight: '400',
-    color: '$text-description',
+    color: '$text-sub',
     lineClamp: '1',
     '-webkit-line-clamp': 2,
   },
@@ -164,7 +169,7 @@ const footer = css({
   },
   '& span, time': {
     fontSize: '0.875rem',
-    color: '$text-description',
+    color: '$text-sub',
   },
 });
 
@@ -172,11 +177,6 @@ const footerTextBlock = css({
   display: 'flex',
   '& .john': {
     color: '$text',
-  },
-  '& .separator': {
-    margin: '0 0.25rem',
-    fontWeight: 'bold',
-    fontSize: '1rem',
   },
 });
 

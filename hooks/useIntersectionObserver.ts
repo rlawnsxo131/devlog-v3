@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-interface useIntersectionObserverProps {
+interface UseIntersectionObserverProps {
   root?: null;
   rootMargin?: string;
   threshold?: number;
@@ -12,7 +12,7 @@ export default function useIntersectionObserver({
   rootMargin = '0px',
   threshold = 0,
   onIntersect,
-}: useIntersectionObserverProps) {
+}: UseIntersectionObserverProps) {
   const [target, setTarget] = useState<HTMLElement | null | undefined>(null);
 
   useEffect(() => {

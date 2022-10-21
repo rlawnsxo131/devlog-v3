@@ -1,2 +1,2 @@
 export { default as PostCard } from './PostCard';
-export { default as PostCardGirdContainer } from './PostCardGirdContainer';
+export { default as PostCardGirdTemplate } from './PostCardGirdTemplate';

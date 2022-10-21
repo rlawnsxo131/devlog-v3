@@ -145,9 +145,9 @@ react-router 를 사용해 서버사이드 렌더링을 해야 할 때는 경로
 
 ```tsx
 const extractor = new ChunkExtractor({
-    statsFile,
-    publicPath: process.env.REACT_APP_PUBLIC_URL,
-  });
+  statsFile,
+  publicPath: process.env.REACT_APP_PUBLIC_URL,
+});
 const helmetContext = {} as FilledContext;
 const Root = (
   <ChunkExtractorManager extractor={extractor}>

@@ -1,23 +1,17 @@
-import { useState } from 'react';
 import useToast from '@/hooks/useToast';
-import SharePostService from '@/services/SharePostService';
+import { sharePost } from '@/lib';
+import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 
 export default function usePostCard() {
   const { info } = useToast();
-  const [isLoadingImageComplete, setIsLoadingImageComplete] = useState(false);
-
-  const handleLoadingComplete = ({ naturalHeight, naturalWidth }) => {
-    if (naturalHeight && naturalWidth) {
-      setIsLoadingImageComplete(true);
-    }
-  };
+  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   const handleCopyURLToClipboard = async (
     e: React.MouseEvent<HTMLButtonElement>,
   ) => {
     const { title, description, slug } = e.currentTarget.dataset;
     const url = `${location.href}${slug}`;
-    await SharePostService.getInstance().excute(
+    sharePost(
       {
         title,
         text: description,
@@ -28,8 +22,8 @@ export default function usePostCard() {
   };
 
   return {
-    isLoadingImageComplete,
-    handleLoadingComplete,
+    isLoadingComplete,
+    onLoadingComplete,
     handleCopyURLToClipboard,
   };
 }

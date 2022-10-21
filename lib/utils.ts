@@ -1,6 +1,7 @@
 import { keys } from '@/constants';
 import { Storage } from '@/lib';
 import { Theme } from '@/types';
+import { format } from 'date-fns';
 
 export function setThemeForDocumentAndStorage(theme: Theme) {
   if (theme === 'light') {
@@ -27,4 +28,9 @@ export function optimizeImage(url: string, width?: number) {
   }
 
   return replaced.concat(`?w=${width}`);
+}
+
+export default function formatDate(date: string) {
+  const d = new Date(date);
+  return format(d, 'yyyy-MM-dd');
 }

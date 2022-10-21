@@ -5,7 +5,7 @@ tags:
   - Next.js
   - React.js
   - AWS
-thumbnail: https://image-devlog.juntae.kim/john/baby_john.jpeg
+thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
 date: 2022-06-03
 slug: criteria-for-determining-the-tech-stack
 ---

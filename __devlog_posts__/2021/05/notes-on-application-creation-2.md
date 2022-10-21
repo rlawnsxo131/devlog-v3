@@ -38,8 +38,7 @@ slug: notes-on-application-creation-2
 더군다나 제 블로그의 경우는 특히나 복잡하거나 특이한 사항을 처리할 일이 없었으므로 코드역시 몇줄이면 cors 처리가 가능했습니다. 아래와 같이 말이죠.
 
 ```typescript
-# 직접 작성한 cors 처리 코드
-
+// 직접 작성한 cors 처리 코드
 const cors: Middleware = (ctx, next) => {
   const allowHosts = [/^https:\/\/devlog.juntae.kim$/];
   const { origin } = ctx.headers;
@@ -68,8 +67,7 @@ const cors: Middleware = (ctx, next) => {
 [react-error-boundary](https://github.com/bvaughn/react-error-boundary/blob/master/src/index.tsx) 에서 구현된 라이브러리의 코드를 보시면 쉽게 구현할 수 있다고 느끼실 겁니다.
 
 ```tsx
-# 라이브러리 사용 예제
-
+// 라이브러리 사용 예제
 function ErrorFallback({error, resetErrorBoundary}) {
   return (
     <div role="alert">
@@ -106,9 +104,7 @@ function App() {
 리액트 공식문서의 코드를 긁어와 제가 필요한 부분만 살짝 고쳐사용했습니다. 간단하죠?
 
 ```tsx
-# 내가 직접 구현한 코드
-# 이 블로그의 github 에 전체가 공개되어 있어요
-
+// 내가 직접 구현한 코드
 class ErrorBoundary extends Component {
   state = {
     hasError: false,

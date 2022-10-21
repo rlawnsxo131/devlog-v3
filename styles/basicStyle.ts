@@ -1,4 +1,6 @@
-export const buttonBasicStyle = {
+import { StitchesCSS } from './_stitches.config';
+
+export const buttonBasicStyle: StitchesCSS = {
   padding: '0',
   border: '0',
   boxSizing: 'border-box',
@@ -6,14 +8,14 @@ export const buttonBasicStyle = {
   cursor: 'pointer',
 };
 
-export const buttonWithSVGBasicStyle = {
+export const buttonWithSVGBasicStyle: StitchesCSS = {
   background: 'inherit',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 };
 
-export const layoutBasicResponsiveStyle = {
+export const layoutBasicResponsiveStyle: StitchesCSS = {
   '@xxxs': {
     width: '93%',
   },
@@ -28,7 +30,7 @@ export const layoutBasicResponsiveStyle = {
   },
 };
 
-export const textWrapBaseStyle = {
+export const textWrapBaseStyle: StitchesCSS = {
   overflow: 'hidden',
   display: '-webkit-box',
   '-webkit-box-orient': 'vertical',
@@ -37,7 +39,7 @@ export const textWrapBaseStyle = {
   textOverflow: 'ellipsis',
 };
 
-export const textUnderlineForHoverStyle = {
+export const textUnderlineForHoverStyle: StitchesCSS = {
   color: '$text-underline',
   '&:hover': {
     color: '$text-underline-hover',

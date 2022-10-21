@@ -49,7 +49,7 @@ import prism from 'rehype-prism-plus';
 //   };
 // }
 
-export async function parseMarkdownToMdx(body: string) {
+export default async function parseMarkdownToMdx(body: string) {
   return serialize(body, {
     mdxOptions: {
       remarkPlugins: [remarkMath, toc, slug, remarkGfm],

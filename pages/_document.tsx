@@ -26,11 +26,11 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
       <body>
         <Main />
