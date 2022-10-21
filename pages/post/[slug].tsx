@@ -4,7 +4,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MainContentLayout } from '@/components/layouts';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
 import { MDXRemoteContainer } from '@/components/markdown';
-import PostDetailTemplate from '@/components/post/PostDetailTemplate';
+import { PostDetailTemplate } from '@/components/post';
 
 interface Props {
   post: Post;

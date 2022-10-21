@@ -1,9 +1,12 @@
 import { css } from '@stitches/core';
 import { GetStaticProps } from 'next';
 import { CountTag, Post } from '@/types';
-import { PostCard, PostCardGirdTemplate } from '@/components/post';
+import {
+  PostCard,
+  PostCardGirdTemplate,
+  PostCountTags,
+} from '@/components/post';
 import { getAllPosts } from '@/lib';
-import PostCountTags from '@/components/post/PostCountTags';
 import getUniqCountTagsFor from '@/lib/getUniqCountTagsFor';
 
 interface Props {
