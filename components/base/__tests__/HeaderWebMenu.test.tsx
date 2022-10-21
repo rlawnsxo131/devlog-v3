@@ -47,7 +47,6 @@ describe('<HeaderWebMenu />', () => {
     const { PostAnchor, TagAnchor, InfoAnchor } = renderHeaderWebMenu();
 
     expect(PostAnchor()).toHaveAttribute('href', '/');
-    expect(TagAnchor()).toHaveAttribute('href', '/tag');
     expect(InfoAnchor()).toHaveAttribute('href', '/info');
   });
 });

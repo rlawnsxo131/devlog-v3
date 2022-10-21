@@ -2,9 +2,8 @@
 title: WebServer 와 Application Layer - 이론편 (with. golang)
 description: server 짤때 golang 참 재미있고 괜찮습니다.
 tags:
-  - application
-  - architecture
-  - golang
+  - Architecture
+  - Golang
 thumbnail: https://image-devlog.juntae.kim/post/image/png/layer_with_golang.png
 date: 2022-05-28
 slug: about-the-application-layer

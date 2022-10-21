@@ -106,7 +106,6 @@ describe('<HeaderMobileMenu />', () => {
     });
 
     expect(PostAnchor()).toHaveAttribute('href', '/');
-    expect(TagAnchor()).toHaveAttribute('href', '/tag');
     expect(InfoAnchor()).toHaveAttribute('href', '/info');
   });
 });

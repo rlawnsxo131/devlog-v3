@@ -33,13 +33,6 @@ function HeaderMobileMenu(props: Props) {
               </Link>
             </li>
             <li>
-              <Link href={'/tag'}>
-                <a className={anchor({ variant: getRouteVariant('/tag') })}>
-                  태그
-                </a>
-              </Link>
-            </li>
-            <li>
               <Link href={'/info'}>
                 <a className={anchor({ variant: getRouteVariant('/info') })}>
                   소개
