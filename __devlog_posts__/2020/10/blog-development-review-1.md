@@ -1,5 +1,5 @@
 ---
-title: 블로그 개발 후기 1탄 - Typescript
+title: 블로그 개발 후기 1 - Typescript
 description: 타입스크립트 너무 좋다.
 tags:
   - Typescript
