@@ -1482,7 +1482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/unist@npm:*, @types/unist@npm:^2.0.0":
+"@types/unist@npm:*, @types/unist@npm:^2.0.0, @types/unist@npm:^2.0.6":
   version: 2.0.6
   resolution: "@types/unist@npm:2.0.6"
   checksum: 25cb860ff10dde48b54622d58b23e66214211a61c84c0f15f88d38b61aa1b53d4d46e42b557924a93178c501c166aa37e28d7f6d994aba13d24685326272d5db
@@ -2586,6 +2586,7 @@ __metadata:
     "@types/node": ^18.8.2
     "@types/react": ^18.0.21
     "@types/testing-library__jest-dom": ^5.14.5
+    "@types/unist": ^2.0.6
     date-fns: ^2.29.3
     eslint: ^8.24.0
     eslint-config-next: ^12.3.1
@@ -2610,6 +2611,7 @@ __metadata:
     remark-toc: ^8.0.1
     typescript: ^4.8.2
     unified: ^10.1.2
+    unist-util-visit: ^4.1.1
   languageName: unknown
   linkType: soft
 
@@ -7989,7 +7991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit@npm:^4.0.0":
+"unist-util-visit@npm:^4.0.0, unist-util-visit@npm:^4.1.1":
   version: 4.1.1
   resolution: "unist-util-visit@npm:4.1.1"
   dependencies:

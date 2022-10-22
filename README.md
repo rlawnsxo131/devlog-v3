@@ -19,6 +19,7 @@
   * remark-slug
   * remark-gfm
   * unist-util-visit 
+  * @types/unist
 
 ### V1 Repository
 * <https://github.com/rlawnsxo131/devlog-client>

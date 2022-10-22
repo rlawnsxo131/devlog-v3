@@ -24,8 +24,10 @@ function PostCountTags({ countTags }: Props) {
 
 const block = css({
   display: 'flex',
-  flexFlow: 'row wrap',
+  alignItems: 'center',
+  height: '3rem',
   marginBottom: '1rem',
+  overflowX: 'auto',
   '& a': {
     ...linkTagBaseStyle,
     marginBottom: '0.5rem',

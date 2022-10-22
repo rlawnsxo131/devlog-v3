@@ -6,9 +6,8 @@ import slug from 'remark-slug';
 import remarkGfm from 'remark-gfm';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import prism from 'rehype-prism-plus';
-
-// import { visit } from 'unist-util-visit';
-// import type { Node } from 'unist';
+import { visit } from 'unist-util-visit';
+import type { Node } from 'unist';
 
 // type TokenType =
 //   | 'tag'
@@ -37,17 +36,21 @@ import prism from 'rehype-prism-plus';
 //   comment: 'text-gray-400 italic',
 // } as const;
 
-// function parseCodeSnippet() {
-//   return (tree: Node) => {
-//     visit(tree, 'element', (node: any) => {
-//       const [token, type]: [string, TokenType] =
-//         node.properties.className || [];
-//       if (token === 'token') {
-//         node.properties.className = [tokenClassNames[type]];
-//       }
-//     });
-//   };
-// }
+function parseCodeSnippet() {
+  return (tree: Node) => {
+    visit(tree, 'element', (node: any) => {
+      if (node.tagName === 'a') {
+        node.properties.rel = 'noopener noreferrer';
+        node.properties.target = '_blank';
+      }
+      // const [token, type]: [string, TokenType] =
+      //   node.properties.className || [];
+      // if (token === 'token') {
+      //   node.properties.className = [tokenClassNames[type]];
+      // }
+    });
+  };
+}
 
 export default async function parseMarkdownToMdx(body: string) {
   return serialize(body, {
@@ -57,7 +60,7 @@ export default async function parseMarkdownToMdx(body: string) {
         rehypeKatex,
         prism,
         rehypeAutolinkHeadings,
-        // parseCodeSnippet,
+        parseCodeSnippet,
         // imageMetadata(path),
       ],
     },
