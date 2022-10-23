@@ -190,7 +190,7 @@ const footerLinkItemBlock = css({
 
 const footerTagsBlock = css({
   display: 'flex',
-  'a + a': {
+  '& a + a': {
     marginLeft: '0.5rem',
   },
 });
