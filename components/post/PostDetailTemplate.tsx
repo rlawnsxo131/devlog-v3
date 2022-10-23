@@ -1,5 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import formatDate, { optimizeImage } from '@/lib/utils';
+import { optimizeImage, formatDate } from '@/lib/utils';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
 import Image from 'next/image';
 import Link from 'next/link';

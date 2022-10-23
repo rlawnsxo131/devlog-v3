@@ -1,23 +1,34 @@
+import useRoutePathname from '@/hooks/useRoutePathname';
+import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
-import useHeaderMenuRoute from './hooks/useHeaderMenuRoute';
 
 interface Props {}
 
 function HeaderWebMenu(props: Props) {
-  const { getRouteVariant } = useHeaderMenuRoute();
+  const routePathname = useRoutePathname();
 
   return (
     <nav className={block()}>
       <ul className={ul()}>
         <li>
           <Link href={'/'}>
-            <a className={anchor({ variant: getRouteVariant('/') })}>포스트</a>
+            <a
+              className={anchor({
+                variant: utils.getAnchorVariant('/', routePathname),
+              })}
+            >
+              포스트
+            </a>
           </Link>
         </li>
         <li>
           <Link href={'/info'}>
-            <a className={anchor({ variant: getRouteVariant('/info') })}>
+            <a
+              className={anchor({
+                variant: utils.getAnchorVariant('/info', routePathname),
+              })}
+            >
               소개
             </a>
           </Link>

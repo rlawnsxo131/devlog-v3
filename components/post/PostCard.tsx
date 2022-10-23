@@ -1,6 +1,6 @@
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
-import formatDate, { optimizeImage } from '@/lib/utils';
+import { optimizeImage, formatDate } from '@/lib/utils';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -62,7 +62,7 @@ function PostCard({ post }: Props) {
         <div className={footerLinkItemBlock()}>
           <div className={footerTagsBlock()}>
             {post.tags.map((tag) => (
-              <UnderlineLink key={`${post.slug}_${tag}`} href={`/posts/${tag}`}>
+              <UnderlineLink key={tag} href={`/posts/${tag}`}>
                 #{tag}
               </UnderlineLink>
             ))}

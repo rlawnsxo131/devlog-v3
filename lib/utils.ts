@@ -30,7 +30,11 @@ export function optimizeImage(url: string, width?: number) {
   return replaced.concat(`?w=${width}`);
 }
 
-export default function formatDate(date: string) {
+export function formatDate(date: string) {
   const d = new Date(date);
   return format(d, 'yyyy-MM-dd');
+}
+
+export function getAnchorVariant(standardValue: string, currentValue: string) {
+  return standardValue === currentValue ? 'active' : 'default';
 }

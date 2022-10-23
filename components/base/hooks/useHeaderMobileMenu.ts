@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
-import useHeaderMenuRoute from './useHeaderMenuRoute';
+import useRoutePathname from '@/hooks/useRoutePathname';
 
 export default function useHeaderMenu() {
-  const { routePathname, getRouteVariant } = useHeaderMenuRoute();
+  const routePathname = useRoutePathname();
   const parentRef = useRef<HTMLDivElement>(null);
   const [navVisible, setNavVisible] = useState(false);
   const navClosed = useTransitionTimeoutEffect({ visible: navVisible });
@@ -43,6 +43,6 @@ export default function useHeaderMenu() {
     navClosed,
     navVariant,
     handleNavVisible,
-    getRouteVariant,
+    routePathname,
   };
 }

@@ -19,7 +19,7 @@ function InfoDescriptionSection(props: Props) {
             >
               11번가
             </a>
-            웹 프론트엔드 개발자 ( 2022.10 ~)
+            웹 프론트엔드 개발자 ( 2022.10 ~ )
           </li>
           <li>
             <a

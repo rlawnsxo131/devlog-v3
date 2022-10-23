@@ -10,14 +10,19 @@ import { CountTag, Post } from '@/types';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 interface Props {
-  posts: Post[];
+  currentTag: string;
   countTags: CountTag;
+  posts: Post[];
 }
 
-export default function PostsOfTagPage({ posts, countTags }: Props) {
+export default function PostsOfTagPage({
+  currentTag,
+  countTags,
+  posts,
+}: Props) {
   return (
     <div className={block()}>
-      <PostCountTags countTags={countTags} />
+      <PostCountTags countTags={countTags} currentTag={currentTag} />
       <PostCardGirdTemplate>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
@@ -53,8 +58,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      posts,
+      currentTag: tag,
       countTags,
+      posts,
     },
   };
 };

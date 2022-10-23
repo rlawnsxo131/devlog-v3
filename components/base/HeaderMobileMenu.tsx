@@ -4,6 +4,7 @@ import transitions from '@/styles/transitions';
 import Link from 'next/link';
 import useHeaderMobileMenu from './hooks/useHeaderMobileMenu';
 import { MenuIcon } from '../img/icons';
+import { utils } from '@/lib';
 
 interface Props {}
 
@@ -14,7 +15,7 @@ function HeaderMobileMenu(props: Props) {
     navClosed,
     navVariant,
     handleNavVisible,
-    getRouteVariant,
+    routePathname,
   } = useHeaderMobileMenu();
 
   return (
@@ -27,14 +28,22 @@ function HeaderMobileMenu(props: Props) {
           <ul className={ul()}>
             <li>
               <Link href={'/'}>
-                <a className={anchor({ variant: getRouteVariant('/') })}>
+                <a
+                  className={anchor({
+                    variant: utils.getAnchorVariant('/', routePathname),
+                  })}
+                >
                   포스트
                 </a>
               </Link>
             </li>
             <li>
               <Link href={'/info'}>
-                <a className={anchor({ variant: getRouteVariant('/info') })}>
+                <a
+                  className={anchor({
+                    variant: utils.getAnchorVariant('/info', routePathname),
+                  })}
+                >
                   소개
                 </a>
               </Link>
