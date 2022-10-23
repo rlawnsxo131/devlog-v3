@@ -2,11 +2,13 @@ import useRoutePathname from '@/hooks/useRoutePathname';
 import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
+import useGetPostRouteVariant from './hooks/useGetPostRouteVariant';
 
 interface Props {}
 
 function HeaderWebMenu(props: Props) {
   const routePathname = useRoutePathname();
+  const postPathVariant = useGetPostRouteVariant(routePathname);
 
   return (
     <nav className={block()}>
@@ -15,7 +17,7 @@ function HeaderWebMenu(props: Props) {
           <Link href={'/'}>
             <a
               className={anchor({
-                variant: utils.getAnchorVariant('/', routePathname),
+                variant: postPathVariant,
               })}
             >
               포스트

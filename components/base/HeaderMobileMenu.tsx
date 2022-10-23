@@ -5,6 +5,7 @@ import Link from 'next/link';
 import useHeaderMobileMenu from './hooks/useHeaderMobileMenu';
 import { MenuIcon } from '../img/icons';
 import { utils } from '@/lib';
+import useGetPostRouteVariant from './hooks/useGetPostRouteVariant';
 
 interface Props {}
 
@@ -17,6 +18,7 @@ function HeaderMobileMenu(props: Props) {
     handleNavVisible,
     routePathname,
   } = useHeaderMobileMenu();
+  const postPathVariant = useGetPostRouteVariant(routePathname);
 
   return (
     <div className={block()} ref={parentRef}>
@@ -30,7 +32,7 @@ function HeaderMobileMenu(props: Props) {
               <Link href={'/'}>
                 <a
                   className={anchor({
-                    variant: utils.getAnchorVariant('/', routePathname),
+                    variant: postPathVariant,
                   })}
                 >
                   포스트
