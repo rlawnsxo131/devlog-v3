@@ -1,6 +1,6 @@
 import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
-import useHeaderMenuRoute from '@/components/base/hooks/useHeaderMenuRoute';
+import useHeaderMenuRoute from './hooks/useHeaderMenuRoute';
 
 interface Props {}
 

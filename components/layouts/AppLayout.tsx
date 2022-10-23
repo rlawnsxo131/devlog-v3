@@ -1,6 +1,6 @@
 import { css } from '@/styles/_stitches.config';
-import AppHeader from '@/components/layouts/AppHeader';
-import AppMain from '@/components/layouts/AppMain';
+import AppHeader from './AppHeader';
+import AppMain from './AppMain';
 
 interface Props {
   children: React.ReactNode;

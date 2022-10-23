@@ -1,22 +1,23 @@
-import formatDate, { optimizeImage } from '@/lib/utils';
-import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
+import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
+import formatDate, { optimizeImage } from '@/lib/utils';
 import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LinkIcon } from '@/components/img/icons';
+import { LinkIcon } from '../img/icons';
 import PostCardThumbnailSkeleton from './PostCardThumbnailSkeleton';
-import usePostCard from '@/components/post/hooks/usePostCard';
-import UnderlineLink from '@/components/system/UnderlineLink';
-import Separator from '@/components/system/Separator';
+import UnderlineLink from '../system/UnderlineLink';
+import Separator from '../system/Separator';
+import usePostCard from './hooks/usePostCard';
+import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 
 interface Props {
   post: Post;
 }
 
 function PostCard({ post }: Props) {
-  const { isLoadingComplete, onLoadingComplete, handleCopyURLToClipboard } =
-    usePostCard();
+  const { handleCopyURLToClipboard } = usePostCard();
+  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   return (
     <article className={block()}>

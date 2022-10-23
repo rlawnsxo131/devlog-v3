@@ -18,13 +18,13 @@ const block = css({
   /**
    * my custom
    */
-  '*': {
+  '& *': {
     lineHeight: '1.7',
   },
 
   color: '$text-markdown-description',
 
-  a: {
+  '& a': {
     textDecoration: 'underline',
     color: '$text-underline',
     '&:hover': {
@@ -32,22 +32,22 @@ const block = css({
     },
   },
 
-  img: {
+  '& img': {
     maxWidth: '100%',
     height: 'auto',
   },
 
-  li: {
+  '& li': {
     '&::marker': {
       fontWeight: 'bold',
     },
   },
 
-  'li + li': {
+  '& li + li': {
     marginTop: '0.25rem',
   },
 
-  pre: {
+  '& pre': {
     background: '$bg-markdown-pre',
     padding: '1em',
     margin: '0.5em 0px',
@@ -64,7 +64,7 @@ const block = css({
   },
 
   // inline code
-  'pre:not([class*="language-"]), code:not([class*="language-"])': {
+  '& pre:not([class*="language-"]), code:not([class*="language-"])': {
     color: '$text-markdown-inline-code',
     background: '$bg-markdown-pre',
     fontWeight: '500',
@@ -85,7 +85,7 @@ const block = css({
    * 1. Make the element just wide enough to fit its content.
    * 2. Always fill the visible space in .code-highlight.
    */
-  '.code-highlight': {
+  '& .code-highlight': {
     display: 'block',
     // float: 'left' /* 1 */,
     // minWidth: '100' /* 2 */,
@@ -131,7 +131,7 @@ const block = css({
   /**
    * code style start
    */
-  'code[class*="language-"], pre[class*="language-"]': {
+  '& code[class*="language-"], pre[class*="language-"]': {
     background: 'hsl(0deg 0% 14%)',
     color: 'hsl(0 0% 95% / 1)',
     fontFamily:
@@ -155,20 +155,20 @@ const block = css({
     letterSpacing: '1px',
   },
 
-  'code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection, pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection':
+  '& code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection, pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection':
     {
       background: '#eb64b927',
       color: 'inherit',
     },
 
-  'code[class*="language-"]::selection, code[class*="language-"] ::selection, pre[class*="language-"]::selection, pre[class*="language-"] ::selection':
+  '& code[class*="language-"]::selection, code[class*="language-"] ::selection, pre[class*="language-"]::selection, pre[class*="language-"] ::selection':
     {
       background: '#eb64b927',
       color: 'inherit',
     },
 
   /* Properties specific to code blocks */
-  'pre[class*="language-"]': {
+  '& pre[class*="language-"]': {
     padding: '1em' /* this is standard */,
     margin: '0.5em 0' /* this is the default */,
     overflow: 'auto' /* this is standard */,
@@ -176,63 +176,63 @@ const block = css({
   },
 
   /* Properties specific to inline code */
-  ':not(pre) > code[class*="language-"]': {
+  '&:not(pre) > code[class*="language-"]': {
     padding: '0.2em 0.3em',
     borderRadius: '0.5rem',
     whiteSpace: 'normal' /* this is standard */,
   },
 
-  '.token.comment, .token.prolog, .token.cdata': {
+  '& .token.comment, .token.prolog, .token.cdata': {
     color: '#91889b',
   },
 
-  '.token.punctuation': {
+  '& .token.punctuation': {
     color: '#7b6995',
   },
 
-  '.token.builtin, .token.constant, .token.boolean': {
+  '& .token.builtin, .token.constant, .token.boolean': {
     color: '#ffe261',
   },
 
-  '.token.number': {
+  '& .token.number': {
     color: '#b381c5',
   },
 
-  '.token.important, .token.atrule, .token.property, .token.keyword': {
+  '& .token.important, .token.atrule, .token.property, .token.keyword': {
     color: '#40b4c4',
   },
 
-  '.token.doctype, .token.operator, .token.inserted, .token.tag, .token.class-name, .token.symbol':
+  '& .token.doctype, .token.operator, .token.inserted, .token.tag, .token.class-name, .token.symbol':
     {
       color: '#74dfc4',
     },
 
-  '.token.attr-name, .token.function, .token.deleted, .token.selector': {
+  '& .token.attr-name, .token.function, .token.deleted, .token.selector': {
     color: '#eb64b9',
   },
 
-  '.token.attr-value, .token.regex, .token.char, .token.string': {
+  '& .token.attr-value, .token.regex, .token.char, .token.string': {
     color: '#b4dce7',
   },
 
-  '.token.entity, .token.url, .token.variable': {
+  '& .token.entity, .token.url, .token.variable': {
     color: '#ffffff',
   },
 
   /* The following rules are pretty similar across themes, but feel free to adjust them */
-  '.token.bold': {
+  '& .token.bold': {
     fontWeight: 'bold',
   },
 
-  '.token.italic': {
+  '& .token.italic': {
     fontStyle: 'italic',
   },
 
-  '.token.entity': {
+  '& .token.entity': {
     cursor: 'help',
   },
 
-  '.token.namespace': {
+  '& .token.namespace': {
     opacity: '0.7',
   },
 });

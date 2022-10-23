@@ -1,10 +1,8 @@
 import useToast from '@/hooks/useToast';
 import { sharePost } from '@/lib';
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 
 export default function usePostCard() {
   const { info } = useToast();
-  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   const handleCopyURLToClipboard = async (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -22,8 +20,6 @@ export default function usePostCard() {
   };
 
   return {
-    isLoadingComplete,
-    onLoadingComplete,
     handleCopyURLToClipboard,
   };
 }

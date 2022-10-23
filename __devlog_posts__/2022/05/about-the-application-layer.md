@@ -26,7 +26,7 @@ slug: about-the-application-layer
 > 제가 잘못알고 있는점, 배울점이 있다면 언제나 피드백은 환영합니다! 이야기를 시작해볼까요?
 
 # Layer 란 무엇인가
-이야기에 앞서 과연 이 ``Layer`` 란 무엇인가에 대하여 간단히 살펴보고 가면 좋을것 같습니다. 아마도 이 글을 읽으시는 분들중 상당히 많은 분들은 [Martin, Robert C.](https://en.wikipedia.org/wiki/Robert_C._Martin) 의 클린아키텍처를 읽어보셨을것 같은데요. 혹시 읽어보시지 않으셨다면 꼭 읽어보시는 것을 추천하고 싶습니다. 저는 두번째 읽는 순간 어느 한부분에 눈이 확 뜨이는 느낌을 받았는데, 정말 좋은 책이랍니다. 그럼 아주 유명한 이 개념도를 한번 보고 가시죠.
+이야기에 앞서 과연 이 ``Layer`` 란 무엇인가에 대하여 간단히 살펴보고 가면 좋을것 같습니다. 아마도 이 글을 읽으시는 분들중 상당히 많은 분들은 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) 의 클린아키텍처를 읽어보셨을것 같은데요. 혹시 읽어보시지 않으셨다면 꼭 읽어보시는 것을 추천하고 싶습니다. 저는 두번째 읽는 순간 어느 한부분에 눈이 확 뜨이는 느낌을 받았는데, 정말 좋은 책이랍니다. 그럼 아주 유명한 이 개념도를 한번 보고 가시죠.
 
 ![](https://image-devlog.juntae.kim/post/image/jpeg/CleanArchitecture.jpeg)
 

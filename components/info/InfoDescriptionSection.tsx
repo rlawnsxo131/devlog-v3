@@ -49,13 +49,13 @@ function InfoDescriptionSection(props: Props) {
           <h3>DevLog Tech Stack</h3>
         </div>
         <p className={descriptionBlock()}>
-          <strong>V2</strong>
+          <h4>V2</h4>
           {'\n'}
           TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
           React.js, Webpack, React Router, Loadable Components, Unified,
           Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway, Lambda /
           Lambda@Edge{'\n\n'}
-          <strong>V1</strong>
+          <h4>V1</h4>
           {'\n'}
           TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
           Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront, API
@@ -82,7 +82,7 @@ const section = css({
 const listBlock = css({
   margin: '0 0 0 1.125rem',
   padding: '0',
-  'li + li': {
+  '& li + li': {
     marginTop: '0.725rem',
   },
   '& a': {
@@ -98,6 +98,7 @@ const titleBlock = css({
   '& h3': {
     margin: '0',
     fontSize: '1.5rem',
+    fontWeight: '500',
   },
 });
 
@@ -108,6 +109,10 @@ const descriptionBlock = css({
   lineHeight: '1.5',
   whiteSpace: 'pre-wrap',
   fontSize: '1.125rem',
+  '& h4': {
+    margin: '0',
+    fontWeight: '500',
+  },
 });
 
 export default InfoDescriptionSection;

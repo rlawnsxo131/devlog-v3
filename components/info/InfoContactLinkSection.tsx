@@ -1,10 +1,5 @@
-import {
-  EmailIcon,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from '@/components/img/icons/index';
 import { css } from '@/styles/_stitches.config';
+import { EmailIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../img/icons';
 
 interface Props {}
 

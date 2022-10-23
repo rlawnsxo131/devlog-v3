@@ -1,11 +1,11 @@
 import { css } from '@/styles/_stitches.config';
 import formatDate, { optimizeImage } from '@/lib/utils';
-import Image from 'next/image';
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
-import PostDetailImageSkeleton from '@/components/post/PostDetailImageSkeleton';
-import Link from 'next/link';
-import Separator from '@/components/system/Separator';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
+import Image from 'next/image';
+import Link from 'next/link';
+import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
+import PostDetailImageSkeleton from './PostDetailImageSkeleton';
+import Separator from '../system/Separator';
 
 interface Props {
   children: React.ReactNode;
@@ -79,7 +79,7 @@ const info = css({
   alignItems: 'center',
   marginTop: '1.25rem',
   color: '$text',
-  p: {
+  '& p': {
     margin: '0',
     fontWeight: 'bold',
   },
@@ -98,7 +98,7 @@ const postTagsBlock = css({
 const imageBlock = css({
   width: '100%',
   marginTop: '1.25rem',
-  span: {
+  '& span': {
     position: 'unset !important',
   },
   '& img': {
