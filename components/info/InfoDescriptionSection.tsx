@@ -48,19 +48,21 @@ function InfoDescriptionSection(props: Props) {
         <div className={titleBlock()}>
           <h3>DevLog Tech Stack</h3>
         </div>
-        <p className={descriptionBlock()}>
+        <div className={descriptionBlock()}>
           <h4>V2</h4>
-          {'\n'}
-          TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
-          React.js, Webpack, React Router, Loadable Components, Unified,
-          Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway, Lambda /
-          Lambda@Edge{'\n\n'}
+          <p>
+            TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+            React.js, Webpack, React Router, Loadable Components, Unified,
+            Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway,
+            Lambda/Lambda@Edge
+          </p>
           <h4>V1</h4>
-          {'\n'}
-          TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
-          Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront, API
-          Gateway, Lambda / Lambda@Edge
-        </p>
+          <p>
+            TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+            Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront,
+            API Gateway, Lambda / Lambda@Edge
+          </p>
+        </div>
       </section>
     </>
   );
@@ -103,15 +105,19 @@ const titleBlock = css({
 });
 
 const descriptionBlock = css({
-  margin: '0',
   display: 'flex',
   flexFlow: 'row wrap',
   lineHeight: '1.5',
-  whiteSpace: 'pre-wrap',
   fontSize: '1.125rem',
   '& h4': {
     margin: '0',
     fontWeight: '500',
+  },
+  '& p': {
+    margin: '0',
+    '& + h4': {
+      marginTop: '1rem',
+    },
   },
 });
 
