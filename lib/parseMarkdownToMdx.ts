@@ -8,6 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import prism from 'rehype-prism-plus';
 import { visit } from 'unist-util-visit';
 import type { Node } from 'unist';
+import { optimizeImage } from './utils';
 
 // type TokenType =
 //   | 'tag'
@@ -42,6 +43,8 @@ function parseCodeSnippet() {
       if (node.tagName === 'a') {
         node.properties.rel = 'noopener noreferrer';
         node.properties.target = '_blank';
+      } else if (node.tagName === 'img') {
+        node.properties.src = optimizeImage(node.properties.src, 768);
       }
       // const [token, type]: [string, TokenType] =
       //   node.properties.className || [];

@@ -1,8 +1,8 @@
 import { css } from '@/styles/_stitches.config';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
 import Link from 'next/link';
-import { getAnchorVariant } from '@/lib/utils';
 import { CountTag } from '@/types';
+import { utils } from '@/lib';
 
 interface Props {
   countTags: CountTag;
@@ -28,7 +28,7 @@ function PostCountTags({ countTags, currentTag }: Props) {
         <Link key={tag} href={`/posts/${tag}`}>
           <a
             className={anchor({
-              variant: getAnchorVariant(tag, currentTag),
+              variant: utils.getAnchorVariant(tag, currentTag),
             })}
           >
             {tag}

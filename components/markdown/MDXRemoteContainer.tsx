@@ -188,6 +188,7 @@ const block = css({
 
   '& .token.punctuation': {
     color: '#7b6995',
+    fontWeight: 'bold',
   },
 
   '& .token.builtin, .token.constant, .token.boolean': {

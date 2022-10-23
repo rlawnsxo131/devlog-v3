@@ -8,7 +8,7 @@ function InfoDescriptionSection(props: Props) {
     <>
       <section className={section()}>
         <div className={titleBlock()}>
-          <h3>Info</h3>
+          <h3>Experience</h3>
         </div>
         <ul className={listBlock()}>
           <li>

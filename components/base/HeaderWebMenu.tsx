@@ -53,7 +53,7 @@ const ul = css({
   margin: '0',
   padding: '0 2rem',
   display: 'flex',
-  'li + li': {
+  '& li + li': {
     marginLeft: '2rem',
   },
 });
