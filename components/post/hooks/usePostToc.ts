@@ -1,5 +1,5 @@
 import constants from '@/constants';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function usePostToc() {
   const [headings, setHeadings] = useState<
@@ -10,13 +10,10 @@ export default function usePostToc() {
       styleObj: Record<string, string>;
     }[]
   >([]);
-
   const [activeHeading, setActiveHeading] = useState<string>('');
 
   const handleActiveHeading = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const { href } = e.currentTarget;
     const { id } = e.currentTarget.dataset;
-    location.href = href;
     setActiveHeading(id);
   };
 
