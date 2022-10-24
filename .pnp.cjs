@@ -62,10 +62,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rehype-autolink-headings", "npm:6.1.1"],\
             ["rehype-katex", "npm:6.0.2"],\
             ["rehype-prism-plus", "npm:1.5.0"],\
+            ["rehype-slug", "npm:5.0.1"],\
             ["remark-gfm", "npm:3.0.1"],\
             ["remark-math", "npm:5.1.1"],\
             ["remark-prism", "npm:1.3.6"],\
-            ["remark-slug", "npm:7.0.1"],\
             ["remark-toc", "npm:8.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
             ["unified", "npm:10.1.2"],\
@@ -3499,10 +3499,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rehype-autolink-headings", "npm:6.1.1"],\
             ["rehype-katex", "npm:6.0.2"],\
             ["rehype-prism-plus", "npm:1.5.0"],\
+            ["rehype-slug", "npm:5.0.1"],\
             ["remark-gfm", "npm:3.0.1"],\
             ["remark-math", "npm:5.1.1"],\
             ["remark-prism", "npm:1.3.6"],\
-            ["remark-slug", "npm:7.0.1"],\
             ["remark-toc", "npm:8.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
             ["unified", "npm:10.1.2"],\
@@ -8519,6 +8519,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rehype-slug", [\
+        ["npm:5.0.1", {\
+          "packageLocation": "./.yarn/cache/rehype-slug-npm-5.0.1-ecc7c5ab3f-33e6e9419f.zip/node_modules/rehype-slug/",\
+          "packageDependencies": [\
+            ["rehype-slug", "npm:5.0.1"],\
+            ["@types/hast", "npm:2.3.4"],\
+            ["github-slugger", "npm:1.4.0"],\
+            ["hast-util-has-property", "npm:2.0.0"],\
+            ["hast-util-heading-rank", "npm:2.1.0"],\
+            ["hast-util-to-string", "npm:2.0.0"],\
+            ["unified", "npm:10.1.2"],\
+            ["unist-util-visit", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["remark-gfm", [\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/remark-gfm-npm-3.0.1-4a9f6f751e-02254f74d6.zip/node_modules/remark-gfm/",\
@@ -8595,21 +8611,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mdast", "npm:3.0.10"],\
             ["mdast-util-to-hast", "npm:12.2.4"],\
             ["unified", "npm:10.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["remark-slug", [\
-        ["npm:7.0.1", {\
-          "packageLocation": "./.yarn/cache/remark-slug-npm-7.0.1-a3b82fb116-856cf45958.zip/node_modules/remark-slug/",\
-          "packageDependencies": [\
-            ["remark-slug", "npm:7.0.1"],\
-            ["@types/hast", "npm:2.3.4"],\
-            ["@types/mdast", "npm:3.0.10"],\
-            ["github-slugger", "npm:1.4.0"],\
-            ["mdast-util-to-string", "npm:3.1.0"],\
-            ["unified", "npm:10.1.2"],\
-            ["unist-util-visit", "npm:4.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\

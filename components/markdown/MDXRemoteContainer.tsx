@@ -8,8 +8,8 @@ interface Props {
 
 function MDXRemoteContainer({ mdx }: Props) {
   return (
-    <div className={block()}>
-      <MDXRemote {...mdx} lazy />
+    <div className={`${block()} mdx-remote-wrapper`}>
+      <MDXRemote {...mdx} />
     </div>
   );
 }
@@ -55,7 +55,7 @@ const block = css({
     overflow: 'auto',
   },
 
-  blockquote: {
+  '& blockquote': {
     background: '$bg-markdown-pre',
     padding: '1.25em',
     margin: '0.5em 0px',

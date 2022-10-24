@@ -9,6 +9,8 @@ date: 2020-10-26
 slug: blog-development-review-2
 ---
 
+# Table of Contents
+
 블로그 개발후기 두번째, **GraphQL** 에 관한 글입니다.
 
 **GraphQL** 에 관해 제가 오해했던 점, 사용하며 어렵다 느꼈던 점,

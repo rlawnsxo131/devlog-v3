@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { keys } from '@/constants';
 import { Storage } from '@/lib';
 import { useGlobalContextDispatch } from '@/contexts/GlobalContext';
+import constants from '@/constants';
 
 export default function useThemeEffect() {
   const dispatch = useGlobalContextDispatch();
 
   useEffect(() => {
-    const storageTheme = Storage.getItem(keys.ThemeKey);
+    const storageTheme = Storage.getItem(constants.THEME_KEY);
     if (storageTheme) {
       if (storageTheme === 'dark') {
         dispatch({

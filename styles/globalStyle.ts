@@ -4,6 +4,7 @@ const topLevelBoxStyle = {
   margin: '0',
   padding: '0',
   height: '100%',
+  scrollBehavior: 'smooth',
 };
 
 const topLevelBoxChildrenStyle = {
@@ -16,6 +17,7 @@ const topLevelBoxChildrenStyle = {
   'h1, h2, h3, h4, h5': {
     color: '$text',
   },
+
   '&::selection': {
     color: '$text-selection',
     background: '$cyan9',

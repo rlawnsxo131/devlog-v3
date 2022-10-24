@@ -1,6 +1,6 @@
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
-import { AppLayout } from '@/components/layouts';
+import { AppLayout } from '@/components/app';
 import RssButton from '@/components/system/RssButton';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';

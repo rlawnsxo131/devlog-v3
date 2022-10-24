@@ -11,13 +11,13 @@
   * next-mdx-remote
   * unified
   * remark
-  * remark-math 
+  * rehype-slug
   * rehype-katex
   * rehype-autolink-headings
   * rehype-prism-plus
   * remark-toc
-  * remark-slug
   * remark-gfm
+  * remark-math 
   * unist-util-visit 
   * @types/unist
 

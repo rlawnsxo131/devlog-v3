@@ -44,7 +44,6 @@ const block = css({
   display: 'flex',
   alignItems: 'center',
   height: '3.25rem',
-  marginBottom: '1rem',
   overflowX: 'auto',
 });
 

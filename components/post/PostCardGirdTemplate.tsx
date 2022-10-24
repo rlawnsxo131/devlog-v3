@@ -11,6 +11,7 @@ function PostCardGirdTemplate({ children }: Props) {
 const block = css({
   width: '100%',
   display: 'grid',
+  marginTop: '1.725rem',
   '@xxxs': {
     gridAutoRows: '21rem',
     gridTemplateColumns: 'repeat(1, 1fr)',

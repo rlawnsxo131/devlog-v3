@@ -2,7 +2,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import toc from 'remark-toc';
-import slug from 'remark-slug';
+import slug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import prism from 'rehype-prism-plus';
@@ -40,10 +40,7 @@ import { optimizeImage } from './utils';
 function parseCodeSnippet() {
   return (tree: Node) => {
     visit(tree, 'element', (node: any) => {
-      if (node.tagName === 'a') {
-        node.properties.rel = 'noopener noreferrer';
-        node.properties.target = '_blank';
-      } else if (node.tagName === 'img') {
+      if (node.tagName === 'img') {
         node.properties.src = optimizeImage(node.properties.src, 768);
       }
       // const [token, type]: [string, TokenType] =
@@ -58,11 +55,12 @@ function parseCodeSnippet() {
 export default async function parseMarkdownToMdx(body: string) {
   return serialize(body, {
     mdxOptions: {
-      remarkPlugins: [remarkMath, toc, slug, remarkGfm],
+      remarkPlugins: [remarkMath, toc, remarkGfm],
       rehypePlugins: [
-        rehypeKatex,
+        slug,
         prism,
         rehypeAutolinkHeadings,
+        rehypeKatex,
         parseCodeSnippet,
         // imageMetadata(path),
       ],

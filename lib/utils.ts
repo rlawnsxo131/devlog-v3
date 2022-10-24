@@ -1,4 +1,4 @@
-import { keys } from '@/constants';
+import constants from '@/constants';
 import { Storage } from '@/lib';
 import { Theme } from '@/types';
 import { format } from 'date-fns';
@@ -6,11 +6,11 @@ import { format } from 'date-fns';
 export function setThemeForDocumentAndStorage(theme: Theme) {
   if (theme === 'light') {
     document.documentElement.classList.remove('dark');
-    Storage.setItem(keys.ThemeKey, 'light');
+    Storage.setItem(constants.THEME_KEY, 'light');
     return;
   }
   document.documentElement.classList.add('dark');
-  Storage.setItem(keys.ThemeKey, 'dark');
+  Storage.setItem(constants.THEME_KEY, 'dark');
 }
 
 export function optimizeImage(url: string, width?: number) {
