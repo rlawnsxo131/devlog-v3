@@ -4,25 +4,25 @@ import {
   PostCountTags,
 } from '@/components/post';
 import { getAllPosts } from '@/lib';
-import getUniqCountTagsFor from '@/lib/getUniqCountTagsFor';
+import { getUniqCountTagObjFor } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import { CountTag, Post } from '@/types';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 interface Props {
   currentTag: string;
-  countTags: CountTag;
+  countTagObj: CountTag;
   posts: Post[];
 }
 
 export default function PostsOfTagPage({
   currentTag,
-  countTags,
+  countTagObj,
   posts,
 }: Props) {
   return (
     <div className={block()}>
-      <PostCountTags countTags={countTags} currentTag={currentTag} />
+      <PostCountTags countTagObj={countTagObj} currentTag={currentTag} />
       <PostCardGirdTemplate>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
@@ -39,7 +39,7 @@ const block = css({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts();
-  const countTags = getUniqCountTagsFor(posts);
+  const countTags = getUniqCountTagObjFor(posts);
   const paths = Object.keys(countTags).map((tag) => ({
     params: { tag },
   }));
@@ -53,14 +53,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params;
   const allPosts = await getAllPosts();
-  const countTags = getUniqCountTagsFor(allPosts);
+  const countTagObj = getUniqCountTagObjFor(allPosts);
   const posts = allPosts.filter((posts) => posts.tags.includes(tag as string));
 
   return {
     props: {
-      currentTag: tag,
-      countTags,
+      countTagObj,
       posts,
+      currentTag: tag,
     },
   };
 };

@@ -1,6 +1,6 @@
 import { CountTag, Post } from '@/types';
 
-export default function getUniqCountTagsFor(posts: Post[]) {
+export default function getUniqCountTagObjFor(posts: Post[]) {
   return posts
     .map((post) => post.tags)
     .flat()

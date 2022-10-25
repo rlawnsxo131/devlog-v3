@@ -5,12 +5,12 @@ import { CountTag } from '@/types';
 import { utils } from '@/lib';
 
 interface Props {
-  countTags: CountTag;
+  countTagObj: CountTag;
   currentTag?: string;
 }
 
-function PostCountTags({ countTags, currentTag }: Props) {
-  const entries = Object.entries(countTags);
+function PostCountTags({ countTagObj, currentTag }: Props) {
+  const entries = Object.entries(countTagObj);
 
   return (
     <div className={block()}>

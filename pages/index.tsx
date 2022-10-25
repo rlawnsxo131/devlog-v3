@@ -7,17 +7,17 @@ import {
   PostCountTags,
 } from '@/components/post';
 import { getAllPosts } from '@/lib';
-import getUniqCountTagsFor from '@/lib/getUniqCountTagsFor';
+import { getUniqCountTagObjFor } from '@/lib';
 
 interface Props {
   posts: Post[];
-  countTags: CountTag;
+  countTagObj: CountTag;
 }
 
-export default function IndexPage({ posts, countTags }: Props) {
+export default function IndexPage({ posts, countTagObj }: Props) {
   return (
     <div className={block()}>
-      <PostCountTags countTags={countTags} />
+      <PostCountTags countTagObj={countTagObj} />
       <PostCardGirdTemplate>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
@@ -34,12 +34,12 @@ const block = css({
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
-  const countTags = getUniqCountTagsFor(posts);
+  const countTagObj = getUniqCountTagObjFor(posts);
 
   return {
     props: {
       posts,
-      countTags,
+      countTagObj,
     },
   };
 };

@@ -1,7 +1,7 @@
 import { Post } from '@/types';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { AppMainContentLayout } from '@/components/app';
+import { AppMainContentWrapper } from '@/components/app';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
 import { MDXRemoteContainer } from '@/components/markdown';
 import { PostDetailTemplate, PostTocWeb } from '@/components/post';
@@ -13,7 +13,7 @@ interface Props {
 
 export default function PostPage({ post, mdx }: Props) {
   return (
-    <AppMainContentLayout>
+    <AppMainContentWrapper>
       <PostDetailTemplate
         title={post.title}
         tags={post.tags}
@@ -23,7 +23,7 @@ export default function PostPage({ post, mdx }: Props) {
         <MDXRemoteContainer mdx={mdx} />
       </PostDetailTemplate>
       <PostTocWeb />
-    </AppMainContentLayout>
+    </AppMainContentWrapper>
   );
 }
 

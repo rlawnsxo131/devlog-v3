@@ -2,13 +2,13 @@ import {
   InfoContactLinkSection,
   InfoDescriptionSection,
 } from '@/components/info';
-import { AppMainContentLayout } from '@/components/app';
+import { AppMainContentWrapper } from '@/components/app';
 
 export default function InfoPage() {
   return (
-    <AppMainContentLayout>
+    <AppMainContentWrapper>
       <InfoContactLinkSection />
       <InfoDescriptionSection />
-    </AppMainContentLayout>
+    </AppMainContentWrapper>
   );
 }

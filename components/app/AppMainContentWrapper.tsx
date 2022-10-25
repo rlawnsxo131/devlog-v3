@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function AppMainContentLayout({ children }: Props) {
+function AppMainContentWrapper({ children }: Props) {
   return (
     <div className={block()}>
       <section className={section()}>{children}</section>
@@ -25,4 +25,4 @@ const section = css({
   maxWidth: '768px',
 });
 
-export default AppMainContentLayout;
+export default AppMainContentWrapper;

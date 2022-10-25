@@ -1,2 +1,2 @@
 export { default as AppLayout } from './AppLayout';
-export { default as AppMainContentLayout } from './AppMainContentLayout';
+export { default as AppMainContentWrapper } from './AppMainContentWrapper';
