@@ -62,7 +62,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       xs4: '(min-width: 640px)',
       s1: '(min-width: 768px)',
       s2: '(min-width: 820px)',
-      m1: '(min-width: 1024px)',
+      m1: '(min-width: 1025px)',
       m2: '(min-width: 1200px)',
       l1: '(min-width: 1440px)',
       l2: '(min-width: 1920px)',

@@ -1,41 +1,26 @@
-import { css } from '@stitches/core';
 import { GetStaticProps } from 'next';
 import { CountTag, Post } from '@/types';
-import { PostCard, PostCardGirdLayout, PostCountTags } from '@/components/post';
 import { getAllPosts } from '@/lib';
-import { getUniqCountTagObjFor } from '@/lib';
+import { getUniqcountTagFor } from '@/lib';
+import { PostsPageTemplate } from '@/components/post';
 
 interface Props {
   posts: Post[];
-  countTagObj: CountTag;
+  countTag: CountTag;
 }
 
-export default function IndexPage({ posts, countTagObj }: Props) {
-  return (
-    <div className={block()}>
-      <PostCountTags countTagObj={countTagObj} />
-      <PostCardGirdLayout>
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
-      </PostCardGirdLayout>
-    </div>
-  );
+export default function IndexPage({ posts, countTag }: Props) {
+  return <PostsPageTemplate posts={posts} countTag={countTag} />;
 }
-
-const block = css({
-  display: 'flex',
-  flexDirection: 'column',
-});
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
-  const countTagObj = getUniqCountTagObjFor(posts);
+  const countTag = getUniqcountTagFor(posts);
 
   return {
     props: {
       posts,
-      countTagObj,
+      countTag,
     },
   };
 };

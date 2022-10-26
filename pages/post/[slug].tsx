@@ -8,7 +8,7 @@ import {
   PostLayout,
   PostHeader,
   PostThumbnail,
-  PostTocWeb,
+  PostToc,
 } from '@/components/post';
 
 interface Props {
@@ -26,7 +26,7 @@ export default function PostPage({ post, mdx }: Props) {
         thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
         body={<MDXRemoteContainer mdx={mdx} />}
       />
-      <PostTocWeb />
+      <PostToc />
     </AppMainContentWrapper>
   );
 }

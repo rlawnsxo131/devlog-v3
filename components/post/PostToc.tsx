@@ -3,7 +3,7 @@ import usePostToc from './hooks/usePostToc';
 
 interface Props {}
 
-function PostTocWeb(props: Props) {
+function PostToc(props: Props) {
   const { headings, activeHeading, handleActiveHeading } = usePostToc();
 
   return (
@@ -30,7 +30,7 @@ function PostTocWeb(props: Props) {
 const block = css({
   display: 'none',
   mediaQuery: {
-    minWidth: 1300,
+    minWidth: 1350,
     styles: {
       position: 'absolute',
       top: '6rem',
@@ -67,4 +67,4 @@ const list = css({
   },
 });
 
-export default PostTocWeb;
+export default PostToc;

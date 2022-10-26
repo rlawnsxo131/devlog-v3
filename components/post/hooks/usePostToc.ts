@@ -41,7 +41,7 @@ export default function usePostToc() {
           prevYposition = window.scrollY;
         });
       },
-      { threshold: 0, rootMargin: '60px 0px 0px 0px' },
+      { threshold: 1, rootMargin: '60px 0px 0px 0px' },
     );
 
     const nodes = document.querySelectorAll(

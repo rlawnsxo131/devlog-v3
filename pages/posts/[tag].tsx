@@ -1,41 +1,28 @@
-import { PostCard, PostCardGirdLayout, PostCountTags } from '@/components/post';
-import { getAllPosts } from '@/lib';
-import { getUniqCountTagObjFor } from '@/lib';
-import { css } from '@/styles/_stitches.config';
-import { CountTag, Post } from '@/types';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { PostsPageTemplate } from '@/components/post';
+import { getAllPosts } from '@/lib';
+import { getUniqcountTagFor } from '@/lib';
+import { CountTag, Post } from '@/types';
 
 interface Props {
-  currentTag: string;
-  countTagObj: CountTag;
   posts: Post[];
+  countTag: CountTag;
+  currentTag: string;
 }
 
-export default function PostsOfTagPage({
-  currentTag,
-  countTagObj,
-  posts,
-}: Props) {
+export default function PostsOfTagPage({ posts, countTag, currentTag }: Props) {
   return (
-    <div className={block()}>
-      <PostCountTags countTagObj={countTagObj} currentTag={currentTag} />
-      <PostCardGirdLayout>
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
-      </PostCardGirdLayout>
-    </div>
+    <PostsPageTemplate
+      posts={posts}
+      countTag={countTag}
+      currentTag={currentTag}
+    />
   );
 }
 
-const block = css({
-  display: 'flex',
-  flexDirection: 'column',
-});
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts();
-  const countTags = getUniqCountTagObjFor(posts);
+  const countTags = getUniqcountTagFor(posts);
   const paths = Object.keys(countTags).map((tag) => ({
     params: { tag },
   }));
@@ -49,13 +36,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params;
   const allPosts = await getAllPosts();
-  const countTagObj = getUniqCountTagObjFor(allPosts);
+  const countTag = getUniqcountTagFor(allPosts);
   const posts = allPosts.filter((posts) => posts.tags.includes(tag as string));
 
   return {
     props: {
-      countTagObj,
       posts,
+      countTag,
       currentTag: tag,
     },
   };
