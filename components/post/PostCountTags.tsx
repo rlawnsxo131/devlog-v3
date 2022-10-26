@@ -9,6 +9,9 @@ interface Props {
   currentTag?: string;
 }
 
+/**
+ * @TODO 초기 rendering 시에도 활성 태그의 위치를 가시성 영역안에 넣도록 처리하기
+ */
 function PostCountTags({ countTag, currentTag }: Props) {
   const entries = Object.entries(countTag);
 

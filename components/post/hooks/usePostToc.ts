@@ -1,6 +1,9 @@
 import constants from '@/constants';
 import { useEffect, useState } from 'react';
 
+/**
+ * @TODO intersectionObserver 없애고 그냥 scroll event 로 처리할지 고민해보기
+ */
 export default function usePostToc() {
   const [headings, setHeadings] = useState<
     {
