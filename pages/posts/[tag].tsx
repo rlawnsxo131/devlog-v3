@@ -1,8 +1,4 @@
-import {
-  PostCard,
-  PostCardGirdTemplate,
-  PostCountTags,
-} from '@/components/post';
+import { PostCard, PostCardGirdLayout, PostCountTags } from '@/components/post';
 import { getAllPosts } from '@/lib';
 import { getUniqCountTagObjFor } from '@/lib';
 import { css } from '@/styles/_stitches.config';
@@ -23,11 +19,11 @@ export default function PostsOfTagPage({
   return (
     <div className={block()}>
       <PostCountTags countTagObj={countTagObj} currentTag={currentTag} />
-      <PostCardGirdTemplate>
+      <PostCardGirdLayout>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}
-      </PostCardGirdTemplate>
+      </PostCardGirdLayout>
     </div>
   );
 }

@@ -28,13 +28,19 @@ function PostTocWeb(props: Props) {
 }
 
 const block = css({
-  position: 'absolute',
-  top: '6rem',
-  left: '100%',
-  marginRight: '5rem',
-  width: '15rem',
-  display: 'flex',
-  flexDirection: 'column',
+  display: 'none',
+  mediaQuery: {
+    minWidth: 1300,
+    styles: {
+      position: 'absolute',
+      top: '6rem',
+      left: '100%',
+      marginRight: '5rem',
+      width: '15rem',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  },
 });
 
 const list = css({

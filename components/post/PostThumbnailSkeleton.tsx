@@ -2,7 +2,7 @@ import { css } from '@/styles/_stitches.config';
 
 interface Props {}
 
-function PostDetailImageSkeleton(props: Props) {
+function PostThumbnailSkeleton(props: Props) {
   return <div className={block()} />;
 }
 
@@ -14,4 +14,4 @@ const block = css({
   borderRadius: '0.5rem',
 });
 
-export default PostDetailImageSkeleton;
+export default PostThumbnailSkeleton;

@@ -1,11 +1,7 @@
 import { css } from '@stitches/core';
 import { GetStaticProps } from 'next';
 import { CountTag, Post } from '@/types';
-import {
-  PostCard,
-  PostCardGirdTemplate,
-  PostCountTags,
-} from '@/components/post';
+import { PostCard, PostCardGirdLayout, PostCountTags } from '@/components/post';
 import { getAllPosts } from '@/lib';
 import { getUniqCountTagObjFor } from '@/lib';
 
@@ -18,11 +14,11 @@ export default function IndexPage({ posts, countTagObj }: Props) {
   return (
     <div className={block()}>
       <PostCountTags countTagObj={countTagObj} />
-      <PostCardGirdTemplate>
+      <PostCardGirdLayout>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}
-      </PostCardGirdTemplate>
+      </PostCardGirdLayout>
     </div>
   );
 }

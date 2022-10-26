@@ -4,7 +4,12 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { AppMainContentWrapper } from '@/components/app';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
 import { MDXRemoteContainer } from '@/components/markdown';
-import { PostDetailTemplate, PostTocWeb } from '@/components/post';
+import {
+  PostLayout,
+  PostHeader,
+  PostThumbnail,
+  PostTocWeb,
+} from '@/components/post';
 
 interface Props {
   post: Post;
@@ -14,14 +19,13 @@ interface Props {
 export default function PostPage({ post, mdx }: Props) {
   return (
     <AppMainContentWrapper>
-      <PostDetailTemplate
-        title={post.title}
-        tags={post.tags}
-        thumbnail={post.thumbnail}
-        date={post.date}
-      >
-        <MDXRemoteContainer mdx={mdx} />
-      </PostDetailTemplate>
+      <PostLayout
+        header={
+          <PostHeader title={post.title} date={post.date} tags={post.tags} />
+        }
+        thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
+        body={<MDXRemoteContainer mdx={mdx} />}
+      />
       <PostTocWeb />
     </AppMainContentWrapper>
   );
