@@ -15,11 +15,15 @@ function PostsPageTemplate({ posts, countTag, currentTag }: Props) {
     <div className={block()}>
       <PostCountTags countTag={countTag} currentTag={currentTag} />
       <div className={postCardsBlock()}>
-        <PostCardGirdLayout>
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
-        </PostCardGirdLayout>
+        {posts.length ? (
+          <PostCardGirdLayout>
+            {posts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </PostCardGirdLayout>
+        ) : (
+          <div className={emptyBlock()}>empty</div>
+        )}
       </div>
     </div>
   );
@@ -32,6 +36,21 @@ const block = css({
 
 const postCardsBlock = css({
   marginTop: '1.725rem',
+});
+
+const emptyBlock = css({
+  flex: '1',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  '& svg': {
+    width: '20rem',
+    height: 'auto',
+  },
+  '& .empty-button-block': {
+    marginTop: '4rem',
+  },
 });
 
 export default PostsPageTemplate;

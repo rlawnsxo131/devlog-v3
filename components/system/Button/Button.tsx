@@ -7,9 +7,9 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: VariantProps<typeof button>;
 }
 
-function Button({ children, variant }: Props) {
+function Button({ children, variant, ...props }: Props) {
   return (
-    <button type="button" className={button({ ...variant })}>
+    <button type="button" className={button({ ...variant })} {...props}>
       {children}
     </button>
   );
