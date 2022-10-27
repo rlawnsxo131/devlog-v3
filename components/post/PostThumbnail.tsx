@@ -25,16 +25,24 @@ function PostThumbnail({ thumbnail }: Props) {
 }
 
 const block = css({
+  position: 'relative',
   width: '100%',
+  height: 'auto',
+  display: 'flex',
+  justifyContent: 'center',
+  paddingTop: '52.35%',
   '& span': {
     position: 'unset !important',
   },
   '& img': {
-    width: '100% !important',
-    height: 'auto !important',
-    position: 'relative !important',
+    position: 'absolute !important',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
     borderRadius: '0.5rem',
-    objectFit: 'contain',
+    objectFit: 'cover',
+    zIndex: '$thumbnail',
   },
 });
 

@@ -50,6 +50,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       },
       zIndices: {
         header: 10,
+        thumbnail: 8,
       },
     },
     media: {

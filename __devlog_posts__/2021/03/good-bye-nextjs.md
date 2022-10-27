@@ -11,6 +11,7 @@ slug: good-bye-nextjs
 
 # Table of Contents
 
+# 글을 시작하며
 안녕하세요 정말 오랜만에 글을 씁니다.
 한동안 `Next.js` 로 작성되어 있던 제 블로그의 `Client` 기술 스펙을 변경했는데요.
 

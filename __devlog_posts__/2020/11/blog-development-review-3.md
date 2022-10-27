@@ -11,6 +11,7 @@ slug: blog-development-review-3
 
 # Table of contents
 
+# 글을 시작하며
 요세 정신이 없는 덕에 글이 좀 늦어졌습니다.
 블로그 개발 후기 3탄 **Next.js** 에 관한 이야기 입니다.
 

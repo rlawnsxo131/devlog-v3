@@ -1,5 +1,7 @@
 export type Theme = 'light' | 'dark';
 
+export type ErrorType = 'NotFound' | 'InternalServerError';
+
 export interface FrontMatter {
   title: string;
   description: string;

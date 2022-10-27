@@ -10,6 +10,7 @@ slug: notes-on-application-creation-2
 
 # Table of Contents
 
+# 글을 시작하며
 개발 중 조심해야 할 것들 두번째 이야기 입니다. 이번에는 라이브러리를 선택하는 제 개인적인 기준과 사용방식에 관한 이야기를 해보겠습니다. 첫번째 이야기가 궁금하다면 다음 링크를 클릭해 주세요.
 [개발 중 조심해야 할 것들(1)](https://devlog.juntae.kim/post/notes-on-application-creation)
 

@@ -12,6 +12,8 @@ function AppMain({ children }: Props) {
 const block = css({
   ...layoutBasicResponsiveStyle,
   flex: '1 1 0',
+  display: 'flex',
+  flexDirection: 'column',
   marginTop: '6.225rem',
 });
 

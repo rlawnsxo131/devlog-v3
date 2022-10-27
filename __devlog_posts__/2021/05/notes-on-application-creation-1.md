@@ -10,6 +10,7 @@ slug: notes-on-application-creation-1
 
 # Table of Contents
 
+# 글을 시작하며
 한동안 현생이 바빠 오랜만에 글을 작성합니다. 이번엔 ``Backend``, ``Client`` 관계없이 제가 개발을 하며 조심해야 한다고 생각하는 부분들과 그중 가장 많이 보아오고, 겪어온 실수에 대해 이야기할까 합니다.
 
 # React - 스파게티 구조

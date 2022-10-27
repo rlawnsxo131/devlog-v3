@@ -6,6 +6,7 @@ interface Props {
 
 function Core({ children }: Props) {
   useThemeEffect();
+
   return <>{children}</>;
 }
 

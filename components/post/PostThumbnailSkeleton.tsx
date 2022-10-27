@@ -7,9 +7,12 @@ function PostThumbnailSkeleton(props: Props) {
 }
 
 const block = css({
-  position: 'relative',
+  display: 'block',
+  position: 'absolute',
+  top: '0',
+  left: '0',
   width: '100%',
-  paddingTop: '52.35%',
+  height: '100%',
   background: '$bg-skeleton',
   borderRadius: '0.5rem',
 });

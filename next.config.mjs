@@ -4,7 +4,7 @@
 const nextConfig = {
   swcMinify: true,
   images: {
-    domains: ['image-devlog.juntae.kim'],
+    domains: ['localhost', 'image-devlog.juntae.kim'],
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };

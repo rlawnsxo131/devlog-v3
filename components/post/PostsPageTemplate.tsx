@@ -1,5 +1,6 @@
 import { css } from '@/styles/_stitches.config';
 import { CountTag, Post } from '@/types';
+import { ErrorScreen } from '../error';
 import PostCard from './PostCard';
 import PostCardGirdLayout from './PostCardGirdLayout';
 import PostCountTags from './PostCountTags';
@@ -22,7 +23,7 @@ function PostsPageTemplate({ posts, countTag, currentTag }: Props) {
             ))}
           </PostCardGirdLayout>
         ) : (
-          <div className={emptyBlock()}>empty</div>
+          <ErrorScreen type="NotFound" />
         )}
       </div>
     </div>
@@ -30,27 +31,14 @@ function PostsPageTemplate({ posts, countTag, currentTag }: Props) {
 }
 
 const block = css({
+  flex: '1 1 0',
   display: 'flex',
   flexDirection: 'column',
 });
 
 const postCardsBlock = css({
+  flex: '1 1 0',
   marginTop: '1.725rem',
-});
-
-const emptyBlock = css({
-  flex: '1',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  '& svg': {
-    width: '20rem',
-    height: 'auto',
-  },
-  '& .empty-button-block': {
-    marginTop: '4rem',
-  },
 });
 
 export default PostsPageTemplate;
