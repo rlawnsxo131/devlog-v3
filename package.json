@@ -7,6 +7,7 @@
     "start:dev": "next dev",
     "start:dev:https": "(local-ssl-proxy --source 3001 --target 3000) & next dev",
     "build:prod": "next build",
+    "build:prod:export": "next build && next export",
     "start:prod": "next start",
     "lint": "next lint",
     "test": "jest --coverage"

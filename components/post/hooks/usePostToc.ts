@@ -34,6 +34,7 @@ export default function usePostToc() {
           } else {
             direction = 'up';
           }
+
           if (
             (direction === 'down' && !entry.isIntersecting) ||
             (direction === 'up' && entry.isIntersecting)
