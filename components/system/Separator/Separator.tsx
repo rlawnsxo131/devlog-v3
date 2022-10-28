@@ -18,6 +18,8 @@ function Separator({ cssProps }: Props) {
   );
 }
 
-const block = css({});
+const block = css({
+  color: '$text',
+});
 
 export default Separator;
