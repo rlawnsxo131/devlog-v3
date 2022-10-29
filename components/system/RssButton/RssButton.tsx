@@ -6,9 +6,13 @@ interface Props {}
 
 function RssButton(props: Props) {
   return (
-    <button type="button" className={block()}>
+    <a
+      rel="noopener noreferrer"
+      href={`${process.env.NEXT_PUBLIC_SERVICE_URL}/rss/feed.xml`}
+      target="_blank"
+    >
       <RssIcon />
-    </button>
+    </a>
   );
 }
 
