@@ -12,7 +12,7 @@ interface Toc {
 }
 
 /**
- * @TODO 암만봐도 맘에 안든다. 좀 뜯어고치자.
+ * @TODO 암만봐도 맘에 안든다. intersection 이든 뭐든 좀 뜯어고치자.
  */
 export default function usePostToc() {
   const [tocs, setTocs] = useState<Toc[] | null>(null);
