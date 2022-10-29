@@ -12,7 +12,7 @@ interface Toc {
 }
 
 /**
- * InterSectionObserver 보다 이게 더 정확한듯
+ * @TODO 암만봐도 맘에 안든다. 좀 뜯어고치자.
  */
 export default function usePostToc() {
   const [tocs, setTocs] = useState<Toc[] | null>(null);
