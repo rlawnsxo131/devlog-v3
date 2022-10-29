@@ -42,7 +42,7 @@ export default function usePostToc() {
             text: nodes[i].textContent,
             level: level,
             yPosition: parseInt(
-              `${nodes[i].getBoundingClientRect().top + scrollTop - 80}`,
+              `${nodes[i].getBoundingClientRect().top + scrollTop}`,
               10,
             ),
             styleObj: {
@@ -60,7 +60,7 @@ export default function usePostToc() {
       if (!tocs) return;
       const scrollTop = utils.getScrollTop();
       const currentToc = [...tocs].reverse().find((toc) => {
-        return scrollTop >= toc.yPosition - 80;
+        return scrollTop >= toc.yPosition;
       });
       if (!currentToc) return;
       setActiveTocId(currentToc.id);
