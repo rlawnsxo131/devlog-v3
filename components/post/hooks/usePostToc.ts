@@ -1,7 +1,7 @@
-import { useDeferredValue, useEffect, useState, useTransition } from 'react';
+import { useEffect, useState } from 'react';
 import constants from '@/constants';
 import { utils } from '@/lib';
-import { debounce, throttle } from 'throttle-debounce';
+import { throttle } from 'throttle-debounce';
 
 interface Toc {
   id: string;
