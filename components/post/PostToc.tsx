@@ -5,21 +5,20 @@ import usePostToc from './hooks/usePostToc';
 interface Props {}
 
 function PostToc(props: Props) {
-  const { headings, activeHeading, handleClickToc } = usePostToc();
+  const { tocs, activeTocId, handleClickToc } = usePostToc();
 
   return (
     <div className={block()}>
       <ul className={list()}>
-        {headings?.map((v) => (
+        {tocs?.map((v) => (
           <li key={v.id}>
             <a
               href={`#${v.id}`}
               style={v.styleObj}
               className={tocAnchor({
-                variant: utils.getAnchorVariant(v.id, activeHeading),
+                variant: utils.getAnchorVariant(v.id, activeTocId),
               })}
               data-id={v.id}
-              data-y-position={v.yPosition}
               onClick={handleClickToc}
             >
               {v.text}

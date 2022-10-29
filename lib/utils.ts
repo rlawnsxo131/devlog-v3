@@ -46,3 +46,7 @@ export function getScrollTop() {
     : document.body.scrollTop;
   return scrollTop;
 }
+
+export function remToPixel(rem: number) {
+  return parseFloat(getComputedStyle(document.documentElement).fontSize) * rem;
+}

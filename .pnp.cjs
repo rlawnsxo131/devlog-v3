@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.11.7"],\
             ["@types/react", "npm:18.0.23"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
+            ["@types/throttle-debounce", "npm:5.0.0"],\
             ["@types/unist", "npm:2.0.6"],\
             ["date-fns", "npm:2.29.3"],\
             ["eslint", "npm:8.26.0"],\
@@ -71,6 +72,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["remark-prism", "npm:1.3.6"],\
             ["remark-toc", "npm:8.0.1"],\
             ["sharp", "npm:0.31.1"],\
+            ["throttle-debounce", "npm:5.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
             ["unified", "npm:10.1.2"],\
             ["unist-util-visit", "npm:4.1.1"]\
@@ -2116,6 +2118,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/throttle-debounce", [\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/@types-throttle-debounce-npm-5.0.0-c27fac6e7d-f0b1f62681.zip/node_modules/@types/throttle-debounce/",\
+          "packageDependencies": [\
+            ["@types/throttle-debounce", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/tough-cookie", [\
         ["npm:4.0.2", {\
           "packageLocation": "./.yarn/cache/@types-tough-cookie-npm-4.0.2-9e61f877e6-e055556ffd.zip/node_modules/@types/tough-cookie/",\
@@ -3584,6 +3595,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.11.7"],\
             ["@types/react", "npm:18.0.23"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
+            ["@types/throttle-debounce", "npm:5.0.0"],\
             ["@types/unist", "npm:2.0.6"],\
             ["date-fns", "npm:2.29.3"],\
             ["eslint", "npm:8.26.0"],\
@@ -3610,6 +3622,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["remark-prism", "npm:1.3.6"],\
             ["remark-toc", "npm:8.0.1"],\
             ["sharp", "npm:0.31.1"],\
+            ["throttle-debounce", "npm:5.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"],\
             ["unified", "npm:10.1.2"],\
             ["unist-util-visit", "npm:4.1.1"]\
@@ -9648,6 +9661,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/text-table-npm-0.2.0-d92a778b59-b6937a38c8.zip/node_modules/text-table/",\
           "packageDependencies": [\
             ["text-table", "npm:0.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["throttle-debounce", [\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/throttle-debounce-npm-5.0.0-f5662f7aca-aa8bf25828.zip/node_modules/throttle-debounce/",\
+          "packageDependencies": [\
+            ["throttle-debounce", "npm:5.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

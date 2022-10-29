@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useDeferredValue, useEffect, useState, useTransition } from 'react';
 import constants from '@/constants';
 import { utils } from '@/lib';
+import { debounce, throttle } from 'throttle-debounce';
 
-interface Heading {
+interface Toc {
   id: string;
   text: string;
   level: number;
@@ -11,60 +12,32 @@ interface Heading {
 }
 
 /**
- * @TODO intersectionObserver 없애고 그냥 scroll event 로 처리할지 고민해보기
+ * InterSectionObserver 보다 이게 더 정확한듯
  */
 export default function usePostToc() {
-  const [headings, setHeadings] = useState<Heading[] | null>(null);
-  const [activeHeading, setActiveHeading] = useState('');
+  const [tocs, setTocs] = useState<Toc[] | null>(null);
+  const [activeTocId, setActiveTocId] = useState('');
 
   const handleClickToc = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const { id, yPosition } = e.currentTarget.dataset;
-    setActiveHeading(id);
-    window.location.hash = `#${id}`;
-    window.scrollTo(0, parseInt(yPosition, 10));
+    const { id } = e.currentTarget.dataset;
+    setActiveTocId(id);
   };
 
   useEffect(() => {
-    let direction = '';
-    let prevYposition = 0;
-
-    const intersectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (window.scrollY === 0 && prevYposition === 0) {
-            return;
-          } else if (window.scrollY > prevYposition) {
-            direction = 'down';
-          } else {
-            direction = 'up';
-          }
-
-          if (
-            (direction === 'down' && !entry.isIntersecting) ||
-            (direction === 'up' && entry.isIntersecting)
-          ) {
-            setActiveHeading(entry.target.id);
-          }
-
-          prevYposition = window.scrollY;
-        });
-      },
-      { threshold: 0.9, rootMargin: '64px' },
-    );
-
     const nodes = document.querySelectorAll(
       '.mdx-remote-wrapper h1, h2, h3, h4, h5',
     );
-    const headings: Heading[] = [];
+    const tocs: Toc[] = [];
     const scrollTop = utils.getScrollTop();
     for (let i = 0; i < nodes.length; i++) {
       if (nodes[i].tagName.match(/H([1-5])/)) {
         const textContent = nodes[i].textContent;
-        if (textContent !== constants.MARKDOWN_TABLE_OF_CONTENTS) {
-          intersectionObserver.observe(nodes[i]);
+        if (
+          textContent.replace(/(\s*)/g, '').toUpperCase() !==
+          constants.MARKDOWN_TABLE_OF_CONTENTS
+        ) {
           const level = parseInt(nodes[i].tagName.replace('H', ''), 10);
-          headings.push({
+          tocs.push({
             id: nodes[i].id,
             text: nodes[i].textContent,
             level: level,
@@ -79,16 +52,30 @@ export default function usePostToc() {
         }
       }
     }
-    setHeadings(headings);
+    setTocs(tocs);
+  }, [setTocs]);
+
+  useEffect(() => {
+    const onScroll = throttle(50, () => {
+      if (!tocs) return;
+      const scrollTop = utils.getScrollTop();
+      const currentToc = [...tocs].reverse().find((toc) => {
+        return scrollTop >= toc.yPosition - 80;
+      });
+      if (!currentToc) return;
+      setActiveTocId(currentToc.id);
+    });
+
+    globalThis.addEventListener('scroll', onScroll);
 
     return () => {
-      intersectionObserver.disconnect();
+      window.removeEventListener('scroll', onScroll);
     };
-  }, [setHeadings, setActiveHeading]);
+  }, [tocs, setActiveTocId]);
 
   return {
-    headings,
-    activeHeading,
+    tocs,
+    activeTocId,
     handleClickToc,
   };
 }
