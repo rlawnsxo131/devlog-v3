@@ -1,23 +1,28 @@
-import constants from '@/constants';
 import { useEffect, useState } from 'react';
+import constants from '@/constants';
+import { utils } from '@/lib';
+
+interface Heading {
+  id: string;
+  text: string;
+  level: number;
+  yPosition: number;
+  styleObj: Record<string, string>;
+}
 
 /**
  * @TODO intersectionObserver 없애고 그냥 scroll event 로 처리할지 고민해보기
  */
 export default function usePostToc() {
-  const [headings, setHeadings] = useState<
-    {
-      id: string;
-      text: string;
-      level: number;
-      styleObj: Record<string, string>;
-    }[]
-  >([]);
-  const [activeHeading, setActiveHeading] = useState<string>('');
+  const [headings, setHeadings] = useState<Heading[] | null>(null);
+  const [activeHeading, setActiveHeading] = useState('');
 
-  const handleActiveHeading = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const { id } = e.currentTarget.dataset;
+  const handleClickToc = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const { id, yPosition } = e.currentTarget.dataset;
     setActiveHeading(id);
+    window.location.hash = `#${id}`;
+    window.scrollTo(0, parseInt(yPosition, 10));
   };
 
   useEffect(() => {
@@ -45,42 +50,45 @@ export default function usePostToc() {
           prevYposition = window.scrollY;
         });
       },
-      { threshold: 1, rootMargin: '60px 0px 0px 0px' },
+      { threshold: 0.9, rootMargin: '64px' },
     );
 
     const nodes = document.querySelectorAll(
       '.mdx-remote-wrapper h1, h2, h3, h4, h5',
     );
-    nodes.forEach((el) => {
-      if (el.tagName.match(/H([1-5])/)) {
-        const textContent = el.textContent;
+    const headings: Heading[] = [];
+    const scrollTop = utils.getScrollTop();
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].tagName.match(/H([1-5])/)) {
+        const textContent = nodes[i].textContent;
         if (textContent !== constants.MARKDOWN_TABLE_OF_CONTENTS) {
-          intersectionObserver.observe(el);
-          const level = parseInt(el.tagName.replace('H', ''), 10);
-          setHeadings((prev) => [
-            ...prev,
-            {
-              id: el.id,
-              text: el.textContent,
-              level: level,
-              styleObj: {
-                paddingLeft: `${(level - 1) * 1}rem`,
-              },
+          intersectionObserver.observe(nodes[i]);
+          const level = parseInt(nodes[i].tagName.replace('H', ''), 10);
+          headings.push({
+            id: nodes[i].id,
+            text: nodes[i].textContent,
+            level: level,
+            yPosition: parseInt(
+              `${nodes[i].getBoundingClientRect().top + scrollTop - 80}`,
+              10,
+            ),
+            styleObj: {
+              paddingLeft: `${(level - 1) * 1}rem`,
             },
-          ]);
+          });
         }
       }
-    });
+    }
+    setHeadings(headings);
 
     return () => {
-      setHeadings([]);
       intersectionObserver.disconnect();
     };
-  }, [setHeadings]);
+  }, [setHeadings, setActiveHeading]);
 
   return {
     headings,
     activeHeading,
-    handleActiveHeading,
+    handleClickToc,
   };
 }

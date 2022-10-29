@@ -5,12 +5,12 @@ import usePostToc from './hooks/usePostToc';
 interface Props {}
 
 function PostToc(props: Props) {
-  const { headings, activeHeading, handleActiveHeading } = usePostToc();
+  const { headings, activeHeading, handleClickToc } = usePostToc();
 
   return (
     <div className={block()}>
       <ul className={list()}>
-        {headings.map((v) => (
+        {headings?.map((v) => (
           <li key={v.id}>
             <a
               href={`#${v.id}`}
@@ -19,7 +19,8 @@ function PostToc(props: Props) {
                 variant: utils.getAnchorVariant(v.id, activeHeading),
               })}
               data-id={v.id}
-              onClick={handleActiveHeading}
+              data-y-position={v.yPosition}
+              onClick={handleClickToc}
             >
               {v.text}
             </a>
@@ -65,6 +66,10 @@ const tocAnchor = css({
   flexFlow: 'row wrap',
   color: '$text-sub',
   transition: '0.125s all ease-in',
+  '& .active': {
+    transform: 'scale(1.05)',
+    color: '$text',
+  },
   variants: {
     variant: {
       default: {
@@ -75,6 +80,9 @@ const tocAnchor = css({
         color: '$text',
       },
     },
+  },
+  defaultVariants: {
+    variant: 'default',
   },
 });
 

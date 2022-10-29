@@ -4,7 +4,7 @@ import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 
 interface Props {}
 
-function RssButton(props: Props) {
+function RssAnchor(props: Props) {
   return (
     <a
       rel="noopener noreferrer"
@@ -22,4 +22,4 @@ const block = css({
   padding: '0.5rem',
 });
 
-export default RssButton;
+export default RssAnchor;

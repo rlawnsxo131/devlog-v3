@@ -38,3 +38,11 @@ export function formatDate(date: string) {
 export function getAnchorVariant(standardValue: string, currentValue: string) {
   return standardValue === currentValue ? 'active' : 'default';
 }
+
+export function getScrollTop() {
+  if (!document.body) return 0;
+  const scrollTop = document.documentElement
+    ? document.documentElement.scrollTop || document.body.scrollTop
+    : document.body.scrollTop;
+  return scrollTop;
+}
