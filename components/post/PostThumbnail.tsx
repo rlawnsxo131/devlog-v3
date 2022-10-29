@@ -3,7 +3,6 @@ import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import { Post } from '@/types';
 import Image from 'next/image';
-import PostThumbnailSkeleton from './PostThumbnailSkeleton';
 
 type Props = Pick<Post, 'thumbnail'>;
 
@@ -19,7 +18,7 @@ function PostThumbnail({ thumbnail }: Props) {
         loading="lazy"
         onLoadingComplete={onLoadingComplete}
       />
-      {!isLoadingComplete && <PostThumbnailSkeleton />}
+      {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
     </div>
   );
 }
@@ -44,6 +43,17 @@ const block = css({
     objectFit: 'cover',
     zIndex: '$thumbnail',
   },
+});
+
+const thumbnailSkeleton = css({
+  display: 'block',
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+  background: '$bg-skeleton',
+  borderRadius: '0.5rem',
 });
 
 export default PostThumbnail;

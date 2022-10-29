@@ -5,7 +5,6 @@ import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LinkIcon } from '../img/icons';
-import PostCardThumbnailSkeleton from './PostCardThumbnailSkeleton';
 import UnderlineLink from '../system/UnderlineLink';
 import Separator from '../system/Separator';
 import usePostCard from './hooks/usePostCard';
@@ -31,7 +30,7 @@ function PostCard({ post }: Props) {
               layout="fill"
               onLoadingComplete={onLoadingComplete}
             />
-            {!isLoadingComplete && <PostCardThumbnailSkeleton />}
+            {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
           </a>
         </Link>
       </div>
@@ -131,6 +130,16 @@ const thumbnail = css({
     objectFit: 'cover',
     borderRadius: '0.5rem',
   },
+});
+
+const thumbnailSkeleton = css({
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+  borderRadius: '0.5rem',
+  background: '$bg-skeleton',
 });
 
 const content = css({
