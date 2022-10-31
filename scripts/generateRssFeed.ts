@@ -2,11 +2,11 @@ import fs from 'fs';
 import { Feed, Item } from 'feed';
 import { marked } from 'marked';
 import { Post } from '@/types';
-import getAllPosts from './getAllPosts';
+import getAllPosts from '../lib/getAllPosts';
 
 const PUBLIC_PATH = `${process.cwd()}/public`;
-const NEXT_PUBLIC_SERVICE_URL = process.env.NEXT_PUBLIC_SERVICE_URL;
-const NEXT_PUBLIC_IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL;
+const NEXT_PUBLIC_SERVICE_URL = 'https://devlog.juntae.kim';
+const NEXT_PUBLIC_IMAGE_URL = 'https://image-devlog.juntae.kim';
 
 const author = {
   name: 'Juntae(John) Kim',
