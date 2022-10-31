@@ -35,10 +35,10 @@ async function getDeleteChunkKeys() {
 
 async function removeOldChunks() {
   const chunkKeys = await getDeleteChunkKeys();
-  const objects: ObjectIdentifier[] = Array.from(chunkKeys).map((key) => ({
-    Key: key,
-  }));
   if (chunkKeys.size) {
+    const objects: ObjectIdentifier[] = Array.from(chunkKeys).map((key) => ({
+      Key: key,
+    }));
     const deleteObjectsCommand = new DeleteObjectsCommand({
       Bucket: BUCKET,
       Delete: {
