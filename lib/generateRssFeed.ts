@@ -28,7 +28,7 @@ function createFeeds(post: Post): Item {
   };
 }
 
-export default async function generateRssFeed(posts: Post[]) {
+export default function generateRssFeed(posts: Post[]) {
   const feed = new Feed({
     title: 'DevLog',
     description: 'DevLog',
@@ -51,13 +51,14 @@ export default async function generateRssFeed(posts: Post[]) {
   fs.writeFileSync(`${PUBLIC_PATH}/rss/feed.json`, feed.json1());
 }
 
-(async () => {
-  try {
-    const posts = await getAllPosts();
-    await generateRssFeed(posts);
+getAllPosts()
+  .then((posts) => {
+    generateRssFeed(posts);
+  })
+  .then((_) => {
     console.log('rss creation complete');
-  } catch (err) {
+  })
+  .catch((err) => {
     console.error('rss creation fail');
-    throw new Error(err);
-  }
-})();
+    console.error(err);
+  });

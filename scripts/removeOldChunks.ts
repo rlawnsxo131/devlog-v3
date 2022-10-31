@@ -58,5 +58,5 @@ removeOldChunks()
   })
   .catch((err) => {
     console.error('fail to remove old chunks');
-    throw new Error(err);
+    console.error(err);
   });
