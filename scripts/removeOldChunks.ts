@@ -20,7 +20,6 @@ async function getDeleteChunkKeys() {
   const objectList = await client.send(listCommand);
   if (objectList.Contents?.length) {
     for (const content of objectList.Contents) {
-      console.log(content);
       const { LastModified } = content;
       const today = new Date();
       const lastModifiedDate = new Date(LastModified);
@@ -52,7 +51,12 @@ async function removeOldChunks() {
   console.log('no chunks to delete');
 }
 
-removeOldChunks().then((result) => {
-  console.log('success remove old chunks');
-  console.log('remove result: ', JSON.stringify(result));
-});
+removeOldChunks()
+  .then((result) => {
+    console.log('success to remove old chunks');
+    console.log('remove result: ', JSON.stringify(result));
+  })
+  .catch((err) => {
+    console.log('fail to remove old chunks');
+    console.error(err);
+  });
