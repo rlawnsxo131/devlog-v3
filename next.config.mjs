@@ -1,13 +1,14 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const domains = ['image-devlog.juntae.kim'];
 
 const images = isProduction
   ? {
       loader: 'akamai',
       path: '',
-      domains: ['image-devlog.juntae.kim'],
+      domains,
     }
   : {
-      domains: ['image-devlog.juntae.kim'],
+      domains,
     };
 const assetPrefix = isProduction
   ? process.env.NEXT_PUBLIC_SERVICE_URL
