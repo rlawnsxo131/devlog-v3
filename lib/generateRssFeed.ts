@@ -57,7 +57,7 @@ export default async function generateRssFeed(posts: Post[]) {
     await generateRssFeed(posts);
     console.log('rss creation complete');
   } catch (err) {
-    console.log('rss creation fail');
+    console.error('rss creation fail');
     throw new Error(err);
   }
 })();

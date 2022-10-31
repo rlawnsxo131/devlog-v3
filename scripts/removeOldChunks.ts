@@ -57,6 +57,6 @@ removeOldChunks()
     console.log('remove result: ', JSON.stringify(result));
   })
   .catch((err) => {
-    console.log('fail to remove old chunks');
-    console.error(err);
+    console.error('fail to remove old chunks');
+    throw new Error(err);
   });
