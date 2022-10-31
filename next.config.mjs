@@ -18,7 +18,7 @@ const assetPrefix = isProduction
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  productionBrowserSourceMaps: true,
+  productionBrowserSourceMaps: !isProduction,
   swcMinify: true,
   images,
   // assetPrefix,
