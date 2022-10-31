@@ -28,7 +28,7 @@ function createFeeds(post: Post): Item {
   };
 }
 
-export default function generateRssFeed(posts: Post[]) {
+function generateRssFeed(posts: Post[]) {
   const feed = new Feed({
     title: 'DevLog',
     description: 'DevLog',
