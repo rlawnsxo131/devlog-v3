@@ -5,7 +5,7 @@ import usePostToc from './hooks/usePostToc';
 interface Props {}
 
 function PostToc(props: Props) {
-  const { tocs, activeTocId, handleClickToc } = usePostToc();
+  const { tocs, activeTocId } = usePostToc();
 
   return (
     <div className={block()}>
@@ -19,7 +19,6 @@ function PostToc(props: Props) {
                 variant: utils.getAnchorVariant(v.id, activeTocId),
               })}
               data-id={v.id}
-              onClick={handleClickToc}
             >
               {v.text}
             </a>

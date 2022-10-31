@@ -1,20 +1,33 @@
-/**
- * @TODO 여기 내일 route53 연결이랑 이것저것 작업하고 바꾸자
- */
+const isProduction = process.env.NODE_ENV === 'production';
+
+const images = isProduction
+  ? {
+      loader: 'akamai',
+      path: '',
+      domains: ['image-devlog.juntae.kim'],
+    }
+  : {
+      domains: ['image-devlog.juntae.kim'],
+    };
+const assetPrefix = isProduction
+  ? process.env.NEXT_PUBLIC_SERVICE_URL
+  : undefined;
 
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  productionBrowserSourceMaps: true,
   swcMinify: true,
-  images: {
-    loader: 'akamai',
-    path: '',
-    domains: ['image-devlog.juntae.kim'],
-  },
-  assetPrefix: process.env.NEXT_PUBLIC_SERVICE_URL,
-  webpack: (config) => {
+  images,
+  // assetPrefix,
+  compress: true,
+  webpack: (config, options) => {
     config.resolve.fallback = { fs: false };
+    if (!options.dev) {
+      config.devtool = options.isServer ? false : 'hidden-source-map';
+    }
+
     return config;
   },
 };

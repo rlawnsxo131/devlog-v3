@@ -6,13 +6,19 @@
     "sdk:update": "yarn dlx @yarnpkg/sdks",
     "start:dev": "next dev",
     "start:dev:https": "(local-ssl-proxy --source 3001 --target 3000) & next dev",
-    "build:prod": "next build",
-    "build:prod:export": "next build && next export",
-    "start:prod": "next start",
+    "build": "next build",
+    "start": "next start",
+    "remove:chunk": "ts-node scripts/removeOldChunks.ts",
+    "build:rss": "ts-node lib/generateRssFeed.ts",
+    "build:export": "next build && next export",
+    "build:production": "ts-node lib/generateRssFeed.ts && next build && next export",
+    "deploy:production": "ts-node lib/generateRssFeed.ts && next build && next export && aws s3 sync ./out s3://devlog-v3.juntae.kim && ts-node scripts/removeOldChunks.ts",
     "lint": "next lint",
     "test": "jest --coverage"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.199.0",
+    "@aws-sdk/types": "^3.198.0",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -23,7 +29,6 @@
     "@types/node": "^18.11.7",
     "@types/react": "^18.0.23",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@types/throttle-debounce": "^5.0.0",
     "@types/unist": "^2.0.6",
     "eslint": "^8.26.0",
     "eslint-config-next": "^12.3.1",
@@ -33,6 +38,8 @@
     "local-ssl-proxy": "^1.3.0",
     "marked": "^4.1.1",
     "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
     "typescript": "^4.8.2"
   },
   "dependencies": {
@@ -55,7 +62,6 @@
     "remark-prism": "^1.3.6",
     "remark-toc": "^8.0.1",
     "sharp": "^0.31.1",
-    "throttle-debounce": "^5.0.0",
     "unified": "^10.1.2",
     "unist-util-visit": "^4.1.1"
   }

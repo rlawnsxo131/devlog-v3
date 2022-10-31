@@ -2,6 +2,7 @@ import fs from 'fs';
 import { Feed, Item } from 'feed';
 import { marked } from 'marked';
 import { Post } from '@/types';
+import getAllPosts from './getAllPosts';
 
 const PUBLIC_PATH = `${process.cwd()}/public`;
 const NEXT_PUBLIC_SERVICE_URL = process.env.NEXT_PUBLIC_SERVICE_URL;
@@ -43,8 +44,20 @@ export default async function generateRssFeed(posts: Post[]) {
   const postFeeds = posts.map(createFeeds);
   postFeeds.forEach(feed.addItem);
 
+  // generate
   fs.mkdirSync(`${PUBLIC_PATH}/rss`, { recursive: true });
   fs.writeFileSync(`${PUBLIC_PATH}/rss/feed.xml`, feed.rss2());
   fs.writeFileSync(`${PUBLIC_PATH}/rss/atom.xml`, feed.atom1());
   fs.writeFileSync(`${PUBLIC_PATH}/rss/feed.json`, feed.json1());
 }
+
+(async () => {
+  try {
+    const posts = await getAllPosts();
+    await generateRssFeed(posts);
+    console.log('rss creation complete');
+  } catch (err) {
+    console.log('rss creation fail');
+    throw new Error(err);
+  }
+})();
