@@ -45,10 +45,6 @@ export default async function sharePost(
       console.log('share cancel error: AbortError');
       return;
     }
-    try {
-      await copyToClipBoard(params.url, fallbackCallback);
-    } catch (err) {
-      throw err;
-    }
+    return copyToClipBoard(params.url, fallbackCallback);
   }
 }
