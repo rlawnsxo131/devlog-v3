@@ -10,6 +10,8 @@ import {
   PostThumbnail,
   PostToc,
 } from '@/components/post';
+import { SEO } from '@/components/base';
+import { SiteConfig } from 'config';
 
 interface Props {
   post: Post;
@@ -18,16 +20,32 @@ interface Props {
 
 export default function PostPage({ post, mdx }: Props) {
   return (
-    <AppMainContentWrapper>
-      <PostLayout
-        header={
-          <PostHeader title={post.title} date={post.date} tags={post.tags} />
-        }
-        thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
-        body={<MDXRemoteContainer mdx={mdx} />}
-      />
-      <PostToc />
-    </AppMainContentWrapper>
+    <>
+      <SEO
+        title={`${post.title} - DevLog`}
+        description={post.description}
+        url={`${SiteConfig.url}/post/${post.slug}`}
+        imageUrl={post.thumbnail}
+        type="article"
+      >
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.date} />
+        <meta property="article:author" content={`${SiteConfig.url}/info`} />
+        {post.tags.map((tag) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+      </SEO>
+      <AppMainContentWrapper>
+        <PostLayout
+          header={
+            <PostHeader title={post.title} date={post.date} tags={post.tags} />
+          }
+          thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
+          body={<MDXRemoteContainer mdx={mdx} />}
+        />
+        <PostToc />
+      </AppMainContentWrapper>
+    </>
   );
 }
 

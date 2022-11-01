@@ -3,19 +3,12 @@ import { Feed, Item } from 'feed';
 import { marked } from 'marked';
 import { Post } from '@/types';
 import getAllPosts from '../lib/getAllPosts';
+import { SiteConfig } from 'config';
 
 const PUBLIC_PATH = `${process.cwd()}/public`;
-const NEXT_PUBLIC_SERVICE_URL = 'https://devlog.juntae.kim';
-const NEXT_PUBLIC_IMAGE_URL = 'https://image-devlog.juntae.kim';
-
-const author = {
-  name: 'Juntae(John) Kim',
-  email: 'public.juntae@gmail.com',
-  link: 'https://twitter.com/john_xxoo',
-};
 
 function createFeeds(post: Post): Item {
-  const link = `${NEXT_PUBLIC_SERVICE_URL}/post/${encodeURI(post.slug)}`;
+  const link = `${SiteConfig.url}/post/${encodeURI(post.slug)}`;
   return {
     link,
     title: post.title,
@@ -23,8 +16,8 @@ function createFeeds(post: Post): Item {
     content: marked(post.body).replace(/[\u001C-\u001F\u0008]/gu, ''),
     id: link,
     date: new Date(post.date),
-    author: [author],
-    contributor: [author],
+    author: [SiteConfig.author],
+    contributor: [SiteConfig.author],
   };
 }
 
@@ -32,13 +25,13 @@ function generateRssFeed(posts: Post[]) {
   const feed = new Feed({
     title: 'DevLog',
     description: 'DevLog',
-    link: NEXT_PUBLIC_SERVICE_URL,
-    id: NEXT_PUBLIC_SERVICE_URL,
-    image: `${NEXT_PUBLIC_IMAGE_URL}/logo/devlog.png`,
+    link: SiteConfig.url,
+    id: SiteConfig.url,
+    image: SiteConfig.logoUrl,
     updated: new Date(posts[0].date),
     copyright: 'Copyright (C) 2020. DevLog. All rights reserved.',
-    feed: `${NEXT_PUBLIC_SERVICE_URL}/rss`,
-    author,
+    feed: `${SiteConfig.url}/rss`,
+    author: SiteConfig.author,
   });
 
   const postFeeds = posts.map(createFeeds);

@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const isLocal = process.env.PREFIX === 'local';
 const domains = ['image-devlog.juntae.kim'];
 
 const images = isProduction
@@ -10,9 +11,8 @@ const images = isProduction
   : {
       domains,
     };
-const assetPrefix = isProduction
-  ? process.env.NEXT_PUBLIC_SERVICE_URL
-  : undefined;
+const assetPrefix =
+  isProduction && !isLocal ? process.env.NEXT_PUBLIC_SERVICE_URL : undefined;
 
 /**
  * @type {import('next').NextConfig}

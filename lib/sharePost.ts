@@ -12,20 +12,23 @@ function shareMobileWithNavigationAPI({ title, text, url }: SharePostParams) {
   });
 }
 
-function copyToClipBoard(value: string, callback: () => void) {
+async function copyToClipBoard(value: string, callback: () => void) {
   try {
-    navigator.clipboard.writeText(value).then((_) => {
+    try {
+      const _ = await navigator.clipboard.writeText(value);
       callback();
-    });
+    } catch (_) {
+      const input = document.createElement('input');
+      input.value = value;
+      document.body.appendChild(input);
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+      document.execCommand('Copy');
+      document.body.removeChild(input);
+      callback();
+    }
   } catch (err) {
-    const input = document.createElement('input');
-    input.value = value;
-    document.body.appendChild(input);
-    input.select();
-    input.setSelectionRange(0, input.value.length);
-    document.execCommand('Copy');
-    document.body.removeChild(input);
-    callback();
+    throw err;
   }
 }
 
@@ -42,6 +45,10 @@ export default async function sharePost(
       console.log('share cancel error: AbortError');
       return;
     }
-    copyToClipBoard(params.url, fallbackCallback);
+    try {
+      await copyToClipBoard(params.url, fallbackCallback);
+    } catch (err) {
+      throw err;
+    }
   }
 }

@@ -28,6 +28,27 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta property="og:locale" content="ko-KR" />
+        <meta name="author" content="john" />
+        <meta property="og:locale" content="ko_KR" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="rss"
+          href="/rss/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+json"
+          title="rss"
+          href="/rss/feed.json"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="rss"
+          href="/rss/atom.xml"
+        />
         <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}

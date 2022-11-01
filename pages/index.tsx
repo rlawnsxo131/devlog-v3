@@ -3,6 +3,7 @@ import { CountTag, Post } from '@/types';
 import { getAllPosts } from '@/lib';
 import { getUniqcountTagFor } from '@/lib';
 import { PostsPageTemplate } from '@/components/post';
+import { SEO } from '@/components/base';
 
 interface Props {
   posts: Post[];
@@ -10,7 +11,19 @@ interface Props {
 }
 
 export default function IndexPage({ posts, countTag }: Props) {
-  return <PostsPageTemplate posts={posts} countTag={countTag} />;
+  return (
+    <>
+      <SEO
+        description={`김준태 블로그(DevLog) - ${posts
+          .slice(0, 11)
+          .map((post) => post.title)
+          .slice(0, 20)
+          .join()}`}
+        type="blog"
+      />
+      <PostsPageTemplate posts={posts} countTag={countTag} />
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {

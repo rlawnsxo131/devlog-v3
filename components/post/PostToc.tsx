@@ -5,7 +5,7 @@ import usePostToc from './hooks/usePostToc';
 interface Props {}
 
 function PostToc(props: Props) {
-  const { tocs, activeTocId } = usePostToc();
+  const { tocs, deferrdActiveTocId, handleTocClick } = usePostToc();
 
   return (
     <div className={block()}>
@@ -16,9 +16,10 @@ function PostToc(props: Props) {
               href={`#${v.id}`}
               style={v.styleObj}
               className={tocAnchor({
-                variant: utils.getAnchorVariant(v.id, activeTocId),
+                variant: utils.getAnchorVariant(v.id, deferrdActiveTocId),
               })}
               data-id={v.id}
+              onClick={handleTocClick}
             >
               {v.text}
             </a>
@@ -64,10 +65,6 @@ const tocAnchor = css({
   flexFlow: 'row wrap',
   color: '$text-sub',
   transition: '0.125s all ease-in',
-  '& .active': {
-    transform: 'scale(1.05)',
-    color: '$text',
-  },
   variants: {
     variant: {
       default: {

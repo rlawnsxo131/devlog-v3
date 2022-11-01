@@ -1,22 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useDeferredValue, useEffect, useState } from 'react';
 import constants from '@/constants';
-import { utils } from '@/lib';
 
 interface Toc {
   id: string;
   text: string;
   level: number;
-  yPosition: number;
   styleObj: Record<string, string>;
 }
 
 export default function usePostToc() {
   const [tocs, setTocs] = useState<Toc[] | null>(null);
   const [activeTocId, setActiveTocId] = useState('');
+  const deferrdActiveTocId = useDeferredValue(activeTocId);
+
+  const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const { id } = e.currentTarget.dataset;
+    setActiveTocId(id);
+  };
 
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
-      const activeToc = entries.find((v) => v.isIntersecting);
+      const activeToc = entries.find((entry) => entry.isIntersecting);
       if (!activeToc) return;
       setActiveTocId(activeToc.target.id);
     });
@@ -25,7 +29,6 @@ export default function usePostToc() {
       '.mdx-remote-wrapper h1, h2, h3, h4, h5',
     );
     const tocs: Toc[] = [];
-    const scrollTop = utils.getScrollTop();
     for (let i = 0; i < nodes.length; i++) {
       if (nodes[i].tagName.match(/H([1-5])/)) {
         const textContent = nodes[i].textContent;
@@ -39,10 +42,6 @@ export default function usePostToc() {
             id: nodes[i].id,
             text: nodes[i].textContent,
             level: level,
-            yPosition: parseInt(
-              `${nodes[i].getBoundingClientRect().top + scrollTop}`,
-              10,
-            ),
             styleObj: {
               paddingLeft: `${(level - 1) * 1}rem`,
             },
@@ -59,6 +58,7 @@ export default function usePostToc() {
 
   return {
     tocs,
-    activeTocId,
+    deferrdActiveTocId,
+    handleTocClick,
   };
 }

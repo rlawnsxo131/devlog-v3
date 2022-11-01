@@ -5,6 +5,7 @@ const topLevelBoxStyle = {
   padding: '0',
   height: '100%',
   scrollBehavior: 'smooth',
+  scrollPadding: '5rem',
 };
 
 const topLevelBoxChildrenStyle = {

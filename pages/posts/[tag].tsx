@@ -3,6 +3,8 @@ import { PostsPageTemplate } from '@/components/post';
 import { getAllPosts } from '@/lib';
 import { getUniqcountTagFor } from '@/lib';
 import { CountTag, Post } from '@/types';
+import { SEO } from '@/components/base';
+import { SiteConfig } from 'config';
 
 interface Props {
   posts: Post[];
@@ -12,11 +14,19 @@ interface Props {
 
 export default function PostsOfTagPage({ posts, countTag, currentTag }: Props) {
   return (
-    <PostsPageTemplate
-      posts={posts}
-      countTag={countTag}
-      currentTag={currentTag}
-    />
+    <>
+      <SEO
+        title={`${currentTag} - DevLog`}
+        description={`김준태 블로그(DevLog) - ${currentTag} 에 관한 글목록`}
+        url={`${SiteConfig.url}/posts/${currentTag}`}
+        type="blog"
+      />
+      <PostsPageTemplate
+        posts={posts}
+        countTag={countTag}
+        currentTag={currentTag}
+      />
+    </>
   );
 }
 
