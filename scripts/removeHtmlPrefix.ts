@@ -9,10 +9,9 @@ const OUT_FILE_PATH = `${process.cwd()}/out`;
 function removeHtmlPrefix() {
   const filePath = sync(`${OUT_FILE_PATH}/**/*.html*`).reverse();
   for (const path of filePath) {
-    if (path.endsWith('index.html')) {
-      const pureFilename = path.split('.html')[0];
-      fs.renameSync(path, pureFilename);
-    }
+    if (path.endsWith('index.html')) continue;
+    const pureFilename = path.split('.html')[0];
+    fs.renameSync(path, pureFilename);
   }
 }
 
