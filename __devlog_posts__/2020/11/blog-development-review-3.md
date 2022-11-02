@@ -4,7 +4,7 @@ description: Next.js 여러모로 마음에 든다.
 tags:
   - Next.js
   - React.js
-thumbnail: https://image-devlog.juntae.kim/post/image/png/NextJS.png
+thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/png/NextJS.png
 date: 2020-11-26
 slug: blog-development-review-3
 ---

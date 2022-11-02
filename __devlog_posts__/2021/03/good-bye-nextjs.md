@@ -4,7 +4,7 @@ description: Next.js 를 React.js 로 갈아 엎어보았다.
 tags:
   - Next.js
   - React.js
-thumbnail: https://image-devlog.juntae.kim/post/image/jpeg/next-react.jpg
+thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/jpeg/next-react.jpg
 date: 2021-03-11
 slug: good-bye-nextjs
 ---

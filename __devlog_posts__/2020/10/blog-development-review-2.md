@@ -4,7 +4,7 @@ description: 난 graphql 을 오해하고 있었다.
 tags:
   - GraphQL
   - Apollo
-thumbnail: https://image-devlog.juntae.kim/post/image/png/graphql.png
+thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/png/graphql.png
 date: 2020-10-26
 slug: blog-development-review-2
 ---

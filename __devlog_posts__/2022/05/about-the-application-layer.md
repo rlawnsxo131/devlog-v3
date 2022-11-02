@@ -4,7 +4,7 @@ description: server 짤때 golang 참 재미있고 괜찮습니다.
 tags:
   - Architecture
   - Golang
-thumbnail: https://image-devlog.juntae.kim/post/image/png/layer_with_golang.png
+thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/png/layer_with_golang.png
 date: 2022-05-28
 slug: about-the-application-layer
 ---

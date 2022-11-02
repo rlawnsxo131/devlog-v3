@@ -3,7 +3,7 @@ title: 개발 중 조심해야 할 것들 2
 description: 지금 당장 생각나는 개발중 조심해야 하는 것들.
 tags:
   - Architecture
-thumbnail: https://image-devlog.juntae.kim/post/image/jpeg/things-developers.jpg
+thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/jpeg/things-developers.jpg
 date: 2021-05-03
 slug: notes-on-application-creation-2
 ---
