@@ -18,7 +18,7 @@
 	"TypescriptReactFunctionComponent": {
 		"prefix": "fc",
 		"body": [
-			"import { css } from '@/styles/_stitches.config'",
+			"import { css } from '@/styles/_stitches.config';",
 			"",
 			"interface Props {}",
 			"",

@@ -19,6 +19,7 @@ export default function IndexPage({ posts, countTag }: Props) {
           .map((post) => post.title)
           .slice(0, 20)
           .join()}`}
+        ogDescription="김준태 블로그(DevLog)"
         type="blog"
       />
       <PostsPageTemplate posts={posts} countTag={countTag} />

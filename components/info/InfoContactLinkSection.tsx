@@ -46,7 +46,6 @@ function InfoContactLinkSection(props: Props) {
 const block = css({
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '1.5rem',
   padding: '1rem',
   background: '$bg-info-section',
   boxShadow: '$default1',

@@ -10,7 +10,8 @@ export default function InfoPage() {
     <>
       <SEO
         title="Info - DevLog"
-        description="김준태 블로그(DevLog) - 소개 페이지"
+        description="김준태 블로그(DevLog) - Info"
+        type="blog"
       />
       <AppMainContentWrapper>
         <InfoContactLinkSection />

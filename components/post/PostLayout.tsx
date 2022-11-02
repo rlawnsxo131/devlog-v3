@@ -8,11 +8,11 @@ interface Props {
 
 function PostLayout({ header, thumbnail, body }: Props) {
   return (
-    <div className={block()}>
-      <div className={headerBlock()}>{header}</div>
+    <article className={block()}>
+      <header className={headerBlock()}>{header}</header>
       <div className={thumbnailBlock()}>{thumbnail}</div>
       <div className={bodyBlock()}>{body}</div>
-    </div>
+    </article>
   );
 }
 

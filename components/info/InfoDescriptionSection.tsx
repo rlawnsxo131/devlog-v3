@@ -72,13 +72,11 @@ const section = css({
   display: 'flex',
   flexDirection: 'column',
   padding: '1rem',
+  marginTop: '1.5rem',
   background: '$bg-info-section',
   boxShadow: '$default1',
   borderRadius: '4px',
   color: '$text',
-  '& + &': {
-    marginTop: '1.5rem',
-  },
 });
 
 const listBlock = css({
@@ -101,6 +99,14 @@ const titleBlock = css({
     margin: '0',
     fontSize: '1.5rem',
     fontWeight: '500',
+  },
+});
+
+const aboutBlock = css({
+  '& p': {
+    margin: '0',
+    lineHeight: '2',
+    fontSize: '1.125rem',
   },
 });
 
