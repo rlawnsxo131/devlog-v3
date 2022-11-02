@@ -1,8 +1,10 @@
-import { utils } from '@/lib';
-import { linkTagBaseStyle } from '@/styles/basicStyle';
-import { css } from '@/styles/_stitches.config';
-import { Post } from '@/types';
 import Link from 'next/link';
+
+import { utils } from '@/lib';
+import { css } from '@/styles/_stitches.config';
+import { linkTagBaseStyle } from '@/styles/basicStyle';
+import type { Post } from '@/types';
+
 import Separator from '../system/Separator';
 
 type Props = Pick<Post, 'title' | 'tags' | 'date'>;

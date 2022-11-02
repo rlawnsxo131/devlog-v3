@@ -1,5 +1,7 @@
 import { act } from '@testing-library/react';
+
 import { renderHookWithGlobalProvider } from '@/__test_utils__/renderWithGlobalProviders';
+
 import useThemeButton from '../hooks/useThemeButton';
 
 describe('useThemeButton', () => {

@@ -10,6 +10,7 @@ const images = isProduction
     }
   : {
       domains,
+      path: '/_next/image',
     };
 const assetPrefix =
   isProduction && !isLocal ? process.env.NEXT_PUBLIC_SERVICE_URL : undefined;

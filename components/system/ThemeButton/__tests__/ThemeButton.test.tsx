@@ -1,6 +1,8 @@
-import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
 import { waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
+
 import ThemeButton from '..';
 
 function renderThemeButton() {

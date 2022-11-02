@@ -36,6 +36,6 @@
       "@/__test_utils__/*": ["__test_utils__/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/build.js"],
+  "include": ["next-env.d.ts", "**/**/*.ts", "**/**/*.tsx", "scripts/build.js"],
   "exclude": ["node_modules"]
 }

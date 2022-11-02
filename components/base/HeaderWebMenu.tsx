@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 import useRoutePathname from '@/hooks/useRoutePathname';
 import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
-import Link from 'next/link';
+
 import useGetPostRouteVariant from './hooks/useGetPostRouteVariant';
 
 interface Props {}

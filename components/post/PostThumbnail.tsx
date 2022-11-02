@@ -1,8 +1,9 @@
+import Image from 'next/image';
+
 import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
-import { Post } from '@/types';
-import Image from 'next/image';
+import type { Post } from '@/types';
 
 type Props = Pick<Post, 'thumbnail'>;
 

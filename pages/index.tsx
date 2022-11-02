@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next';
-import { CountTag, Post } from '@/types';
-import { getAllPosts } from '@/lib';
-import { getUniqcountTagFor } from '@/lib';
-import { PostsPageTemplate } from '@/components/post';
+
 import { SEO } from '@/components/base';
+import { PostsPageTemplate } from '@/components/post';
+import { getAllPosts, getUniqcountTagFor } from '@/lib';
+import { CountTag, Post } from '@/types';
 
 interface Props {
   posts: Post[];

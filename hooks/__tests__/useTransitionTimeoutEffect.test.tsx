@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+
 import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 
 describe('useTransitionTimeoutEffect', () => {

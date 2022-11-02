@@ -1,6 +1,8 @@
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote';
 import { memo } from 'react';
+
 import { css } from '@/styles/_stitches.config';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 interface Props {
   mdx: MDXRemoteSerializeResult;

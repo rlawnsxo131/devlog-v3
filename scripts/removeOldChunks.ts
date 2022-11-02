@@ -1,8 +1,8 @@
+import type { ObjectIdentifier } from '@aws-sdk/client-s3';
 import {
-  S3Client,
-  ListObjectsCommand,
   DeleteObjectsCommand,
-  ObjectIdentifier,
+  ListObjectsCommand,
+  S3Client,
 } from '@aws-sdk/client-s3';
 
 const REGION = 'ap-northeast-2';

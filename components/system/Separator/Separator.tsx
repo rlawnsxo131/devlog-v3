@@ -1,4 +1,5 @@
-import { css, StitchesCSS } from '@/styles/_stitches.config';
+import type { StitchesCSS } from '@/styles/_stitches.config';
+import { css } from '@/styles/_stitches.config';
 
 interface Props {
   cssProps: StitchesCSS;

@@ -1,5 +1,6 @@
-import { buttonBasicStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
+import { buttonBasicStyle } from '@/styles/basicStyle';
+
 import useGoHomeButton from './hooks/useGoHomeButton';
 
 interface Props {

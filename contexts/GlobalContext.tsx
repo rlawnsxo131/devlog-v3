@@ -1,6 +1,7 @@
 import { createContext, Dispatch, useContext, useReducer } from 'react';
-import { Theme } from '@/types';
+
 import { utils } from '@/lib';
+import { Theme } from '@/types';
 
 // state
 interface GlobalState {

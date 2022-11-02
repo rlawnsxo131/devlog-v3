@@ -1,7 +1,8 @@
-import fs from 'fs';
-import { FrontMatter, Post } from '@/types';
-import { sync } from 'glob';
 import frontMatter from 'front-matter';
+import fs from 'fs';
+import { sync } from 'glob';
+
+import { FrontMatter, Post } from '@/types';
 
 const POST_PATH = `${process.cwd()}/__devlog_posts__`;
 

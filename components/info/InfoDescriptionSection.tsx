@@ -1,5 +1,5 @@
-import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
+import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
 
 interface Props {}
 

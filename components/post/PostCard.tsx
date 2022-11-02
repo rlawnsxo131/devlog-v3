@@ -1,14 +1,16 @@
-import { css } from '@/styles/_stitches.config';
-import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
-import { optimizeImage, formatDate } from '@/lib/utils';
-import { Post } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LinkIcon } from '../img/icons';
-import UnderlineLink from '../system/UnderlineLink';
-import Separator from '../system/Separator';
-import usePostCard from './hooks/usePostCard';
+
 import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
+import { formatDate, optimizeImage } from '@/lib/utils';
+import { css } from '@/styles/_stitches.config';
+import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
+import type { Post } from '@/types';
+
+import { LinkIcon } from '../img/icons';
+import Separator from '../system/Separator';
+import UnderlineLink from '../system/UnderlineLink';
+import usePostCard from './hooks/usePostCard';
 
 interface Props {
   post: Post;

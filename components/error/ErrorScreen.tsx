@@ -1,5 +1,6 @@
 import { css } from '@/styles/_stitches.config';
-import { ErrorType } from '@/types';
+import type { ErrorType } from '@/types';
+
 import ErrorGoHomeButton from './ErrorGoHomeButton';
 import ErrorScreenMutableContent from './ErrorScreenMutableContent';
 

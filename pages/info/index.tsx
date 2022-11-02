@@ -1,9 +1,9 @@
+import { AppMainContentWrapper } from '@/components/app';
+import { SEO } from '@/components/base';
 import {
   InfoContactLinkSection,
   InfoDescriptionSection,
 } from '@/components/info';
-import { AppMainContentWrapper } from '@/components/app';
-import { SEO } from '@/components/base';
 
 export default function InfoPage() {
   return (

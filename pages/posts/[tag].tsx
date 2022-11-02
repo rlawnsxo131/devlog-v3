@@ -1,10 +1,10 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { PostsPageTemplate } from '@/components/post';
-import { getAllPosts } from '@/lib';
-import { getUniqcountTagFor } from '@/lib';
-import { CountTag, Post } from '@/types';
-import { SEO } from '@/components/base';
 import { SiteConfig } from 'config';
+import { GetStaticPaths, GetStaticProps } from 'next';
+
+import { SEO } from '@/components/base';
+import { PostsPageTemplate } from '@/components/post';
+import { getAllPosts, getUniqcountTagFor } from '@/lib';
+import { CountTag, Post } from '@/types';
 
 interface Props {
   posts: Post[];

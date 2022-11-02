@@ -1,5 +1,5 @@
-import useThemeState from '@/hooks/theme/useThemeState';
 import useThemeActions from '@/hooks/theme/useThemeActions';
+import useThemeState from '@/hooks/theme/useThemeState';
 
 export default function useThemeButton() {
   const theme = useThemeState();

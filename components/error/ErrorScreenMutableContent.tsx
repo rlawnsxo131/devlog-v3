@@ -1,4 +1,5 @@
-import { ErrorType } from '@/types';
+import type { ErrorType } from '@/types';
+
 import {
   InternalServerErrorBackground,
   NotFoundBackground,

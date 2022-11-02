@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { Storage } from '@/lib';
-import { useGlobalContextDispatch } from '@/contexts/GlobalContext';
+
 import constants from '@/constants';
+import { useGlobalContextDispatch } from '@/contexts/GlobalContext';
+import { Storage } from '@/lib';
 
 export default function useThemeEffect() {
   const dispatch = useGlobalContextDispatch();

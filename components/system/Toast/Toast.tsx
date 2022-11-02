@@ -1,5 +1,6 @@
-import { Flip, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { Flip, ToastContainer } from 'react-toastify';
 
 interface Props {}
 

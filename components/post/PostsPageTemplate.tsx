@@ -1,5 +1,6 @@
 import { css } from '@/styles/_stitches.config';
-import { CountTag, Post } from '@/types';
+import type { CountTag, Post } from '@/types';
+
 import { ErrorScreen } from '../error';
 import PostCard from './PostCard';
 import PostCardGirdLayout from './PostCardGirdLayout';

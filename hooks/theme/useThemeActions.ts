@@ -1,5 +1,6 @@
-import { useGlobalContextDispatch } from '@/contexts/GlobalContext';
 import { useMemo } from 'react';
+
+import { useGlobalContextDispatch } from '@/contexts/GlobalContext';
 
 export default function useThemeActions() {
   const dispatch = useGlobalContextDispatch();

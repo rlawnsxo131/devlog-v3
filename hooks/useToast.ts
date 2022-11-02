@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { toast, ToastPosition } from 'react-toastify';
+
 import useThemeState from '@/hooks/theme/useThemeState';
 
 const bodyStyle = {

@@ -1,14 +1,17 @@
-import fs from 'fs';
-import { Feed, Item } from 'feed';
-import { marked } from 'marked';
-import { Post } from '@/types';
-import getAllPosts from '../lib/getAllPosts';
 import { SiteConfig } from 'config';
+import { Feed, Item } from 'feed';
+import fs from 'fs';
+import { marked } from 'marked';
+
+import { Post } from '@/types';
+
+import getAllPosts from '../lib/getAllPosts';
 
 const PUBLIC_PATH = `${process.cwd()}/public`;
 
 function createFeeds(post: Post): Item {
   const link = `${SiteConfig.url}/post/${encodeURI(post.slug)}`;
+
   return {
     link,
     title: post.title,

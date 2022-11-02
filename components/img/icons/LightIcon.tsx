@@ -1,6 +1,6 @@
 import {
-  svgContentFillCss,
   svgBackgroundFillCss,
+  svgContentFillCss,
 } from '@/styles/basicStyleCss';
 
 interface Props extends React.SVGProps<SVGSVGElement> {}

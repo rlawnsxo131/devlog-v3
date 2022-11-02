@@ -1,13 +1,14 @@
 import { serialize } from 'next-mdx-remote/serialize';
-import remarkMath from 'remark-math';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
-import toc from 'remark-toc';
+import prism from 'rehype-prism-plus';
 import slug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import prism from 'rehype-prism-plus';
-import { visit } from 'unist-util-visit';
+import remarkMath from 'remark-math';
+import toc from 'remark-toc';
 import type { Node } from 'unist';
+import { visit } from 'unist-util-visit';
+
 import { optimizeImage } from './utils';
 
 // type TokenType =

@@ -1,5 +1,5 @@
-import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 import { css } from '@/styles/_stitches.config';
+import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 
 interface Props {
   children: React.ReactNode;

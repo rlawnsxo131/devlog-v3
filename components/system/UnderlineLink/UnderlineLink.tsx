@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { memo } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
-import Link from 'next/link';
 
 interface Props {
   href: string;

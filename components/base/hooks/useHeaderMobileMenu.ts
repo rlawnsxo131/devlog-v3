@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
+
 import useRoutePathname from '@/hooks/useRoutePathname';
+import useTransitionTimeoutEffect from '@/hooks/useTransitionTimeoutEffect';
 
 export default function useHeaderMenu() {
   const routePathname = useRoutePathname();

@@ -1,7 +1,8 @@
-import { css } from '@/styles/_stitches.config';
-import { RssIcon } from '@/components/img/icons';
-import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 import { SiteConfig } from 'config';
+
+import { RssIcon } from '@/components/img/icons';
+import { css } from '@/styles/_stitches.config';
+import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 
 interface Props {}
 

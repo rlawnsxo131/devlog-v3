@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import { SiteConfig } from 'config';
+import Head from 'next/head';
 
 interface Props {
   children?: React.ReactNode;

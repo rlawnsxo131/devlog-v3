@@ -1,8 +1,9 @@
+import Link from 'next/link';
+
+import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
-import Link from 'next/link';
-import { CountTag } from '@/types';
-import { utils } from '@/lib';
+import type { CountTag } from '@/types';
 
 interface Props {
   countTag: CountTag;

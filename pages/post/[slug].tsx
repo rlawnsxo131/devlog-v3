@@ -1,17 +1,18 @@
-import { Post } from '@/types';
+import { SiteConfig } from 'config';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
 import { AppMainContentWrapper } from '@/components/app';
-import { getAllPosts, parseMarkdownToMdx } from '@/lib';
+import { SEO } from '@/components/base';
 import { MDXRemoteContainer } from '@/components/markdown';
 import {
-  PostLayout,
   PostHeader,
+  PostLayout,
   PostThumbnail,
   PostToc,
 } from '@/components/post';
-import { SEO } from '@/components/base';
-import { SiteConfig } from 'config';
+import { getAllPosts, parseMarkdownToMdx } from '@/lib';
+import { Post } from '@/types';
 
 interface Props {
   post: Post;

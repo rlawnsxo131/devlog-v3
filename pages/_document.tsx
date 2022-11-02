@@ -1,6 +1,7 @@
+import { Head, Html, Main, NextScript } from 'next/document';
+
 import constants from '@/constants';
 import { darkTheme, getCssText } from '@/styles/_stitches.config';
-import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   const themeScript = `

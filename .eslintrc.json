@@ -1,3 +1,38 @@
 {
-  "extends": ["next/core-web-vitals", "eslint-config-next"]
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:import/recommended",
+    "eslint-config-next",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "import"],
+  "rules": {
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "no-useless-catch": "warn",
+    "no-control-regex": "warn"
+  }
 }

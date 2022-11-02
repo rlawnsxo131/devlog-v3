@@ -1,5 +1,6 @@
-import { css } from '@/styles/_stitches.config';
 import Link from 'next/link';
+
+import { css } from '@/styles/_stitches.config';
 
 interface Props {}
 

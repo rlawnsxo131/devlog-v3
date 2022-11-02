@@ -14,10 +14,10 @@ function shareMobileWithNavigationAPI({ title, text, url }: SharePostParams) {
 
 async function copyToClipBoard(value: string, callback: () => void) {
   try {
+    await window.navigator.clipboard.writeText(value);
+    callback();
+  } catch (_) {
     try {
-      const _ = await navigator.clipboard.writeText(value);
-      callback();
-    } catch (_) {
       const input = document.createElement('input');
       input.value = value;
       document.body.appendChild(input);
@@ -26,9 +26,9 @@ async function copyToClipBoard(value: string, callback: () => void) {
       document.execCommand('Copy');
       document.body.removeChild(input);
       callback();
+    } catch (err) {
+      throw err;
     }
-  } catch (err) {
-    throw err;
   }
 }
 

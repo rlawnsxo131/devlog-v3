@@ -1,7 +1,8 @@
+import { format } from 'date-fns';
+
 import constants from '@/constants';
 import { Storage } from '@/lib';
 import { Theme } from '@/types';
-import { format } from 'date-fns';
 
 export function setThemeForDocumentAndStorage(theme: Theme) {
   if (theme === 'light') {
@@ -18,7 +19,7 @@ export function optimizeImage(url: string, width?: number) {
   if (url.includes('.svg')) return url;
 
   // cloudfront
-  let replaced = url.replace(
+  const replaced = url.replace(
     'http://image-devlog.juntae.kim',
     'https://image-devlog.juntae.kim',
   );
