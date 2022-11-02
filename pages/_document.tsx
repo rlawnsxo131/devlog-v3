@@ -112,7 +112,7 @@ export default function Document() {
         />
         <meta
           name="theme-color"
-          content="#05a2c2"
+          content="#0c8097"
           media="(prefers-color-scheme: dark)"
         />
         <link
