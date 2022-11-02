@@ -31,7 +31,7 @@ slug: about-the-application-layer
 # Layer 란 무엇인가
 이야기에 앞서 과연 이 ``Layer`` 란 무엇인가에 대하여 간단히 살펴보고 가면 좋을것 같습니다. 아마도 이 글을 읽으시는 분들중 상당히 많은 분들은 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) 의 클린아키텍처를 읽어보셨을것 같은데요. 혹시 읽어보시지 않으셨다면 꼭 읽어보시는 것을 추천하고 싶습니다. 저는 두번째 읽는 순간 어느 한부분에 눈이 확 뜨이는 느낌을 받았는데, 정말 좋은 책이랍니다. 그럼 아주 유명한 이 개념도를 한번 보고 가시죠.
 
-![](https://image-devlog.juntae.kim/post/image/jpeg/CleanArchitecture.jpeg)
+![](https://image-devlog.juntae.kim/post/image/2022/05/CleanArchitecture.jpeg)
 
 layer 란 단어 그대로의 뜻을 해석하자면 층입니다. 이 말인 즉슨 우리가 작성하는 application 에도 층이란 것이 존재한다는 것이지요. 편의상 앞으로 ``계층``이란 표현을 사용하겠습니다. 앞서 드린 이야기처럼 이 글에선 위 이미지에 나와있는 부분들을 상세히 설명하지 않습니다. 다만 쉽게 이해할 수 있는 간단한 개념을 정확히 이해하면 좋을듯 싶은데요. 어플리케이션엔 계층이란 것이 존재합니다. 그리고 이 계층들은 각자 본인이 맞은바의 역할이 명확히 존재하지요. 이 역할들은 어떻게 나뉠까요? 비교적 간단히 알아보고 넘어가볼까 합니다.
 
