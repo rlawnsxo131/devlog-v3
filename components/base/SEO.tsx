@@ -10,7 +10,7 @@ interface Props {
   imageUrl?: string;
   author?: string;
   url?: string;
-  type?: string;
+  type: string;
 }
 
 function SEO({
@@ -30,7 +30,7 @@ function SEO({
       <meta property="og:image" content={imageUrl || SiteConfig.logoUrl} />
       <meta property="og:image:width" content="800" />
       <meta property="og:image:height" content="400" />
-      {type && <meta property="og:type" content={type} />}
+      <meta property="og:type" content={type} />
       <meta name="description" content={description} />
       <link rel="canonical" href={url || SiteConfig.url} />
       {children}
