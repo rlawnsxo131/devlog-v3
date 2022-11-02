@@ -18,6 +18,14 @@ function ErrorScreenMutableContent({ type }: Props) {
       </>
     );
   }
+  if (type === 'Unknown') {
+    return (
+      <>
+        <InternalServerErrorBackground />
+        <h1>Unknown Error !</h1>
+      </>
+    );
+  }
   return (
     <>
       <InternalServerErrorBackground />

@@ -1,8 +1,9 @@
-import { GlobalContextProvider } from '@/contexts/GlobalContext';
 import { render, renderHook } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 
-function GlobalHocWrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+import { GlobalContextProvider } from '@/contexts/GlobalContext';
+
+function GlobalHocWrapper({ children }: PropsWithChildren): JSX.Element {
   return <GlobalContextProvider>{children}</GlobalContextProvider>;
 }
 

@@ -1,4 +1,4 @@
-import { StitchesCSS } from './_stitches.config';
+import type { StitchesCSS } from './_stitches.config';
 
 export const buttonBasicStyle: StitchesCSS = {
   padding: '0',

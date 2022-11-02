@@ -1,5 +1,6 @@
 import { cyan, cyanDark, gray, grayDark, red, redDark } from '@radix-ui/colors';
-import { createStitches, CSS, ScaleValue } from '@stitches/core';
+import type { CSS, ScaleValue } from '@stitches/core';
+import { createStitches } from '@stitches/core';
 
 export const { createTheme, globalCss, getCssText, config, css, keyframes } =
   createStitches({
