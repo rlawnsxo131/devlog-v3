@@ -37,6 +37,8 @@ const block = css({
   '& img': {
     maxWidth: '100%',
     height: 'auto',
+    display: 'block',
+    margin: '1.5rem auto',
   },
 
   '& li': {

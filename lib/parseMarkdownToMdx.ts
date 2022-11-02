@@ -42,6 +42,8 @@ function parseCodeSnippet() {
   return (tree: Node) => {
     visit(tree, 'element', (node: any) => {
       if (node.tagName === 'img') {
+        const alt = node.properties.src.split('/').at(-1);
+        node.properties.alt = alt ?? '';
         node.properties.src = optimizeImage(node.properties.src, 768);
       }
       // const [token, type]: [string, TokenType] =
