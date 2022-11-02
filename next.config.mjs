@@ -15,6 +15,7 @@ const images = isProduction
 const assetPrefix =
   isProduction && !isLocal ? process.env.NEXT_PUBLIC_SERVICE_URL : undefined;
 
+console.log(assetPrefix);
 /**
  * @type {import('next').NextConfig}
  */

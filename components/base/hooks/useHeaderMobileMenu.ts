@@ -22,12 +22,14 @@ export default function useHeaderMenu() {
   }, [routePathname]);
 
   useEffect(() => {
-    function listener(e: React.BaseSyntheticEvent | MouseEvent | TouchEvent) {
+    const listener = (
+      e: React.BaseSyntheticEvent | MouseEvent | TouchEvent,
+    ) => {
       if (!parentRef.current) return;
       if (!parentRef.current.contains(e.target)) {
         setNavVisible(false);
       }
-    }
+    };
 
     document.addEventListener('mousedown', listener);
     document.addEventListener('touchstart', listener);

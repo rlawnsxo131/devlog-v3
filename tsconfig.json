@@ -33,6 +33,8 @@
       "@/lib/*": ["lib/*"],
       "@/constants": ["constants"],
       "@/constants/*": ["constants/*"],
+      "@/config": ["config"],
+      "@/config/*": ["config/*"],
       "@/__test_utils__/*": ["__test_utils__/*"]
     }
   },

@@ -31,7 +31,6 @@ export default function Document() {
       <Head>
         <meta property="og:locale" content="ko-KR" />
         <meta name="author" content="john" />
-        <meta property="og:locale" content="ko_KR" />
         <link
           rel="alternate"
           type="application/rss+xml"
