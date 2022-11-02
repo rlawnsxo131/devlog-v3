@@ -1,8 +1,8 @@
-import { SiteConfig } from 'config';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
+import { SiteConfig } from '@/config';
 import { getAllPosts, getUniqcountTagFor } from '@/lib';
 import { CountTag, Post } from '@/types';
 

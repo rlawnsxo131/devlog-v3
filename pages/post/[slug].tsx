@@ -1,5 +1,4 @@
-import { SiteConfig } from 'config';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { AppMainContentWrapper } from '@/components/app';
@@ -11,6 +10,7 @@ import {
   PostThumbnail,
   PostToc,
 } from '@/components/post';
+import { SiteConfig } from '@/config';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
 import { Post } from '@/types';
 

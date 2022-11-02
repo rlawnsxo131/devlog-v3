@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import type { GetStaticProps } from 'next';
 
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';

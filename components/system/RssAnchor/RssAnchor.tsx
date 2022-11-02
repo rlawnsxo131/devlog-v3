@@ -1,6 +1,5 @@
-import { SiteConfig } from 'config';
-
 import { RssIcon } from '@/components/img/icons';
+import { SiteConfig } from '@/config';
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle, buttonWithSVGBasicStyle } from '@/styles/basicStyle';
 
