@@ -1,44 +1,41 @@
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
 import type { CountTag } from '@/types';
 
+import usePostCountTags from './hooks/usePostCountTags';
+import PostCountTag from './PostCountTag';
+
 interface Props {
   countTag: CountTag;
   currentTag?: string;
 }
 
-/**
- * @TODO 초기 rendering 시에도 활성 태그의 위치를 가시성 영역안에 넣도록 처리하기
- */
 function PostCountTags({ countTag, currentTag }: Props) {
   const entries = Object.entries(countTag);
+  const { containerRef, scrollToCenter } = usePostCountTags();
 
   return (
-    <div className={block()}>
-      <Link href="/">
-        <a
-          className={anchor({
-            variant: currentTag ? 'default' : 'active',
-          })}
-        >
-          All
-          <span>{entries.length}</span>
-        </a>
-      </Link>
+    <div className={block()} ref={containerRef}>
+      <PostCountTag
+        title="All"
+        path="/"
+        count={entries.length}
+        isActive={!currentTag}
+        scrollToCenter={scrollToCenter}
+      />
       {entries.map(([tag, count]) => (
-        <Link key={tag} href={`/posts/${tag}`}>
-          <a
-            className={anchor({
-              variant: utils.getAnchorVariant(tag, currentTag),
-            })}
-          >
-            {tag}
-            <span>{count}</span>
-          </a>
-        </Link>
+        <PostCountTag
+          key={tag}
+          title={tag}
+          path={`/posts/${tag}`}
+          count={count}
+          isActive={tag === currentTag}
+          scrollToCenter={scrollToCenter}
+        />
       ))}
     </div>
   );

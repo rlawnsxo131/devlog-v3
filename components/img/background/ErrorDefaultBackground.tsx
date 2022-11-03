@@ -1,6 +1,6 @@
 interface Props {}
 
-function InternalServerErrorBackground(props: Props) {
+function ErrorDefaultBackground(props: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -617,4 +617,4 @@ function InternalServerErrorBackground(props: Props) {
   );
 }
 
-export default InternalServerErrorBackground;
+export default ErrorDefaultBackground;

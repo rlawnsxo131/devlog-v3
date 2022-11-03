@@ -26,7 +26,7 @@
 			"  return <div className={block()}></div>;",
 			"}",
 			"",
-			"const block = css({})",
+			"const block = css({});",
 			"",
 			"export default ${TM_FILENAME_BASE};"
 		]

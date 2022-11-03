@@ -1,9 +1,6 @@
 import type { ErrorType } from '@/types';
 
-import {
-  InternalServerErrorBackground,
-  NotFoundBackground,
-} from '../img/background';
+import { ErrorDefaultBackground, NotFoundBackground } from '../img/background';
 
 interface Props {
   type: ErrorType;
@@ -21,14 +18,14 @@ function ErrorScreenMutableContent({ type }: Props) {
   if (type === 'Unknown') {
     return (
       <>
-        <InternalServerErrorBackground />
+        <ErrorDefaultBackground />
         <h1>Unknown Error !</h1>
       </>
     );
   }
   return (
     <>
-      <InternalServerErrorBackground />
+      <ErrorDefaultBackground />
       <h1>Internal Server Error !</h1>
     </>
   );

@@ -15,7 +15,6 @@ const images = isProduction
 const assetPrefix =
   isProduction && !isLocal ? process.env.NEXT_PUBLIC_SERVICE_URL : undefined;
 
-console.log(assetPrefix);
 /**
  * @type {import('next').NextConfig}
  */
@@ -23,7 +22,7 @@ const nextConfig = {
   productionBrowserSourceMaps: !isProduction,
   swcMinify: true,
   images,
-  // assetPrefix,
+  assetPrefix,
   compress: true,
   webpack: (config, options) => {
     config.resolve.fallback = { fs: false };

@@ -1,5 +1,6 @@
 import { css } from '@/styles/_stitches.config';
 
+import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import AppMain from './AppMain';
 
@@ -8,12 +9,7 @@ interface Props {
 }
 
 function AppLayout({ children }: Props) {
-  return (
-    <div className={block()}>
-      {children}
-      <div className={fakePaddingArea()} />
-    </div>
-  );
+  return <div className={block()}>{children}</div>;
 }
 
 const block = css({
@@ -24,11 +20,8 @@ const block = css({
   minHeight: '100%',
 });
 
-const fakePaddingArea = css({
-  height: '5rem',
-});
-
 AppLayout.Header = AppHeader;
 AppLayout.Main = AppMain;
+AppLayout.Footer = AppFooter;
 
 export default AppLayout;

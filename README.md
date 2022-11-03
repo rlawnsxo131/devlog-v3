@@ -2,6 +2,9 @@
 
 ## Personal Development blog by John
 
+### Favicon Color Hex
+* #05a2c2
+
 ### Tech Stack
 * Yarn Berry
 * TypeScript

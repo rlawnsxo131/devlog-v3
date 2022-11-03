@@ -1,7 +1,6 @@
-import { AppLayout } from '@/components/app';
+import { AppCopyWrite, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
-import RssAnchor from '@/components/system/RssAnchor';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
 import { GlobalContextProvider } from '@/contexts/GlobalContext';
@@ -19,7 +18,6 @@ export default function App({ Component, pageProps }) {
             rightSideItems={
               <>
                 <HeaderWebMenu />
-                <RssAnchor />
                 <ThemeButton />
                 <HeaderMobileMenu />
               </>
@@ -28,6 +26,9 @@ export default function App({ Component, pageProps }) {
           <AppLayout.Main>
             <Component {...pageProps} />
           </AppLayout.Main>
+          <AppLayout.Footer>
+            <AppCopyWrite />
+          </AppLayout.Footer>
         </AppLayout>
         <Toast />
       </Core>

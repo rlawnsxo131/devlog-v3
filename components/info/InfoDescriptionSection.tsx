@@ -49,19 +49,30 @@ function InfoDescriptionSection(props: Props) {
           <h3>DevLog Tech Stack</h3>
         </div>
         <div className={descriptionBlock()}>
-          <h4>V2</h4>
-          <p>
-            TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
-            React.js, Webpack, React Router, Loadable Components, Unified,
-            Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway,
-            Lambda/Lambda@Edge
-          </p>
-          <h4>V1</h4>
-          <p>
-            TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
-            Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront,
-            API Gateway, Lambda / Lambda@Edge
-          </p>
+          <section className={descriptionItem()}>
+            <h4>Current</h4>
+            <p>
+              Yarn Berry, TypeScript, Next.js, Stitches, Unified,
+              Lambda/Lambda@Edge
+            </p>
+          </section>
+          <section className={descriptionItem()}>
+            <h4>V2</h4>
+            <p>
+              TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+              React.js, Webpack, React Router, Loadable Components, Unified,
+              Emotion, GraphQL, EC2, S3, Route53, CloudFront, API Gateway,
+              Lambda/Lambda@Edge
+            </p>
+          </section>
+          <section className={descriptionItem()}>
+            <h4>V1</h4>
+            <p>
+              TypeScript, MariaDB, Docker, Serverless Framework, NodeJS, Koa,
+              Next.js, Styled components, GraphQL, EC2, S3, Route53, CloudFront,
+              API Gateway, Lambda / Lambda@Edge
+            </p>
+          </section>
         </div>
       </section>
     </>
@@ -102,28 +113,26 @@ const titleBlock = css({
   },
 });
 
-const aboutBlock = css({
-  '& p': {
-    margin: '0',
-    lineHeight: '2',
-    fontSize: '1.125rem',
-  },
-});
-
 const descriptionBlock = css({
   display: 'flex',
-  flexFlow: 'row wrap',
+  flexDirection: 'column',
+});
+
+const descriptionItem = css({
+  display: 'flex',
+  flexDirection: 'column',
   lineHeight: '1.5',
-  fontSize: '1.125rem',
   '& h4': {
     margin: '0',
+    fontSize: '1.125rem',
     fontWeight: '500',
   },
   '& p': {
     margin: '0',
-    '& + h4': {
-      marginTop: '1rem',
-    },
+    fontSize: '1rem',
+  },
+  '& + &': {
+    marginTop: '1.5rem',
   },
 });
 
