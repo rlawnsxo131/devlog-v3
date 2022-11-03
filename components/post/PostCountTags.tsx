@@ -1,7 +1,3 @@
-import Link from 'next/link';
-import { useEffect } from 'react';
-
-import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import { linkTagBaseStyle } from '@/styles/basicStyle';
 import type { CountTag } from '@/types';
