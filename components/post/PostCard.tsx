@@ -17,7 +17,7 @@ interface Props {
 }
 
 function PostCard({ post }: Props) {
-  const { handleCopyURLToClipboard } = usePostCard();
+  const { handleCopyToClipboard } = usePostCard();
   const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   return (
@@ -74,7 +74,7 @@ function PostCard({ post }: Props) {
             data-description={post.description}
             data-slug={post.slug}
             className={footerCopyLinkButton()}
-            onClick={handleCopyURLToClipboard}
+            onClick={handleCopyToClipboard}
           >
             <LinkIcon />
           </button>

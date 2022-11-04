@@ -2,7 +2,7 @@ import type { GetStaticProps } from 'next';
 
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
-import { getAllPosts, getUniqcountTagFor } from '@/lib';
+import { getAllPosts, getUniqCountTagFor } from '@/lib';
 import { CountTag, Post } from '@/types';
 
 interface Props {
@@ -29,7 +29,7 @@ export default function IndexPage({ posts, countTag }: Props) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
-  const countTag = getUniqcountTagFor(posts);
+  const countTag = getUniqCountTagFor(posts);
 
   return {
     props: {

@@ -1,4 +1,4 @@
-import { AppCopyWrite, AppLayout } from '@/components/app';
+import { AppCopyright, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
 import ThemeButton from '@/components/system/ThemeButton';
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           </AppLayout.Main>
           <AppLayout.Footer>
-            <AppCopyWrite />
+            <AppCopyright />
           </AppLayout.Footer>
         </AppLayout>
         <Toast />

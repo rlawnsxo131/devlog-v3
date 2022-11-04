@@ -1,6 +1,12 @@
 import { css } from '@/styles/_stitches.config';
 
-import { EmailIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../img/icons';
+import {
+  EmailIcon,
+  GithubIcon,
+  LinkedinIcon,
+  RssIcon,
+  TwitterIcon,
+} from '../img/icons';
 
 interface Props {}
 
@@ -38,6 +44,14 @@ function InfoContactLinkSection(props: Props) {
         target="_blank"
       >
         <EmailIcon />
+      </a>
+      <a
+        className={wrapAnchor()}
+        rel="noopener noreferrer"
+        href="/rss/feed.xml"
+        target="_blank"
+      >
+        <RssIcon />
       </a>
     </section>
   );

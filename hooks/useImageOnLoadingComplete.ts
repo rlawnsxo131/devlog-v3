@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import type { ImageProps } from 'next/image';
+import { useCallback, useState } from 'react';
 
 export default function useImageOnLoadingComplete() {
   const [isLoadingComplete, setIsLoadingImageComplete] = useState(false);
 
-  const onLoadingComplete = ({ naturalHeight, naturalWidth }) => {
-    if (naturalHeight && naturalWidth) {
+  const onLoadingComplete: ImageProps['onLoadingComplete'] = useCallback(
+    (_) => {
       setIsLoadingImageComplete(true);
-    }
-  };
+    },
+    [setIsLoadingImageComplete],
+  );
 
   return {
     isLoadingComplete,

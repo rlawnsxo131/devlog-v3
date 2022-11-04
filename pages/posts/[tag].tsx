@@ -3,7 +3,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { SiteConfig } from '@/config';
-import { getAllPosts, getUniqcountTagFor } from '@/lib';
+import { getAllPosts, getUniqCountTagFor } from '@/lib';
 import { CountTag, Post } from '@/types';
 
 interface Props {
@@ -32,7 +32,7 @@ export default function PostsOfTagPage({ posts, countTag, currentTag }: Props) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts();
-  const countTags = getUniqcountTagFor(posts);
+  const countTags = getUniqCountTagFor(posts);
   const paths = Object.keys(countTags).map((tag) => ({
     params: { tag },
   }));
@@ -46,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params;
   const allPosts = await getAllPosts();
-  const countTag = getUniqcountTagFor(allPosts);
+  const countTag = getUniqCountTagFor(allPosts);
   const posts = allPosts.filter((posts) => posts.tags.includes(tag as string));
 
   return {

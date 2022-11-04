@@ -55,7 +55,7 @@ export default function usePostToc() {
     return () => {
       intersectionObserver.disconnect();
     };
-  }, [setTocs]);
+  }, [setTocs, setActiveTocId]);
 
   return {
     tocs,

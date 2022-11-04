@@ -16,7 +16,8 @@ async function copyToClipBoard(value: string, callback: () => void) {
   try {
     await window.navigator.clipboard.writeText(value);
     callback();
-  } catch (_) {
+  } catch (err) {
+    console.log(err);
     try {
       const input = document.createElement('input');
       input.value = value;
