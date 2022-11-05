@@ -10,6 +10,7 @@ import {
   PostThumbnail,
   PostToc,
 } from '@/components/post';
+import ContactLinks from '@/components/system/ContactLinks';
 import { SiteConfig } from '@/config';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
 import { Post } from '@/types';
@@ -43,6 +44,7 @@ export default function PostPage({ post, mdx }: Props) {
           }
           thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
           body={<MDXRemoteContainer mdx={mdx} />}
+          footer={<ContactLinks />}
         />
         <PostToc />
       </AppMainContentWrapper>

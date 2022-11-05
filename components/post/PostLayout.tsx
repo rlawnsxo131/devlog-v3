@@ -4,14 +4,16 @@ interface Props {
   header: React.ReactNode;
   thumbnail: React.ReactNode;
   body: React.ReactNode;
+  footer: React.ReactNode;
 }
 
-function PostLayout({ header, thumbnail, body }: Props) {
+function PostLayout({ header, thumbnail, body, footer }: Props) {
   return (
     <article className={block()}>
       <header className={headerBlock()}>{header}</header>
       <div className={thumbnailBlock()}>{thumbnail}</div>
       <div className={bodyBlock()}>{body}</div>
+      <div className={footerBlock()}>{footer}</div>
     </article>
   );
 }
@@ -35,6 +37,12 @@ const bodyBlock = css({
   display: 'flex',
   flexDirection: 'column',
   marginTop: '1.25rem',
+});
+
+const footerBlock = css({
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '2.5rem',
 });
 
 export default PostLayout;

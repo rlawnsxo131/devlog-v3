@@ -1,6 +1,6 @@
 ---
 title: 블로그 개발 후기 3 - Next.js
-description: Next.js 여러모로 마음에 든다.
+description: Next.js 여러모로 마음에 든다
 tags:
   - Next.js
   - React.js

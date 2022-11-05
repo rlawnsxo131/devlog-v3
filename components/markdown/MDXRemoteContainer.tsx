@@ -28,6 +28,8 @@ const block = css({
     fontSize: '1.875rem',
   },
 
+  wordBreak: 'break-word',
+  overflowWrap: 'break-word',
   color: '$text-markdown-description',
 
   '& a': {

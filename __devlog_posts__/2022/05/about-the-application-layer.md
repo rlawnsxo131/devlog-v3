@@ -1,6 +1,6 @@
 ---
 title: WebServer 와 Application Layer(with. golang)
-description: server 짤때 golang 참 재미있고 괜찮습니다.
+description: server 짤때 golang 참 재미있고 괜찮습니다
 tags:
   - Architecture
   - Golang

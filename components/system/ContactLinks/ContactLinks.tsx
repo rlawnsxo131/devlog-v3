@@ -6,13 +6,13 @@ import {
   LinkedinIcon,
   RssIcon,
   TwitterIcon,
-} from '../img/icons';
+} from '../../img/icons';
 
 interface Props {}
 
-function InfoContactLinkSection(props: Props) {
+function ContactLinks(props: Props) {
   return (
-    <section className={block()}>
+    <div className={block()}>
       <a
         className={wrapAnchor()}
         rel="noopener noreferrer"
@@ -53,7 +53,7 @@ function InfoContactLinkSection(props: Props) {
       >
         <RssIcon />
       </a>
-    </section>
+    </div>
   );
 }
 
@@ -81,4 +81,4 @@ const wrapAnchor = css({
   },
 });
 
-export default InfoContactLinkSection;
+export default ContactLinks;

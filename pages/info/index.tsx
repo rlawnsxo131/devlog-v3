@@ -1,9 +1,7 @@
 import { AppMainContentWrapper } from '@/components/app';
 import { SEO } from '@/components/base';
-import {
-  InfoContactLinkSection,
-  InfoDescriptionSection,
-} from '@/components/info';
+import { InfoDescriptionSection } from '@/components/info';
+import ContactLinks from '@/components/system/ContactLinks';
 
 export default function InfoPage() {
   return (
@@ -14,7 +12,7 @@ export default function InfoPage() {
         type="blog"
       />
       <AppMainContentWrapper>
-        <InfoContactLinkSection />
+        <ContactLinks />
         <InfoDescriptionSection />
       </AppMainContentWrapper>
     </>

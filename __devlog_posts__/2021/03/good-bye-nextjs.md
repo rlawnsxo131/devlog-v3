@@ -1,6 +1,6 @@
 ---
 title: Goodbye Next.js, Hello React.js
-description: Next.js 를 React.js 로 갈아 엎어보았다.
+description: Next.js 를 React.js 로 갈아 엎어보았다
 tags:
   - Next.js
   - React.js

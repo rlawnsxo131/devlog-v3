@@ -1,6 +1,6 @@
 ---
 title: 블로그 개발 후기 2 - GraphQL(with. REST API)
-description: 난 graphql 을 오해하고 있었다.
+description: 난 graphql 을 오해하고 있었다
 tags:
   - GraphQL
   - Apollo
