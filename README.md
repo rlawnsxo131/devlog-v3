@@ -1,10 +1,7 @@
 # devlog-v3
+<https://devlog.juntae.kim>
 
 ## Personal Development blog by John
-
-### TODO
-* ga 옮기기
-* Next.js 13 조금만 더 테스트해보고 migration
 
 ### Favicon Color Hex
 * #05a2c2

@@ -138,6 +138,17 @@ export default function Document() {
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `,
+          }}
+        />
       </Head>
       <body>
         <Main />

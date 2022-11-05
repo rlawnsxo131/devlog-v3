@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    gtag: (param1: string, param2: string, param3: object) => void;
+  }
+}
+
 export type Theme = 'light' | 'dark';
 
 export type ErrorType = 'NotFound' | 'InternalServerError' | 'Unknown';
