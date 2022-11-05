@@ -11,7 +11,7 @@ export default function usePostCard() {
     e: React.MouseEvent<HTMLButtonElement>,
   ) => {
     const { title, description, slug } = e.currentTarget.dataset;
-    const url = `${location.href}${slug}`;
+    const url = `${location.href}post/${slug}`;
 
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
