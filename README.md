@@ -10,6 +10,10 @@
 * TypeScript
 * Next.js
 * Stitches
+* AWS
+  * Route53
+  * CloudFront
+  * Lambda@Edge
 * Markdown related dependencies
   * next-mdx-remote
   * unified
