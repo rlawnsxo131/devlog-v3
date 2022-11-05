@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 import { AppCopyright, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
