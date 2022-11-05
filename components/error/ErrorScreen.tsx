@@ -12,7 +12,7 @@ function ErrorScreen({ type }: Props) {
   return (
     <div className={block()}>
       <ErrorScreenMutableContent type={type} />
-      <div className="not-found-button-block">
+      <div className="err-screen-button-block">
         <ErrorGoHomeButton>홈으로</ErrorGoHomeButton>
       </div>
     </div>
@@ -38,7 +38,7 @@ const block = css({
     fontSize: '2.5rem',
     fontWeight: '500',
   },
-  '& .not-found-button-block': {
+  '& .err-screen-button-block': {
     marginTop: '2rem',
   },
 });
