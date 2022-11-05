@@ -1,4 +1,5 @@
-import { createContext, Dispatch, useContext, useReducer } from 'react';
+import type { Dispatch } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 
 import { utils } from '@/lib';
 import { Theme } from '@/types';
