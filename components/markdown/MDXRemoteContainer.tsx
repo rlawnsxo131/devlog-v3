@@ -24,6 +24,10 @@ const block = css({
     lineHeight: '1.7',
   },
 
+  '& h1': {
+    fontSize: '1.875rem',
+  },
+
   color: '$text-markdown-description',
 
   '& a': {

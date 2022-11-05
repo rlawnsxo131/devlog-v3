@@ -52,8 +52,7 @@ function InfoDescriptionSection(props: Props) {
           <section className={descriptionItem()}>
             <h4>Current</h4>
             <p>
-              Yarn Berry, TypeScript, Next.js, Stitches, Unified, S3, Route53,
-              CloudFront, Lambda/Lambda@Edge
+              Yarn Berry, TypeScript, Next.js, Stitches, Unified, S3, Route53
             </p>
           </section>
           <section className={descriptionItem()}>

@@ -70,11 +70,11 @@ const wrapAnchor = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '2.5rem',
+  width: '3rem',
   height: '2.5rem',
   borderRadius: '3px',
   '& + &': {
-    marginLeft: '0.5rem',
+    marginLeft: '1rem',
   },
   '&:hover': {
     background: '$bg-hover',

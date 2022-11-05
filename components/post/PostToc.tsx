@@ -8,6 +8,8 @@ interface Props {}
 function PostToc(props: Props) {
   const { tocs, deferrdActiveTocId, handleTocClick } = usePostToc();
 
+  if (!tocs?.length) return null;
+
   return (
     <div className={block()}>
       <ul className={list()}>
