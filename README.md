@@ -12,6 +12,7 @@
 * Next.js
 * Stitches
 * AWS
+  * S3
   * Route53
   * CloudFront
   * Lambda@Edge

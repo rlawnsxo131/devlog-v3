@@ -36,9 +36,15 @@ const globalStyle = globalCss({
   },
   body: {
     ...topLevelBoxStyle,
+    '& *': {
+      ...topLevelBoxChildrenStyle,
+    },
   },
   '#__next': {
     ...topLevelBoxStyle,
+    '& *': {
+      ...topLevelBoxChildrenStyle,
+    },
   },
   a: {
     cursor: 'pointer',

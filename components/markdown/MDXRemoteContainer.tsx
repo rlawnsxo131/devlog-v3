@@ -62,14 +62,13 @@ const block = css({
     padding: '1em',
     margin: '0.5em 0px',
     borderRadius: '0.5em',
-    overflow: 'auto',
+    overflowX: 'auto',
   },
 
   '& blockquote': {
-    background: '$bg-markdown-pre',
+    background: '$bg-markdown-blockquote',
     padding: '1.25em',
     margin: '0.5em 0px',
-    overflow: 'auto',
     borderLeft: '5px solid $cyan9',
   },
 
@@ -154,9 +153,9 @@ const block = css({
     wordSpacing: 'normal',
     wordBreak: 'normal',
     lineHeight: '1.5',
-    '-moz-tab-size': '2',
-    '-o-tab-size': '2',
-    tabSize: '2',
+    '-moz-tab-size': '4',
+    '-o-tab-size': '4',
+    tabSize: '4',
     /* The following properties are also standard */
     '-webkit-hyphens': 'none',
     '-moz-hyphens': 'none',
