@@ -31,4 +31,21 @@
 			"export default ${TM_FILENAME_BASE};"
 		]
 	},
+	"MarkdownPostTemplate": {
+		"prefix": "mp",
+		"body": [
+			"---",
+			"title:",
+			"description:",
+			"tags:",
+			"thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg",
+			"date: yyyy-mm-dd",
+			"slug: ${TM_FILENAME_BASE}",
+			"---",
+			"",
+			"# Table of Contents",
+			"",
+			"# 글을 시작하며"
+		]
+	}
 }

@@ -7,12 +7,18 @@ import { getAllPosts, getUniqCountTagFor } from '@/lib';
 import { CountTag, Post } from '@/types';
 
 interface Props {
+  allPostsCount: number;
   posts: Post[];
   countTag: CountTag;
   currentTag: string;
 }
 
-export default function PostsOfTagPage({ posts, countTag, currentTag }: Props) {
+export default function PostsOfTagPage({
+  allPostsCount,
+  posts,
+  countTag,
+  currentTag,
+}: Props) {
   return (
     <>
       <SEO
@@ -22,6 +28,7 @@ export default function PostsOfTagPage({ posts, countTag, currentTag }: Props) {
         type="blog"
       />
       <PostsPageTemplate
+        allPostsCount={allPostsCount}
         posts={posts}
         countTag={countTag}
         currentTag={currentTag}
@@ -51,6 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      allPostsCount: allPosts.length,
       posts,
       countTag,
       currentTag: tag,

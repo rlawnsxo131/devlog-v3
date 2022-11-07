@@ -22,7 +22,11 @@ export default function IndexPage({ posts, countTag }: Props) {
         ogDescription="김준태 블로그(DevLog)"
         type="blog"
       />
-      <PostsPageTemplate posts={posts} countTag={countTag} />
+      <PostsPageTemplate
+        allPostsCount={posts.length}
+        posts={posts}
+        countTag={countTag}
+      />
     </>
   );
 }

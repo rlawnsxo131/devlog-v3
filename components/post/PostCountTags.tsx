@@ -6,11 +6,12 @@ import usePostCountTags from './hooks/usePostCountTags';
 import PostCountTag from './PostCountTag';
 
 interface Props {
+  allPostsCount: number;
   countTag: CountTag;
   currentTag?: string;
 }
 
-function PostCountTags({ countTag, currentTag }: Props) {
+function PostCountTags({ allPostsCount, countTag, currentTag }: Props) {
   const entries = Object.entries(countTag);
   const { containerRef, scrollToCenter } = usePostCountTags();
 
@@ -19,7 +20,7 @@ function PostCountTags({ countTag, currentTag }: Props) {
       <PostCountTag
         title="All"
         path="/"
-        count={entries.length}
+        count={allPostsCount}
         isActive={!currentTag}
         scrollToCenter={scrollToCenter}
       />

@@ -7,15 +7,25 @@ import PostCardGirdLayout from './PostCardGirdLayout';
 import PostCountTags from './PostCountTags';
 
 interface Props {
+  allPostsCount: number;
   posts: Post[];
   countTag: CountTag;
   currentTag?: string;
 }
 
-function PostsPageTemplate({ posts, countTag, currentTag }: Props) {
+function PostsPageTemplate({
+  allPostsCount,
+  posts,
+  countTag,
+  currentTag,
+}: Props) {
   return (
     <div className={block()}>
-      <PostCountTags countTag={countTag} currentTag={currentTag} />
+      <PostCountTags
+        allPostsCount={allPostsCount}
+        countTag={countTag}
+        currentTag={currentTag}
+      />
       <div className={postCardsBlock()}>
         {posts.length ? (
           <PostCardGirdLayout>

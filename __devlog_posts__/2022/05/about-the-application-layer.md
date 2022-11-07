@@ -1,5 +1,5 @@
 ---
-title: WebServer 와 Application Layer(with. golang)
+title: WebServer 와 Application Layer(with. Golang)
 description: server 짤때 golang 참 재미있고 괜찮습니다
 tags:
   - Architecture
