@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import { SiteConfig } from '@/config';
 import useToast from '@/hooks/useToast';
 import { sharePost } from '@/lib';
 
@@ -11,7 +12,7 @@ export default function usePostCard() {
     e: React.MouseEvent<HTMLButtonElement>,
   ) => {
     const { title, description, slug } = e.currentTarget.dataset;
-    const url = `${location.href}post/${slug}`;
+    const url = `${SiteConfig.url}/post/${slug}`;
 
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
