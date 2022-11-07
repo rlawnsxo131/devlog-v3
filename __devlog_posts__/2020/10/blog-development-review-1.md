@@ -346,7 +346,7 @@ const Block = styled.div`
 export default memo(PostCards);
 ```
 
-# 정리
+# 마치며
 위 예시를 위해 작성한 코드는 아주 간단한 코드로 이루어 져 있습니다.
 아울러 제가 이 글에서 말하고 싶은부분 또한 아주 단순한 부분입니다.
 제가 생각하는 **Typescript** 의 최대의 강점은,
