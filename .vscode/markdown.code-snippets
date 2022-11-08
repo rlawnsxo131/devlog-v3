@@ -16,6 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 	"MarkdownPostTemplate": {
+		"scope": "markdown",
 		"prefix": "mp",
 		"body": [
 			"---",
