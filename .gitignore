@@ -34,3 +34,6 @@ yarn-error.log*
 
 # rss
 /public/rss*
+
+# post
+/__devlog_temp_posts__*

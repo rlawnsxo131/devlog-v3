@@ -15,20 +15,23 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"TypescriptReactFunctionComponent": {
-		"prefix": "fc",
+	"MarkdownPostTemplate": {
+		"prefix": "mp",
 		"body": [
-			"import { css } from '@/styles/_stitches.config';",
+			"---",
+			"title:",
+			"description:",
+			"tags:",
+			"thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg",
+			"date: yyyy-mm-dd",
+			"slug: ${TM_FILENAME_BASE}",
+			"---",
 			"",
-			"interface Props {}",
+			"# Table of Contents",
 			"",
-			"function ${TM_FILENAME_BASE}(props: Props) {",
-			"  return <div className={block()}></div>;",
-			"}",
+			"# 글을 시작하며",
 			"",
-			"const block = css({});",
-			"",
-			"export default ${TM_FILENAME_BASE};"
+			"# 마치며"
 		]
-	},
+	}
 }

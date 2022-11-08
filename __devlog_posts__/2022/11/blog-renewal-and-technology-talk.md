@@ -190,7 +190,7 @@ isolation: 'isolate'
 ```
 
 ```
-블로그 개발 후기 2 - GraphQL(with. REST API)
+# 블로그 개발 후기 2 - GraphQL(with. REST API)
   ㄴ hi graphql은 전혀 모르고 본 글인데 어떤 개념인지 이해하기 쉽네요. 잘 봤습니다 :)
         ㄴ John	감사합니다!
 ```

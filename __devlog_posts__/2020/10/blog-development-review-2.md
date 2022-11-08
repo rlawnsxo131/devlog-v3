@@ -533,7 +533,7 @@ RSS 나 Sitemap 을 반환하는 로직, 로그인 관련 로직은 REST API 기
 이글이 도움이 되었으면 하는 바램입니다.
 
 # Ref
-[https://www.apollographql.com/docs/](https://www.apollographql.com/docs/)
-[https://graphql.org](https://graphql.org)
-[https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134](https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134)
-[https://tech.kakao.com/2019/08/01/graphql-basic](https://tech.kakao.com/2019/08/01/graphql-basic)
+* [https://www.apollographql.com/docs/](https://www.apollographql.com/docs/)
+* [https://graphql.org](https://graphql.org)
+* [https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134](https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134)
+* [https://tech.kakao.com/2019/08/01/graphql-basic](https://tech.kakao.com/2019/08/01/graphql-basic)
