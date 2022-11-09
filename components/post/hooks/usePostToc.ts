@@ -30,18 +30,18 @@ export default function usePostToc() {
       '.mdx-remote-wrapper h1, h2, h3, h4, h5',
     );
     const tocs: Toc[] = [];
-    for (let i = 0; i < nodes.length; i++) {
-      if (nodes[i].tagName.match(/H([1-5])/)) {
-        const textContent = nodes[i].textContent;
+    nodes.forEach((node) => {
+      if (node.tagName.match(/H([1-5])/)) {
+        const textContent = node.textContent;
         if (
           textContent.replace(/(\s*)/g, '').toUpperCase() !==
           constants.MARKDOWN_TABLE_OF_CONTENTS
         ) {
-          intersectionObserver.observe(nodes[i]);
-          const level = parseInt(nodes[i].tagName.replace('H', ''), 10);
+          intersectionObserver.observe(node);
+          const level = parseInt(node.tagName.replace('H', ''), 10);
           tocs.push({
-            id: nodes[i].id,
-            text: nodes[i].textContent,
+            id: node.id,
+            text: node.textContent,
             level: level,
             styleObj: {
               paddingLeft: `${(level - 1) * 1}rem`,
@@ -49,7 +49,7 @@ export default function usePostToc() {
           });
         }
       }
-    }
+    });
     setTocs(tocs);
 
     return () => {

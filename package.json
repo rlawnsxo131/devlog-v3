@@ -11,7 +11,6 @@
     "remove:chunk": "ts-node --transpile-only scripts/removeOldChunks.ts",
     "build:rss": "ts-node --transpile-only scripts/generateRssFeed.ts",
     "build:export": "next build && next export",
-    "build:local:export": "ts-node --transpile-only scripts/generateRssFeed.ts && PREFIX=local next build && next export",
     "build:production": "NODE_ENV=production ts-node --transpile-only scripts/generateRssFeed.ts && next build && next export",
     "deploy:production": "yarn build:production && aws s3 sync out s3://devlog-v3.juntae.kim && ts-node --transpile-only scripts/removeOldChunks.ts",
     "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E1S24NLANHYQLI --paths '/*'",

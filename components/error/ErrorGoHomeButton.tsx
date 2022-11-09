@@ -1,14 +1,14 @@
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle } from '@/styles/basicStyle';
 
-import useGoHomeButton from './hooks/useGoHomeButton';
+import useErrorGoHomeButton from './hooks/useErrorGoHomeButton';
 
 interface Props {
   children: React.ReactNode;
 }
 
 function ErrorGoHomeButton({ children }: Props) {
-  const { handleClick } = useGoHomeButton();
+  const { handleClick } = useErrorGoHomeButton();
 
   return (
     <div className={block()} onClick={handleClick}>

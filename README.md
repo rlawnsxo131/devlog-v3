@@ -1,7 +1,10 @@
 # devlog-v3
-<https://devlog.juntae.kim>
 
-## Personal Development blog by John
+Website link: <https://devlog.juntae.kim>
+
+```
+Personal Development blog by John
+```
 
 ### Favicon Color Hex
 * #05a2c2

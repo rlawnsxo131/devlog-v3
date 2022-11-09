@@ -1,14 +1,16 @@
+import type { StitchesCSS } from './_stitches.config';
 import { globalCss } from './_stitches.config';
 
-const topLevelBoxStyle = {
+const topLevelBoxStyle: StitchesCSS = {
   margin: '0',
   padding: '0',
   height: '100%',
   scrollBehavior: 'smooth',
   scrollPadding: '5rem',
+  boxSizing: 'border-box',
 };
 
-const topLevelBoxChildrenStyle = {
+const topLevelBoxChildrenStyle: StitchesCSS = {
   boxSizing: 'inherit',
   fontFamily:
     'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
@@ -28,7 +30,6 @@ const topLevelBoxChildrenStyle = {
 const globalStyle = globalCss({
   html: {
     ...topLevelBoxStyle,
-    boxSizing: 'border-box',
     background: '$bg',
     '& *': {
       ...topLevelBoxChildrenStyle,

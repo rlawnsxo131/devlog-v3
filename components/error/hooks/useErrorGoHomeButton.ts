@@ -1,6 +1,6 @@
 import useRoutePush from '@/hooks/useRoutePush';
 
-export default function useGoHomeButton() {
+export default function useErrorGoHomeButton() {
   const push = useRoutePush();
 
   const handleClick = () => {
