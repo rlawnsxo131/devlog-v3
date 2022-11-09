@@ -90,22 +90,8 @@ const block = css({
   flexDirection: 'column',
   overflow: 'hidden',
   borderRadius: '0.5rem',
-  isolation: 'isolate',
   '& a': {
-    flex: '1 1 0',
-  },
-  '@m1': {
-    '&:hover': {
-      '& img, svg': {
-        transition: '0.25s ease-in',
-        transform: 'scale(1.1)',
-      },
-    },
-    '&:not(:hover)': {
-      '& img, svg': {
-        transition: 'transform 0.25s ease-out',
-      },
-    },
+    flex: '1 1 0%',
   },
 });
 
@@ -115,6 +101,7 @@ const thumbnail = css({
   height: '52.19206680584551%',
   overflow: 'hidden',
   borderRadius: '0.5rem',
+  isolation: 'isolate',
   '& a': {
     position: 'relative',
     width: '100%',
@@ -131,6 +118,19 @@ const thumbnail = css({
     height: '100%',
     objectFit: 'cover',
     borderRadius: '0.5rem',
+  },
+  '@m1': {
+    '&:hover': {
+      '& img, svg': {
+        transition: '0.25s ease-in',
+        transform: 'scale(1.1) translate3d(0, 0, 0)',
+      },
+    },
+    '&:not(:hover)': {
+      '& img, svg': {
+        transition: 'transform 0.25s ease-out',
+      },
+    },
   },
 });
 
