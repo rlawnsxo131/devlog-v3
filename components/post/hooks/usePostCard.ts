@@ -5,7 +5,7 @@ import useToast from '@/hooks/useToast';
 import { sharePost } from '@/lib';
 
 export default function usePostCard() {
-  const timerRef = useRef(null);
+  const timerRef = useRef<NodeJS.Timeout>(null);
   const { info, error } = useToast();
 
   const handleCopyToClipboard = async (
@@ -22,7 +22,10 @@ export default function usePostCard() {
           text: description,
           url,
         },
-        () => info('포스트 주소가 복사 되었습니다.'),
+        () => {
+          console.log('first: ', timerRef.current);
+          info('포스트 주소가 복사 되었습니다.');
+        },
       ).catch((_) => {
         error('알 수 없는 에러가 발생했습니다.');
       });
