@@ -3,7 +3,7 @@ import type { GetStaticProps } from 'next';
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { getAllPosts, getUniqCountTagFor } from '@/lib';
-import { CountTag, Post } from '@/types';
+import type { CountTag, Post } from '@/types';
 
 interface Props {
   posts: Post[];

@@ -13,7 +13,7 @@ import {
 import ContactLinks from '@/components/system/ContactLinks';
 import { SiteConfig } from '@/config';
 import { getAllPosts, parseMarkdownToMdx } from '@/lib';
-import { Post } from '@/types';
+import type { Post } from '@/types';
 
 interface Props {
   post: Post;

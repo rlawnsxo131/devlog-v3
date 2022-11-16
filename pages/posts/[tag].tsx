@@ -4,7 +4,7 @@ import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { SiteConfig } from '@/config';
 import { getAllPosts, getUniqCountTagFor } from '@/lib';
-import { CountTag, Post } from '@/types';
+import type { CountTag, Post } from '@/types';
 
 interface Props {
   allPostsCount: number;
