@@ -26,7 +26,7 @@ function PostCard({ post }: Props) {
         <Link href={`/post/${post.slug}`}>
           <a>
             <Image
-              src={optimizeImage(post.thumbnail, 640)}
+              src={optimizeImage(post.thumbnail, 600)}
               alt="post-thumbnail"
               loading="lazy"
               layout="fill"
