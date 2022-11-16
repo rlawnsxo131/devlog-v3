@@ -17,8 +17,7 @@ async function copyToClipBoard(value: string, callback: () => void) {
     await window.navigator.clipboard.writeText(value);
     callback();
   } catch (err) {
-    console.log(err);
-    try {
+    if (err instanceof TypeError) {
       const input = document.createElement('input');
       input.value = value;
       document.body.appendChild(input);
@@ -27,9 +26,9 @@ async function copyToClipBoard(value: string, callback: () => void) {
       document.execCommand('Copy');
       document.body.removeChild(input);
       callback();
-    } catch (err) {
-      throw err;
+      return;
     }
+    throw err;
   }
 }
 

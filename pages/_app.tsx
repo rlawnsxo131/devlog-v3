@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { AppCopyright, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
+import ErrorBoundary from '@/components/error/ErrorBoundary';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
 import constants from '@/constants';
@@ -39,29 +40,31 @@ export default function App({ Component, pageProps }) {
           />
         </>
       )}
-      <GlobalContextProvider>
-        <Core>
-          <AppLayout>
-            <AppLayout.Header
-              leftSideItems={<HeaderLogo />}
-              rightSideItems={
-                <>
-                  <HeaderWebMenu />
-                  <ThemeButton />
-                  <HeaderMobileMenu />
-                </>
-              }
-            />
-            <AppLayout.Main>
-              <Component {...pageProps} />
-            </AppLayout.Main>
-            <AppLayout.Footer>
-              <AppCopyright />
-            </AppLayout.Footer>
-          </AppLayout>
-          <Toast />
-        </Core>
-      </GlobalContextProvider>
+      <ErrorBoundary>
+        <GlobalContextProvider>
+          <Core>
+            <AppLayout>
+              <AppLayout.Header
+                leftSideItems={<HeaderLogo />}
+                rightSideItems={
+                  <>
+                    <HeaderWebMenu />
+                    <ThemeButton />
+                    <HeaderMobileMenu />
+                  </>
+                }
+              />
+              <AppLayout.Main>
+                <Component {...pageProps} />
+              </AppLayout.Main>
+              <AppLayout.Footer>
+                <AppCopyright />
+              </AppLayout.Footer>
+            </AppLayout>
+            <Toast />
+          </Core>
+        </GlobalContextProvider>
+      </ErrorBoundary>
     </>
   );
 }

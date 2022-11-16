@@ -23,7 +23,6 @@ export default function usePostCard() {
           url,
         },
         () => {
-          console.log('first: ', timerRef.current);
           info('포스트 주소가 복사 되었습니다.');
         },
       ).catch((_) => {

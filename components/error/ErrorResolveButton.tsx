@@ -1,17 +1,14 @@
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle } from '@/styles/basicStyle';
 
-import useErrorGoHomeButton from './hooks/useErrorGoHomeButton';
-
 interface Props {
   children: React.ReactNode;
+  onClick: () => void;
 }
 
-function ErrorGoHomeButton({ children }: Props) {
-  const { handleClick } = useErrorGoHomeButton();
-
+function ErrorResolveButton({ children, onClick }: Props) {
   return (
-    <div className={block()} onClick={handleClick}>
+    <div className={block()} onClick={onClick}>
       {children}
     </div>
   );
@@ -32,4 +29,4 @@ const block = css({
   borderRadius: '4px',
 });
 
-export default ErrorGoHomeButton;
+export default ErrorResolveButton;

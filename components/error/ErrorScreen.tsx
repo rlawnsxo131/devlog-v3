@@ -1,27 +1,34 @@
+import useRoutePush from '@/hooks/useRoutePush';
 import { css } from '@/styles/_stitches.config';
 import type { ErrorType } from '@/types';
 
-import ErrorGoHomeButton from './ErrorGoHomeButton';
+import ErrorResolveButton from './ErrorResolveButton';
 import ErrorScreenMutableContent from './ErrorScreenMutableContent';
+import useErrorScreen from './hooks/useErrorScreen';
 
 interface Props {
   type: ErrorType;
+  onResolveError?: () => void;
 }
 
-function ErrorScreen({ type }: Props) {
+function ErrorScreen({ type, onResolveError }: Props) {
+  const { buttonText, handleResolveError } = useErrorScreen({ onResolveError });
+
   return (
     <div className={block()}>
       <ErrorScreenMutableContent type={type} />
       <div className="err-screen-button-block">
-        <ErrorGoHomeButton>홈으로</ErrorGoHomeButton>
+        <ErrorResolveButton onClick={handleResolveError}>
+          {buttonText}
+        </ErrorResolveButton>
       </div>
     </div>
   );
 }
 
 const block = css({
-  height: 'calc(100% - 6.225rem)',
   display: 'flex',
+  flex: '1 1 100%',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
@@ -35,7 +42,7 @@ const block = css({
     whiteSpace: 'pre',
     textAlign: 'center',
     lineHeight: '1.5',
-    fontSize: '2.5rem',
+    fontSize: '1.825rem',
     fontWeight: '500',
   },
   '& .err-screen-button-block': {
