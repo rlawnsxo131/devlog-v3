@@ -14,7 +14,7 @@ function InfoDescriptionSection(props: Props) {
           <li>
             <a
               rel="noopener noreferrer"
-              href="https://www.11stcorp.com/company"
+              href="https://www.11stcorp.com"
               target="_blank"
             >
               11번가
