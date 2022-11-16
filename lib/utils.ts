@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 import constants from '@/constants';
 import { Storage } from '@/lib';
-import { Theme } from '@/types';
+import type { Theme } from '@/types';
 
 export function setThemeForDocumentAndStorage(theme: Theme) {
   if (theme === 'light') {

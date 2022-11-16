@@ -1,4 +1,4 @@
-import { CountTag, Post } from '@/types';
+import type { CountTag, Post } from '@/types';
 
 export default function getUniqCountTagFor(posts: Post[]) {
   return posts
