@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import { AppMainContentWrapper } from '@/components/app';
+import { AppMainContentBox } from '@/components/app';
 import { SEO } from '@/components/base';
 import { MDXRemoteContainer } from '@/components/markdown';
 import {
@@ -37,7 +37,7 @@ export default function PostPage({ post, mdx }: Props) {
           <meta key={tag} property="article:tag" content={tag} />
         ))}
       </SEO>
-      <AppMainContentWrapper>
+      <AppMainContentBox>
         <PostLayout
           header={
             <PostHeader title={post.title} date={post.date} tags={post.tags} />
@@ -47,7 +47,7 @@ export default function PostPage({ post, mdx }: Props) {
           footer={<ContactLinks />}
         />
         <PostToc />
-      </AppMainContentWrapper>
+      </AppMainContentBox>
     </>
   );
 }

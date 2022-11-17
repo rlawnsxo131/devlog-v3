@@ -1,6 +1,7 @@
 import type { ErrorInfo, ReactNode } from 'react';
 import { Component } from 'react';
 
+import { FullHeightPageBox } from '../base';
 import ErrorScreen from './ErrorScreen';
 
 interface Props {
@@ -31,17 +32,26 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   handleResolveError = () => {
-    this.setState({
-      hasError: false,
-    });
-    location.reload();
+    this.setState(
+      {
+        hasError: false,
+      },
+      () => {
+        location.reload();
+      },
+    );
   };
 
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <ErrorScreen type="Unknown" onResolveError={this.handleResolveError} />
+        <FullHeightPageBox>
+          <ErrorScreen
+            type="Unknown"
+            onResolveError={this.handleResolveError}
+          />
+        </FullHeightPageBox>
       );
     }
 

@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-function AppMainContentWrapper({ children }: Props) {
+function AppMainContentBox({ children }: Props) {
   return (
     <div className={block()}>
       <section className={section()}>{children}</section>
@@ -25,4 +25,4 @@ const section = css({
   flexDirection: 'column',
 });
 
-export default AppMainContentWrapper;
+export default AppMainContentBox;

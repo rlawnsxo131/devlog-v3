@@ -1,4 +1,4 @@
-import { AppMainContentWrapper } from '@/components/app';
+import { AppMainContentBox } from '@/components/app';
 import { SEO } from '@/components/base';
 import { InfoDescriptionSection } from '@/components/info';
 import ContactLinks from '@/components/system/ContactLinks';
@@ -11,10 +11,10 @@ export default function InfoPage() {
         description="김준태 블로그(DevLog) - Info"
         type="blog"
       />
-      <AppMainContentWrapper>
+      <AppMainContentBox>
         <ContactLinks />
         <InfoDescriptionSection />
-      </AppMainContentWrapper>
+      </AppMainContentBox>
     </>
   );
 }
