@@ -16,7 +16,6 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         bg: '$white',
         'bg-content': '$gray3',
         'bg-content-hover': '$gray5',
-
         'bg-nav': '$white',
         'bg-info-section': '$white',
         'bg-hover': '$cyan4',
