@@ -10,7 +10,7 @@ interface Props {
 function PostLayout({ header, thumbnail, body, footer }: Props) {
   return (
     <article className={block()}>
-      <header className={headerBlock()}>{header}</header>
+      <div className={headerBlock()}>{header}</div>
       <div className={thumbnailBlock()}>{thumbnail}</div>
       <div className={bodyBlock()}>{body}</div>
       <div className={footerBlock()}>{footer}</div>
