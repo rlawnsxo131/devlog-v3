@@ -1,7 +1,7 @@
 import type { ErrorInfo, ReactNode } from 'react';
 import { Component } from 'react';
 
-import { FullHeightPageBox } from '../base';
+import FullHeightPageBox from '../system/FullHeightPageBox';
 import ErrorScreen from './ErrorScreen';
 
 interface Props {
