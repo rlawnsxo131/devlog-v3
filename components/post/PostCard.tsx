@@ -69,7 +69,7 @@ function PostCard({ post, onCopyToClipboard }: Props) {
           </div>
           <button
             type="button"
-            name="share-button"
+            area-label="share"
             data-title={post.title}
             data-description={post.description}
             data-slug={post.slug}

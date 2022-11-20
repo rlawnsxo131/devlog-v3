@@ -26,7 +26,7 @@ function HeaderMobileMenu(props: Props) {
     <div className={block()} ref={parentRef}>
       <button
         type="button"
-        name="menu-button"
+        area-label="menu"
         className={button()}
         onClick={handleNavVisible}
       >

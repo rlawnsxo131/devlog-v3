@@ -27,12 +27,13 @@ export default function Document() {
   `;
 
   return (
-    <Html>
+    <Html lang="ko">
       <Head>
         <meta property="og:locale" content="ko-KR" />
         <meta property="og:type" content="website" />
         <meta name="author" content="john" />
         <meta name="robots" content="index, follow" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"

@@ -12,7 +12,7 @@ function ThemeButton(props: Props) {
   return (
     <button
       type="button"
-      name="theme-button"
+      area-label="theme"
       className={block()}
       onClick={handleTheme}
     >
