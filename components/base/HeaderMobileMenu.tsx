@@ -24,7 +24,12 @@ function HeaderMobileMenu(props: Props) {
 
   return (
     <div className={block()} ref={parentRef}>
-      <button type="button" className={button()} onClick={handleNavVisible}>
+      <button
+        type="button"
+        name="menu-button"
+        className={button()}
+        onClick={handleNavVisible}
+      >
         <MenuIcon aria-label="menu-icon" />
       </button>
       {!navVisible && navClosed ? null : (

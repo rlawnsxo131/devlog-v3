@@ -10,7 +10,12 @@ function ThemeButton(props: Props) {
   const { theme, handleTheme } = useThemeButton();
 
   return (
-    <button type="button" className={block()} onClick={handleTheme}>
+    <button
+      type="button"
+      name="theme-button"
+      className={block()}
+      onClick={handleTheme}
+    >
       {theme === 'light' ? (
         <LightIcon aria-label="light-icon" />
       ) : (
