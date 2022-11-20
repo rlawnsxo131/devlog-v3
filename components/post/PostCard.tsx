@@ -10,14 +10,13 @@ import type { Post } from '@/types';
 import { LinkIcon } from '../img/icons';
 import Separator from '../system/Separator';
 import UnderlineLink from '../system/UnderlineLink';
-import usePostCard from './hooks/usePostCard';
 
 interface Props {
   post: Post;
+  onCopyToClipboard: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 
-function PostCard({ post }: Props) {
-  const { handleCopyToClipboard } = usePostCard();
+function PostCard({ post, onCopyToClipboard }: Props) {
   const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   return (
@@ -74,7 +73,7 @@ function PostCard({ post }: Props) {
             data-description={post.description}
             data-slug={post.slug}
             className={footerCopyLinkButton()}
-            onClick={handleCopyToClipboard}
+            onClick={onCopyToClipboard}
           >
             <LinkIcon />
           </button>

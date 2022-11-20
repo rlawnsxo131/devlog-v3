@@ -2,6 +2,7 @@ import { css } from '@/styles/_stitches.config';
 import type { CountTag, Post } from '@/types';
 
 import { ErrorScreen } from '../error';
+import usePostsPageTemplate from './hooks/usePostsPageTemplate';
 import PostCard from './PostCard';
 import PostCardGirdLayout from './PostCardGirdLayout';
 import PostCountTags from './PostCountTags';
@@ -19,6 +20,8 @@ function PostsPageTemplate({
   countTag,
   currentTag,
 }: Props) {
+  const { handleCopyToClipboard } = usePostsPageTemplate();
+
   return (
     <div className={block()}>
       <PostCountTags
@@ -30,7 +33,11 @@ function PostsPageTemplate({
         {posts.length ? (
           <PostCardGirdLayout>
             {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+              <PostCard
+                key={post.slug}
+                post={post}
+                onCopyToClipboard={handleCopyToClipboard}
+              />
             ))}
           </PostCardGirdLayout>
         ) : (
