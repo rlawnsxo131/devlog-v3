@@ -14,6 +14,7 @@ function ContactLinks(props: Props) {
   return (
     <div className={block()}>
       <a
+        area-label="go to github"
         className={wrapAnchor()}
         rel="noopener noreferrer"
         href="https://github.com/rlawnsxo131"
@@ -22,6 +23,7 @@ function ContactLinks(props: Props) {
         <GithubIcon />
       </a>
       <a
+        area-label="go to linked in"
         className={wrapAnchor()}
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/juntae-kim-8441ba238/"
@@ -30,6 +32,7 @@ function ContactLinks(props: Props) {
         <LinkedinIcon />
       </a>
       <a
+        area-label="go to twitter"
         className={wrapAnchor()}
         rel="noopener noreferrer"
         href="https://twitter.com/john_xxoo"
@@ -38,6 +41,7 @@ function ContactLinks(props: Props) {
         <TwitterIcon />
       </a>
       <a
+        area-label="send mail"
         className={wrapAnchor()}
         rel="noopener noreferrer"
         href="mailto:public.juntae@gmail.com"
@@ -46,6 +50,7 @@ function ContactLinks(props: Props) {
         <EmailIcon />
       </a>
       <a
+        area-label="go to rss feed"
         className={wrapAnchor()}
         rel="noopener noreferrer"
         href="/rss/feed.xml"
