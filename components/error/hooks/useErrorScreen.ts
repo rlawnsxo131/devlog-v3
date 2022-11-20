@@ -3,22 +3,18 @@ import { useMemo } from 'react';
 import useRoutePush from '@/hooks/useRoutePush';
 
 interface UseErrorScreenParams {
-  onResolveError?: () => void;
+  onResolveErrorAndRefresh?: () => void;
 }
 
 export default function useErrorScreen({
-  onResolveError,
+  onResolveErrorAndRefresh,
 }: UseErrorScreenParams) {
   const push = useRoutePush();
+  const buttonText = onResolveErrorAndRefresh ? '새로고침' : '홈으로';
 
-  const buttonText = useMemo(() => {
-    if (onResolveError) return '새로고침';
-    return '홈으로';
-  }, [onResolveError]);
-
-  const handleResolveError = () => {
-    if (onResolveError) {
-      onResolveError();
+  const handleResolveErrorAndRefresh = () => {
+    if (onResolveErrorAndRefresh) {
+      onResolveErrorAndRefresh();
       return;
     }
     push('/');
@@ -26,6 +22,6 @@ export default function useErrorScreen({
 
   return {
     buttonText,
-    handleResolveError,
+    handleResolveErrorAndRefresh,
   };
 }

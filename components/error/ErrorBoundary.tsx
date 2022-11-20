@@ -16,7 +16,7 @@ class ErrorBoundary extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      hasError: false,
+      hasError: true,
     };
   }
 
@@ -31,7 +31,7 @@ class ErrorBoundary extends Component<Props, State> {
     console.log('errorInfo: ', errorInfo);
   }
 
-  handleResolveError = () => {
+  handleResolveErrorAndRefresh = () => {
     this.setState(
       {
         hasError: false,
@@ -49,7 +49,7 @@ class ErrorBoundary extends Component<Props, State> {
         <FullHeightPageBox>
           <ErrorScreen
             type="Unknown"
-            onResolveError={this.handleResolveError}
+            onResolveErrorAndRefresh={this.handleResolveErrorAndRefresh}
           />
         </FullHeightPageBox>
       );

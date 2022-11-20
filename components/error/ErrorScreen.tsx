@@ -8,17 +8,19 @@ import useErrorScreen from './hooks/useErrorScreen';
 
 interface Props {
   type: ErrorType;
-  onResolveError?: () => void;
+  onResolveErrorAndRefresh?: () => void;
 }
 
-function ErrorScreen({ type, onResolveError }: Props) {
-  const { buttonText, handleResolveError } = useErrorScreen({ onResolveError });
+function ErrorScreen({ type, onResolveErrorAndRefresh }: Props) {
+  const { buttonText, handleResolveErrorAndRefresh } = useErrorScreen({
+    onResolveErrorAndRefresh,
+  });
 
   return (
     <div className={block()}>
       <ErrorScreenMutableContent type={type} />
       <div className="err-screen-button-block">
-        <ErrorResolveButton onClick={handleResolveError}>
+        <ErrorResolveButton onClick={handleResolveErrorAndRefresh}>
           {buttonText}
         </ErrorResolveButton>
       </div>
