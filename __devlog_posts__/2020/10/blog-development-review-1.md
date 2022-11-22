@@ -11,12 +11,12 @@ slug: blog-development-review-1
 # Table of Contents
 
 # 글을 시작하며
-> *글 작성에 앞서 **이 블로그에 쓰인 모든 기술스택**은 아래 링크를 참조해 주세요.
-> 
-> *아래 링크를 따라가시면 깃헙 링크에 모든 코드가 공개되어 있습니다.
-> 
-> *[https://devlog.juntae.kim/info](https://devlog.juntae.kim/info)
 
+> \*글 작성에 앞서 **이 블로그에 쓰인 모든 기술스택**은 아래 링크를 참조해 주세요.
+>
+> \*아래 링크를 따라가시면 깃헙 링크에 모든 코드가 공개되어 있습니다.
+>
+> \*[https://devlog.juntae.kim/info](https://devlog.juntae.kim/info)
 
 개발용 블로그를 직접 만든 이유는 너무 여러가지 인지라 생략하고,
 이 블로그를 개발하며 사용한 기술들에 대한 **지극히 개인적인 의견** 들을 **순차적**으로 작성하려 합니다.
@@ -37,6 +37,7 @@ slug: blog-development-review-1
 # 간단한 코드
 
 ## Javascript
+
 아래는 posts 라는 값을 props 로 받아 리스트를 그리는 아주 간단한
 리액트 컴포넌트 입니다. 물론 아무런 경고 따위는 뱉지 않습니다.
 
@@ -58,6 +59,7 @@ function Posts({ posts }) {
 ```
 
 ## Typescript
+
 이번엔 타입스크립트 입니다.
 만약 위와 같은 코드를 파일 확장자만 **jsx** > **tsx** 로 변경한다면 아래와 같은 에러가 발생합니다.
 
@@ -114,7 +116,9 @@ posts 안에 있는 Post 들이 어떤 프로퍼티를 가지고 있는지 타�
 그럼 더 간단한 아래 코드를 살펴보겠습니다.
 
 # 더 간단한 코드
+
 ## Javascirpt
+
 아래 **sum** 이란 함수는 인자 a, b 를 받고 이를 더해 리턴하는 아주 간단한 함수입니다.
 그런데 여기 **문자열 '1'** 과 **숫자 2**를 인자로 전달한다면?
 javascript의 특성상 결과는 **문자열 12** 가 나와버립니다.
@@ -141,6 +145,7 @@ console.log(typeof result); // string
 (사실 로직자체를 복잡하게 짜지 않는게 옳은 방법이란 생각이 드네요 2222)
 
 ## Typescript
+
 타입스크립트입니다.
 일단 저 파일의 확장자만 **ts**로 변경한다면 **너 지금 인자가 any 야** 란 경고를 뱉어줍니다.
 
@@ -151,7 +156,7 @@ Parameter 'b' implicitly has an 'any' type.ts(7006)
 
 타이핑을 해보겠습니다.
 
-``` typescript
+```typescript
 function sum(a: number, b: number) {
   return a + b;
 }
@@ -166,10 +171,12 @@ Argument of type 'string' is not assignable to parameter of type 'number'.ts(234
 ```
 
 # Server && Client Codes
+
 마지막으로 타입스크립트로 작성된 이 블로그의 서버와 클라이언트 사이드 코드를 간단히 보고 넘어가겠습니다.
 편의상 **ServerSide**는 **RestAPI** 로 짜여진 부분의 코드를 참조합니다.
 
 ## ServerSide
+
 서버사이드의 코드입니다. 필요없는 부분은 전부 생략했습니다.
 이번 코드에서 살펴보실 부분은 딱 한가지, **Parameter** 에 관한 **typing** 입니다.
 
@@ -206,7 +213,7 @@ type EnrollPostArgs = {
   series_id?: number;
   tags: Array<string>;
 };
-export const enrollPost: Middleware = async ctx => {
+export const enrollPost: Middleware = async (ctx) => {
   const {
     id,
     post_header,
@@ -266,6 +273,7 @@ export const enrollPost: Middleware = async ctx => {
 ```
 
 ## Client
+
 다음은 게시글 리스트를 그려주는 클라이언트 사이드의 코드입니다. 이번에도 한부분만 살펴보겠습니다.
 **val** 에 **PostType** 이란걸 명시해 주었습니다. 이렇게 타이핑을 하지 않으면 **val** 가 **any** 라며 경고를 합니다.
 
@@ -278,33 +286,36 @@ const { loading, error, data } = useQuery(GET_POSTS, {
 
 <>
   {data.posts.map((val: PostType, idx: number) => (
-     <PostCard key={`${val.id}${idx}`} post={val} />
+    <PostCard key={`${val.id}${idx}`} post={val} />
   ))}
-</>
+</>;
 ```
 
 저는 귀찮아서 위와같이 작성했지만 사실 아래와 같이 바꾸어 주어도 무방합니다.
 
-``` tsx
+```tsx
 // data가 무슨 타입인지 알려주고,
-const { loading, error, data } = useQuery<{posts: Array<PostType>}>(GET_POSTS, {
-  variables: {
-    tag: query.tag,
+const { loading, error, data } = useQuery<{ posts: Array<PostType> }>(
+  GET_POSTS,
+  {
+    variables: {
+      tag: query.tag,
+    },
   },
-});
+);
 
 // 어쩌면 이녀석은 undefined 일수도 있으니
 // 값이 있을때만 그리란 optional 연산을 해줍니다.(data?.<logic>)
 <>
   {data?.posts.map((val, idx) => (
-     <PostCard key={`${val.id}${idx}`} post={val} />
+    <PostCard key={`${val.id}${idx}`} post={val} />
   ))}
-</>
+</>;
 ```
 
 위 작성한 예시 컴포넌트의 모든 코드입니다.
 
-``` tsx
+```tsx
 import * as React from 'react';
 import styled from 'styled-components';
 import PostCard from './PostCard';
@@ -330,7 +341,7 @@ function PostCards(props: PostCardsProps) {
 
   return (
     <Block>
-      {/* ... */} 
+      {/* ... */}
       {data.posts.map((val: PostType, idx: number) => (
         <PostCard key={`${val.id}${idx}`} post={val} />
       ))}
@@ -347,6 +358,7 @@ export default memo(PostCards);
 ```
 
 # 마치며
+
 위 예시를 위해 작성한 코드는 아주 간단한 코드로 이루어 져 있습니다.
 아울러 제가 이 글에서 말하고 싶은부분 또한 아주 단순한 부분입니다.
 제가 생각하는 **Typescript** 의 최대의 강점은,

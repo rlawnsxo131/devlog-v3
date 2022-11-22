@@ -12,23 +12,25 @@ slug: blog-development-review-2
 # Table of Contents
 
 # 글을 시작하며
+
 블로그 개발후기 두번째, **GraphQL** 에 관한 글입니다.
 
 **GraphQL** 에 관해 제가 오해했던 점, 사용하며 어렵다 느꼈던 점,
 **REST API** 와의 간단한 비교 및 여타 요소에 대해 이야기 합니다.
 
->**이 글은 ApolloServer 와 ApolloClient 를 사용하여 개발한 경험에 기반하여 작성하였습니다.**
+> **이 글은 ApolloServer 와 ApolloClient 를 사용하여 개발한 경험에 기반하여 작성하였습니다.**
 
 # GraphQL 에 관한 나의 오해
 
 [GraphQL 공식 홈페이지](https://graphql.org) 대문에는 이런 글이 적혀 있습니다.
+
 ```
-GraphQL is a query language for APIs and a runtime for fulfilling those queries with your 
-existing data. GraphQL provides a complete and understandable description of the data in 
-your API, gives clients the power to ask for exactly what they need and nothing more, 
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your
+existing data. GraphQL provides a complete and understandable description of the data in
+your API, gives clients the power to ask for exactly what they need and nothing more,
 makes it easier to evolve APIs over time, and enables powerful developer tools.
 
-GraphQL은 API를 위한 쿼리 언어이며 이미 존재하는 데이터로 쿼리를 수행하기 위한 런타임 입니다. GraphQL은 API에 
+GraphQL은 API를 위한 쿼리 언어이며 이미 존재하는 데이터로 쿼리를 수행하기 위한 런타임 입니다. GraphQL은 API에
 있는 데이터에 대한 완벽하고 이해하기 쉬운 설명을 제공하고 클라이언트에게 필요한 것을 정확하게 요청할 수 있는 기능을 제
 공하며 시간이 지남에 따라 API를 쉽게 진화시키고 강력한 개발자 도구를 지원합니다.
 ```
@@ -84,6 +86,7 @@ NoSQL 이든 RDB 를 쓰든 별 상관 없습니다.
 그럼 본론으로 들어가겠습니다.
 
 # 단 하나의 Endpoint
+
 GraphQL 은 **단 하나의 Endpoint** 만을 갖게 됩니다.
 기존의 REST API 라면 제 블로그의 **post** 에 관한 Endpoint 는 대략 이렇게 정의 될 것입니다.
 
@@ -138,16 +141,18 @@ GraphQL 은 REST 의 GET 과 같은 역할을 하는 요청을 **query** 로 표
 클라이언트 사이드에서의 **데이터 fetching** 에 있습니다.
 
 # Over-Fetching, Under-Fetching
-흔히들 **Over-Fetching** 과  **Under-Fetching** 에 대한 이야기를 하며, 이를 줄여야
+
+흔히들 **Over-Fetching** 과 **Under-Fetching** 에 대한 이야기를 하며, 이를 줄여야
 더욱 효율적인 통신이 가능하다 란 이야기를 합니다.
 
 뭐, 사실 생각해보면 당연한 이야기 입니다. 요청시 필요하지도 않은 데이터를 던져주면
 response 크기만 커질 뿐 별반 좋을게 없으니까요.
 
-SQL 을 처음 배울때 역시도 SELECT 문에서 * 은 쓰지말고 필요한 데이터만 가져올 수 있게
+SQL 을 처음 배울때 역시도 SELECT 문에서 \* 은 쓰지말고 필요한 데이터만 가져올 수 있게
 왠만하면 명시를 해 주어라 라고 하는 것과 같은 이치입니다.
 
 ## Over-Fetching
+
 그러나 생각을 해봅시다.
 개인적으로 실무에서 코딩중 여러개의 테이블을 JOIN 해서 값을 던져주는 경우엔,
 사실 어느 테이블에 어느 데이터만 뽑아올지 대부분 명시를 해줍니다.
@@ -163,6 +168,7 @@ async function getPosts(): Array<Post> {
   return posts;
 }
 ```
+
 ```java
 // JPA(Hibernate)
 public List<Post> findAll() {
@@ -171,6 +177,7 @@ public List<Post> findAll() {
     return posts;
 }
 ```
+
 ```ruby
 # ActiveRecord
 def get_posts
@@ -197,11 +204,11 @@ async function getPost(id: number) {
       },
     }),
   ]);
-  
+
   return {
     post,
-    comments
-  }
+    comments,
+  };
 }
 ```
 
@@ -238,6 +245,7 @@ const GET_POST = gql`
 Over-Fetching 문제는 거의 없을것이란 생각이 듭니다. 이번엔 Under-Fetching 입니다.
 
 ## Under-Fetching
+
 이번엔 제 블로그보다 저희 회사의 서비스를 예로 들겠습니다.
 처음 앱에 접속했을 때 가져와야 할 정보가 간단히 두가지 뿐이라고 가정합니다.
 
@@ -287,8 +295,8 @@ query {
 대표적으로 GraphQL 로 작성된 서버가 1:N 관계로 인한 문제 해결시 쉽게 찾아볼 수 있는,
 **DataLoader** 라는 녀석에 대해 이야기 해보겠습니다.
 
-
 # DataLoader
+
 **DataLoader** 는 기본적으로 GraphQL 내부 스키마 정의시 **1 : N** 관계에서 깊은 연관이 있습니다.
 이를 설명하기 위해 관계정의에 관한 부분을 먼저 살펴보겠습니다.
 
@@ -383,7 +391,7 @@ export const resolvers: IResolvers = {
   Post: {
     tags: async (parent: Post, _, { loaders }) => {
       const tags: Array<PostTag> = await loaders.tag.load(parent.id);
-      return tags.map(tag => tag.name);
+      return tags.map((tag) => tag.name);
     },
     // ...
   },
@@ -393,7 +401,7 @@ export const resolvers: IResolvers = {
     // ...
   },
   Mutation: {},
-}
+};
 ```
 
 기본적으로 Post 라는 객체타입에 원래 속해있는 값들
@@ -410,11 +418,11 @@ export const resolvers: IResolvers = {
 만약 아무런 처리를 하지 않고, 전달받은 포스트 아이디에 대한 값에 대한 태그를 셀렉트 하는 로직만을 작성한다면, `우리는 20개의 포스트를 가져올때 20번의 태그를 가져오는 DB SELECT 를 실행하게 됩니다.`
 이런 문제를 해결하기 위해 **DataLoader** 라는 라이브러리를 사용합니다.
 
->DataLoader 의 원리를 비교적 간단히 설명하자면,
-data fetch 시 1+N 의 문제를 **batching** 을 통해 1+1 변환시켜주는 역할을 합니다.
-DataLoader는 javascript의 **event-loop** 를 이용 하는데, **event-loop** 중 하나의 **tick**에서 실행된 data fetch에 대한 요청들을 하나의 요청으로 모아서 실행하고, 그 결과를 다시 알맞게 분배하는 역할을 합니다.
-아래의 내용들은 실제 블로그를 구현한 로직들이 들어가있어 복잡할 수 있으니,
-설명이 간단하게 잘 되어있는 [hosung 님의 글](https://y0c.github.io/2019/11/24/graphql-query-optimize-with-dataloader/) 을 참고하셔도 좋을 듯 싶습니다.
+> DataLoader 의 원리를 비교적 간단히 설명하자면,
+> data fetch 시 1+N 의 문제를 **batching** 을 통해 1+1 변환시켜주는 역할을 합니다.
+> DataLoader는 javascript의 **event-loop** 를 이용 하는데, **event-loop** 중 하나의 **tick**에서 실행된 data fetch에 대한 요청들을 하나의 요청으로 모아서 실행하고, 그 결과를 다시 알맞게 분배하는 역할을 합니다.
+> 아래의 내용들은 실제 블로그를 구현한 로직들이 들어가있어 복잡할 수 있으니,
+> 설명이 간단하게 잘 되어있는 [hosung 님의 글](https://y0c.github.io/2019/11/24/graphql-query-optimize-with-dataloader/) 을 참고하셔도 좋을 듯 싶습니다.
 
 다시 Post 객체에대한 tags 라는 특별한 값을 정의한 로직을 보겠습니다.
 아래와 같이 loaders 라는 객체에 들어있는 tag.load 라는 로직을 실행합니다.
@@ -441,7 +449,7 @@ DataLoader는 javascript의 **event-loop** 를 이용 하는데, **event-loop** 
 
 ```typescript
 export const createTagsLoader = () =>
-  new DataLoader<number, Array<PostTag>>(async postIds => {
+  new DataLoader<number, Array<PostTag>>(async (postIds) => {
     const tags = await getRepository(Tag)
       .createQueryBuilder('t')
       .select(['t.name, pht.post_id'])
@@ -452,11 +460,12 @@ export const createTagsLoader = () =>
     const groupingObj = groupByObjectId<PostTag>(
       postIds,
       tags,
-      tag => tag.post_id
+      (tag) => tag.post_id,
     );
-    return postIds.map(id => groupingObj[id]);
+    return postIds.map((id) => groupingObj[id]);
   });
 ```
+
 순서대로 살펴봅니다.
 
 1. 일단 postIds 라는 값은 셀렉트한 모든 포스트의 아이디값이 들어오게 됩니다.
@@ -467,7 +476,7 @@ export const createTagsLoader = () =>
 export function groupByObjectId<T>(
   ids: ReadonlyArray<number>, // baching 으로 인해 셀렉트할 인자로 넘어온 포스트 아이디들을 그대로 받음
   rows: Array<T>, // tag 를 셀렉트한 결과에 해당하는 모든 로우들
-  idResolver: (row: T) => number // 각각의 tag 로우를 넘겨주면 해당 tag와 매핑할 post_id 를 셀렉트해주는 함수
+  idResolver: (row: T) => number, // 각각의 tag 로우를 넘겨주면 해당 tag와 매핑할 post_id 를 셀렉트해주는 함수
 ) {
   // 결과가 담길 객체 선언
   const obj: {
@@ -476,7 +485,7 @@ export function groupByObjectId<T>(
 
   // 넘어온 아이디를 객체의 key 값으로 각각 담아준다.
   // 그리고 각각의 객체의 값은 빈 배열을 넣어준다.
-  ids.forEach(id => {
+  ids.forEach((id) => {
     obj[id] = [];
   });
 
@@ -484,16 +493,17 @@ export function groupByObjectId<T>(
   // 각각의 row.post_id 를 키값으로 갖고있는 객체의 배열에 해당하는 row를 넣어준다.
   // 즉, 아까 위에서 모든 postIds 를 각각 객체의 키로 넣어주었으니,
   // obj 의 키가 tag.post_id 와 일치하는 값들을 넣어준다.(현재 아래서 돌고있는 row 가 tag객체)
-  rows.forEach(row => {
+  rows.forEach((row) => {
     obj[idResolver(row)].push(row);
   });
 
   return obj;
 }
 ```
+
 타입스크립트로 작성되어 코드가 좀 더 길어진 감이 있지만 순서대로 보자면,
 
-1. batching 으로 인해 셀렉트한 포스트의 아이디가 한번에 넘어왔고, 
+1. batching 으로 인해 셀렉트한 포스트의 아이디가 한번에 넘어왔고,
 2. 이걸 기반으로 post_has_tag 와 tag 를 연결시켜 넘어온 포스트아이디가 가지고 있는 태그객체를 전부 셀렉트한 값이 rows 란 이름으로 넘어옵니다.
 3. 이때 post_id 가 꼭 있어야 합니다. 이걸기반으로 post 와 매핑해줍니다.
 4. batching 으로 인해 한번에 넘어온 포스트 아이디를 빈 객체에 각각 키값으로 넣어주고, 그 값은 빈배열로 선언합니다.
@@ -505,11 +515,12 @@ export function groupByObjectId<T>(
 2. 이걸 기반으로 내가 필요로 하는 값을 찾아내고
 3. 다시 묶어준다 입니다.
 
-비교적 단순한  1 : N 관계의 로직도 사실 마냥 쉽지만은 않은 로직으로 작성이 되어있는데
+비교적 단순한 1 : N 관계의 로직도 사실 마냥 쉽지만은 않은 로직으로 작성이 되어있는데
 이보다 훨씬 복잡한 백엔드 로직을 작성한다고 생각하면 백엔드 단의 데이터 관계정의를
 정말 잘 해야할 것 같다는 생각이 듭니다.
 
 # 마치며
+
 저는 GraphQL 과 RestAPI 를 적절히 섞어서 쓰는것을 추천하고 싶습니다.
 예를 들어 현재의 제 블로그 역시 기본적인 CRUD 로직은 GraphQL 로 작성되어 있는 반면,
 
@@ -533,7 +544,8 @@ RSS 나 Sitemap 을 반환하는 로직, 로그인 관련 로직은 REST API 기
 이글이 도움이 되었으면 하는 바램입니다.
 
 # Ref
-* [https://www.apollographql.com/docs/](https://www.apollographql.com/docs/)
-* [https://graphql.org](https://graphql.org)
-* [https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134](https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134)
-* [https://tech.kakao.com/2019/08/01/graphql-basic](https://tech.kakao.com/2019/08/01/graphql-basic)
+
+- [https://www.apollographql.com/docs/](https://www.apollographql.com/docs/)
+- [https://graphql.org](https://graphql.org)
+- [https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134](https://medium.com/@FourwingsY/graphql을-오해하다-3216f404134)
+- [https://tech.kakao.com/2019/08/01/graphql-basic](https://tech.kakao.com/2019/08/01/graphql-basic)

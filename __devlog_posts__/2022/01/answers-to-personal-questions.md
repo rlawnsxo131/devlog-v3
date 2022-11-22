@@ -11,6 +11,7 @@ slug: answers-to-personal-questions
 # Table Of Contents
 
 # 글을 시작하며
+
 ```
 현재는 블로그가 다른 기술 스택으로 작성되어 있습니다.
 아래 질문에 대한 답변에 해당하는 기술 스택으로 작성된 코드는 github 에 모두 공개되어 있습니다.
@@ -35,10 +36,11 @@ slug: answers-to-personal-questions
 ```
 
 ## 코드 스타일에 관한 질문
-이 블로그의 개발 목적은 빠른 오픈 이었던지라... 사실 구조나 코드에 퀄리티를 크게 신경 쓰지 않았습니다. 그래서 요세 작성중인 ```madre``` 라는 개인프로젝트의 github 주소를 첨부합니다. 해당 프로젝트는 그래도 구조를 신경쓰면서 작성중이랍니다. (사실 아직도 구조를 바꾸는 중이고, 서버에 경우는 언어가 바뀔 수 도 있습니다..)
 
-* server: [https://github.com/rlawnsxo131/madre-server](https://github.com/rlawnsxo131/madre-server)
-* client: [https://github.com/rlawnsxo131/madre-client](https://github.com/rlawnsxo131/madre-client)
+이 블로그의 개발 목적은 빠른 오픈 이었던지라... 사실 구조나 코드에 퀄리티를 크게 신경 쓰지 않았습니다. 그래서 요세 작성중인 `madre` 라는 개인프로젝트의 github 주소를 첨부합니다. 해당 프로젝트는 그래도 구조를 신경쓰면서 작성중이랍니다. (사실 아직도 구조를 바꾸는 중이고, 서버에 경우는 언어가 바뀔 수 도 있습니다..)
+
+- server: [https://github.com/rlawnsxo131/madre-server](https://github.com/rlawnsxo131/madre-server)
+- client: [https://github.com/rlawnsxo131/madre-client](https://github.com/rlawnsxo131/madre-client)
 
 ## Next.js 에서 React.js 로 직접 SSR (블로그) 를 다시 구현한 이유가 무엇인가요? 요즘 Next.js 를 많이 사용하던데 특별한 이유가 있나요?
 
@@ -46,9 +48,10 @@ slug: answers-to-personal-questions
 다음에 또 서버사이드 렌더링을 구현해야 한다면 고려할 생각도 충분이 갖고 있구요.
 다만 저는 성향상 구조 설계나 비교적 세세한 컨트롤 등을 직접 하는걸 선호합니다.
 
-아울러 Next.js 를 이용해 서버사이드 렌더링을 구현 하더라도 제가 원하는 스택을 추가하거나, 기능을 넣다보면 커스텀이 필요했습니다. 그리고 이미 ``React + loadable-components`` 의 조합으로 서버사이드 렌더링을 구현한 경험이 있었고, 상대적으로 Next.js 보다 React + loadable-components 로 SSR 을 구현하는것에 ``익숙``했기에 후자를 선택 했습니다.
+아울러 Next.js 를 이용해 서버사이드 렌더링을 구현 하더라도 제가 원하는 스택을 추가하거나, 기능을 넣다보면 커스텀이 필요했습니다. 그리고 이미 `React + loadable-components` 의 조합으로 서버사이드 렌더링을 구현한 경험이 있었고, 상대적으로 Next.js 보다 React + loadable-components 로 SSR 을 구현하는것에 `익숙`했기에 후자를 선택 했습니다.
 
 ## React 를 잘 하려면 무엇을 공부해야 할까요?
+
 제가 답변드리기 쉽지 않은 질문중 하나 인듯 싶습니다.
 사실 제 기준에 저는 React 를 그리 잘 하는 사람이 아니기 때문입니다.
 다만 저는 React 의 기능을 잘 사용하는 것보다 React 가 어떻게 작동하는지. 그리고 React 란 기술이 왜 나오게 되었으며 어떨때 선택해야 하는지를 더 중요하게 생각하는 편 입니다.
@@ -56,9 +59,11 @@ slug: answers-to-personal-questions
 감히 조언을 드리자면 저는 React 의 작동 원리나 javascript(with. typescript) 를 깊히 공부하는 것을 더 추천드리고 싶습니다. 아울러 브라우저가 어떻게 동작하고, 이녀석이 화면을 렌더링 할 때 어떤 일들이 이루어 지는지. 혹은 서버로 request 를 날릴때 어떠한 단계를 거치고, 어떠한 부분을 고려하면 좋은지. 등에 관한 웹의 전반적인 부분을 공부하시면 좋을 것 같습니다. 이부분은 저또한 맨날 공부하고 읽어도 항상 까먹습니다...
 
 ## Front end 개발자 이신가요?
+
 현재 재직중인 회사의 팀 특성상 백엔드와 웹 프론트엔드를 모두 다룹니다. 개인적으론 혼종이라 생각합니다.
 
 ## Serverless Framework 로 Server Side Rendering 을 어떻게 구현해야 하나요?
+
 짧은 설명으로 적기엔 내용이 다소 많아 이 블로그의 서버사이드 렌더링이 이루어지는 과정만 말씀드리겠습니다. 어서 관련한 내용을 포스트로 작성해야 겠다는 생각이 드네요.
 
 1. 도메인을 찌릅니다. 제 도메인은 **AWS** 의 **API Gateway** 에 연결되어 있습니다.
@@ -70,6 +75,7 @@ slug: answers-to-personal-questions
 7. 이때 **Splitting** 된 **chunk file** 들은 **Cloud Front** 에 올라가 있고, 파일이 필요한 때 불러오게 됩니다.
 
 ## 댓글, 대댓글 은 어떻게 구현했나요?
+
 1. 일단 데이터베이스 comment 테이블의 스키마에 post_id 와 level, reply_comment_id 라는 컬럼이 있습니다. 저는 level 을 3depth 까지만 허용하기 위해 로직에서 제한(0, 1, 2) 을 걸어 두었습니다.
 2. 댓글의 대댓글인 경우 reply_comment_id 라는 컬럼에 부모 댓글의 아이디가 저장됩니다.
 3. 부모 댓글의 level 을 기반으로 현재 새롭게 만들어진 댓글에 +1 을 해서 level 을 기록합니다.
@@ -77,9 +83,10 @@ slug: answers-to-personal-questions
 5. 이 때 가장 최상위 댓글을 기반으로 id 와 reply_comment_id 만을 골라냅니다.
 6. 위에서 골라온 댓글을 기반으로 reply_comment_id 를 이용해 최상위 댓글의 댓글을 골라내고, 이 과정을 한번더 반복하 가장 하위 댓글을 골라냅니다.
 7. 이렇게 3번의 select 로 찾아낸 댓글을 application 단에서 조인합니다.
-그럼 아래와 같은 구조의 데이터가 만들어 집니다.
+   그럼 아래와 같은 구조의 데이터가 만들어 집니다.
+
 ```json
-{ 
+{
   "comments":[
     {
       "id": 1,
@@ -103,10 +110,13 @@ slug: answers-to-personal-questions
 ```
 
 ## 몇년차 이신가요?
+
 2019년 부터 현업에서 일을 한 3년차 개발자 입니다.
 
 ## 메인 언어가 무엇인가요?
+
 코딩을 시작은 java 와 Spring 으로 했으나 현재 가장 익숙한 언어는 javascript 와 typescript 입니다. backend 는 node.js 를 가장 익숙히 다루고, 프론트 엔드는 React.js 를 이용해 개발하는 것을 선호합니다. 요즘은 golang 에 관심을 갖고 공부중인데요. golang 에 대한 글도 적어보겠습니다. 아주 매력있는 언어랍니다.
 
 # 마치며
+
 위 답변이 도움이 되셨으면 좋겠습니다. 아무래도 여태는 글의 양도 그렇고, 상대적으로 뾰족한 주제에 대한 양질의 글을 쓰지 못한것 같습니다. 반성하고 더욱 좋은 글을 작성하도록 노력해 보겠습니다. 감사합니다.
