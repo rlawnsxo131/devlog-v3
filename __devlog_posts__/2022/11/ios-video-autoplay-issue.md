@@ -34,7 +34,7 @@ slug: ios-video-autoplay-issue
 이 이슈를 해결할 당시 `Web Frontend` 와 `iOS 네이티브` 코드 둘다 어느정도 문제가 있었는데요. 일단 저는 Web 개발을 하는 만큼 일단은 제 영역인 `Frontend 영역`에서 문제를 찾기 시작했습니다. 당시 기준, 하위 os 버전에서는 문제가 없었으나 최신 os 버전에 해당하는 11대 버전에서는 동영상이 제대로 재생이 되지 않는 문제가 있었습니다. 그래서 Html 에 아래와 같은 속성을 추가해 해결 하게 되었는데 코드는 다음과 같습니다.
 
 ```html
-<video loop="loop" muted="muted" autoplay="autoplay" playsline></video>
+<video loop="loop" muted="muted" autoplay="autoplay" playsinline></video>
 ```
 
 - `muted`: 이 속성은 말그대로 음소거 처리를 하는 속성입니다. 제 경우 iOS 에서 이슈를 발견했으나 트러블 슈팅중 chrome 에서도 재생이 안되는 현상을 발견했고, 이 속성은 사용자의 제한된 네트워크 상황에서 과도한 데이터 소비를 방하기 위한 정책과 관련이 있습니다. 아래 링크를 참조해 주세요.
