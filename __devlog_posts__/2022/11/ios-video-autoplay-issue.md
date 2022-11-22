@@ -37,7 +37,7 @@ slug: ios-video-autoplay-issue
 <video loop="loop" muted="muted" autoplay="autoplay" playsline></video>
 ```
 
-- `mute`: 이 속성은 말그대로 음소거 처리를 하는 속성입니다. 제 경우 iOS 에서 이슈를 발견했으나 트러블 슈팅중 chrome 에서도 재생이 안되는 현상을 발견했고, 이 속성은 사용자의 제한된 네트워크 상황에서 과도한 데이터 소비를 방하기 위한 정책에 해당하는 부분입니다. 아래 링크를 참조해 주세요.
+- `muted`: 이 속성은 말그대로 음소거 처리를 하는 속성입니다. 제 경우 iOS 에서 이슈를 발견했으나 트러블 슈팅중 chrome 에서도 재생이 안되는 현상을 발견했고, 이 속성은 사용자의 제한된 네트워크 상황에서 과도한 데이터 소비를 방하기 위한 정책에 해당하는 부분입니다. 아래 링크를 참조해 주세요.
 
   - [chrome - autoplay/#webaudio](https://developer.chrome.com/blog/autoplay/#webaudio)
 
