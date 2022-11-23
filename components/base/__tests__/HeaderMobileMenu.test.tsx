@@ -6,7 +6,8 @@ import {
 import userEvent from '@testing-library/user-event';
 
 import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
-import HeaderMobileMenu from '@/components/base/HeaderMobileMenu';
+
+import HeaderMobileMenu from '../HeaderMobileMenu';
 
 jest.mock('next/router', () => ({
   useRouter() {

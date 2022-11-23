@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
 
-import ThemeButton from '..';
+import ThemeButton from '../ThemeButton';
 
 function renderThemeButton() {
   const result = renderWithGlobalHoc(<ThemeButton />);

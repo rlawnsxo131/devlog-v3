@@ -1,5 +1,6 @@
 import { renderWithGlobalHoc } from '@/__test_utils__/renderWithGlobalProviders';
-import HeaderWebMenu from '@/components/base/HeaderWebMenu';
+
+import HeaderWebMenu from '../HeaderWebMenu';
 
 jest.mock('next/router', () => ({
   useRouter() {
