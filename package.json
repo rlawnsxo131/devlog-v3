@@ -17,6 +17,17 @@
     "lint": "next lint",
     "test": "jest --coverage"
   },
+  "repository": "https://github.com/rlawnsxo131/devlog-v3",
+  "author": {
+    "name" : "Juntae(john) Kim",
+    "email" : "public.juntae@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "nextjs",
+    "blog"
+  ],
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.216.0",
     "@aws-sdk/types": "^3.215.0",
