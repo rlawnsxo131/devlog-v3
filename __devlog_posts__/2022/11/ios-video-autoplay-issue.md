@@ -2,6 +2,7 @@
 title: iOS 동영상 자동재생이 안될때(mobile issue)
 description: 예전에 삽질했던 기억이 나네요. iOS. 단어 근본으로 썼습니다.
 tags:
+  - Issue
   - iOS
   - Webview
 thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom_2.jpeg
