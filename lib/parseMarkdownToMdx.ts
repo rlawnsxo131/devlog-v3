@@ -1,3 +1,8 @@
+/**
+ * @TODO
+ * next-mdx-remote 를 lib/index.ts 에서 export 중이라,
+ * lib 에서 끌어다 쓰는 코드가 있는 부분의 테스트가 깨지는데 이건 시간날때 수정하자.
+ */
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
