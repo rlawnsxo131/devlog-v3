@@ -8,9 +8,9 @@ interface Props {
 
 function ErrorResolveButton({ children, onClick }: Props) {
   return (
-    <div className={block()} onClick={onClick}>
+    <button className={block()} onClick={onClick}>
       {children}
-    </div>
+    </button>
   );
 }
 

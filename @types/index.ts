@@ -28,6 +28,4 @@ export interface Post {
   slug: string;
 }
 
-export interface CountTag {
-  [index: string]: number;
-}
+export type CountTag = Record<string, number>;

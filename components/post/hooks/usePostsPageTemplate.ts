@@ -29,7 +29,7 @@ export default function usePostsPageTemplate() {
         });
       }, 250);
     },
-    [info, error],
+    [info, error, timerRef],
   );
 
   return {

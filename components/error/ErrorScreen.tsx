@@ -12,7 +12,7 @@ interface Props {
 }
 
 function ErrorScreen({ type, onResolveErrorAndRefresh }: Props) {
-  const { buttonText, handleResolveErrorAndRefresh } = useErrorScreen({
+  const { buttonText, handleResolveError } = useErrorScreen({
     onResolveErrorAndRefresh,
   });
 
@@ -20,7 +20,7 @@ function ErrorScreen({ type, onResolveErrorAndRefresh }: Props) {
     <div className={block()}>
       <ErrorScreenMutableContent type={type} />
       <div className="err-screen-button-block">
-        <ErrorResolveButton onClick={handleResolveErrorAndRefresh}>
+        <ErrorResolveButton onClick={handleResolveError}>
           {buttonText}
         </ErrorResolveButton>
       </div>

@@ -12,7 +12,7 @@ export default function useErrorScreen({
   const push = useRoutePush();
   const buttonText = onResolveErrorAndRefresh ? '새로고침' : '홈으로';
 
-  const handleResolveErrorAndRefresh = () => {
+  const handleResolveError = () => {
     if (onResolveErrorAndRefresh) {
       onResolveErrorAndRefresh();
       return;
@@ -22,6 +22,6 @@ export default function useErrorScreen({
 
   return {
     buttonText,
-    handleResolveErrorAndRefresh,
+    handleResolveError,
   };
 }
