@@ -11,7 +11,7 @@ interface Props {
   path: string;
   count: number;
   isActive: boolean;
-  scrollToCenter: (ref: MutableRefObject<HTMLAnchorElement>) => void;
+  scrollToCenter: (ref: MutableRefObject<HTMLAnchorElement | null>) => void;
 }
 
 function PostCountTag({ title, path, count, isActive, scrollToCenter }: Props) {

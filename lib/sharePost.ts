@@ -41,10 +41,13 @@ export default async function sharePost(
       ...params,
     });
   } catch (err) {
-    if (err.name === 'AbortError') {
-      console.log('share cancel error: AbortError');
-      return;
+    if (err instanceof Error) {
+      if (err.name === 'AbortError') {
+        console.log('share cancel error: AbortError');
+        return;
+      }
     }
+    if (!params.url) throw new Error('sharePost: not found url');
     return copyToClipBoard(params.url, fallbackCallback);
   }
 }

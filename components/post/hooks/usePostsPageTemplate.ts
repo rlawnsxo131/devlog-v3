@@ -5,7 +5,7 @@ import useToast from '@/hooks/useToast';
 import { sharePost } from '@/lib';
 
 export default function usePostsPageTemplate() {
-  const timerRef = useRef<NodeJS.Timeout>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const { info, error } = useToast();
 
   const handleCopyToClipboard = useCallback(

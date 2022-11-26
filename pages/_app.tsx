@@ -1,3 +1,4 @@
+import type { AppProps } from 'next/app';
 import Script from 'next/script';
 
 import { AppCopyright, AppLayout } from '@/components/app';
@@ -12,7 +13,7 @@ import useGTagEffect from '@/hooks/useGTagEffect';
 import { gTag } from '@/lib';
 import globalStyle from '@/styles/globalStyle';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   globalStyle();
   useGTagEffect();
 

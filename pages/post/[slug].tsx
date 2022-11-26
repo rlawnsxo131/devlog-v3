@@ -73,8 +73,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+type StaticParams = {
+  slug: string;
+};
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = params as StaticParams;
   const posts = await getAllPosts();
   const post = posts.find((post) => post.slug === slug);
   if (post) {

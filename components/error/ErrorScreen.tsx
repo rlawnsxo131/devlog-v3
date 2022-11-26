@@ -1,4 +1,3 @@
-import useRoutePush from '@/hooks/useRoutePush';
 import { css } from '@/styles/_stitches.config';
 import type { ErrorType } from '@/types';
 
