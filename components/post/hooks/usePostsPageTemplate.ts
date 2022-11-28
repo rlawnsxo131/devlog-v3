@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useRef } from 'react';
 
 import { SiteConfig } from '@/config';
 import useToast from '@/hooks/useToast';
