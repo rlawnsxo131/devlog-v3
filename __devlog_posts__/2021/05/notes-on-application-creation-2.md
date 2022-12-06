@@ -1,6 +1,6 @@
 ---
 title: 개발 중 조심해야 할 것들 2
-description: 지금 당장 생각나는 개발중 조심해야 하는 것들
+description: 지금 당장 생각나는 개발중 조심해야 하는 것들 두번째
 tags:
   - Architecture
 thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/jpeg/things-developers.jpg
