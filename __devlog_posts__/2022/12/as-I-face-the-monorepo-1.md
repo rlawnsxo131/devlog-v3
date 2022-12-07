@@ -396,7 +396,7 @@ const result = obj?.name ?? 'name';
 
 위의 경우 optional 한 값이란 선언을 전혀 하지 않았음에도 컴파일러에서 특별히 무언가를 제약하지 않습니다. 이건 다른 언어를 하시던 분들께는 굉장히 이상할 수 있는 부분인데요. 예를들어 swift 의 경우 optional 한 값이란 표현을 해주지 않는다면, 어림도 없지 하며 경고를 내뿜습니다. kotlin 역시 저런식으로 코드를 작성한다면 너 optional 한 값으로 정의 안했는데 왜그래? 라며 린트가 경고를 줍니다. 그래서 위의 경우를 남용한다면 아래와 같은 상황이 생길 수 있습니다.
 
-```typescript
+```tsx
 interface Reseponse {
   id: string;
   profile: {
@@ -413,6 +413,10 @@ function Page() {
       const age = data.profile?.age ?? 0;
     });
   }, []);
+
+  return (
+    <div>{...}</div>
+  )
 }
 ```
 
