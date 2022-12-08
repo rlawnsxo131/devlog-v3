@@ -1,6 +1,6 @@
 ---
-title: 모노레포를 마주하며 2 - 프로젝트 세팅
-description: yarn berry workspace + storybook(vite) + esbuild 등을 이용하여 프로젝트 세팅하기
+title: 모노레포를 마주하며 2 - monorepo 세팅
+description: yarn berry workspace + storybook(vite) + esbuild 를 이용한 monorepo 세팅
 tags:
   - Monorepo
   - Architecture
