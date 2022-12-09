@@ -27,7 +27,7 @@ slug: as-I-face-the-monorepo-2
 
 yarn 은 설치되어 있다고 가정하고 진행합니다.
 
-- 버전을 `berry` 로 설정하시고, 프로젝트를 `init` 해 주세요.
+- 버전을 berry 로 설정하시고, 프로젝트를 init 해 주세요.
 
 ```shell
 $ yarn set version berry
@@ -38,11 +38,13 @@ $ yarn init
 
 - Extensions 에서 ZipFS 를 설치하고, 프로젝트의 root 에서 typescript 를 설치합니다.
 - 그리고 이 프로젝트의 sdk 를 set 해주세요.
-- 저는 vscode 를 사용하지만 아닌경우 editor 이름만 바꾸어 주면 됩니다. 아래 링크를 참고하세요.
+
+저는 vscode 를 사용하지만 아닌경우 명령어만 바꾸어 주면 됩니다. 아래 링크를 참고하세요.
+
 - [https://yarnpkg.com/getting-started/editor-sdks](https://yarnpkg.com/getting-started/editor-sdks)
 
 > 지금 내가 사용하는 에디터의 typescript 버전과 다운받는 typescript **버전을 맞춰주세요.**  
-> 문제가 생기지 않을수도 있지만, 간혹 ide 의 ts 버전과 sdk 의 ts 버전이 달라서 온통 빨간줄이 그어지는 현상을  
+> 문제가 생기지 않을수도 있지만, vscode 의 ts 버전과 sdk 의 ts 버전이 달라서 온통 빨간줄이 그어지는 현상을  
 > 마주할 수 있습니다. 이게 진짜 중간에 겪으면 문제 찾는다고 엄한데 살피다 시간 다 날립니다.
 
 ```shell
@@ -50,10 +52,11 @@ $ yarn add --dev typescript
 $ yarn dlx @yarnpkg/sdks vscode
 ```
 
-- 이렇게 프로젝트 sdk 설정을 하면 typescript 버전을 이 workspace 버전을 사용할꺼냐 라는 질문을 합니다.
+이렇게 프로젝트 sdk 설정을 하면 typescript 버전을 이 workspace 버전을 사용할꺼냐 라는 질문을 합니다.
+
 - workspace 버전을 선택해 주세요.
 
-여기까지 따라오셨다면, 프로젝트는 다음과 같은 파일을 지니게 됩니다.
+여기까지 진행하셨다면, 프로젝트는 다음과 같은 파일을 지니게 됩니다.
 
 ```
 |---.vscode
@@ -111,7 +114,7 @@ $ yarn workspaces list # 이제 리스트를 잘 출력합니다.
 ➤ YN0000: Done in 0s 2ms
 ```
 
-여기까지 잘 오셨으면 프로젝트는 아래와 같은 모습이 됩니다.
+여기까지 진행하셨으면, 프로젝트는 아래와 같은 모습이 됩니다.
 
 ```
 |---.vscode
@@ -128,7 +131,7 @@ $ yarn workspaces list # 이제 리스트를 잘 출력합니다.
 
 여기서 우리는 root 에 있는 tsconfig.json file 을 tsconfig.base.json 파일로 이름을 변경 할텐데요. 공통이 되는 설정을 root 에 두고 각 프로젝트에서 extends 해 사용하기 위함입니다. 이름을 변경하고, 아래 내용을 입력해 주세요. 물론 당연히 저와 다른 설정을 사용하고 싶으시다면 바꾸면 되겠죠?
 
-- tsconfig.json 파일의 이름을 tsconfig.base.json 으로 변경하고 아래 내용을 적어주세요.
+- tsconfig.json 파일의 이름을 tsconfig.base.json 으로 변경하고, 기존 설정을 아래처럼 바꾸어 주세요.
 
 ```json
 // tsconfig.base.json
@@ -150,4 +153,36 @@ $ yarn workspaces list # 이제 리스트를 잘 출력합니다.
 }
 ```
 
-# Storybook(vite) 설정
+이번에는 `package.json` 에 `script` 를 추가 하겠습니다. 앞으로의 작업을 편하게 하기 위함인데요. yarn workspace 는 특정 작업영역에 있는 명령을 root 에서 실행가능케 하는 기능을 제공합니다.
+
+- 아래 두가지 스크립트를 추가해 주세요.
+
+```json
+// package.json
+{ ... }
+"scripts": {
+  "coreui": "yarn workspace @packages/coreui",
+  "webapp": "yarn workspace @packages/webapp"
+},
+{ ... }
+```
+
+위 스크립트에 각각 `@packages/coreui`/`@packages/webapp` 라고 적힌 부분이 workspace 에 해당하는 프로젝트중 하나를 특정하기 위함인데요. 이부분은 **coreui** 와 **webapp** 프로젝트의 `package.json` 내부 `name` 값과 일치해야 합니다.
+
+- coreui 와 webapp 의 package.json 에 있는 name 을 수정해 주세요.
+
+```json
+// coreui/package.json
+{
+  "name": "@packages/coreui",
+}
+
+// webapp/package.json
+{
+  "name": "@packages/webapp",
+}
+```
+
+# storybook(vite) + esbuild 설정
+
+저는 여기서 제일 삽질을 많이 했는데요. 해결은 막상 하고보니 굉장히 간단했으나, 이렇게 하는거 맞아? 란 생각에 시간을 많이 사용하였습니다. 아직까지는 `vite` 를 사용할때 여기저기서 터지는 사례가 종종 들리네요. 하지만 vite 라는 도구는 참 매력적인듯 싶습니다. 이 예제는 `coreui` 에 공통으로 사용할 컴포넌트를 모아 라이브러리 처럼 build 할텐데요. 빌드엔 `esbuild` 와 `tsc` 를 사용합니다. esbuild 는 빨라서 좋은데, 제가 좋아하는 golang 으로 작성되어서 더 맘에듭니다.

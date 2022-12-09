@@ -734,4 +734,4 @@ function DealGroup() {
 막상 글을 적다보니, 생각보다 분량이 많아졌습니다. 하지만, 실무에서 겪어온 복잡도가 정말 높은 예제는 설명하지 못해 조금 아쉬운 마음인데요. 기회가 된다면 컴포넌의 설계와 디자인만을 자세히 다루는 글을 적어 보겠습니다.
 
 [다음글](/post/as-I-face-the-monorepo-2) 에서는 monorepo 프로젝트를 세팅하는 내용을 다룹니다.  
-`yarn berry worksapce` + `typescript` + `storybook(vite)` + `next` 가 주가되는 예제인데요. 공통된 컴포넌트는 `esbuild` 로 빌드 합니다. 관심이 있으시다면 읽어보셔도 좋을것 같습니다. 긴 글을 읽어 주셔서 감사합니다. 여러분의 코딩이 늘 즐겁기를 바랍니다.
+`yarn berry worksapce` + `typescript` + `storybook(vite)` + `next` 가 주가되는 예제인데요. 공통으로 사용할 컴포넌트는 `esbuild` 로 빌드 합니다. 관심이 있으시다면 읽어보셔도 좋을것 같습니다. 긴 글을 읽어 주셔서 감사합니다. 여러분의 코딩이 늘 즐겁기를 바랍니다.
