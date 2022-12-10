@@ -18,54 +18,30 @@ export default function App({ Component, pageProps }: AppProps) {
   useGTagEffect();
 
   return (
-    <>
-      {constants.IS_PRODUCTION && (
-        <>
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${gTag.GA_TRACKING_ID}`}
-          />
-          <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gTag.GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
-              });
-            `,
-            }}
-          />
-        </>
-      )}
-      <ErrorBoundary>
-        <GlobalContextProvider>
-          <Core>
-            <AppLayout>
-              <AppLayout.Header
-                leftSideItems={<HeaderLogo />}
-                rightSideItems={
-                  <>
-                    <HeaderWebMenu />
-                    <ThemeButton />
-                    <HeaderMobileMenu />
-                  </>
-                }
-              />
-              <AppLayout.Main>
-                <Component {...pageProps} />
-              </AppLayout.Main>
-              <AppLayout.Footer>
-                <AppCopyright />
-              </AppLayout.Footer>
-            </AppLayout>
-            <Toast />
-          </Core>
-        </GlobalContextProvider>
-      </ErrorBoundary>
-    </>
+    <ErrorBoundary>
+      <GlobalContextProvider>
+        <Core>
+          <AppLayout>
+            <AppLayout.Header
+              leftSideItems={<HeaderLogo />}
+              rightSideItems={
+                <>
+                  <HeaderWebMenu />
+                  <ThemeButton />
+                  <HeaderMobileMenu />
+                </>
+              }
+            />
+            <AppLayout.Main>
+              <Component {...pageProps} />
+            </AppLayout.Main>
+            <AppLayout.Footer>
+              <AppCopyright />
+            </AppLayout.Footer>
+          </AppLayout>
+          <Toast />
+        </Core>
+      </GlobalContextProvider>
+    </ErrorBoundary>
   );
 }

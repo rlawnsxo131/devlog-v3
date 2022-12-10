@@ -1,6 +1,7 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
 import constants from '@/constants';
+import { gTag } from '@/lib';
 import { darkTheme, getCssText } from '@/styles/_stitches.config';
 
 export default function Document() {
@@ -150,6 +151,28 @@ export default function Document() {
           `,
           }}
         />
+        {constants.IS_PRODUCTION && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gTag.GA_TRACKING_ID}`}
+            />
+            <script
+              id="gtag-init"
+              async
+              dangerouslySetInnerHTML={{
+                __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gTag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+              }}
+            />
+          </>
+        )}
       </Head>
       <body>
         <Main />
