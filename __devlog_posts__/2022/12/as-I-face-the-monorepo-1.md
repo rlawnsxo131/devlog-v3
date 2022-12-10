@@ -4,7 +4,7 @@ description: 모노레포를 도입하는 시기와 공통 컴포넌트를 설�
 tags:
   - Monorepo
   - Architecture
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
+thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom_2.jpeg
 date: 2022-12-10
 slug: as-I-face-the-monorepo-1
 ---
@@ -15,11 +15,11 @@ slug: as-I-face-the-monorepo-1
 
 얼마전 회사에서, 유지보수중인 프로젝트에 `monorepo` 를 도입하며 문득 들었던 생각이 있습니다.  
 제가 예전에도(이전 회사) 이와 비슷한 이유로 **monorepo** 를 도입하지 않았었나? 하는 생각입니다.  
-기억이라 해야 맞을까요? 그래서 이 기회에 monorepo 를 도입하며 제가 느낀점들과 프로젝트를 세팅하는 간단한 예제를 이야기하려 하는데요. 이번에 회사에서 진행중인 프로젝트엔 `pnpm` 을 사용했지만, 이번엔 `yarn berry` 및 제게 익숙하지 않은 스택으로 세팅을 해보고 싶어서 예제는 yarn berry 를 사용하였습니다.
+기억이라 해야 맞을까요? 그래서 이 기회에 monorepo 를 도입하며 제가 느낀점들과 프로젝트를 세팅하는 간단한 예제를 이야기하려 하는데요. 이번에 회사에서 진행중인 프로젝트엔 `pnpm` 을 사용했지만, 이번엔 `yarn berry` 와 제게 익숙하지 않은 스택으로 세팅을 해보고 싶어서 예제는 yarn berry 를 사용하였습니다.
 
 이 글에서는, monorepo 를 도입하며 느낀 배경과 프로젝트를 package 별로 떼어내며 느낀점. 의사결정 과정에 대하여 이야기 합니다. 모노레포 프로젝트를 **세팅하는 예제**는 다음글에 이어집니다. 해당 내용이나 소스코드가 궁금하시다면 링크를 참고해 주세요.
 
-- [모노레포를 마주하며 2 - monorepo 세팅](/post/as-I-face-the-monorepo-2)
+- [모노레포를 마주하며 2 - monorepo 세팅](https://devlog.juntae.kim/post/as-I-face-the-monorepo-2)
 - [예제 코드 repository](https://github.com/rlawnsxo131/yarn-berry-monorepo-esbuild)
 
 # monorepo 는 새로운 개념인가?
@@ -115,7 +115,7 @@ function John({ button }) {
 
 ## 컴포넌트 확장하기(Children, Props)
 
-위의 코드를 보셔서 알겠지만, 컴포넌트를 확장하는 가장 간단한 방법중 한가지는, props 로 component 자체를 받는것 입니다. 하지만 이것도 정도에 따라 장단이 존재한다고 생각하는데요. 아래 케이스를 살펴보겠습니다.
+위의 코드를 보셔서 알겠지만, 컴포넌트를 확장하는 가장 간단한 방법중 한가지는, props 로 component 자체를 받는것 입니다. 하지만 이것도 정도에 따라 장단점이 있다고 생각합니다. 아래 케이스를 살펴보겠습니다.
 
 ```tsx
 /**
@@ -152,7 +152,7 @@ function Component2() {
 - 일단, 자식으로 어떠한 컴포넌트가 올지라도 유연한 대응이 가능합니다.
 - 하지만 너무 유연한 나머지, 어떤 제약이나 이 컴포넌트를 언제 사용해야 하는지 등의 요소를 알기가 쉽지 않습니다.
 
-그럼, 위와같은 형태는 어떤 방식으로 사용하면 좋을까요? 혹은, 어떨때 단점을 상쇄해 낼 수 있을까요? 저는 `Compound Components` 패턴 등을 섞어 컴포넌트를 설계할때 위와 같은 형태를 사용하는데요. `Select`, `Layout`, `Popup` 등의 컴포넌트 작성시 즐겨 사용합니다. 아래의 예시를 살펴보겠습니다.
+그럼, 위와같은 형태는 어떤 방식으로 사용하면 좋을까요? 혹은, 어떻게 단점을 상쇄해 낼 수 있을까요? 저는 `Compound Components` 패턴 등을 섞어 컴포넌트를 설계할때 위와 같은 형태를 사용하는데요. `Select`, `Layout`, `Popup` 등의 컴포넌트 작성시 즐겨 사용합니다. 아래의 예시를 살펴보겠습니다.
 
 ```jsx
 /**
@@ -253,7 +253,7 @@ function Page() {
 }
 ```
 
-이렇게 적절한 변화를 주면서 컴포넌트를 설계한다면, 외부의 변화에 유연하면서 특정 조건은 만족시키는 컴포넌트를 작성하기가 굉장히 쉬워집니다. 그럼 여기서 한가지 요소를 더 추가하는 케이스를 살펴보면 어떨까 싶습니다. 내가 작성하는 컴포넌트를 다른 팀원이 사용할때, 타인에게 `특정 로직`을 **반드시 받아서 처리하는 컴포넌트**를 구현해야 한다는 사실을 알리고 싶다면 어떻게 해야할까요? view 는 유연하되, 이 로직만은 받아서 처리하라는 정보를 사용자에게 주고 싶다면요.
+이렇게 적절한 변화를 주면서 컴포넌트를 설계한다면, 외부의 변화에 유연하면서 특정 조건은 만족시키는 컴포넌트를 작성하기가 굉장히 쉬워집니다. 그럼 여기서 한가지 요소를 더 추가하는 케이스를 살펴보면 어떨까 싶습니다. 내가 작성하는 컴포넌트를 다른 팀원이 사용할때, 타인에게 `특정 로직`을 **반드시 받아서 처리하는 컴포넌트**를 구현해야 한다는 사실을 알리고 싶다면 어떻게 해야할까요? view 는 유연하되, 어떤 처리는 꼭 해야한다는 정보를 사용자에게 주고 싶다면요.
 
 ## 컴포넌트 확장하기(Render Props With Typescript)
 
@@ -303,8 +303,8 @@ function PopupBase({ children, visible, onClose }: Props) {
 ```tsx
 /**
  * 컴파일러가 경고를 뿜는 코드
- * Type 'Element' is not assignable to type '(onClose: Handler) => ReactNode'.
- * Type 'Element' provides no match for the signature '(onClose: Handler): ReactNode'
+ * Type 'Element' is not assignable to type '(onClose: OnClose) => ReactNode'.
+ * Type 'Element' provides no match for the signature '(onClose: OnClose): ReactNode'
  * ts(2322)
  */
 function Page() {
@@ -595,7 +595,7 @@ function ProductInfo({
 
 ```jsx
 /**
- * showLikeButton, showCartButton 추가
+ * onClickLikeButton, onClickCartButton 추가
  */
 function ProductInfo({
   recommendProducts,
@@ -621,7 +621,7 @@ function ProductInfo({
 }
 ```
 
-자 이제 어느부분을 개선하면 좋을지 보이시나요? 이런 방식의 코드는, 하나의 변화에 대한 대응을 추가할 때마다 인자가 늘어나고 이로인한 가독성은 갈수록 떨어질 가능성이 높아집니다. 그래서 이럴때 외부로부터 컴포넌트를 주입받는 것을 고려하면, 복잡도를 떨어뜨린 채로 추가 변경 사항에 대응이 유리한 컴포넌트를 만들수 있는데요. 코드를 조금 바꿔보겠습니다.
+자 이제 어느부분을 개선하면 좋을지 보이시나요? 이런 방식의 코드는, 하나의 변화에 대한 대응을 추가할 때마다 인자가 늘어남과 비례해 가독성은 갈수록 떨어질 가능성이 높아집니다. 이런 상황에 컴포넌트를 주입받는 것을 고려하면, 복잡도를 떨어뜨린 채로 추가 변경 사항에 대응이 유리한 컴포넌트를 만들수 있는데요. 코드를 조금 바꿔보겠습니다.
 
 ```jsx
 /**
@@ -635,7 +635,7 @@ function ProductInfo({ button }) {
       </div>
       {recommendProducts && recommendProducts.map((product) => (
         <div key={product.id}>
-          {button && button}
+          {button}
           { ... }
         </div>
       ))}
@@ -684,7 +684,7 @@ function LikeButtonProductPage() {
 /**
  * 회사에서 중복되는 코드를 공통으로 떼어내고, 해당 컴포넌트를 사용해 리펙터링 한 코드.
  *
- * tmi 인데 요즘 공통컴포넌트 떼어낸다고 리펙터링할게 굉장히 많아요.
+ * tmi 인데 요즘 공통컴포넌트 떼어낸다고 기존로직을 열심히 파악하는 중입니다.
  * 아래 코드도 수정이 더 필요하지만, 떼어내고 나니 기분이 좋네요.
  */
 function DealGroup() {
@@ -737,5 +737,5 @@ function DealGroup() {
 
 우린 변화가 많은 컴포넌트를 작성해야 하는 일도 있고, 어떨땐 컴포넌트를 작게 쪼개는것이 작업량에 비해 가져오는 이득이 크지 않은 경우도 있습니다. 또한, 데이터를 주입받는 방식과 컴포넌트를 주입받는 방식은 모두 장단점이 있습니다. 이글이 현재 내가 작성해야 하는 코드의 디자인을 결정할 때 도움이 되었으면 합니다.
 
-[다음글](/post/as-I-face-the-monorepo-2) 에서는 monorepo 프로젝트를 세팅하는 내용을 다룹니다.  
+[다음글](https://devlog.juntae.kim/post/as-I-face-the-monorepo-2) 에서는 monorepo 프로젝트를 세팅하는 내용을 다룹니다.  
 `yarn berry worksapce` + `typescript` + `storybook(vite)` + `next` 가 주가되는 예제인데요. 공통으로 사용할 컴포넌트는 `esbuild` 로 빌드 합니다. 관심이 있으시다면 읽어보셔도 좋을것 같습니다. 긴 글을 읽어 주셔서 감사합니다. 여러분의 코딩이 늘 즐겁기를 바랍니다.

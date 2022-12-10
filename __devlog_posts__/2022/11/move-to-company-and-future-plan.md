@@ -3,7 +3,6 @@ title: 이직, 그리고 개발자로서의 커리어에 관하여
 description: Frontend 개발자로서의 계획과 주관을 담은 생각을 이야기 합니다
 tags:
   - Think
-  - Frontend
 thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
 date: 2022-11-05
 slug: move-to-company-and-future-plan

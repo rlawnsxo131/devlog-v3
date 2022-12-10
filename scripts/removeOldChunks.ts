@@ -21,12 +21,14 @@ async function getDeleteChunkKeys() {
   if (objectList.Contents?.length) {
     for (const content of objectList.Contents) {
       const { LastModified } = content;
-      const today = new Date();
-      const lastModifiedDate = new Date(LastModified);
-      const diffTime = Math.abs(today.getTime() - lastModifiedDate.getTime());
-      const diffDay = Math.ceil(diffTime / (1000 * 3600 * 24));
-      if (diffDay >= 3 && content.Key) {
-        result.add(content.Key);
+      if (LastModified) {
+        const today = new Date();
+        const lastModifiedDate = new Date(LastModified);
+        const diffTime = Math.abs(today.getTime() - lastModifiedDate.getTime());
+        const diffDay = Math.ceil(diffTime / (1000 * 3600 * 24));
+        if (diffDay >= 3 && content.Key) {
+          result.add(content.Key);
+        }
       }
     }
   }

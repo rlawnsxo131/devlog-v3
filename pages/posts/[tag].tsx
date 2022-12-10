@@ -50,8 +50,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+type StaticParams = {
+  tag?: string;
+};
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { tag } = params;
+  let { tag } = params as StaticParams;
+  tag ??= '';
   const allPosts = await getAllPosts();
   const countTag = getUniqCountTagFor(allPosts);
   const posts = allPosts.filter((posts) => posts.tags.includes(tag as string));
