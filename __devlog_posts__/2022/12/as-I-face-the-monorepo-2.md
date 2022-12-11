@@ -570,7 +570,7 @@ export default withTM(nextConfig);
 
 - **test with jest**
 
-이 글에서는 다루지 않았으나, 예시코드에는 jest 설정과 eslint 설정을 해둔 상태인데요. `yarn berry` 의 경우 라이브러리 호이스팅을 사용하지 않습니다. 덕분에 `nohoist` 옵션을 사용하지 않아도 됩니다. 하지만 jest 의 경우 제 생각에는 전역적으로 버전이 같아도 크게 문제가 없을것 같다는 생각인데요. 이게 yarn berry 에서 권장하는 방식이 맞는지 아직 확신이 서질 않습니다. root 만 `jest` 를 소유한채 각 디렉터리가 config 를 따로 가지고 있다면, root 에서 `yarn workspaces` 명령어로 test 가 전부 가능합니다. 제 생각엔 workspace 내의 프로젝트별 테스트시 jest 의 버전이 달라야 하는 이유가 있는 경우를 제외하곤 상관 없을것 같긴 하나, 고민 해볼 만한 부분 같습니다.  
+이 글에서는 다루지 않았으나, 예시코드에는 jest 설정과 eslint 설정을 해둔 상태인데요. `yarn berry` 의 경우 라이브러리 호이스팅을 사용하지 않습니다. 덕분에 `nohoist` 옵션을 사용하지 않아도 됩니다. 하지만 jest 의 경우 전역적으로 버전이 같아도 크게 문제가 없을것 같다는 생각인데요. 이게 yarn berry 에서 권장하는 방식이 맞는지 아직 확신이 서질 않습니다. root 만 `jest` 를 소유한채 각 디렉터리가 config 를 따로 가지고 있다면, root 에서 `yarn workspaces` 명령어로 test 가 전부 가능합니다. 제 생각엔 workspace 내의 프로젝트별 테스트시 jest 의 버전이 달라야 하는 이유가 있는 경우를 제외하곤 상관 없을것 같긴 하나, 고민 해볼 만한 부분 같습니다.  
 `yarn workspaces foreach` 명령어를 사용하거나, [공통스크립트를 사용하는 방법](https://yarnpkg.com/getting-started/qa#how-to-share-scripts-between-workspaces) 을 추가로 봐도 좋을것 같습니다.
 
 - **storybook**
