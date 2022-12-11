@@ -583,7 +583,7 @@ export default withTM(nextConfig);
 
 # Ref
 
-- [yarn 공식문서](https://yarnpkg.com/): 좀 많이 아쉽습니다. 문서가 더 자세하면 좋겠어요...
+- [yarn 공식문서](https://yarnpkg.com/): 조금 아쉽습니다. 문서가 더 자세하면 좋겠어요...
 - [storybook template react vs react product 차이](https://stackoverflow.com/questions/71074658/whats-the-difference-react-vs-react-project-vs-webpack-react-for-storybook)
 - [우아한 형제들 기술블로그](https://techblog.woowahan.com/7976/)
 - [storybook webpack5 migration](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#wrong-webpack-version)
