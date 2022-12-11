@@ -1,6 +1,6 @@
 ---
 title: 모노레포를 마주하며 2 - monorepo 세팅
-description: yarn berry workspace + storybook(vite) + esbuild 를 이용한 monorepo 세팅
+description: yarn berry workspace + storybook(vite) + next.js + esbuild 를 이용한 monorepo 세팅
 tags:
   - Monorepo
   - Vite
@@ -23,7 +23,7 @@ slug: as-I-face-the-monorepo-2
 안녕하세요. 이번엔 직접 `monorepo` 프로젝트를 세팅해 보겠습니다.  
 코드를 작성한지는 1 ~ 2주 정도 된것 같은데, 글 두개를 함께 블로그에 올리려다 보니 시간이 조금 지체되었습니다.
 
-예제는 **mac book** + **vscode** 를 기준으로 진행합니다. 기왕에 하는거, 제가 요즘 관심갖고 있거나 잘 모르는 녀석들로 세팅해 보고싶었습니다. `yarn berry worksapce` + `typescript` + `storybook(vite)` + `next` 를 이용해 monorepo 프로젝트를 세팅합니다. 공통으로 사용할 컴포넌트는 `esbuild` 로 빌드합니다. 글을 읽기 귀찮으신 분들을 위해 전체 `소스코드`를 미리 첨부합니다. 아래 링크를 참고해 주세요.
+예제는 **mac book** + **vscode** 를 기준으로 진행합니다. 기왕에 하는거, 제가 요즘 관심갖고 있거나 잘 모르는 녀석들로 세팅해 보고싶었습니다. `yarn berry worksapce` + `typescript` + `storybook(vite)` + `next.js` 를 이용해 monorepo 프로젝트를 세팅합니다. 공통으로 사용할 컴포넌트는 `esbuild` 로 빌드합니다. 글을 읽기 귀찮으신 분들을 위해 전체 `소스코드`를 미리 첨부합니다. 아래 링크를 참고해 주세요.
 
 - [전체코드](https://github.com/rlawnsxo131/yarn-berry-monorepo-esbuild)
 
@@ -366,7 +366,7 @@ const commonConfig = {
   target: 'es2015',
   bundle: true,
   tsconfig: 'tsconfig.build.json',
-  external: ['react', ...external],
+  external: [...external],
   sourcemap: true,
 };
 
@@ -389,7 +389,7 @@ Promise.all([
 ]).catch(() => process.exit(1));
 ```
 
-위 설정을 살펴보면, `cjs` 와 `mjs` 를 모두 지원토록 설정을 작성했는데요. 신경써서 보실만한 부분은 `external` 설정 정도일것 같습니다. 저는 peerDependencies 및 devDependencies 만을 현재 사용하고 있습니다. 때문에 굳이 bundle 에 포함시킬 필요가 없어서 모든 디펜던시를 제외하도록 설정 했습니다.
+위 설정을 살펴보면, `cjs` 와 `mjs` 를 모두 지원토록 설정을 작성했는데요. 신경써서 보실만한 부분은 `external` 설정 정도일것 같습니다. 저는 peerDependencies 및 devDependencies 만을 현재 사용하고 있습니다. 때문에 굳이 bundle 에 포함시킬 의존성이 없어서 모든 의존성을 제외하도록 설정 했습니다.
 
 # Next.js 프로젝트 설정및 workspace 의존성 추가
 
@@ -494,7 +494,7 @@ $ yarn coreui build
 // webapp/package.json
 {
   "dependencies": {
-    "@packages/coreui": "0.0.0" // 버전은 와일드카드(*) 도 사용 가능합니다.
+    "@packages/coreui": "workspace:0.0.0" // 버전은 와일드카드(*) 도 사용 가능합니다.
   }
 }
 ```
@@ -566,11 +566,12 @@ export default withTM(nextConfig);
 
 - **@pacakges/coreui**
 
-`@coreui` 를 현재는 `esbuild` 로 미리 컴파일해 `library` 형태로 제공하고 있습니다. 사실 이 부분은 내가 library 형태로 제공할 필요가 없는경우 처리가 필요 없을수도 있습니다. `package.json` 에 `main` 을 `index.ts` 로선언하고 `export` 옵션만을 적어줘도 될 테니까요. 이부분은 상황에 맞게 사용하면 될 것 같습니다.
+`@packages/coreui` 를 현재는 `esbuild` 로 미리 컴파일해 `library` 형태로 제공하고 있습니다. 사실 이 부분은 내가 library 형태로 제공할 필요가 없는경우 처리가 필요 없을수도 있습니다. `package.json` 에 `main` 을 `index.ts` 로선언하고 `export` 옵션만을 적어줘도 될 테니까요. 이부분은 상황에 맞게 사용하면 될 것 같습니다.
 
 - **test with jest**
 
-이 글에서는 다루지 않았으나, 예시코드에는 jest 설정과 eslint 설정을 해둔 상태인데요. `yarn berry` 의 경우 라이브러리 호이스팅을 사용하지 않습니다. 덕분에 `nohoist` 옵션을 사용하지 않아도 되죠. 하지만 jest 의 경우 제 생각에는 전역적으로 버전이 같아도 크게 문제가 없을것 같다는 생각인데요. 이게 yarn berry 에서 권장하는 방식이 맞는지 아직 확신이 서질 않습니다. root 만 `jest` 를 소유한채 각 디렉터리가 config 를 따로 가지고 있다면, root 에서 `yarn workspaces` 명령어로 test 가 전부 가능한데요. 제 생각엔 workspace 내의 프로젝트별 테스트시 jest 의 버전이 달라야 하는 이유가 있는 경우를 제외하곤 상관 없을것 같긴 하나, 고민 해볼 만한 부분 같습니다.
+이 글에서는 다루지 않았으나, 예시코드에는 jest 설정과 eslint 설정을 해둔 상태인데요. `yarn berry` 의 경우 라이브러리 호이스팅을 사용하지 않습니다. 덕분에 `nohoist` 옵션을 사용하지 않아도 됩니다. 하지만 jest 의 경우 제 생각에는 전역적으로 버전이 같아도 크게 문제가 없을것 같다는 생각인데요. 이게 yarn berry 에서 권장하는 방식이 맞는지 아직 확신이 서질 않습니다. root 만 `jest` 를 소유한채 각 디렉터리가 config 를 따로 가지고 있다면, root 에서 `yarn workspaces` 명령어로 test 가 전부 가능합니다. 제 생각엔 workspace 내의 프로젝트별 테스트시 jest 의 버전이 달라야 하는 이유가 있는 경우를 제외하곤 상관 없을것 같긴 하나, 고민 해볼 만한 부분 같습니다.  
+`yarn workspaces foreach` 명령어를 사용하거나, [공통스크립트를 사용하는 방법](https://yarnpkg.com/getting-started/qa#how-to-share-scripts-between-workspaces) 을 추가로 봐도 좋을것 같습니다.
 
 - **storybook**
 
