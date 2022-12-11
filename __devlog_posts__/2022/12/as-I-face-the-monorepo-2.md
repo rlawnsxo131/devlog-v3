@@ -403,7 +403,7 @@ $ mkdir packages/webapp/pages
 ```
 
 - `package.json` 에 아래 내용을 추가한뒤 프로젝트를 실행해 주세요. 필요한 작업을 next 가 알아서 해 줍니다.
-- 저는 추가로 `tscofnig.json` 을 수정한 상태인데요. 이부분은 [코드](https://github.com/rlawnsxo131/yarn-berry-monorepo-esbuild/blob/main/packages/webapp/tsconfig.json)를 첨부합니다. 입맛에 따라 수정해 주세요.
+- 저는 추가로 `tsconfig.json` 을 수정한 상태인데요. 이부분은 [코드](https://github.com/rlawnsxo131/yarn-berry-monorepo-esbuild/blob/main/packages/webapp/tsconfig.json)를 첨부합니다. 입맛에 따라 수정해 주세요.
 
 ```json
 {
