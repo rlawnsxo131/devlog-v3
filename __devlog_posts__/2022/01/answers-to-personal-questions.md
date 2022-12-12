@@ -3,7 +3,7 @@ title: 자주 받은 질문 정리
 description: 가장 자주받은 질문을 정리해 보았습니다
 tags:
   - Think
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
+thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-01-02
 slug: answers-to-personal-questions
 ---

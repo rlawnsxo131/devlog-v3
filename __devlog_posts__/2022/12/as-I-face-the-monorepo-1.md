@@ -4,7 +4,7 @@ description: 모노레포를 도입하는 시기와 공통 컴포넌트를 설�
 tags:
   - Monorepo
   - Architecture
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom_2.jpeg
+thumbnail: /images/post/thumbnail/john_home_cherry_blossom_2.jpeg
 date: 2022-12-10
 slug: as-I-face-the-monorepo-1
 ---

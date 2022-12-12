@@ -24,6 +24,7 @@ export interface Post {
   description: string;
   tags: string[];
   thumbnail: string;
+  thumbnailBlurData: string;
   date: string;
   slug: string;
 }

@@ -5,7 +5,7 @@ import { marked } from 'marked';
 import type { Post } from '@/types';
 
 import { SiteConfig } from '../config';
-import getAllPosts from '../lib/getAllPosts';
+import getAllPosts from '../lib/post/getAllPosts';
 
 const PUBLIC_PATH = `${process.cwd()}/public`;
 

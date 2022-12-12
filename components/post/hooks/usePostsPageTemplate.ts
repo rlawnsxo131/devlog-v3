@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { SiteConfig } from '@/config';
 import useToast from '@/hooks/useToast';
-import { sharePost } from '@/lib';
+import { sharePost } from '@/lib/post';
 
 export default function usePostsPageTemplate() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);

@@ -14,7 +14,7 @@ import toc from 'remark-toc';
 import type { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 
-import { optimizeImage } from './utils';
+import imageMetadata from './imageMetadata';
 
 // type TokenType =
 //   | 'tag'
@@ -46,11 +46,6 @@ import { optimizeImage } from './utils';
 function parseCodeSnippet() {
   return (tree: Node) => {
     visit(tree, 'element', (node: any) => {
-      if (node.tagName === 'img') {
-        const alt = node.properties.src.split('/').at(-1);
-        node.properties.alt = alt ?? '';
-        node.properties.src = optimizeImage(node.properties.src, 768);
-      }
       // const [token, type]: [string, TokenType] =
       //   node.properties.className || [];
       // if (token === 'token') {
@@ -70,7 +65,7 @@ export default async function parseMarkdownToMdx(body: string) {
         rehypeAutolinkHeadings,
         rehypeKatex,
         parseCodeSnippet,
-        // imageMetadata(path),
+        imageMetadata(),
       ],
     },
   });

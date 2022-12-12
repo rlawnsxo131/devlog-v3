@@ -3,7 +3,7 @@ title: 기술 스택 결정에 대한 질문을 받아 작성하는 글
 description: 은탄환은 없다랄까요?
 tags:
   - Think
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
+thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-06-03
 slug: criteria-for-determining-the-tech-stack
 ---

@@ -4,6 +4,8 @@ import { memo } from 'react';
 
 import { css } from '@/styles/_stitches.config';
 
+import MDXComponent from './MDXComponent';
+
 interface Props {
   mdx: MDXRemoteSerializeResult;
 }
@@ -11,7 +13,7 @@ interface Props {
 function MDXRemoteContainer({ mdx }: Props) {
   return (
     <div className={`${block()} mdx-remote-wrapper`}>
-      <MDXRemote {...mdx} />
+      <MDXRemote {...mdx} components={MDXComponent} />
     </div>
   );
 }

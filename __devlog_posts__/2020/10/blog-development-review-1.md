@@ -3,7 +3,7 @@ title: 블로그 개발 후기 1 - Typescript
 description: 타입스크립트 너무 좋다
 tags:
   - Typescript
-thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/jpeg/typescript.jpg
+thumbnail: /images/post/thumbnail/typescript.jpeg
 date: 2020-10-19
 slug: blog-development-review-1
 ---

@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import Script from 'next/script';
 
 import { AppCopyright, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
@@ -7,10 +6,8 @@ import HeaderWebMenu from '@/components/base/HeaderWebMenu';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
-import constants from '@/constants';
 import { GlobalContextProvider } from '@/contexts/GlobalContext';
 import useGTagEffect from '@/hooks/useGTagEffect';
-import { gTag } from '@/lib';
 import globalStyle from '@/styles/globalStyle';
 
 export default function App({ Component, pageProps }: AppProps) {

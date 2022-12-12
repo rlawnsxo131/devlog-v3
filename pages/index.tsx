@@ -1,8 +1,9 @@
 import type { GetStaticProps } from 'next';
+import { getPlaiceholder } from 'plaiceholder';
 
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
-import { getAllPosts, getUniqCountTagFor } from '@/lib';
+import { getAllPosts, getUniqCountTagFor } from '@/lib/post';
 import type { CountTag, Post } from '@/types';
 
 interface Props {
@@ -32,8 +33,16 @@ export default function IndexPage({ posts, countTag }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts();
-  const countTag = getUniqCountTagFor(posts);
+  const originPosts = await getAllPosts();
+  const countTag = getUniqCountTagFor(originPosts);
+  const posts: Post[] = [];
+  for await (const post of originPosts) {
+    const { base64 } = await getPlaiceholder(post.thumbnail);
+    posts.push({
+      ...post,
+      thumbnailBlurData: base64,
+    });
+  }
 
   return {
     props: {

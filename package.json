@@ -19,8 +19,8 @@
   },
   "repository": "https://github.com/rlawnsxo131/devlog-v3",
   "author": {
-    "name" : "Juntae(john) Kim",
-    "email" : "public.juntae@gmail.com"
+    "name": "Juntae(john) Kim",
+    "email": "public.juntae@gmail.com"
   },
   "license": "MIT",
   "keywords": [
@@ -66,8 +66,10 @@
     "date-fns": "^2.29.3",
     "front-matter": "^4.0.2",
     "glob": "^8.0.3",
+    "image-size": "^1.0.2",
     "next": "^12.3.1",
     "next-mdx-remote": "^4.1.0",
+    "plaiceholder": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-toastify": "^9.1.1",

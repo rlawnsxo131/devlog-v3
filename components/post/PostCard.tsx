@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
-import { formatDate, optimizeImage } from '@/lib/utils';
+import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
 import type { Post } from '@/types';
@@ -17,21 +16,20 @@ interface Props {
 }
 
 function PostCard({ post, onCopyToClipboard }: Props) {
-  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
-
   return (
     <article className={block()}>
       <div className={thumbnail()}>
         <Link href={`/post/${post.slug}`}>
           <a>
             <Image
-              src={optimizeImage(post.thumbnail, 600)}
-              alt="post-thumbnail"
+              src={post.thumbnail}
+              alt={post.thumbnail}
               loading="lazy"
               layout="fill"
-              onLoadingComplete={onLoadingComplete}
+              placeholder="blur"
+              blurDataURL={post.thumbnailBlurData}
+              sizes="640px"
             />
-            {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
           </a>
         </Link>
       </div>
@@ -132,16 +130,6 @@ const thumbnail = css({
       },
     },
   },
-});
-
-const thumbnailSkeleton = css({
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  borderRadius: '0.5rem',
-  background: '$bg-skeleton',
 });
 
 const content = css({

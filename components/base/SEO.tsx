@@ -22,6 +22,8 @@ function SEO({
   url,
   type,
 }: Props) {
+  const siteUrl = url || SiteConfig.url;
+
   return (
     <Head>
       <title>{title || 'DevLog'}</title>
@@ -31,8 +33,11 @@ function SEO({
       <meta property="og:image:width" content="800" />
       <meta property="og:image:height" content="400" />
       <meta property="og:type" content={type} />
+      <meta property="og:url" content={siteUrl} />
+      {/* @TODO: site_name 을 넣을까 말까 */}
+      {/* <meta property='og:site_name' content="김준태(john)의 개발 블로그(DevLog)" /> */}
       <meta name="description" content={description} />
-      <link rel="canonical" href={url || SiteConfig.url} />
+      <link rel="canonical" href={siteUrl} />
       {children}
     </Head>
   );

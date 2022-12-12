@@ -3,7 +3,7 @@ title: 개발 중 조심해야 할 것들 1
 description: 지금 당장 생각나는 개발중 조심해야 하는 것들 첫번째
 tags:
   - Architecture
-thumbnail: https://image-devlog.juntae.kim/post/image/thumbnail/jpeg/things-developers.jpg
+thumbnail: /images/post/thumbnail/things_developers.jpeg
 date: 2021-05-03
 slug: notes-on-application-creation-1
 ---
@@ -22,7 +22,7 @@ slug: notes-on-application-creation-1
 
 아마도 리액트를 경험해 보신 분들은 `presentational component` 와 `container component` 에 관한 내용을 한번쯤은 접해보셨을 것 같습니다. 개념자체는 간단합니다. 오로지 view 를 그리는 영역과, 데이터를 관리하는 영역의 컴포넌트를 완전히 분리시켜 상태를 관리하자 라는 아주 간단한 개념인데요. 여기에 추가로 `Flux Architecture` 에 기반한 `Redux` 사용시 보통 여러 컴포넌트가 공유하는 상태는 아래와 같은 형태의 데이터 흐름을 가지게 됩니다.
 
-![](https://image-devlog.juntae.kim/post/image/2021/05/flux.png)
+![flux](/images/post/2021/05/flux.png)
 
 굉장히 간단합니다. 여러 컴포넌트, 혹은 전역적으로 공유해야 하는 데이터는 단방향으로 흐르고, 특정 액션이 `dispatch` 되면 그로인해 `store` 의 상태가 변화됩니다. 그리고 이 store 의 특정 상태와 연결되어 있는
 **container component** 는 이 상태를 받아 **presentational component** 에 주입시켜 줍니다. 그리고 데이터를 받은 presentational component 는 데이터를 반영해 화면을 그립니다. 아주 쉽죠?

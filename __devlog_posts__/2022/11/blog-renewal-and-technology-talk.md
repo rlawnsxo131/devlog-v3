@@ -5,7 +5,7 @@ tags:
   - Think
   - NextJS
   - AWS
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom.jpg
+thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-11-06
 slug: blog-renewal-and-technology-talk
 ---
@@ -32,7 +32,7 @@ slug: blog-renewal-and-technology-talk
 이때 이렇게 보안이며 뭐며 나름 신경을 쓴데에는 이유가 있었습니다. 이유는 공부입니다. cloud 에 익숙해질겸 `VPC` 내부 설정도 직접 해보고, `Subnet` 쪼개서 보안도 챙기고, 아무리 작아도 일단 라이브하는 서비스 바닥부터 다 만들어 봐야지? 란 생각이 컸죠. 이때 아직도 살아있는 어드민에는 Markdown Editor 까지 직접 구현을 해 두었습니다(잘가라). 뭐 어찌되었든 사이즈가 너무 크단 생각이 들었습니다.  
 상세 구조를 자세히 그리자면 너무 복잡해질것 같아, 러프한 구조를 그린 이미지를 첨부합니다.
 
-![devlog_prev_architecture](https://image-devlog.juntae.kim/post/image/2022/11/devlog_prev_architecture.drawio.png)
+![devlog_prev_architecture](/images/post/2022/11/devlog_prev_architecture.png)
 
 특히나 DB 를 직접 띄우다 보니 글을쓰고 댓글을 쓰는 일이야 크게 없지만서도 지금 남은 용량이 얼마나 되고, EBS 볼륨은 언제쯤 늘려야 하나. 메모리는 언제쯤 올려야 하나. 를 신경쓰기가 참 귀찮더군요. 만약 제가 이 블로그로 사이드 프로젝트를 끝낼거라면 모르겠습니다. 허나 저는 진행중인 개인 프로젝트의 서버에 K8S 더나아가 EKS 를 써볼 생각입니다. 초기엔 모르겠지만 RDS 를 써야 하는 때가 올때까지 서비스를 키워보겠다는 목표를 갖고 개발중 인데요. 그럼 이 블로그는 진짜 나만 쓰는 블로그이니, 최대한 편하게 관리하도록 만들어 놓는게 내가 유지하는데 현실성이 있는 선택이겠다 싶더군요.
 

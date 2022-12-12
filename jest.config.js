@@ -17,12 +17,6 @@ const customJestConfig = {
   testMatch: ['<rootDir>/**/**/*.test.(ts|tsx)'],
   testEnvironment: 'jest-environment-jsdom',
 
-  // @TODO
-  // testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
-  // transform: {
-  //   '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
-  // },
-
   // johns custom options
   restoreMocks: true,
   moduleNameMapper: {

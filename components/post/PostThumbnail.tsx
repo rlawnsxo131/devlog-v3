@@ -1,25 +1,22 @@
 import Image from 'next/image';
 
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
-import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
 import type { Post } from '@/types';
 
-type Props = Pick<Post, 'thumbnail'>;
+type Props = Pick<Post, 'thumbnail' | 'thumbnailBlurData'>;
 
-function PostThumbnail({ thumbnail }: Props) {
-  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
-
+function PostThumbnail({ thumbnail, thumbnailBlurData }: Props) {
   return (
     <div className={block()}>
       <Image
-        src={utils.optimizeImage(thumbnail, 768)}
-        alt="post-thumbnail"
+        src={thumbnail}
+        alt={thumbnail}
         layout="fill"
         loading="lazy"
-        onLoadingComplete={onLoadingComplete}
+        placeholder="blur"
+        blurDataURL={thumbnailBlurData}
+        sizes="768px"
       />
-      {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
     </div>
   );
 }
@@ -44,17 +41,6 @@ const block = css({
     objectFit: 'cover',
     zIndex: '$thumbnail',
   },
-});
-
-const thumbnailSkeleton = css({
-  display: 'block',
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  background: '$bg-skeleton',
-  borderRadius: '0.5rem',
 });
 
 export default PostThumbnail;

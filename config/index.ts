@@ -5,9 +5,8 @@ const url =
 
 export const SiteConfig = {
   url: url,
-  imageUrl: 'https://image-devlog.juntae.kim',
   title: 'DevLog',
-  logoUrl: 'https://image-devlog.juntae.kim/logo/devlog.png',
+  logoUrl: 'https://devlog.juntae.kim/devlog.png',
   author: {
     name: 'Juntae(John) Kim',
     email: 'public.juntae@gmail.com',

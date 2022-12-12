@@ -5,7 +5,7 @@ tags:
   - Issue
   - iOS
   - Webview
-thumbnail: https://image-devlog.juntae.kim/john/john_home_cherry_blossom_2.jpeg
+thumbnail: /images/post/thumbnail/john_home_cherry_blossom_2.jpeg
 date: 2022-11-22
 slug: ios-video-autoplay-issue
 ---
