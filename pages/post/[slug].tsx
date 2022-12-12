@@ -43,12 +43,7 @@ export default function PostPage({ post, mdx }: Props) {
           header={
             <PostHeader title={post.title} date={post.date} tags={post.tags} />
           }
-          thumbnail={
-            <PostThumbnail
-              thumbnail={post.thumbnail}
-              thumbnailBlurData={post.thumbnailBlurData}
-            />
-          }
+          thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
           body={<MDXRemoteContainer mdx={mdx} />}
           footer={<ContactLinks />}
         />
