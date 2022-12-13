@@ -4,14 +4,14 @@ import Link from 'next/link';
 import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
-import type { Post } from '@/types';
+import type { PostWithThumbnailBlurData } from '@/types';
 
 import { LinkIcon } from '../img/icons';
 import Separator from '../system/Separator';
 import UnderlineLink from '../system/UnderlineLink';
 
 interface Props {
-  post: Post;
+  post: PostWithThumbnailBlurData;
   onCopyToClipboard: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 

@@ -20,7 +20,6 @@ export default async function getAllPosts() {
         tags: attributes.tags.slice(0, 3),
         date: new Date(attributes.date).toISOString().substring(0, 19),
         thumbnail: attributes.thumbnail,
-        thumbnailBlurData: '',
         slug: attributes.slug,
       };
       acc.push(post);

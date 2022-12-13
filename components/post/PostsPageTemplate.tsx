@@ -1,5 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import type { CountTag, Post } from '@/types';
+import type { CountTag, PostWithThumbnailBlurData } from '@/types';
 
 import { ErrorScreen } from '../error';
 import usePostsPageTemplate from './hooks/usePostsPageTemplate';
@@ -9,7 +9,7 @@ import PostCountTags from './PostCountTags';
 
 interface Props {
   allPostsCount: number;
-  posts: Post[];
+  posts: PostWithThumbnailBlurData[];
   countTag: CountTag;
   currentTag?: string;
 }
