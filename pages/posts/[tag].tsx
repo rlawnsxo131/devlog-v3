@@ -5,11 +5,11 @@ import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { SiteConfig } from '@/config';
 import { getAllPosts, getUniqCountTagFor } from '@/lib/post';
-import type { CountTag, Post } from '@/types';
+import type { CountTag, PostWithThumbnailBlurData } from '@/types';
 
 interface Props {
   allPostsCount: number;
-  posts: Post[];
+  posts: PostWithThumbnailBlurData[];
   countTag: CountTag;
   currentTag: string;
 }
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const countTag = getUniqCountTagFor(allPosts);
   const filterdPosts = allPosts.filter((posts) => posts.tags.includes(tag));
 
-  const posts: Post[] = [];
+  const posts: PostWithThumbnailBlurData[] = [];
   for await (const post of filterdPosts) {
     const { base64 } = await getPlaiceholder(post.thumbnail);
     posts.push({

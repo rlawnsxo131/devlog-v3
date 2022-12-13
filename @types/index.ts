@@ -24,9 +24,12 @@ export interface Post {
   description: string;
   tags: string[];
   thumbnail: string;
-  thumbnailBlurData: string;
   date: string;
   slug: string;
+}
+
+export interface PostWithThumbnailBlurData extends Post {
+  thumbnailBlurData: string;
 }
 
 export type CountTag = Record<string, number>;

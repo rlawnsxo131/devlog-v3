@@ -84,12 +84,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = posts.find((post) => post.slug === slug);
   if (post) {
     const mdx = await parseMarkdownToMdx(post.body);
-    const { base64 } = await getPlaiceholder(post.thumbnail);
     return {
       props: {
         post: {
           ...post,
-          thumbnailBlurData: base64,
         },
         mdx,
       },
