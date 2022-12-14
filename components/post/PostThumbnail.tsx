@@ -42,17 +42,14 @@ const block = css({
 });
 
 const thumbnailBlock = css({
+  position: 'absolute !important',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
   borderRadius: '0.5rem',
-  '& img': {
-    position: 'absolute !important',
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    borderRadius: '0.5rem',
-    objectFit: 'cover',
-    zIndex: '$thumbnail',
-  },
+  objectFit: 'cover !important',
+  zIndex: '$thumbnail',
 });
 
 const thumbnailSkeleton = css({
