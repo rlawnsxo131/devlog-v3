@@ -12,13 +12,12 @@ function PostThumbnail({ thumbnail }: Props) {
   return (
     <div className={block()}>
       <Image
-        className={thumbnailBlock({
-          variant: isLoadingComplete ? 'visible' : 'default',
-        })}
+        className={thumbnailBlock()}
         src={thumbnail}
         alt={thumbnail}
         layout="fill"
         loading="lazy"
+        sizes="768px"
         onLoadingComplete={onLoadingComplete}
       />
       <div
@@ -29,11 +28,6 @@ function PostThumbnail({ thumbnail }: Props) {
     </div>
   );
 }
-
-const imageFadeTransition = {
-  willChange: 'opacity',
-  transition: 'opacity 0.25s linear',
-};
 
 const block = css({
   position: 'relative',
@@ -48,8 +42,6 @@ const block = css({
 });
 
 const thumbnailBlock = css({
-  ...imageFadeTransition,
-  transform: 'translateZ(0)',
   borderRadius: '0.5rem',
   '& img': {
     position: 'absolute !important',
@@ -61,23 +53,9 @@ const thumbnailBlock = css({
     objectFit: 'cover',
     zIndex: '$thumbnail',
   },
-  variants: {
-    variant: {
-      default: {
-        opacity: '0',
-      },
-      visible: {
-        opacity: '1',
-      },
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
 });
 
 const thumbnailSkeleton = css({
-  ...imageFadeTransition,
   display: 'block',
   position: 'absolute',
   top: '0',
@@ -86,6 +64,9 @@ const thumbnailSkeleton = css({
   height: '100%',
   background: '$bg-skeleton',
   borderRadius: '0.5rem',
+  transform: 'translateZ(0)',
+  transition: 'opacity 0.25s linear',
+  willChange: 'opacity',
   variants: {
     variant: {
       default: {
