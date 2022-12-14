@@ -67,7 +67,7 @@ const tocAnchor = css({
   display: 'flex',
   flexFlow: 'row wrap',
   color: '$text-sub',
-  transition: '0.125s all ease-in',
+  transition: 'all 0.125s ease-in',
   variants: {
     variant: {
       default: {
