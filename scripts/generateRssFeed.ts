@@ -1,4 +1,5 @@
-import { Feed, Item } from 'feed';
+import type { Item } from 'feed';
+import { Feed } from 'feed';
 import fs from 'fs';
 import { marked } from 'marked';
 

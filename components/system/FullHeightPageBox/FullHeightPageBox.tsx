@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function FullHeightPageBox({ children }: Props) {

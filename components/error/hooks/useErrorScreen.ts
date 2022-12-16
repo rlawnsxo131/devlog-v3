@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import useRoutePush from '@/hooks/useRoutePush';
 
 interface UseErrorScreenParams {

@@ -1,11 +1,9 @@
+import type { PropsWithChildren } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function AppMain({ children }: Props) {
+function AppMain({ children }: PropsWithChildren) {
   return <main className={block()}>{children}</main>;
 }
 

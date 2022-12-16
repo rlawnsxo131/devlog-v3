@@ -1,14 +1,12 @@
+import type { PropsWithChildren } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import AppMain from './AppMain';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function AppLayout({ children }: Props) {
+function AppLayout({ children }: PropsWithChildren) {
   return <div className={block()}>{children}</div>;
 }
 

@@ -1,11 +1,9 @@
+import type { PropsWithChildren } from 'react';
+
 import useThemeEffect from '@/hooks/theme/useThemeEffect';
 import useUnhandledRejectionEffect from '@/hooks/useUnhandledRejectionEffect';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function Core({ children }: Props) {
+function Core({ children }: PropsWithChildren) {
   useThemeEffect();
   useUnhandledRejectionEffect();
 

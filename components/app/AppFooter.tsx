@@ -1,10 +1,8 @@
+import type { PropsWithChildren } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function AppFooter({ children }: Props) {
+function AppFooter({ children }: PropsWithChildren) {
   return <footer className={block()}>{children}</footer>;
 }
 

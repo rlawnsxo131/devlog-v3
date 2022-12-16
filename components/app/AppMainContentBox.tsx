@@ -1,10 +1,8 @@
+import type { PropsWithChildren } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function AppMainContentBox({ children }: Props) {
+function AppMainContentBox({ children }: PropsWithChildren) {
   return (
     <div className={block()}>
       <section className={section()}>{children}</section>

@@ -1,10 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
 interface Props {
-  header: React.ReactNode;
-  thumbnail: React.ReactNode;
-  body: React.ReactNode;
-  footer: React.ReactNode;
+  header: ReactNode;
+  thumbnail: ReactNode;
+  body: ReactNode;
+  footer: ReactNode;
 }
 
 function PostLayout({ header, thumbnail, body, footer }: Props) {

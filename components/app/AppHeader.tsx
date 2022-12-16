@@ -1,9 +1,11 @@
+import type { ReactNode } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 
 interface Props {
-  leftSideItems: React.ReactNode;
-  rightSideItems: React.ReactNode;
+  leftSideItems: ReactNode;
+  rightSideItems: ReactNode;
 }
 
 function AppHeader({ leftSideItems, rightSideItems }: Props) {

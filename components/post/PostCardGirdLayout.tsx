@@ -1,10 +1,8 @@
+import type { PropsWithChildren } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function PostCardGirdLayout({ children }: Props) {
+function PostCardGirdLayout({ children }: PropsWithChildren) {
   return <div className={block()}>{children}</div>;
 }
 

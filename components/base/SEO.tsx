@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import type { ReactNode } from 'react';
 
 import { SiteConfig } from '@/config';
 
 interface Props {
-  children?: React.ReactNode;
+  children?: ReactNode;
   title?: string;
   description: string;
   ogDescription?: string;

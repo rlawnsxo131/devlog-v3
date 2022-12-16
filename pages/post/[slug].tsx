@@ -1,6 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { getPlaiceholder } from 'plaiceholder';
 
 import { AppMainContentBox } from '@/components/app';
 import { SEO } from '@/components/base';

@@ -1,8 +1,8 @@
-import type { Dispatch } from 'react';
+import type { Dispatch, ReactNode } from 'react';
 import { createContext, useContext, useReducer } from 'react';
 
 import { utils } from '@/lib';
-import { Theme } from '@/types';
+import type { Theme } from '@/types';
 
 // state
 interface GlobalState {
@@ -36,11 +36,7 @@ function globalContextReducer(state: GlobalState, action: Action): GlobalState {
   }
 }
 
-export function GlobalContextProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function GlobalContextProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(globalContextReducer, {
     theme: 'light',
   });

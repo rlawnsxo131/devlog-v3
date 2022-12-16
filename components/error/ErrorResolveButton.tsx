@@ -1,8 +1,10 @@
+import type { ReactNode } from 'react';
+
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle } from '@/styles/basicStyle';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   onClick: () => void;
 }
 
