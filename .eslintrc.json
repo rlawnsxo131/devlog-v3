@@ -27,6 +27,7 @@
   "ignorePatterns": ["jest.config.js", "__test_utils__"],
   "rules": {
     "prefer-const": "error",
+    "no-unused-vars": "error",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -38,7 +39,7 @@
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "@typescript-eslint/consistent-type-imports": [
-      1,
+      "error",
       {
         "prefer": "type-imports",
         "disallowTypeAnnotations": false
