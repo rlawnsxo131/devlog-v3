@@ -14,12 +14,12 @@ function renderHeaderWebMenu() {
   const result = renderWithGlobalHoc(<HeaderWebMenu />);
 
   const PostAnchor = () =>
-    result.getByText('포스트', {
+    result.queryByText('포스트', {
       selector: 'a',
     });
 
   const InfoAnchor = () =>
-    result.getByText('소개', {
+    result.queryByText('소개', {
       selector: 'a',
     });
 

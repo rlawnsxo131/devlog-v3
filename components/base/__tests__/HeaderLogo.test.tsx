@@ -6,7 +6,7 @@ function renderHeaderLogo() {
   const result = renderWithGlobalHoc(<HeaderLogo />);
 
   const LogoText = () =>
-    result.getByText('DevLog', {
+    result.queryByText('DevLog', {
       selector: 'h1',
     });
 
@@ -25,6 +25,6 @@ describe('<HeaderLogo />', () => {
   it('anchor path is /', () => {
     const { LogoText } = renderHeaderLogo();
 
-    expect(LogoText().closest('a')).toHaveAttribute('href', '/');
+    expect(LogoText()?.closest('a')).toHaveAttribute('href', '/');
   });
 });

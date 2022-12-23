@@ -11,12 +11,12 @@ function renderThemeButton() {
   const Button = () => result.getByRole('button');
 
   const LightIconSVG = () =>
-    result.getByLabelText('light-icon', {
+    result.queryByLabelText('light-icon', {
       selector: 'svg',
     });
 
   const NightIconSVG = () =>
-    result.getByLabelText('night-icon', {
+    result.queryByLabelText('night-icon', {
       selector: 'svg',
     });
 
