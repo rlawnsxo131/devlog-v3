@@ -1,9 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { MouseEvent } from 'react';
 
+import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
-import { buttonBasicStyle, textWrapBaseStyle } from '@/styles/basicStyle';
+import {
+  buttonBasicStyle,
+  skeletonBasicStyle,
+  textWrapBasicStyle,
+} from '@/styles/basicStyle';
 import type { PostWithThumbnailBlurData } from '@/types';
 
 import { LinkIcon } from '../img/icons';
@@ -12,10 +18,12 @@ import UnderlineLink from '../system/UnderlineLink';
 
 interface Props {
   post: PostWithThumbnailBlurData;
-  onCopyToClipboard: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
+  onCopyToClipboard: (e: MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 
 function PostCard({ post, onCopyToClipboard }: Props) {
+  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
+
   return (
     <article className={block()}>
       <div className={thumbnail()}>
@@ -24,11 +32,17 @@ function PostCard({ post, onCopyToClipboard }: Props) {
             <Image
               src={post.thumbnail}
               alt={post.thumbnail}
-              loading="lazy"
               layout="fill"
-              placeholder="blur"
-              blurDataURL={post.thumbnailBlurData}
               sizes="640px"
+              loading="lazy"
+              onLoadingComplete={onLoadingComplete}
+              // placeholder="blur"
+              // blurDataURL={post.thumbnailBlurData}
+            />
+            <div
+              className={thumbnailSkeleton({
+                variant: isLoadingComplete ? 'hidden' : 'default',
+              })}
             />
           </a>
         </Link>
@@ -132,12 +146,22 @@ const thumbnail = css({
   },
 });
 
+const thumbnailSkeleton = css({
+  ...skeletonBasicStyle,
+  position: 'absolute',
+  display: 'block',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+});
+
 const content = css({
   flex: '1 1 0',
   display: 'flex',
   flexDirection: 'column',
   '& h4, p': {
-    ...textWrapBaseStyle,
+    ...textWrapBasicStyle,
   },
   '& h4': {
     margin: '1rem 0 0 0',

@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { css } from '@/styles/_stitches.config';
 
-function PostCardGirdLayout({ children }: PropsWithChildren) {
+function PostCardGridLayout({ children }: PropsWithChildren) {
   return <div className={block()}>{children}</div>;
 }
 
@@ -59,4 +59,4 @@ const block = css({
   },
 });
 
-export default PostCardGirdLayout;
+export default PostCardGridLayout;

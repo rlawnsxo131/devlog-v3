@@ -30,7 +30,7 @@ export const layoutBasicResponsiveStyle: StitchesCSS = {
   },
 };
 
-export const textWrapBaseStyle: StitchesCSS = {
+export const textWrapBasicStyle: StitchesCSS = {
   overflow: 'hidden',
   display: '-webkit-box',
   '-webkit-box-orient': 'vertical',
@@ -39,7 +39,7 @@ export const textWrapBaseStyle: StitchesCSS = {
   textOverflow: 'ellipsis',
 };
 
-export const textUnderlineForHoverStyle: StitchesCSS = {
+export const textUnderlineForHoverBasicStyle: StitchesCSS = {
   color: '$text-underline',
   '&:hover': {
     color: '$text-underline-hover',
@@ -47,7 +47,7 @@ export const textUnderlineForHoverStyle: StitchesCSS = {
   },
 };
 
-export const linkTagBaseStyle: StitchesCSS = {
+export const linkTagBasicStyle: StitchesCSS = {
   padding: '0.25rem 1rem',
   background: '$bg-content',
   color: '$text',
@@ -58,5 +58,26 @@ export const linkTagBaseStyle: StitchesCSS = {
   },
   '&:hover': {
     background: '$bg-content-hover',
+  },
+};
+
+export const skeletonBasicStyle: StitchesCSS = {
+  background: '$bg-skeleton',
+  borderRadius: '0.5rem',
+  transform: 'translateZ(0)',
+  transition: 'opacity 0.25s linear',
+  willChange: 'opacity',
+  variants: {
+    variant: {
+      default: {
+        opacity: '1',
+      },
+      hidden: {
+        opacity: '0',
+      },
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
   },
 };

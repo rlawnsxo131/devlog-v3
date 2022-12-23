@@ -4,7 +4,7 @@ import type { CountTag, PostWithThumbnailBlurData } from '@/types';
 import { ErrorScreen } from '../error';
 import usePostsPageTemplate from './hooks/usePostsPageTemplate';
 import PostCard from './PostCard';
-import PostCardGirdLayout from './PostCardGirdLayout';
+import PostCardGridLayout from './PostCardGridLayout';
 import PostCountTags from './PostCountTags';
 
 interface Props {
@@ -31,7 +31,7 @@ function PostsPageTemplate({
       />
       <div className={postCardsBlock()}>
         {posts.length ? (
-          <PostCardGirdLayout>
+          <PostCardGridLayout>
             {posts.map((post) => (
               <PostCard
                 key={post.slug}
@@ -39,7 +39,7 @@ function PostsPageTemplate({
                 onCopyToClipboard={handleCopyToClipboard}
               />
             ))}
-          </PostCardGirdLayout>
+          </PostCardGridLayout>
         ) : (
           <ErrorScreen type="NotFound" />
         )}

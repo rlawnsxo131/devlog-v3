@@ -10,17 +10,19 @@ import {
   PostThumbnail,
   PostToc,
 } from '@/components/post';
+import PostLinked from '@/components/post/PostLinked';
 import ContactLinks from '@/components/system/ContactLinks';
 import { SiteConfig } from '@/config';
-import { getAllPosts, parseMarkdownToMdx } from '@/lib/post';
-import type { Post } from '@/types';
+import { getAllPosts, getPostDataFor, parseMarkdownToMdx } from '@/lib/post';
+import type { LinkedPost, Post } from '@/types';
 
 interface Props {
   post: Post;
   mdx: MDXRemoteSerializeResult;
+  linkedPost: LinkedPost;
 }
 
-export default function PostPage({ post, mdx }: Props) {
+export default function PostPage({ post, mdx, linkedPost }: Props) {
   return (
     <>
       <SEO
@@ -44,7 +46,12 @@ export default function PostPage({ post, mdx }: Props) {
           }
           thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
           body={<MDXRemoteContainer mdx={mdx} />}
-          footer={<ContactLinks />}
+          footer={
+            <>
+              <PostLinked linkedPost={linkedPost} />
+              <ContactLinks />
+            </>
+          }
         />
         <PostToc />
       </AppMainContentBox>
@@ -80,13 +87,17 @@ type StaticParams = {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as StaticParams;
   const posts = await getAllPosts();
-  const post = posts.find((post) => post.slug === slug);
+  const { post, linkedPost } = await getPostDataFor(posts, slug);
+
   if (post) {
     const mdx = await parseMarkdownToMdx(post.body);
     return {
       props: {
         post: {
           ...post,
+        },
+        linkedPost: {
+          ...linkedPost,
         },
         mdx,
       },

@@ -1,9 +1,11 @@
+import type { SVGProps } from 'react';
+
 import {
   svgBackgroundFillCss,
   svgContentFillCss,
 } from '@/styles/basicStyleCss';
 
-interface Props extends React.SVGProps<SVGSVGElement> {}
+interface Props extends SVGProps<SVGSVGElement> {}
 
 function MenuIcon(props: Props) {
   return (

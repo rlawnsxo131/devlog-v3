@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react';
 import { useRef } from 'react';
 
 import { SiteConfig } from '@/config';
@@ -8,9 +9,7 @@ export default function usePostsPageTemplate() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const { info, error } = useToast();
 
-  const handleCopyToClipboard = async (
-    e: React.MouseEvent<HTMLButtonElement>,
-  ) => {
+  const handleCopyToClipboard = async (e: MouseEvent<HTMLButtonElement>) => {
     const { title, description, slug } = e.currentTarget.dataset;
     const url = `${SiteConfig.url}/post/${slug}`;
 

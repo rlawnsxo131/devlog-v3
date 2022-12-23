@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { memo } from 'react';
 
 import { css } from '@/styles/_stitches.config';
-import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
+import { textUnderlineForHoverBasicStyle } from '@/styles/basicStyle';
 
 interface Props {
   href: string;
@@ -19,7 +19,7 @@ function UnderlineLink({ children, href }: Props) {
 }
 
 const block = css({
-  ...textUnderlineForHoverStyle,
+  ...textUnderlineForHoverBasicStyle,
 });
 
 export default memo(UnderlineLink);

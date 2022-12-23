@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import type { HTMLProps } from 'react';
 
-function NextImageComponent(props: React.HTMLProps<HTMLImageElement>) {
+function NextImageComponent(props: HTMLProps<HTMLImageElement>) {
   const src = props.src;
 
   if (src) {

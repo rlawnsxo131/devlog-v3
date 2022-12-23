@@ -1,3 +1,4 @@
+import type { BaseSyntheticEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import useRoutePathname from '@/hooks/useRoutePathname';
@@ -22,9 +23,7 @@ export default function useHeaderMenu() {
   }, [routePathname]);
 
   useEffect(() => {
-    const listener = (
-      e: React.BaseSyntheticEvent | MouseEvent | TouchEvent,
-    ) => {
+    const listener = (e: BaseSyntheticEvent | MouseEvent | TouchEvent) => {
       if (!parentRef.current) return;
       if (!parentRef.current.contains(e.target)) {
         setNavVisible(false);

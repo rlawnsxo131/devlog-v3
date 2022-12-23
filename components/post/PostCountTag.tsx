@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { MutableRefObject } from 'react';
 
 import { css } from '@/styles/_stitches.config';
-import { linkTagBaseStyle } from '@/styles/basicStyle';
+import { linkTagBasicStyle } from '@/styles/basicStyle';
 
 import usePostCountTag from './hooks/usePostCountTag';
 
@@ -32,7 +32,7 @@ function PostCountTag({ title, path, count, isActive, scrollToCenter }: Props) {
 }
 
 const anchor = css({
-  ...linkTagBaseStyle,
+  ...linkTagBasicStyle,
   marginBottom: '0.5rem',
   display: 'flex',
   justifyContent: 'center',

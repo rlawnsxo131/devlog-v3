@@ -1,5 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import { textUnderlineForHoverStyle } from '@/styles/basicStyle';
+import { textUnderlineForHoverBasicStyle } from '@/styles/basicStyle';
 
 interface Props {}
 
@@ -97,7 +97,7 @@ const listBlock = css({
     marginTop: '0.725rem',
   },
   '& a': {
-    ...textUnderlineForHoverStyle,
+    ...textUnderlineForHoverBasicStyle,
     margin: '0 0.25rem 0 0',
   },
 });
