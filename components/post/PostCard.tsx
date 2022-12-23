@@ -5,11 +5,7 @@ import type { MouseEvent } from 'react';
 import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
-import {
-  buttonBasicStyle,
-  skeletonBasicStyle,
-  textWrapBasicStyle,
-} from '@/styles/basicStyle';
+import { buttonBasicStyle, textWrapBasicStyle } from '@/styles/basicStyle';
 import type { Post } from '@/types';
 
 import { LinkIcon } from '../img/icons';
@@ -38,11 +34,7 @@ function PostCard({ post, isLazyLoadingThumbnail, onCopyToClipboard }: Props) {
               loading={isLazyLoadingThumbnail ? 'lazy' : 'eager'}
               onLoadingComplete={onLoadingComplete}
             />
-            <div
-              className={thumbnailSkeleton({
-                variant: isLoadingComplete ? 'hidden' : 'default',
-              })}
-            />
+            {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
           </a>
         </Link>
       </div>
@@ -146,13 +138,13 @@ const thumbnail = css({
 });
 
 const thumbnailSkeleton = css({
-  ...skeletonBasicStyle,
   position: 'absolute',
   display: 'block',
   top: '0',
   left: '0',
   width: '100%',
   height: '100%',
+  background: '$bg-skeleton',
 });
 
 const content = css({

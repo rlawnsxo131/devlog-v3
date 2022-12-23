@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
 import { css } from '@/styles/_stitches.config';
-import { skeletonBasicStyle } from '@/styles/basicStyle';
 import type { Post } from '@/types';
 
 type Props = Pick<Post, 'thumbnail'>;
@@ -17,15 +16,11 @@ function PostThumbnail({ thumbnail }: Props) {
         src={thumbnail}
         alt={thumbnail}
         layout="fill"
-        loading="lazy"
+        loading="eager"
         sizes="768px"
         onLoadingComplete={onLoadingComplete}
       />
-      <div
-        className={thumbnailSkeleton({
-          variant: isLoadingComplete ? 'hidden' : 'default',
-        })}
-      />
+      {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
     </div>
   );
 }
@@ -48,13 +43,13 @@ const thumbnailBlock = css({
 });
 
 const thumbnailSkeleton = css({
-  ...skeletonBasicStyle,
   display: 'block',
   position: 'absolute',
   top: '0',
   left: '0',
   width: '100%',
   height: '100%',
+  background: '$bg-skeleton',
 });
 
 export default PostThumbnail;

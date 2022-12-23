@@ -60,24 +60,3 @@ export const linkTagBasicStyle: StitchesCSS = {
     background: '$bg-content-hover',
   },
 };
-
-export const skeletonBasicStyle: StitchesCSS = {
-  background: '$bg-skeleton',
-  borderRadius: '0.5rem',
-  transform: 'translateZ(0)',
-  transition: 'opacity 0.25s linear',
-  willChange: 'opacity',
-  variants: {
-    variant: {
-      default: {
-        opacity: '1',
-      },
-      hidden: {
-        opacity: '0',
-      },
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-};
