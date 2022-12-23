@@ -10,18 +10,19 @@ import {
   skeletonBasicStyle,
   textWrapBasicStyle,
 } from '@/styles/basicStyle';
-import type { PostWithThumbnailBlurData } from '@/types';
+import type { Post } from '@/types';
 
 import { LinkIcon } from '../img/icons';
 import Separator from '../system/Separator';
 import UnderlineLink from '../system/UnderlineLink';
 
 interface Props {
-  post: PostWithThumbnailBlurData;
+  post: Post;
+  isLazyLoadingThumbnail: boolean;
   onCopyToClipboard: (e: MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 
-function PostCard({ post, onCopyToClipboard }: Props) {
+function PostCard({ post, isLazyLoadingThumbnail, onCopyToClipboard }: Props) {
   const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   return (
@@ -34,10 +35,8 @@ function PostCard({ post, onCopyToClipboard }: Props) {
               alt={post.thumbnail}
               layout="fill"
               sizes="640px"
-              loading="lazy"
+              loading={isLazyLoadingThumbnail ? 'lazy' : 'eager'}
               onLoadingComplete={onLoadingComplete}
-              // placeholder="blur"
-              // blurDataURL={post.thumbnailBlurData}
             />
             <div
               className={thumbnailSkeleton({

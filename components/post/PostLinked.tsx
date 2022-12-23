@@ -13,6 +13,7 @@ interface Props {
 
 function PostLinked({ linkedPost }: Props) {
   const { prevPost, nextPost } = linkedPost;
+
   if (!prevPost && !nextPost) return null;
 
   return (

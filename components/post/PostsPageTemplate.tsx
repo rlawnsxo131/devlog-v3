@@ -1,5 +1,5 @@
 import { css } from '@/styles/_stitches.config';
-import type { CountTag, PostWithThumbnailBlurData } from '@/types';
+import type { CountTag, Post } from '@/types';
 
 import { ErrorScreen } from '../error';
 import usePostsPageTemplate from './hooks/usePostsPageTemplate';
@@ -9,7 +9,7 @@ import PostCountTags from './PostCountTags';
 
 interface Props {
   allPostsCount: number;
-  posts: PostWithThumbnailBlurData[];
+  posts: Post[];
   countTag: CountTag;
   currentTag?: string;
 }
@@ -32,10 +32,11 @@ function PostsPageTemplate({
       <div className={postCardsBlock()}>
         {posts.length ? (
           <PostCardGridLayout>
-            {posts.map((post) => (
+            {posts.map((post, idx) => (
               <PostCard
                 key={post.slug}
                 post={post}
+                isLazyLoadingThumbnail={idx > 19}
                 onCopyToClipboard={handleCopyToClipboard}
               />
             ))}

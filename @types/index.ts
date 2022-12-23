@@ -28,10 +28,6 @@ export interface Post {
   slug: string;
 }
 
-export interface PostWithThumbnailBlurData extends Post {
-  thumbnailBlurData: string;
-}
-
 export type LinkedPost = Record<'prevPost' | 'nextPost', Post>;
 
 export type CountTag = Record<string, number>;
