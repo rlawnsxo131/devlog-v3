@@ -1,7 +1,6 @@
 import { AppMainContentBox } from '@/components/app';
-import { SEO } from '@/components/base';
+import { ContactLinks, SEO } from '@/components/base';
 import { InfoDescriptionSection } from '@/components/info';
-import ContactLinks from '@/components/system/ContactLinks';
 
 export default function InfoPage() {
   return (

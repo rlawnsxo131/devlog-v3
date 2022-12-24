@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { AppMainContentBox } from '@/components/app';
-import { SEO } from '@/components/base';
+import { ContactLinks, SEO } from '@/components/base';
 import { MDXRemoteContainer } from '@/components/markdown';
 import {
   PostHeader,
@@ -11,7 +11,6 @@ import {
   PostToc,
 } from '@/components/post';
 import PostLinked from '@/components/post/PostLinked';
-import ContactLinks from '@/components/system/ContactLinks';
 import { SiteConfig } from '@/config';
 import { getAllPosts, getPostDataFor, parseMarkdownToMdx } from '@/lib/post';
 import type { LinkedPost, Post } from '@/types';

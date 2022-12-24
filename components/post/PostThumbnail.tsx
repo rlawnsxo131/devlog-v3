@@ -50,6 +50,7 @@ const thumbnailSkeleton = css({
   width: '100%',
   height: '100%',
   background: '$bg-skeleton',
+  borderRadius: '0.5rem',
 });
 
 export default PostThumbnail;

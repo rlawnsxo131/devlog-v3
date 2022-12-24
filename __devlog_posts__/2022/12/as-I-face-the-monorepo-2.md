@@ -197,7 +197,7 @@ $ yarn workspaces list # 이제 리스트를 잘 출력합니다.
 - 여기서 템플릿은 `react` 를 선택합니다.
 
 ```shell
-$ dlx sb init --builder @storybook/builder-vite
+$ yarn dlx sb init --builder @storybook/builder-vite
 $ 템플릿은 리액트 선택
 ```
 

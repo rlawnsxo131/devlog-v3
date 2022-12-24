@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { AppCopyright, AppLayout } from '@/components/app';
 import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
-import ErrorBoundary from '@/components/error/ErrorBoundary';
+import { ErrorBoundary } from '@/components/error';
 import ThemeButton from '@/components/system/ThemeButton';
 import Toast from '@/components/system/Toast';
 import { GlobalContextProvider } from '@/contexts/GlobalContext';

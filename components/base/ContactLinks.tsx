@@ -6,7 +6,7 @@ import {
   LinkedinIcon,
   RssIcon,
   TwitterIcon,
-} from '../../img/icons';
+} from '../img/icons';
 
 interface Props {}
 

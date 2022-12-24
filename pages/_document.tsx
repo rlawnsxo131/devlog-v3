@@ -109,12 +109,12 @@ export default function Document() {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta
           name="theme-color"
-          content="#0c8097"
+          content="#ffffff"
           media="(prefers-color-scheme: light)"
         />
         <meta
           name="theme-color"
-          content="#0c8097"
+          content="#1c1c1c"
           media="(prefers-color-scheme: dark)"
         />
         <link
