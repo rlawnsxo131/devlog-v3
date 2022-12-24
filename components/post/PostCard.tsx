@@ -14,11 +14,10 @@ import UnderlineLink from '../system/UnderlineLink';
 
 interface Props {
   post: Post;
-  isLazyLoadingThumbnail: boolean;
   onCopyToClipboard: (e: MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 
-function PostCard({ post, isLazyLoadingThumbnail, onCopyToClipboard }: Props) {
+function PostCard({ post, onCopyToClipboard }: Props) {
   const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
 
   return (
@@ -31,7 +30,6 @@ function PostCard({ post, isLazyLoadingThumbnail, onCopyToClipboard }: Props) {
               alt={post.thumbnail}
               layout="fill"
               sizes="640px"
-              loading={isLazyLoadingThumbnail ? 'lazy' : 'eager'}
               onLoadingComplete={onLoadingComplete}
             />
             {!isLoadingComplete && <div className={thumbnailSkeleton()} />}

@@ -36,7 +36,6 @@ function PostsPageTemplate({
               <PostCard
                 key={post.slug}
                 post={post}
-                isLazyLoadingThumbnail={idx > 19}
                 onCopyToClipboard={handleCopyToClipboard}
               />
             ))}

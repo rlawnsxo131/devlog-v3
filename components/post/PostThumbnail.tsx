@@ -16,7 +16,6 @@ function PostThumbnail({ thumbnail }: Props) {
         src={thumbnail}
         alt={thumbnail}
         layout="fill"
-        loading="eager"
         sizes="768px"
         onLoadingComplete={onLoadingComplete}
       />
