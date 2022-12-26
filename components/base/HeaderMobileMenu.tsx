@@ -1,7 +1,3 @@
-/**
- * @TODO
- * 현재 사용하지 않고 있음. 다시 안쓸거 같으면 지우자.
- */
 import Link from 'next/link';
 
 import { utils } from '@/lib';
@@ -47,6 +43,17 @@ function HeaderMobileMenu(props: Props) {
                   })}
                 >
                   포스트
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/tags'}>
+                <a
+                  className={anchor({
+                    variant: utils.getAnchorVariant('/tags', routePathname),
+                  })}
+                >
+                  태그
                 </a>
               </Link>
             </li>

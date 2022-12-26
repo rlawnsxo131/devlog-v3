@@ -13,6 +13,7 @@ function AppMainResponsiveBox({ children }: Props) {
 
 const block = css({
   ...layoutBasicResponsiveStyle,
+  marginTop: '4rem',
 });
 
 export default AppMainResponsiveBox;

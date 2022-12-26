@@ -43,7 +43,6 @@ const block = css({
   justifyContent: 'flex-start',
   alignItems: 'center',
   overflowX: 'auto',
-  zIndex: '$post-count-tags',
   background: '$bg',
 
   '@xs4': {

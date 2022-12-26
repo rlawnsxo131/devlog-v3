@@ -7,6 +7,7 @@ const topLevelBoxStyle: StitchesCSS = {
   height: '100%',
   scrollPadding: '5rem',
   boxSizing: 'border-box',
+  scrollBehavior: 'smooth',
 };
 
 const topLevelBoxChildrenStyle: StitchesCSS = {

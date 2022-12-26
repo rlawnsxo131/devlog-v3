@@ -33,9 +33,6 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         'text-underline': '$cyan10',
         'text-underline-hover': '$cyan11',
 
-        // border
-        border: '$gray5',
-
         // fill
         'fill-content': '$gray12',
         'fill-background': '$white',
@@ -116,9 +113,6 @@ export const darkTheme = createTheme('dark', {
     'text-anchor-active': '$cyan9',
     'text-underline': '$cyan9',
     'text-underline-hover': '$cyan10',
-
-    // border
-    border: '$gray5',
 
     // fill
     'fill-content': '$gray12',

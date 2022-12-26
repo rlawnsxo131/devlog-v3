@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { css } from '@/styles/_stitches.config';
+import { layoutBasicResponsiveStyle } from '@/styles/basicStyle';
 
 interface Props {
   leftSideItems: ReactNode;
@@ -19,6 +20,9 @@ function AppHeader({ leftSideItems, rightSideItems }: Props) {
 }
 
 const block = css({
+  position: 'fixed',
+  top: 0,
+  left: 0,
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -29,21 +33,10 @@ const block = css({
 });
 
 const contentBlock = css({
+  ...layoutBasicResponsiveStyle,
   display: 'flex',
   justifyContent: 'space-between',
   height: '4rem',
-  '@xxxs': {
-    width: '93%',
-  },
-  '@m1': {
-    width: '783px',
-  },
-  '@m2': {
-    width: '875px',
-  },
-  '@l1': {
-    width: '1215px',
-  },
 });
 
 const items = css({

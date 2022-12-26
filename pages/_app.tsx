@@ -1,8 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import { AppCopyright, AppLayout } from '@/components/app';
-import { Core, HeaderLogo } from '@/components/base';
-import FooterMobileMenu from '@/components/base/FooterMobileMenu';
+import { Core, HeaderLogo, HeaderMobileMenu } from '@/components/base';
 import HeaderWebMenu from '@/components/base/HeaderWebMenu';
 import { ErrorBoundary } from '@/components/error';
 import ThemeButton from '@/components/system/ThemeButton';
@@ -26,15 +25,15 @@ export default function App({ Component, pageProps }: AppProps) {
                 <>
                   <HeaderWebMenu />
                   <ThemeButton />
+                  <HeaderMobileMenu />
                 </>
               }
             />
             <AppLayout.Main>
               <Component {...pageProps} />
-              <AppCopyright />
             </AppLayout.Main>
             <AppLayout.Footer>
-              <FooterMobileMenu />
+              <AppCopyright />
             </AppLayout.Footer>
           </AppLayout>
           <Toast />

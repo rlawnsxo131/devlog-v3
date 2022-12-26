@@ -10,6 +10,9 @@ const isProduction = process.env.NODE_ENV === 'production';
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  experimental: {
+    scrollRestoration: true,
+  },
   productionBrowserSourceMaps: !isProduction,
   swcMinify: true,
   images: {

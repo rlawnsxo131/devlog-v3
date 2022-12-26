@@ -7,7 +7,7 @@ function AppCopyright(props: Props) {
 }
 
 const block = css({
-  marginTop: '4rem',
+  marginTop: '3rem',
   padding: '1.5rem 0',
   fontSize: '1rem',
   color: '$text-sub',
