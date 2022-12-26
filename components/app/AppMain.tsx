@@ -9,11 +9,9 @@ function AppMain({ children }: PropsWithChildren) {
 
 const block = css({
   ...layoutBasicResponsiveStyle,
-  position: 'relative',
   flex: '1 1 100%',
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '6.225rem',
 });
 
 export default AppMain;

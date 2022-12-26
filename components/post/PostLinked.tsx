@@ -35,11 +35,7 @@ function PostLinked({ linkedPost }: Props) {
       >
         {nextPost && (
           <Link href={`/post/${nextPost.slug}`}>
-            <a
-              className={anchor({
-                variant: 'end',
-              })}
-            >
+            <a className={anchor()}>
               <div className={description()}>다음 포스트</div>
               <div className={postTitle()}>{nextPost.title}</div>
             </a>

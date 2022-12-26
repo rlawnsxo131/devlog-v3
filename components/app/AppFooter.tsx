@@ -11,10 +11,10 @@ const block = css({
   justifyContent: 'center',
   alignItems: 'center',
   '@xxxs': {
-    height: '8rem',
+    marginTop: '3.8rem',
   },
   '@m1': {
-    height: '10rem',
+    marginTop: '5.8rem',
   },
 });
 

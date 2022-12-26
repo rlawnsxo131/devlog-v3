@@ -13,6 +13,7 @@ function AppMainContentBox({ children }: PropsWithChildren) {
 const block = css({
   display: 'flex',
   justifyContent: 'center',
+  marginTop: '2.21rem',
 });
 
 const section = css({

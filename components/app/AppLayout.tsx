@@ -11,7 +11,6 @@ function AppLayout({ children }: PropsWithChildren) {
 }
 
 const block = css({
-  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
