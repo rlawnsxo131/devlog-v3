@@ -17,7 +17,6 @@ const block = css({
 });
 
 const section = css({
-  position: 'relative',
   width: '100%',
   maxWidth: '768px',
   display: 'flex',

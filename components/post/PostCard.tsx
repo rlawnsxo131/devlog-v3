@@ -86,7 +86,6 @@ function PostCard({ post, onCopyToClipboard }: Props) {
 }
 
 const block = css({
-  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   overflow: 'hidden',
@@ -97,7 +96,6 @@ const block = css({
 });
 
 const thumbnail = css({
-  position: 'relative',
   width: '100%',
   height: '52.19206680584551%',
   overflow: 'hidden',
