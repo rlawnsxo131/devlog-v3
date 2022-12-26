@@ -7,15 +7,7 @@ function AppFooter({ children }: PropsWithChildren) {
 }
 
 const block = css({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  '@xxxs': {
-    marginTop: '3.8rem',
-  },
-  '@m1': {
-    marginTop: '5.8rem',
-  },
+  width: '100%',
 });
 
 export default AppFooter;

@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { getPlaiceholder } from 'plaiceholder';
 
+import { AppMainResponsiveBox } from '@/components/app';
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { SiteConfig } from '@/config';
@@ -28,12 +28,14 @@ export default function PostsOfTagPage({
         url={`${SiteConfig.url}/posts/${currentTag}`}
         type="blog"
       />
-      <PostsPageTemplate
-        allPostsCount={allPostsCount}
-        posts={posts}
-        countTag={countTag}
-        currentTag={currentTag}
-      />
+      <AppMainResponsiveBox>
+        <PostsPageTemplate
+          allPostsCount={allPostsCount}
+          posts={posts}
+          countTag={countTag}
+          currentTag={currentTag}
+        />
+      </AppMainResponsiveBox>
     </>
   );
 }

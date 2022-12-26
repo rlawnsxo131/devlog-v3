@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import { AppMainContentBox } from '@/components/app';
+import { AppMainContentBox, AppMainResponsiveBox } from '@/components/app';
 import { ContactLinks, SEO } from '@/components/base';
 import { MDXRemoteContainer } from '@/components/markdown';
 import {
@@ -38,22 +38,28 @@ export default function PostPage({ post, mdx, linkedPost }: Props) {
           <meta key={tag} property="article:tag" content={tag} />
         ))}
       </SEO>
-      <AppMainContentBox>
-        <PostLayout
-          header={
-            <PostHeader title={post.title} date={post.date} tags={post.tags} />
-          }
-          thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
-          body={<MDXRemoteContainer mdx={mdx} />}
-          footer={
-            <>
-              <PostLinked linkedPost={linkedPost} />
-              <ContactLinks />
-            </>
-          }
-        />
-        <PostToc />
-      </AppMainContentBox>
+      <AppMainResponsiveBox>
+        <AppMainContentBox>
+          <PostLayout
+            header={
+              <PostHeader
+                title={post.title}
+                date={post.date}
+                tags={post.tags}
+              />
+            }
+            thumbnail={<PostThumbnail thumbnail={post.thumbnail} />}
+            body={<MDXRemoteContainer mdx={mdx} />}
+            footer={
+              <>
+                <PostLinked linkedPost={linkedPost} />
+                <ContactLinks />
+              </>
+            }
+          />
+          <PostToc />
+        </AppMainContentBox>
+      </AppMainResponsiveBox>
     </>
   );
 }

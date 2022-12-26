@@ -1,3 +1,7 @@
+/**
+ * @TODO
+ * 현재 사용하지 않고 있음. 다시 안쓸거 같으면 지우자.
+ */
 import Link from 'next/link';
 
 import { utils } from '@/lib';

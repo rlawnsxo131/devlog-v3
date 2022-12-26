@@ -7,11 +7,11 @@ function AppCopyright(props: Props) {
 }
 
 const block = css({
-  alignSelf: 'flex-end',
-  color: '$text-sub',
-  fontSize: '1rem',
-  textAlign: 'center',
+  marginTop: '4rem',
   padding: '1.5rem 0',
+  fontSize: '1rem',
+  color: '$text-sub',
+  textAlign: 'center',
 });
 
 export default AppCopyright;

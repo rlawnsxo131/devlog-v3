@@ -14,7 +14,7 @@ const block = css({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  minHeight: '100%',
+  height: '100%',
 });
 
 AppLayout.Header = AppHeader;

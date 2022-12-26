@@ -33,7 +33,6 @@ function PostCountTag({ title, path, count, isActive, scrollToCenter }: Props) {
 
 const anchor = css({
   ...linkTagBasicStyle,
-  marginBottom: '0.5rem',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'space-between',

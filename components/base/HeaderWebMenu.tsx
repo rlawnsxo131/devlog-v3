@@ -27,6 +27,17 @@ function HeaderWebMenu(props: Props) {
           </Link>
         </li>
         <li>
+          <Link href={'/tags'}>
+            <a
+              className={anchor({
+                variant: utils.getAnchorVariant('/tags', routePathname),
+              })}
+            >
+              태그
+            </a>
+          </Link>
+        </li>
+        <li>
           <Link href={'/info'}>
             <a
               className={anchor({

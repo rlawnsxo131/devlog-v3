@@ -5,7 +5,6 @@ const topLevelBoxStyle: StitchesCSS = {
   margin: '0',
   padding: '0',
   height: '100%',
-  scrollBehavior: 'smooth',
   scrollPadding: '5rem',
   boxSizing: 'border-box',
 };
@@ -50,6 +49,9 @@ const globalStyle = globalCss({
   a: {
     cursor: 'pointer',
     textDecoration: 'none',
+  },
+  '*': {
+    '-webkit-tap-highlight-color': 'transparent',
   },
 });
 

@@ -62,7 +62,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["marked", "npm:4.2.3"],\
             ["next", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:12.3.1"],\
             ["next-mdx-remote", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.0"],\
-            ["plaiceholder", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:2.5.0"],\
             ["prettier", "npm:2.8.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:18.2.0"],\
@@ -4316,15 +4315,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["blurhash", [\
-        ["npm:1.1.5", {\
-          "packageLocation": "./.yarn/cache/blurhash-npm-1.1.5-720540d109-8a64702494.zip/node_modules/blurhash/",\
-          "packageDependencies": [\
-            ["blurhash", "npm:1.1.5"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["bowser", [\
         ["npm:2.11.0", {\
           "packageLocation": "./.yarn/cache/bowser-npm-2.11.0-33664d9063-29c3f01f22.zip/node_modules/bowser/",\
@@ -4660,15 +4650,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["string-width", "npm:4.2.3"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["wrap-ansi", "npm:7.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["clone", [\
-        ["npm:2.1.2", {\
-          "packageLocation": "./.yarn/cache/clone-npm-2.1.2-1d491c6629-aaf106e9bc.zip/node_modules/clone/",\
-          "packageDependencies": [\
-            ["clone", "npm:2.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5199,7 +5180,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["marked", "npm:4.2.3"],\
             ["next", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:12.3.1"],\
             ["next-mdx-remote", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:4.1.0"],\
-            ["plaiceholder", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:2.5.0"],\
             ["prettier", "npm:2.8.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:18.2.0"],\
@@ -9729,39 +9709,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["node-cache", [\
-        ["npm:5.1.2", {\
-          "packageLocation": "./.yarn/cache/node-cache-npm-5.1.2-f65482660d-b0bdd81a6f.zip/node_modules/node-cache/",\
-          "packageDependencies": [\
-            ["node-cache", "npm:5.1.2"],\
-            ["clone", "npm:2.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["node-fetch", [\
-        ["npm:2.6.7", {\
-          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "npm:2.6.7"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:176377ecdf2ab2754eecb427d8cc8b68182f155986ed86df7b9d4019c7b83a1be6df95c1787bb7145f2ea6f8c0764bc3f6fc78bf56eb26a4f0e9d276ca51f76f#npm:2.6.7", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-066e3319c1/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "virtual:176377ecdf2ab2754eecb427d8cc8b68182f155986ed86df7b9d4019c7b83a1be6df95c1787bb7145f2ea6f8c0764bc3f6fc78bf56eb26a4f0e9d276ca51f76f#npm:2.6.7"],\
-            ["@types/encoding", null],\
-            ["encoding", "npm:0.1.13"],\
-            ["whatwg-url", "npm:5.0.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/encoding",\
-            "encoding"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["node-gyp", [\
         ["npm:9.1.0", {\
           "packageLocation": "./.yarn/unplugged/node-gyp-npm-9.1.0-2091059b31/node_modules/node-gyp/",\
@@ -10216,33 +10163,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["pkg-dir", "npm:4.2.0"],\
             ["find-up", "npm:4.1.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["plaiceholder", [\
-        ["npm:2.5.0", {\
-          "packageLocation": "./.yarn/cache/plaiceholder-npm-2.5.0-75785527ce-8fde074409.zip/node_modules/plaiceholder/",\
-          "packageDependencies": [\
-            ["plaiceholder", "npm:2.5.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:2.5.0", {\
-          "packageLocation": "./.yarn/__virtual__/plaiceholder-virtual-176377ecdf/0/cache/plaiceholder-npm-2.5.0-75785527ce-8fde074409.zip/node_modules/plaiceholder/",\
-          "packageDependencies": [\
-            ["plaiceholder", "virtual:44ec71d91a6b2eaca66623c652ebf52afbe09d30a64c6a6f9fdbcfd0040e2a3e5e31f52fda008b62c93b6b0bf7d2838c2bdf53f9b67cf0863b8503e7f372922f#npm:2.5.0"],\
-            ["@types/sharp", null],\
-            ["blurhash", "npm:1.1.5"],\
-            ["encoding", "npm:0.1.13"],\
-            ["image-size", "npm:1.0.2"],\
-            ["node-cache", "npm:5.1.2"],\
-            ["node-fetch", "virtual:176377ecdf2ab2754eecb427d8cc8b68182f155986ed86df7b9d4019c7b83a1be6df95c1787bb7145f2ea6f8c0764bc3f6fc78bf56eb26a4f0e9d276ca51f76f#npm:2.6.7"],\
-            ["sharp", "npm:0.31.2"]\
-          ],\
-          "packagePeers": [\
-            "@types/sharp",\
-            "sharp"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11608,13 +11528,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["tr46", [\
-        ["npm:0.0.3", {\
-          "packageLocation": "./.yarn/cache/tr46-npm-0.0.3-de53018915-726321c5ea.zip/node_modules/tr46/",\
-          "packageDependencies": [\
-            ["tr46", "npm:0.0.3"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.1.0", {\
           "packageLocation": "./.yarn/cache/tr46-npm-2.1.0-00af583f4f-ffe6049b9d.zip/node_modules/tr46/",\
           "packageDependencies": [\
@@ -12256,13 +12169,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["webidl-conversions", [\
-        ["npm:3.0.1", {\
-          "packageLocation": "./.yarn/cache/webidl-conversions-npm-3.0.1-60310f6a2b-c92a0a6ab9.zip/node_modules/webidl-conversions/",\
-          "packageDependencies": [\
-            ["webidl-conversions", "npm:3.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:5.0.0", {\
           "packageLocation": "./.yarn/cache/webidl-conversions-npm-5.0.0-9649787484-ccf1ec2ca7.zip/node_modules/webidl-conversions/",\
           "packageDependencies": [\
@@ -12326,15 +12232,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["whatwg-url", "npm:11.0.0"],\
             ["tr46", "npm:3.0.0"],\
             ["webidl-conversions", "npm:7.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:5.0.0", {\
-          "packageLocation": "./.yarn/cache/whatwg-url-npm-5.0.0-374fb45e60-b8daed4ad3.zip/node_modules/whatwg-url/",\
-          "packageDependencies": [\
-            ["whatwg-url", "npm:5.0.0"],\
-            ["tr46", "npm:0.0.3"],\
-            ["webidl-conversions", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }],\

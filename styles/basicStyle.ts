@@ -53,9 +53,7 @@ export const linkTagBasicStyle: StitchesCSS = {
   color: '$text',
   fontSize: '0.875rem',
   borderRadius: '0.3rem',
-  '& + &': {
-    marginLeft: '0.5rem',
-  },
+  marginRight: '0.5rem',
   '&:hover': {
     background: '$bg-content-hover',
   },

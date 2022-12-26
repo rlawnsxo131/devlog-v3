@@ -38,11 +38,17 @@ function PostCountTags({ allPostsCount, countTag, currentTag }: Props) {
 }
 
 const block = css({
+  height: '4rem',
   display: 'flex',
-  paddingTop: '1.5rem',
-  paddingBottom: '1rem',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
   overflowX: 'auto',
+  zIndex: '$post-count-tags',
   background: '$bg',
+
+  '@xs4': {
+    height: '5rem',
+  },
 });
 
 export default PostCountTags;

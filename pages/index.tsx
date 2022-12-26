@@ -1,17 +1,18 @@
 import type { GetStaticProps } from 'next';
-import { getPlaiceholder } from 'plaiceholder';
 
+import AppMainResponsiveBox from '@/components/app/AppMainResponsiveBox';
 import { SEO } from '@/components/base';
 import { PostsPageTemplate } from '@/components/post';
 import { getAllPosts, getUniqCountTagFor } from '@/lib/post';
 import type { CountTag, Post } from '@/types';
 
 interface Props {
+  allPostsCount: number;
   posts: Post[];
   countTag: CountTag;
 }
 
-export default function IndexPage({ posts, countTag }: Props) {
+export default function IndexPage({ allPostsCount, posts, countTag }: Props) {
   return (
     <>
       <SEO
@@ -23,11 +24,13 @@ export default function IndexPage({ posts, countTag }: Props) {
         ogDescription="김준태 블로그(DevLog)"
         type="blog"
       />
-      <PostsPageTemplate
-        allPostsCount={posts.length}
-        posts={posts}
-        countTag={countTag}
-      />
+      <AppMainResponsiveBox>
+        <PostsPageTemplate
+          allPostsCount={allPostsCount}
+          posts={posts}
+          countTag={countTag}
+        />
+      </AppMainResponsiveBox>
     </>
   );
 }
@@ -38,6 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
+      allPostsCount: posts.length,
       posts,
       countTag,
     },

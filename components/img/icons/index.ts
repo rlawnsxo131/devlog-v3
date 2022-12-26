@@ -1,9 +1,12 @@
 export { default as EmailIcon } from './EmailIcon';
 export { default as GithubIcon } from './GithubIcon';
+export { default as HomeIcon } from './HomeIcon';
+export { default as InfoIcon } from './InfoIcon';
 export { default as LightIcon } from './LightIcon';
 export { default as LinkedinIcon } from './LinkedinIcon';
 export { default as LinkIcon } from './LinkIcon';
 export { default as MenuIcon } from './MenuIcon';
 export { default as NightIcon } from './NightIcon';
 export { default as RssIcon } from './RssIcon';
+export { default as TagIcon } from './TagIcon';
 export { default as TwitterIcon } from './TwitterIcon';
