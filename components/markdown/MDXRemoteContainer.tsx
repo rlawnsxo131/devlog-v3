@@ -82,8 +82,8 @@ const block = css({
     fontSize: '.875rem',
     padding: '0.25rem 0.3rem',
     borderRadius: '0.25rem',
-    fontFamily:
-      'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
+    // fontFamily:
+    //   'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
     '> *': {
       padding: '1rem 0.5rem',
       borderRadius: '0.25rem',
@@ -145,8 +145,8 @@ const block = css({
   '& code[class*="language-"], pre[class*="language-"]': {
     background: 'hsl(0deg 0% 14%)',
     color: 'hsl(0 0% 95% / 1)',
-    fontFamily:
-      'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' /* this is the default */,
+    // fontFamily:
+    //   'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' /* this is the default */,
     /* The following properties are standard, please leave them as they are */
     fontSize: '0.875rem',
     direction: 'ltr',
