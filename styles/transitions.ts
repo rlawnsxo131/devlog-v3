@@ -22,16 +22,9 @@ const scaleDown = keyframes({
   },
 });
 
-const shimmer = keyframes({
-  '100%': {
-    backgroundPosition: '120% 100%, 0 0',
-  },
-});
-
 const transitions = {
   scaleUp,
   scaleDown,
-  shimmer,
 };
 
 export default transitions;

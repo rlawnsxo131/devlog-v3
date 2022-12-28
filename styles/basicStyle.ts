@@ -67,12 +67,3 @@ export const contentHoverBorderAndBackgroundBasicStyle: StitchesCSS = {
     borderColor: '$bg-content-hover',
   },
 };
-
-export const thumbnailSkeletonBasicStyle: StitchesCSS = {
-  background:
-    'linear-gradient(90deg, $bg-skeleton 10%, $bg-skeleton2 90%), $bg-skeleton',
-  backgroundSize: '15% 100%, 100% 100%',
-  backgroundPosition: '0 0, 0 0',
-  backgroundRepeat: 'no-repeat',
-  animation: `${transitions.shimmer} 1s Infinite`,
-};

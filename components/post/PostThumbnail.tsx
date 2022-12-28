@@ -2,8 +2,6 @@ import Image from 'next/image';
 
 import useNextImageLoading from '@/hooks/useNextImageLoading';
 import { css } from '@/styles/_stitches.config';
-import { thumbnailSkeletonBasicStyle } from '@/styles/basicStyle';
-import transitions from '@/styles/transitions';
 import type { Post } from '@/types';
 
 type Props = Pick<Post, 'thumbnail'>;
@@ -54,7 +52,7 @@ const thumbnailSkeleton = css({
   width: '100%',
   height: '100%',
   borderRadius: '0.5rem',
-  ...thumbnailSkeletonBasicStyle,
+  background: '$bg-skeleton',
 });
 
 export default PostThumbnail;

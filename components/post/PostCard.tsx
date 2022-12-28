@@ -5,12 +5,7 @@ import type { MouseEvent } from 'react';
 import useNextImageLoading from '@/hooks/useNextImageLoading';
 import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
-import {
-  buttonBasicStyle,
-  textWrapBasicStyle,
-  thumbnailSkeletonBasicStyle,
-} from '@/styles/basicStyle';
-import transitions from '@/styles/transitions';
+import { buttonBasicStyle, textWrapBasicStyle } from '@/styles/basicStyle';
 import type { Post } from '@/types';
 
 import { LinkIcon } from '../img/icons';
@@ -151,7 +146,7 @@ const thumbnailSkeleton = css({
   width: '100%',
   height: '100%',
   borderRadius: '0.5rem',
-  ...thumbnailSkeletonBasicStyle,
+  background: '$bg-skeleton',
 });
 
 const content = css({
