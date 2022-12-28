@@ -33,10 +33,10 @@ const block = css({
 });
 
 const contentBlock = css({
-  ...layoutBasicResponsiveStyle,
   display: 'flex',
   justifyContent: 'space-between',
   height: '4rem',
+  ...layoutBasicResponsiveStyle,
 });
 
 const items = css({

@@ -50,7 +50,6 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
       },
       zIndices: {
         header: 10,
-        'post-count-tags': 12,
         thumbnail: 8,
       },
     },

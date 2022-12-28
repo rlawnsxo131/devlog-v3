@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { MouseEvent } from 'react';
 
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
+import useNextImageLoading from '@/hooks/useNextImageLoading';
 import { formatDate } from '@/lib/utils';
 import { css } from '@/styles/_stitches.config';
 import { buttonBasicStyle, textWrapBasicStyle } from '@/styles/basicStyle';
@@ -18,7 +18,8 @@ interface Props {
 }
 
 function PostCard({ post, onCopyToClipboard }: Props) {
-  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
+  const { isLoadingComplete, onLoadingComplete, onError } =
+    useNextImageLoading();
 
   return (
     <article className={block()}>
@@ -31,6 +32,7 @@ function PostCard({ post, onCopyToClipboard }: Props) {
               layout="fill"
               sizes="640px"
               onLoadingComplete={onLoadingComplete}
+              onError={onError}
             />
             {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
           </a>
@@ -101,6 +103,7 @@ const thumbnail = css({
   overflow: 'hidden',
   borderRadius: '0.5rem',
   isolation: 'isolate',
+  zIndex: '$thumbnail',
   '& a': {
     position: 'relative',
     width: '100%',

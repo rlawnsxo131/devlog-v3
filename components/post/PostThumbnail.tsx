@@ -1,13 +1,14 @@
 import Image from 'next/image';
 
-import useImageOnLoadingComplete from '@/hooks/useImageOnLoadingComplete';
+import useNextImageLoading from '@/hooks/useNextImageLoading';
 import { css } from '@/styles/_stitches.config';
 import type { Post } from '@/types';
 
 type Props = Pick<Post, 'thumbnail'>;
 
 function PostThumbnail({ thumbnail }: Props) {
-  const { isLoadingComplete, onLoadingComplete } = useImageOnLoadingComplete();
+  const { isLoadingComplete, onLoadingComplete, onError } =
+    useNextImageLoading();
 
   return (
     <div className={block()}>
@@ -18,6 +19,7 @@ function PostThumbnail({ thumbnail }: Props) {
         layout="fill"
         sizes="768px"
         onLoadingComplete={onLoadingComplete}
+        onError={onError}
       />
       {!isLoadingComplete && <div className={thumbnailSkeleton()} />}
     </div>
@@ -31,6 +33,7 @@ const block = css({
   display: 'flex',
   justifyContent: 'center',
   paddingTop: '52.35%',
+  zIndex: '$thumbnail',
   '& span': {
     position: 'unset !important',
   },
