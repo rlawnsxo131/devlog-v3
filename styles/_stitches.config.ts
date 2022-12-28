@@ -23,6 +23,7 @@ export const { createTheme, globalCss, getCssText, config, css, keyframes } =
         'bg-button-primary': '$cyan9',
         'bg-button-primary-hover': '$cyan10',
         'bg-skeleton': '$gray3',
+        'bg-skeleton2': '$gray2',
 
         // text
         text: '$gray12',
@@ -103,6 +104,7 @@ export const darkTheme = createTheme('dark', {
     'bg-button-primary': '$cyan6',
     'bg-button-primary-hover': '$cyan7',
     'bg-skeleton': '$gray3',
+    'bg-skeleton2': '$gray4',
 
     // text
     text: '$gray12',
