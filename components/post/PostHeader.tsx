@@ -2,7 +2,10 @@ import Link from 'next/link';
 
 import { utils } from '@/lib';
 import { css } from '@/styles/_stitches.config';
-import { linkTagBasicStyle } from '@/styles/basicStyle';
+import {
+  contentHoverBorderAndBackgroundBasicStyle,
+  linkTagBasicStyle,
+} from '@/styles/basicStyle';
 import type { Post } from '@/types';
 
 import Separator from '../system/Separator';
@@ -66,6 +69,7 @@ const tagsBlock = css({
   marginTop: '2.25rem',
   '& a': {
     ...linkTagBasicStyle,
+    ...contentHoverBorderAndBackgroundBasicStyle,
   },
 });
 

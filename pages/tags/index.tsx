@@ -4,7 +4,10 @@ import Link from 'next/link';
 import { AppMainContentBox, AppMainResponsiveBox } from '@/components/app';
 import { getAllPosts, getUniqCountTagFor } from '@/lib/post';
 import { css } from '@/styles/_stitches.config';
-import { linkTagBasicStyle } from '@/styles/basicStyle';
+import {
+  contentHoverBorderAndBackgroundBasicStyle,
+  linkTagBasicStyle,
+} from '@/styles/basicStyle';
 import type { CountTag } from '@/types';
 
 interface Props {
@@ -50,6 +53,7 @@ const tagsBlock = css({
   display: 'flex',
   '& a': {
     ...linkTagBasicStyle,
+    ...contentHoverBorderAndBackgroundBasicStyle,
     marginTop: '1rem',
     '& span': {
       color: '$cyan9',

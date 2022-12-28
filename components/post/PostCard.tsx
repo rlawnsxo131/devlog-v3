@@ -30,7 +30,10 @@ function PostCard({ post, onCopyToClipboard }: Props) {
               src={post.thumbnail}
               alt={post.thumbnail}
               layout="fill"
-              sizes="640px"
+              sizes="(max-width: 599px) 100vw,
+              (max-width: 1199px) 50vw,
+              (max-width: 1439px) 33vw,
+              25vw"
               onLoadingComplete={onLoadingComplete}
               onError={onError}
             />

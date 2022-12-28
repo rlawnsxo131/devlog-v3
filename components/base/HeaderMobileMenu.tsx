@@ -96,6 +96,7 @@ const nav = css({
   transformOrigin: 'top',
   background: '$bg-nav',
   boxShadow: '$header-navigation',
+  willChange: 'transform, opacity',
   variants: {
     variant: {
       enabled: {

@@ -1,58 +1,43 @@
-import type { StitchesCSS } from './_stitches.config';
 import { globalCss } from './_stitches.config';
 
-const topLevelBoxStyle: StitchesCSS = {
-  margin: '0',
-  padding: '0',
-  height: '100%',
-  scrollPadding: '5rem',
-  boxSizing: 'border-box',
-  scrollBehavior: 'smooth',
-};
-
-const topLevelBoxChildrenStyle: StitchesCSS = {
-  boxSizing: 'inherit',
-  fontFamily:
-    'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
-  //'"Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif',
-
-  textRendering: 'optimizeLegibility',
-  'h1, h2, h3, h4, h5': {
-    color: '$text',
-  },
-
-  '&::selection': {
-    color: '$text-selection',
-    background: '$cyan9',
-  },
-};
-
 const globalStyle = globalCss({
-  html: {
-    ...topLevelBoxStyle,
+  'html, body, #__next': {
+    margin: 0,
+    padding: 0,
+    height: '100%',
     background: '$bg',
-    '& *': {
-      ...topLevelBoxChildrenStyle,
+  },
+
+  html: {
+    scrollPadding: '5rem',
+    scrollBehavior: 'smooth',
+    boxSizing: 'border-box',
+    '*': {
+      boxSizing: 'inherit',
+      '-webkit-tap-highlight-color': 'transparent',
     },
   },
+
   body: {
-    ...topLevelBoxStyle,
-    '& *': {
-      ...topLevelBoxChildrenStyle,
+    textRendering: 'optimizeLegibility',
+    fontFamily:
+      'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+    //'"Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif',
+
+    'h1, h2, h3, h4, h5': {
+      color: '$text',
     },
-  },
-  '#__next': {
-    ...topLevelBoxStyle,
-    '& *': {
-      ...topLevelBoxChildrenStyle,
+    a: {
+      cursor: 'pointer',
+      textDecoration: 'none',
     },
-  },
-  a: {
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  '*': {
-    '-webkit-tap-highlight-color': 'transparent',
+
+    '*': {
+      '&::selection': {
+        color: '$text-selection',
+        background: '$cyan9',
+      },
+    },
   },
 });
 

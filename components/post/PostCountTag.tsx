@@ -2,7 +2,10 @@ import Link from 'next/link';
 import type { MutableRefObject } from 'react';
 
 import { css } from '@/styles/_stitches.config';
-import { linkTagBasicStyle } from '@/styles/basicStyle';
+import {
+  contentHoverBorderAndBackgroundBasicStyle,
+  linkTagBasicStyle,
+} from '@/styles/basicStyle';
 
 import usePostCountTag from './hooks/usePostCountTag';
 
@@ -36,8 +39,6 @@ const anchor = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'space-between',
-  borderWidth: '2px',
-  borderStyle: 'solid',
   '& span': {
     color: '$cyan9',
     marginLeft: '0.35rem',
@@ -45,10 +46,7 @@ const anchor = css({
   variants: {
     variant: {
       default: {
-        borderColor: '$bg-content',
-        '&:hover': {
-          borderColor: '$bg-content-hover',
-        },
+        ...contentHoverBorderAndBackgroundBasicStyle,
       },
       active: {
         borderColor: '$cyan9',
