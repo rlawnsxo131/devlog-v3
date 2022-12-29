@@ -28,14 +28,14 @@ function PostLinked({ linkedPost }: Props) {
           </Link>
         )}
       </div>
-      <div
-        className={linkBlock({
-          variant: 'end',
-        })}
-      >
+      <div className={linkBlock()}>
         {nextPost && (
           <Link href={`/post/${nextPost.slug}`}>
-            <a className={anchor()}>
+            <a
+              className={anchor({
+                variant: 'end',
+              })}
+            >
               <div className={description()}>다음 포스트</div>
               <div className={postTitle()}>{nextPost.title}</div>
             </a>
@@ -59,10 +59,8 @@ const block = css({
 
 const linkBlock = css({
   flex: '1 1 0',
+  marginTop: '1.5rem',
 
-  '@xxxs': {
-    marginTop: '1.5rem',
-  },
   '@s1': {
     flexDirection: 'row',
     '& + &': {
