@@ -5,12 +5,13 @@ import { AppMainContentBox, AppMainResponsiveBox } from '@/components/app';
 import { ContactLinks, SEO } from '@/components/base';
 import { MDXRemoteContainer } from '@/components/markdown';
 import {
+  PostComments,
   PostHeader,
   PostLayout,
+  PostLinked,
   PostThumbnail,
   PostToc,
 } from '@/components/post';
-import PostLinked from '@/components/post/PostLinked';
 import { SiteConfig } from '@/config';
 import { getAllPosts, getPostDataFor, parseMarkdownToMdx } from '@/lib/post';
 import type { LinkedPost, Post } from '@/types';
@@ -54,6 +55,7 @@ export default function PostPage({ post, mdx, linkedPost }: Props) {
               <>
                 <PostLinked linkedPost={linkedPost} />
                 <ContactLinks />
+                <PostComments />
               </>
             }
           />

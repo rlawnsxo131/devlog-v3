@@ -66,7 +66,7 @@ const block = css({
   display: 'flex',
   alignItems: 'center',
   padding: '1rem',
-  background: '$bg-info-section',
+  background: '$bg-content-sub2',
   boxShadow: '$default1',
   borderRadius: '4px',
 });

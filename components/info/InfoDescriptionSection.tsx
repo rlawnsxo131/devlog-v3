@@ -84,7 +84,7 @@ const section = css({
   flexDirection: 'column',
   padding: '1rem',
   marginTop: '1.5rem',
-  background: '$bg-info-section',
+  background: '$bg-content-sub2',
   boxShadow: '$default1',
   borderRadius: '4px',
   color: '$text',

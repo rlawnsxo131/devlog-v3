@@ -78,7 +78,7 @@ const anchor = css({
   justifyContent: 'center',
   height: '4rem',
   padding: '0 1rem',
-  background: '$bg-info-section',
+  background: '$bg-content-sub2',
   boxShadow: '$default1',
   borderRadius: '4px',
   variants: {

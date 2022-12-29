@@ -21,6 +21,8 @@ Personal Development blog by John
   - Route53
   - CloudFront
   - Lambda@Edge
+- Comment
+  - utterances
 - Markdown related dependencies
   - next-mdx-remote
   - unified
