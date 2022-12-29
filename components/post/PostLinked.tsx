@@ -59,10 +59,10 @@ const block = css({
 
 const linkBlock = css({
   flex: '1 1 0',
-  marginTop: '1.5rem',
-
+  '&:not(:empty)': {
+    marginTop: '1.5rem',
+  },
   '@s1': {
-    flexDirection: 'row',
     '& + &': {
       marginLeft: '3rem',
     },
