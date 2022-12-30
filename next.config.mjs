@@ -13,6 +13,7 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  reactStrictMode: true,
   productionBrowserSourceMaps: !isProduction,
   swcMinify: true,
   images: {

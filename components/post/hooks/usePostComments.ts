@@ -1,15 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import constants from '@/constants';
 import useThemeState from '@/hooks/theme/useThemeState';
+import useRouteQuery from '@/hooks/useRouteQuery';
 import { Storage } from '@/lib';
 
 export default function usePostComments() {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const { slug } = useRouteQuery();
+  const ref = useRef<HTMLDivElement>(null);
   const theme = useThemeState() === 'dark' ? 'github-dark' : 'github-light';
 
   useEffect(() => {
     if (!ref.current) return;
+
+    // remove prev comments
+    const prevUtterances = document.querySelectorAll('.utterances');
+    if (prevUtterances.length) {
+      for (const elem of prevUtterances) {
+        ref.current.removeChild(elem);
+      }
+    }
+
     const theme =
       Storage.getItem(constants.THEME_KEY) === 'dark'
         ? 'github-dark'
@@ -23,15 +34,9 @@ export default function usePostComments() {
     scriptElem.setAttribute('label', 'Comment');
     scriptElem.crossOrigin = 'anonymous';
     ref.current.appendChild(scriptElem);
-
-    return () => {
-      ref.current = null;
-    };
-  }, []);
+  }, [slug]);
 
   useEffect(() => {
-    if (!document.querySelector('.utterances-frame')) return;
-
     const iframe =
       document.querySelector<HTMLIFrameElement>('.utterances-frame');
 
