@@ -37,9 +37,7 @@ export default function useToast() {
       info(text: string, position: ToastPosition = 'top-right') {
         toast.info(text, {
           icon: false,
-          bodyStyle: {
-            ...bodyStyle,
-          },
+          bodyStyle,
           theme,
           progressStyle: {
             background: 'hsl(191deg 91% 37%)',
