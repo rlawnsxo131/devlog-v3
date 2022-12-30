@@ -14,11 +14,9 @@ export default function usePostComments() {
     if (!ref.current) return;
 
     // remove prev comments
-    const prevUtterances = document.querySelectorAll('.utterances');
-    if (prevUtterances.length) {
-      for (const elem of prevUtterances) {
-        ref.current.removeChild(elem);
-      }
+    const prevUtterances = document.querySelector('.utterances');
+    if (prevUtterances) {
+      ref.current.replaceChildren();
     }
 
     const theme =
