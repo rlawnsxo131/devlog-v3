@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import constants from '@/constants';
 import useThemeState from '@/hooks/theme/useThemeState';
