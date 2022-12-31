@@ -41,7 +41,7 @@ export default function usePostComments() {
     if (iframe) {
       const message = {
         type: 'set-theme',
-        theme: theme,
+        theme,
       };
       iframe.contentWindow?.postMessage(message, 'https://utteranc.es');
     }

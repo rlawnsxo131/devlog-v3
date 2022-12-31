@@ -8,7 +8,6 @@ function AppMain({ children }: PropsWithChildren) {
 
 const block = css({
   flex: '1 1 100%',
-  width: '100%',
   display: 'flex',
   justifyContent: 'center',
 });
