@@ -29,6 +29,11 @@ function renderHeaderMobileMenu() {
       selector: 'a',
     });
 
+  const TagsAnchor = () =>
+    result.queryByText('태그', {
+      selector: 'a',
+    });
+
   const InfoAnchor = () =>
     result.queryByText('소개', {
       selector: 'a',
@@ -43,6 +48,7 @@ function renderHeaderMobileMenu() {
     HeaderMenuButton,
     HeaderMenuNavigation,
     PostAnchor,
+    TagsAnchor,
     InfoAnchor,
     clickMenuButton,
   };
@@ -85,8 +91,13 @@ describe('<HeaderMobileMenu />', () => {
   });
 
   it('click the links inside the menu navigation', async () => {
-    const { HeaderMenuNavigation, PostAnchor, InfoAnchor, clickMenuButton } =
-      renderHeaderMobileMenu();
+    const {
+      HeaderMenuNavigation,
+      PostAnchor,
+      TagsAnchor,
+      InfoAnchor,
+      clickMenuButton,
+    } = renderHeaderMobileMenu();
 
     clickMenuButton();
     act(() => {
@@ -97,6 +108,7 @@ describe('<HeaderMobileMenu />', () => {
     });
 
     expect(PostAnchor()).toHaveAttribute('href', '/');
+    expect(TagsAnchor()).toHaveAttribute('href', '/tags');
     expect(InfoAnchor()).toHaveAttribute('href', '/info');
   });
 });
