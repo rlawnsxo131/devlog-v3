@@ -14,8 +14,7 @@ export default function usePostComments() {
     if (!ref.current) return;
 
     // remove prev comments
-    const prevUtterances = document.querySelector('.utterances');
-    if (prevUtterances) {
+    if (document.querySelector('.utterances')) {
       ref.current.replaceChildren();
     }
 
