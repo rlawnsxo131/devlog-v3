@@ -37,13 +37,15 @@ export default function usePostComments() {
     const iframe =
       document.querySelector<HTMLIFrameElement>('.utterances-frame');
 
-    if (iframe) {
-      const message = {
+    if (!iframe) return;
+
+    iframe.contentWindow?.postMessage(
+      {
         type: 'set-theme',
         theme,
-      };
-      iframe.contentWindow?.postMessage(message, 'https://utteranc.es');
-    }
+      },
+      'https://utteranc.es',
+    );
   }, [theme]);
 
   return {

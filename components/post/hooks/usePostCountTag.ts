@@ -13,9 +13,8 @@ export default function usePostCountTag({
   const tagRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
-    if (isActive) {
-      scrollToCenter(tagRef);
-    }
+    if (!isActive) return;
+    scrollToCenter(tagRef);
   }, [isActive, tagRef, scrollToCenter]);
 
   return {

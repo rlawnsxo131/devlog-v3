@@ -36,25 +36,25 @@ export default function usePostToc() {
     );
     const tocs: Toc[] = [];
     nodes.forEach((node) => {
-      if (node.tagName.match(/H([1-5])/)) {
-        const textContent = node.textContent;
-        if (textContent) {
-          if (
-            textContent.replace(/(\s*)/g, '').toUpperCase() !==
-            constants.MARKDOWN_TABLE_OF_CONTENTS
-          ) {
-            intersectionObserver.observe(node);
-            const level = parseInt(node.tagName.replace('H', ''), 10);
-            tocs.push({
-              id: node.id,
-              text: textContent,
-              level: level,
-              styleObj: {
-                paddingLeft: `${(level - 1) * 1}rem`,
-              },
-            });
-          }
-        }
+      if (!node.tagName.match(/H([1-5])/)) return;
+      if (!node.textContent) return;
+
+      const textContent = node.textContent;
+      const upperCaseTextContent = textContent
+        .replace(/(\s*)/g, '')
+        .toUpperCase();
+
+      if (upperCaseTextContent !== constants.MARKDOWN_TABLE_OF_CONTENTS) {
+        intersectionObserver.observe(node);
+        const level = parseInt(node.tagName.replace('H', ''), 10);
+        tocs.push({
+          id: node.id,
+          text: textContent,
+          level: level,
+          styleObj: {
+            paddingLeft: `${(level - 1) * 1}rem`,
+          },
+        });
       }
     });
     setTocs(tocs);

@@ -28,6 +28,7 @@ export default function useThemeEffect() {
       });
       return;
     }
+
     dispatch({
       type: 'SET_LIGHT_THEME',
     });
