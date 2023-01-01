@@ -14,14 +14,12 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
     "eslint-config-next",
     "next",
     "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "simple-import-sort", "import"],
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
   "ignorePatterns": ["jest.config.js"],
   "rules": {
     "prefer-const": "error",
