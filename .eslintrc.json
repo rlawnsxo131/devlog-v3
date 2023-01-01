@@ -6,7 +6,6 @@
     "node": true,
     "jest": true
   },
-  "parser": "@typescript-eslint/parser",
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]
@@ -22,6 +21,7 @@
     "next",
     "next/core-web-vitals"
   ],
+  "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "simple-import-sort", "import"],
   "ignorePatterns": ["jest.config.js"],
   "rules": {
