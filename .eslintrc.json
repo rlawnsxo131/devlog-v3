@@ -16,7 +16,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:import/recommended",
     "eslint-config-next",
     "next",
     "next/core-web-vitals"
