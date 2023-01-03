@@ -14,8 +14,9 @@ export default function usePostCountTag({
 
   useEffect(() => {
     if (!isActive) return;
+    if (!tagRef.current) return;
     scrollToCenter(tagRef);
-  }, [isActive, tagRef, scrollToCenter]);
+  }, [isActive, scrollToCenter, tagRef]);
 
   return {
     tagRef,

@@ -1,37 +1,37 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 import constants from '@/constants';
 import useThemeState from '@/hooks/theme/useThemeState';
+import useRefEffect from '@/hooks/useRefEffect';
 import useRouteQuery from '@/hooks/useRouteQuery';
 import { Storage } from '@/lib';
 
 export default function usePostComments() {
   const { slug } = useRouteQuery();
-  const ref = useRef<HTMLDivElement>(null);
   const theme = useThemeState() === 'dark' ? 'github-dark' : 'github-light';
 
-  useEffect(() => {
-    if (!ref.current) return;
+  const ref = useRefEffect(
+    (div: HTMLDivElement) => {
+      if (document.querySelector('.utterances')) {
+        div.replaceChildren();
+      }
 
-    // remove prev comments
-    if (document.querySelector('.utterances')) {
-      ref.current.replaceChildren();
-    }
-
-    const theme =
-      Storage.getItem(constants.THEME_KEY) === 'dark'
-        ? 'github-dark'
-        : 'github-light';
-    const scriptElem = document.createElement('script');
-    scriptElem.src = 'https://utteranc.es/client.js';
-    scriptElem.async = true;
-    scriptElem.setAttribute('repo', 'rlawnsxo131/devlog-v3');
-    scriptElem.setAttribute('issue-term', 'pathname');
-    scriptElem.setAttribute('theme', theme);
-    scriptElem.setAttribute('label', 'Comment');
-    scriptElem.crossOrigin = 'anonymous';
-    ref.current.appendChild(scriptElem);
-  }, [slug]);
+      const theme =
+        Storage.getItem(constants.THEME_KEY) === 'dark'
+          ? 'github-dark'
+          : 'github-light';
+      const scriptElem = document.createElement('script');
+      scriptElem.src = 'https://utteranc.es/client.js';
+      scriptElem.async = true;
+      scriptElem.setAttribute('repo', 'rlawnsxo131/devlog-v3');
+      scriptElem.setAttribute('issue-term', 'pathname');
+      scriptElem.setAttribute('theme', theme);
+      scriptElem.setAttribute('label', 'Comment');
+      scriptElem.crossOrigin = 'anonymous';
+      div.appendChild(scriptElem);
+    },
+    [slug],
+  );
 
   useEffect(() => {
     const iframe =
