@@ -20,7 +20,7 @@ jest.mock('next/router', () => ({
 function renderHeaderMobileMenu() {
   const result = renderWithGlobalHoc(<HeaderMobileMenu />);
 
-  const HeaderMenuButton = () => result.getByRole('button');
+  const HeaderMenuButton = () => result.queryByRole('button');
 
   const HeaderMenuNavigation = () => result.queryByRole('navigation');
 
@@ -40,7 +40,7 @@ function renderHeaderMobileMenu() {
     });
 
   function clickMenuButton() {
-    userEvent.click(HeaderMenuButton());
+    userEvent.click(HeaderMenuButton()!);
   }
 
   return {
