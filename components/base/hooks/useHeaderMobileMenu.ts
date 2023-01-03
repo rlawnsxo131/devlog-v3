@@ -16,7 +16,6 @@ export default function useHeaderMenu() {
   const parentRef = useRefEffect(
     (div: HTMLDivElement) => {
       const handler = (e: BaseSyntheticEvent | MouseEvent | TouchEvent) => {
-        if (!div) return;
         if (div.contains(e.target)) return;
         setNavVisible(false);
       };
