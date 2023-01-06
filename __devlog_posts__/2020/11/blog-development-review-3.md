@@ -697,4 +697,3 @@ package:
 - [Next.js 공식 홈페이지](https://nextjs.org/)
 - [Next.js Apollo Client 설정 내 깃헙](https://github.com/rlawnsxo131/devlog-client/blob/master/graphql/apollo.tsx)
 - [[번역] 깊이 있는 리액트 개발 환경 구축하기](https://sujinlee.me/webpack-react-tutorial/)
-- [Typescript React 개발 환경 직접 만들기](https://velog.io/@jhj46456/Typescript-React-개발-환경-직접-만들기)
