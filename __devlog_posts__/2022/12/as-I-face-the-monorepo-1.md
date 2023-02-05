@@ -364,11 +364,11 @@ function alertIfExistError(err, message) {
 alertIfExistError(err, '에러 발생');
 
 // 이런방식으로 조금더 범용적인 함수를 선언하려 합니다
-function alertIf(visible, message) {
-  if (!visible) return;
+function alertIf(compare, message) {
+  if (!compare()) return;
   alert(message);
 }
-alertIf(!!err, '에러 발생');
+alertIf(() => !!err, '에러 발생');
 ```
 
 위는 아주 단순한 예시이지만, alertIfExistsError 함수의 경우 error 의 유무만을 판단하여 alert 을 해주는 기능으로 밖에 사용할 수 없어 보입니다. 하지만 alertIf 라는 함수는 error 의 유무뿐 아닌 어떠한 상황에도 alert 을 해주는 함수로서 사용될 수 있죠. 함수가 조금더 범용적으로 사용될 수 있을것 같지 않나요? 그럼 이어서 몇가지 생각 해볼 만한 부분에 관한 이야기를 해보겠습니다.
