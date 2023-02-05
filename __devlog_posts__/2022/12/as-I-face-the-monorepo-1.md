@@ -364,8 +364,8 @@ function alertIfExistError(err, message) {
 alertIfExistError(err, '에러 발생');
 
 // 이런방식으로 조금더 범용적인 함수를 선언하려 합니다
-function alertIf(compare, message) {
-  if (!compare()) return;
+function alertIf(predicate, message) {
+  if (!predicate()) return;
   alert(message);
 }
 alertIf(() => !!err, '에러 발생');
