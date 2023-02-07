@@ -40,7 +40,9 @@ function renderHeaderMobileMenu() {
     });
 
   function clickMenuButton() {
-    userEvent.click(HeaderMenuButton()!);
+    const button = HeaderMenuButton();
+    if (!button) throw new Error('HeaderMenuButton is null');
+    userEvent.click(button);
   }
 
   return {
@@ -87,6 +89,7 @@ describe('<HeaderMobileMenu />', () => {
       jest.advanceTimersByTime(duration);
     });
     await waitForElementToBeRemoved(() => HeaderMenuNavigation());
+
     expect(HeaderMenuNavigation()).toBeNull();
   });
 
