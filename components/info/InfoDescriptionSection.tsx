@@ -7,6 +7,9 @@ function InfoDescriptionSection(props: Props) {
   return (
     <>
       <section className={section()}>
+        이 블로그에 쓰인 글과 생각은, 유통기한이 있습니다.
+      </section>
+      <section className={section()}>
         <div className={titleBlock()}>
           <h3>Experience</h3>
         </div>
