@@ -7,7 +7,7 @@ function InfoDescriptionSection(props: Props) {
   return (
     <>
       <section className={section()}>
-        이 블로그에 쓰인 글과 생각은, 유통기한이 있습니다.
+        이 블로그에 쓰인 글과 생각은, 유효한 기간이 있습니다.
       </section>
       <section className={section()}>
         <div className={titleBlock()}>
@@ -22,7 +22,7 @@ function InfoDescriptionSection(props: Props) {
             >
               11번가
             </a>
-            웹 프론트엔드 개발자 ( 2022.10 ~ )
+            웹 프론트엔드 개발자 ( 2022.10 ~ 2023.06 )
           </li>
           <li>
             <a
