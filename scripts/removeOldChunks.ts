@@ -56,6 +56,7 @@ async function removeOldChunks() {
 removeOldChunks()
   .then((result) => {
     console.log('success to remove old chunks');
+    console.log('Deleted length: ', result?.Deleted?.length);
     console.log('remove result: ', JSON.stringify(result));
   })
   .catch((err) => {
