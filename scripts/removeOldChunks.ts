@@ -4,12 +4,16 @@ import {
   ListObjectsCommand,
   S3Client,
 } from '@aws-sdk/client-s3';
+import { defaultProvider } from '@aws-sdk/credential-provider-node';
 
 const REGION = 'ap-northeast-2';
 const BUCKET = 'devlog-v3.juntae.kim';
 
 const client = new S3Client({
   region: REGION,
+  credentials: defaultProvider({
+    profile: 'admin',
+  }),
 });
 
 async function getDeleteChunkKeys() {

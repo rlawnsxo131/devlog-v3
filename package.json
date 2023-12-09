@@ -1,6 +1,6 @@
 {
   "name": "devlog-v3",
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@4.0.1",
   "scripts": {
     "sdk": "yarn dlx @yarnpkg/sdks vscode",
     "sdk:update": "yarn dlx @yarnpkg/sdks",
@@ -12,8 +12,8 @@
     "build:rss": "ts-node --transpile-only scripts/generateRssFeed.ts",
     "build:export": "next build && next export",
     "build:production": "NODE_ENV=production ts-node --transpile-only scripts/generateRssFeed.ts && next build && next export",
-    "deploy:s3": "yarn build:production && aws s3 sync out s3://devlog-v3.juntae.kim && ts-node --transpile-only scripts/removeOldChunks.ts",
-    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E1S24NLANHYQLI --paths '/*'",
+    "deploy:s3": "yarn build:production && aws s3 sync out s3://devlog-v3.juntae.kim --profile admin && ts-node --transpile-only scripts/removeOldChunks.ts",
+    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E1S24NLANHYQLI --paths '/*' --profile admin",
     "deploy:production": "yarn deploy:s3 && yarn cloudfront:invalidate",
     "lint": "next lint",
     "test": "jest --coverage"
@@ -33,6 +33,7 @@
   ],
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.216.0",
+    "@aws-sdk/credential-provider-node": "^3.470.0",
     "@aws-sdk/types": "^3.215.0",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",

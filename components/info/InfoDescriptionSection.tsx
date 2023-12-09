@@ -17,6 +17,16 @@ function InfoDescriptionSection(props: Props) {
           <li>
             <a
               rel="noopener noreferrer"
+              href="https://www.kakaopay.com/"
+              target="_blank"
+            >
+              카카오페이
+            </a>
+            웹 프론트엔드 개발자 ( 2023.06 ~ )
+          </li>
+          <li>
+            <a
+              rel="noopener noreferrer"
               href="https://www.11stcorp.com"
               target="_blank"
             >
