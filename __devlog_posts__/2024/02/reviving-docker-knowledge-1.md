@@ -51,7 +51,7 @@ slug: docker-study-1
 
 우리가 작성하는 소프트웨어는 결국 os 와 라이브러리에 의존성을 지니고 있다. 우리가 브라우저에서 어떤 라이브러리를 이용해 HTTP 요청을 작성하더라도, 이것은 결국엔 os 의 socket 을 이용해야 하는것처럼 말이다. 이런 의존성을 가진채, 성격이 전혀 다른 어플리케이션 여러개를 하나의 os 에 띄워야 한다고 생각해보자. 이때, 작동중인 어플리케이션들이 서로 간섭하지 않고 안전하게 동작하려면 어떤 요소가 필요할까?
 
-nodejs 로 작성된 어플리케이션 여러개를 하나의 server 에서 실행해야 한다고 가정해보자. 이때 nodejs 어플리케이션이 실행되어야 하는 host 환경이 모두 다르며, 의존하는 nodejs 의 버전이 모두 다르다고 가정해보자. 도대체 어떤 일들이 필요할까? 그냥 생각만 해도 머리가 아프다.
+nodejs 어플리케이션 여러개를 하나의 server 에서 실행해야 한다고 가정해보자. 이때 nodejs 어플리케이션이 실행되어야 하는 host 환경이 모두 다르며, 의존하는 nodejs 의 버전이 모두 다르다고 가정해보자. 도대체 어떤 일들이 필요할까? 그냥 생각만 해도 머리가 아프다.
 
 ![linux_container](/images/post/2024/02/linux_container.png)
 [Virtualization VS Containers - 이미지 출처](https://www.redhat.com/ko/topics/containers/whats-a-linux-container)
