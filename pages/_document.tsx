@@ -207,7 +207,7 @@ export default function Document() {
           <>
             <script
               async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gTag.GA_TRACKING_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=G-H9C41MYXQ5`}
             />
             <script
               id="gtag-init"
@@ -217,7 +217,7 @@ export default function Document() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${gTag.GA_TRACKING_ID}', {
+              gtag('config', 'G-H9C41MYXQ5', {
                 page_path: window.location.pathname,
               });
             `,
