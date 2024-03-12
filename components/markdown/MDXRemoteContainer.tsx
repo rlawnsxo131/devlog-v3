@@ -247,6 +247,33 @@ const block = css({
   '& .token.namespace': {
     opacity: '0.7',
   },
+
+  table: {
+    minWidth: '40%',
+    maxWidth: '100%',
+    border: '1px solid $border-table',
+    borderCollapse: 'collapse',
+    tableLayout: 'auto',
+    fontSize: '0.875rem',
+
+    'thead > tr > th': {
+      borderBottom: '4px solid $border-table',
+    },
+
+    'th, td': {
+      wordBreak: 'break-word',
+      padding: '0.5rem',
+      borderBottom: '1px solid $border-table',
+    },
+
+    'tr > td:first-of-type': {
+      whiteSpace: 'nowrap',
+    },
+
+    'td + td, th + th': {
+      borderLeft: '1px solid $border-table',
+    },
+  },
 });
 
 export default memo(MDXRemoteContainer);
