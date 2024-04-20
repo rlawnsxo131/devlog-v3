@@ -29,10 +29,7 @@ slug: docker-study-1
 
 ```
 잘못된 정보가 퍼져나가는 것을 원치 않습니다.
-저는 이 분야의 전문가가 아니며, 잘못된 내용이 있을수 있습니다.
-
-댓글 혹은 메일로 내용의 잘못된 부분을 정정해 주신다면,
-감사한 마음으로 기쁘게 글을 수정 하겠습니다(출처나 github, email 등은 동의하에 남기겠습니다).
+잘못된 내용이 있다면, 댓글 혹은 메일로 알려주세요.
 ```
 
 # Docker 란
@@ -53,7 +50,7 @@ slug: docker-study-1
 
 nodejs 어플리케이션 여러개를 하나의 server 에서 실행해야 한다고 가정해보자. 이때 nodejs 어플리케이션이 실행되어야 하는 host 환경이 모두 다르며, 의존하는 nodejs 의 버전이 모두 다르다고 가정해보자. 도대체 어떤 일들이 필요할까? 그냥 생각만 해도 머리가 아프다.
 
-![linux_container](/images/post/2024/02/linux_container.png)
+![linux-container](/images/post/2024/02/linux-container.png)
 [Virtualization VS Containers - 이미지 출처](https://www.redhat.com/ko/topics/containers/whats-a-linux-container)
 
 컨테이너라는 개념(기술)은 위와같은 문제들을 해결한다. 컨테이너를 실행한다는 것은, 기존 시스템에 존재하는 프로세스를 격리하여 `독립적인 환경` 에서 실행하게 된다는 의미이다. 사실 **컨테이너는 실제로 실행중인 프로세스** 일 뿐이다.
@@ -82,7 +79,7 @@ nodejs 어플리케이션 여러개를 하나의 server 에서 실행해야 한�
 - 하이퍼바이저: 호스트 컴퓨터에서 다수의 운영 체제를 동시에 실행하기 위한 논리적 플랫폼(virtual machine monitor 또는 virtual machine manager, 줄여서 VMM). 가상머신과 하드웨어 간의 리소스할당, io 처리등을 담당한다.
 - Guest OS: 하이퍼바이저를 통해 생성되고 관리되는 운영체제. 즉 host OS 에 올라가는 가상화된 녀석.
 
-![virtual_machines_docker_containers](/images/post/2024/02/virtual_machines_docker_containers.png)
+![virtual-machines-docker-containers](/images/post/2024/02/virtual-machines-docker-containers.png)
 [Virtual machines vs Docker Containers - 이미지 출처](https://www.cherryservers.com/blog/a-complete-overview-of-docker-architecture)
 
 이를 해결하기 위해 CPU의 가상화 기술([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization))을 이용한 [KVM](https://linux-kvm.org/page/Main_Page)(Kernel-based Virtual Machine)과 [반가상화](https://en.wikipedia.org/wiki/Paravirtualization)(Paravirtualization)방식의 Xen이 등장한다. 이러한 방식은 게스트 OS가 필요하긴 하지만 전체OS를 가상화하는 방식이 아니였기 때문에 호스트형 가상화 방식에 비해 성능이 향상 되었다.
@@ -123,7 +120,7 @@ nodejs 어플리케이션 여러개를 하나의 server 에서 실행해야 한�
 
 ## containerd
 
-[containerd](https://containerd.io/)는 도커의 런타임인데, [OCI](https://opencontainers.org/) 가 정한 표준을 준수하여 도커측에서 만든 런타임이다. 도커 컨테이너의 실행과 관리, 이미지, 스토리지와 네트워크 인터페이스 연결과 같은 시스템의 전체 라이프사이클 관리하는 주체가 된다. 하지만 containerd 는 컨테이너를 생성하는 역할은 하지 못하기에, 비교적 더 저수준에 속하는 런타임에 의존하게 되는데 이때 컨테이너를 생성하는 녀석이 바로 [runC](https://github.com/opencontainers/runc) 이다.
+[containerd](https://containerd.io/)는 도커의 런타임인데, [OCI](https://opencontainers.org/) 가 정한 표준을 준수하여 도커측에서 만든 런타임이다. 도커 컨테이너의 실행과 관리, 이미지, 스토리지와 네트워크 인터페이스 연결과 같은 시스템의 전체 라이프사이클 관리하는 주체가 된다. 하지만 containerd 는 컨테이너를 생성하는 역할은 하지 못하기에, 이를 가능케하는 녀석에 의존하게 되는데 이때 컨테이너를 생성하는 녀석이 바로 [runC](https://github.com/opencontainers/runc)([정확히는 내부의 libcontainer](https://github.com/opencontainers/runc/tree/main/libcontainer)) 이다.
 아래 이미지를 살펴보자.
 
 ![docker engine](/images/post/2024/02/docker-engine.png)[docker engine - 이미지 출처](https://gngsn.tistory.com/128)

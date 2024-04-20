@@ -23,10 +23,7 @@ slug: docker-study-2
 
 ```
 잘못된 정보가 퍼져나가는 것을 원치 않습니다.
-저는 이 분야의 전문가가 아니며, 잘못된 내용이 있을수 있습니다.
-
-댓글 혹은 메일로 내용의 잘못된 부분을 정정해 주신다면,
-감사한 마음으로 기쁘게 글을 수정 하겠습니다(출처나 github, email 등은 동의하에 남기겠습니다).
+잘못된 내용이 있다면, 댓글 혹은 메일로 알려주세요.
 ```
 
 # 도커 엔진 개요
@@ -56,7 +53,7 @@ $ docker exec -it asdf /bin/sh
 
 # 도커 아키텍처와 client - server 통신
 
-![docker-architecture](/images/post/2024/02/docker-architecture.png)
+![docker-architecture](/images/post/2024/04/docker-architecture.png)
 [docker-architecture - 이미지 출처](https://docs.docker.com/get-started/overview/#docker-architecture)
 
 위 이미지는 [도커 아키텍처 공식문서](https://docs.docker.com/get-started/overview/#docker-architecture) 에 있는 이미지이다. 이미지를 살펴보면 알 수 있듯, 각 명령어 실행시 `docker client` 의 역할을 하는 녀석이 입력받은 명령어를 **docker host** 영역의 `docker daemon` 에 전달한다.
@@ -82,9 +79,7 @@ ifconfig: interface docker0 does not exist
 
 음..? 해당 인터페이스가 없다고 한다? 결론부터 말하자면 이유는 지금 내가 **mac** 을 사용해서 이다. mac 에선 약간 특이한게 **Docker Desktop**에서 네트워킹이 구현되는 방식으로 인해 docker0 호스트에서 인터페이스를 볼 수 없고, 이 인터페이스는 실제로 가상 머신 내에 있다고 한다([참고](https://docs.docker.com/desktop/networking/#there-is-no-docker0-bridge-on-the-host)).
 
-## Docker Network Driver 에 따른 특징
-
-## UNIX Socket 과 TCP Socket 에 사용 케이스
+# UNIX Socket 과 TCP Socket 에 사용 케이스
 
 위에서 docker client 와 daemon 은 서로 REST API 통신을 하며, 상황에 따라 `UNIX Socket` 과 `TCP Socket` 을 사용한다고 했다. 특별한 케이스도 있겠지만, 기본적으로 이 두가지를 알면 일반적인 상황에선 문제가 없어보인다. 각각 사용되는 케이스가 조금 다른데 이는 다음과 같다.
 
@@ -94,3 +89,19 @@ ifconfig: interface docker0 does not exist
 | TCP Socket  | **도커데몬**은 필요에 따라 **외부 네트워크에 노출**될수 있는데, 예를들어 내가 통신해야 하는 도커데몬이 로컬이 아닌 다른 서버에 떠있다고 가정해 보자. 해서 해당 도커데몬이 떠있는 서버에 로컬에서 명령어를 내리려면 어떻게 해야할까? 일단 네트워크 상의 통신이 필요할 것이다. 그럼 유닉스 도메인소켓의 동작에서 벗어난 행동을 해야 한다(local host 의 process 간의 통신이 아니기 때문에). 해서 이때는 `TCP 소켓`을 사용한다. |
 
 각 Socket 을 사용하는 방법과 옵션은 [daemon-socket-option](https://docs.docker.com/reference/cli/dockerd/#daemon-socket-option) 에 잘 기재되어 있다.
+
+# Docker Network Driver 와 이에 따른 특징
+
+위에서 도커의 Server - client 간 통신과 상황에 따른 Socket 의 사용 케이스를 살펴보았다. 헌데 이 기능이 왜 필요할까? 잘 생각해보면 우리가 도커를 활용할때 컨테이너의 내부와 외부의 통신이 거의 대부분의 상황에 필연적임을 알 수 있다. 평소 내가 익숙하게 EXPOSE 명령어를 dockerfile 에 명시하여, 호스트와 내부의 특정 포트를 연결시키는 행위를 생각하면 이해가 쉬울듯 하다. 후에 더 자세히 다루겠으나, EXPOSE 는 사실 필수가 아니긴 하다 다음 [공식 문서](https://docs.docker.com/reference/dockerfile/#expose) 를 참고하자.
+
+```bash
+$ docker run -d -p 3000:3000 my-image
+```
+
+우리가 컨테이너를 실행하면, **특정 내부 IP** 가 할당된다. 이때 내부 IP 만으로는 **외부와의 통신이 불가능** 한데, 컨테이너를 활용하다 보면 컨테이너와 컨테이너, 컨테이너와 호스트등 통신이 가능해야 하는 순간이 필수적이라 봐도 무방하다. 이를 위한, 도커의 네트워크 구조를 살펴보자.
+
+![docker-network-architecture](/images/post/2024/04/docker-network-architecture.png)
+
+이미지는 내가 가지고 있는, **시작하세요! 도커/쿠버네티스** 라는 책에 첨부된 이미지를 직접 따라 그렸다. 우리가 확인해 봐야 할 요소는 크게 호스트의 `eth0`, 기본 브리지인 `docker0`, 컨테이너의 가상 네트워크 인터페이스인 `veth` 이 3 인데, 각각의 요소를 살펴보자.
+
+# Ref
