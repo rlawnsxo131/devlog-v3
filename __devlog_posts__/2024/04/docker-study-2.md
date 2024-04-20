@@ -92,13 +92,15 @@ ifconfig: interface docker0 does not exist
 
 # Docker Network Driver 와 이에 따른 특징
 
-위에서 도커의 Server - client 간 통신과 상황에 따른 Socket 의 사용 케이스를 살펴보았다. 헌데 이 기능이 왜 필요할까? 잘 생각해보면 우리가 도커를 활용할때 컨테이너의 내부와 외부의 통신이 거의 대부분의 상황에 필연적임을 알 수 있다. 평소 내가 익숙하게 EXPOSE 명령어를 dockerfile 에 명시하여, 호스트와 내부의 특정 포트를 연결시키는 행위를 생각하면 이해가 쉬울듯 하다. 후에 더 자세히 다루겠으나, EXPOSE 는 사실 필수가 아니긴 하다 다음 [공식 문서](https://docs.docker.com/reference/dockerfile/#expose) 를 참고하자.
+위에서 도커의 Server - client 간 통신과 상황에 따른 Socket 의 사용 케이스를 살펴보았다. 헌데 이 기능이 왜 필요할까? 잘 생각해보면 우리가 도커를 활용할때 컨테이너의 내부와 외부의 통신이 거의 대부분의 상황에 필연적임을 알 수 있다. 평소 내가 익숙하게 EXPOSE 명령어를 dockerfile 에 명시하여, 아래와 같이 호스트와 내부의 특정 포트를 연결시키는 행위를 생각하면 이해가 쉬울듯 하다.
 
 ```bash
 $ docker run -d -p 3000:3000 my-image
 ```
 
-우리가 컨테이너를 실행하면, **특정 내부 IP** 가 할당된다. 이때 내부 IP 만으로는 **외부와의 통신이 불가능** 한데, 컨테이너를 활용하다 보면 컨테이너와 컨테이너, 컨테이너와 호스트등 통신이 가능해야 하는 순간이 필수적이라 봐도 무방하다. 이를 위한, 도커의 네트워크 구조를 살펴보자.
+후에 더 자세히 다루겠으나, EXPOSE 는 사실 필수가 아니긴 하다. 일단은 다음 [공식 문서](https://docs.docker.com/reference/dockerfile/#expose) 를 참고하자.
+
+본론으로 들어가서, 우리가 **컨테이너를 실행**하면 **특정 내부 IP** 가 할당된다. 이때 내부 IP 만으로는 **외부와의 통신이 불가능** 한데, 컨테이너를 활용하다 보면 컨테이너와 컨테이너, 컨테이너와 호스트등 통신이 가능해야 하는 순간이 필수적이라 봐도 무방하다. 이를 위한, 도커의 네트워크 구조를 살펴보자.
 
 ![docker-network-architecture](/images/post/2024/04/docker-network-architecture.png)
 
