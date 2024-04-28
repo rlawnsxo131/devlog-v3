@@ -15,11 +15,11 @@ slug: docker-study-2
 글이 좀 늦어졌다. 시간이 없단건 핑계고, 재밌어 보이는 다른 주제를 공부하느라 블로그 글을 작성하는데 시간을 쓰지 않았다. 뭐 어쨋든 이 글은 다음의 둘 또는 네가지 주제로 작성될 예정이다.
 
 1. [가상화 : 도커를 이해하기 위한 가장 기본적인 가상화와 컨테이너의 개념을 다룬다](https://devlog.juntae.kim/post/docker-study-1)
-2. **[도커엔진 : 실제 docker 엔진의 내부 구조를 살펴본다](https://devlog.juntae.kim/post/docker-study-2)**
+2. **[도커엔진과 네트워크 : 실제 docker 엔진과 네트워크 구조를 살펴본다](https://devlog.juntae.kim/post/docker-study-2)**
 3. **도커파일과 이미지**(고민중) : 도커파일과 이미지, 이미지 표준, 레이어 캐싱등의 개념을 다룬다
 4. **활용**(고민중) : 명령어및 실무에서 겪었던 경험(logging, troubleshooting, container orchestration - main ECS / sub K8S)을 다룬다
 
-도커 공부 두번째, `도커엔진`에 관한 글이다. 이번 글에서 다룰 내용중 일부는, [이전글](https://devlog.juntae.kim/post/docker-study-1) 에서 언급한 내용이 포함되어 있다. 해당 내용을 조금더 살펴보고, 외에 더 알아두면 좋을만한 요소를 다루어 본다.
+도커 공부 두번째, `도커 엔진과 네트워크`에 관한 글이다. 이번 글에서 다룰 내용중 일부는, [이전글](https://devlog.juntae.kim/post/docker-study-1) 에서 언급한 내용이 포함되어 있다. 해당 내용을 조금더 살펴보고, 외에 더 알아두면 좋을만한 요소를 다루어 본다.
 
 ```
 잘못된 정보가 퍼져나가는 것을 원치 않습니다.

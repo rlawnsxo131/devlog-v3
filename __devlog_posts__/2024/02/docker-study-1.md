@@ -20,7 +20,7 @@ slug: docker-study-1
 이글은 그중 첫번째 주제인 `가상화`를 다룬다.
 
 1. **[가상화 : 도커를 이해하기 위한 가장 기본적인 가상화와 컨테이너의 개념을 다룬다](https://devlog.juntae.kim/post/docker-study-1)**
-2. [도커엔진 : 실제 docker 엔진의 내부 구조를 살펴본다](https://devlog.juntae.kim/post/docker-study-2)
+2. [도커엔진과 네트워크 : 실제 docker 엔진과 네트워크 구조를 살펴본다](https://devlog.juntae.kim/post/docker-study-2)
 3. **도커파일과 이미지**(고민중) : 도커파일과 이미지, 이미지 표준, 레이어 캐싱등의 개념을 다룬다
 4. **활용**(고민중) : 명령어및 실무에서 겪었던 경험(logging, troubleshooting, container orchestration - main ECS / sub K8S)을 다룬다
 
