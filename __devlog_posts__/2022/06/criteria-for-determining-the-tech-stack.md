@@ -6,6 +6,7 @@ tags:
 thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-06-03
 slug: criteria-for-determining-the-tech-stack
+published: true
 ---
 
 # Table of Contents

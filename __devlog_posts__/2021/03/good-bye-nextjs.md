@@ -7,6 +7,7 @@ tags:
 thumbnail: /images/post/thumbnail/next_react.jpeg
 date: 2021-03-11
 slug: good-bye-nextjs
+published: true
 ---
 
 # Table of Contents

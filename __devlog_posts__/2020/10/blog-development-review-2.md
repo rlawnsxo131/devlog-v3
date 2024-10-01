@@ -7,6 +7,7 @@ tags:
 thumbnail: /images/post/thumbnail/graphql.png
 date: 2020-10-26
 slug: blog-development-review-2
+published: true
 ---
 
 # Table of Contents

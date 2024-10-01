@@ -6,6 +6,7 @@ tags:
 thumbnail: /images/post/thumbnail/typescript.jpeg
 date: 2020-10-19
 slug: blog-development-review-1
+published: true
 ---
 
 # Table of Contents

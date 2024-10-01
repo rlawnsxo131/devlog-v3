@@ -6,6 +6,7 @@ tags:
 thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-01-02
 slug: answers-to-personal-questions
+published: true
 ---
 
 # Table Of Contents

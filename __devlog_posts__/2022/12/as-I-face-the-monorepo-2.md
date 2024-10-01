@@ -8,6 +8,7 @@ tags:
 thumbnail: /images/post/thumbnail/john_home_cherry_blossom_2.jpeg
 date: 2022-12-10
 slug: as-I-face-the-monorepo-2
+published: true
 ---
 
 # Table of Contents

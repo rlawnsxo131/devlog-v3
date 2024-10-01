@@ -6,6 +6,7 @@ tags:
 thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-11-05
 slug: move-to-company-and-future-plan
+published: true
 ---
 
 # Table of Contents

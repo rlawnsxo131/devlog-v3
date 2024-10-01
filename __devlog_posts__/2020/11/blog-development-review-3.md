@@ -7,6 +7,7 @@ tags:
 thumbnail: /images/post/thumbnail/nextjs.png
 date: 2020-11-26
 slug: blog-development-review-3
+published: true
 ---
 
 # Table of contents

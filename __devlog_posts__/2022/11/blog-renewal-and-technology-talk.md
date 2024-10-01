@@ -8,6 +8,7 @@ tags:
 thumbnail: /images/post/thumbnail/john_home_cherry_blossom.jpeg
 date: 2022-11-06
 slug: blog-renewal-and-technology-talk
+published: true
 ---
 
 # Table of Contents

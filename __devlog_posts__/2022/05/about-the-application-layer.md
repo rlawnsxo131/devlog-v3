@@ -7,6 +7,7 @@ tags:
 thumbnail: /images/post/thumbnail/clean_architecture_with_golang.png
 date: 2022-05-28
 slug: about-the-application-layer
+published: true
 ---
 
 # Table of Contents
